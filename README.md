@@ -1,4 +1,5 @@
 # README
+[![wercker status](https://app.wercker.com/status/1e4894c998fbc5dc843132728392bf4e/s/develop "wercker status")](https://app.wercker.com/project/byKey/1e4894c998fbc5dc843132728392bf4e)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
