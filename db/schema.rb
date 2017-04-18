@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513195252) do
+ActiveRecord::Schema.define(version: 20170418083147) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "code",                          default: "",    null: false
@@ -61,6 +61,19 @@ ActiveRecord::Schema.define(version: 20140513195252) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id", unique: true, using: :btree
+  end
+
+  create_table "submissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "submitted",                                         null: false
+    t.binary   "file1",         limit: 65535
+    t.binary   "messages",      limit: 65535
+    t.string   "status",                      default: "unchecked", null: false
+    t.float    "mark",          limit: 24
+    t.text     "comment",       limit: 65535
+    t.integer  "assignment_id",                                     null: false
+    t.integer  "user_id",                                           null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
