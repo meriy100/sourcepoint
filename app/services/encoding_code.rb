@@ -73,7 +73,7 @@ class Dictionary < Hash
 end
 
 class EncodingCode
-  attr_accessor :code, :code_encoded, :dictionary
+  attr_accessor :code, :code_encoded, :dictionary, :charlist
 
   EXPECT_CHARS = [
     "{",
@@ -110,6 +110,7 @@ class EncodingCode
   def initialize(src, dictionary = Dictionary.new)
     self.code_encoded ||= ""
     self.dictionary = dictionary
+    self.charlist = []
 
     self.code = src
   end
@@ -124,7 +125,7 @@ class EncodingCode
 
   def encode
     remove_comment
-    code.each_line do |line|
+    code.each_line.with_index(1) do |line, idx|
       # TODO : 数字はエンコーディングするのかどうか
       words = line
         .gsub(%r{("[\w\W\s\S]*")}, " @s ")
@@ -164,8 +165,9 @@ class EncodingCode
           dictionary.set(word)
         end
       end
-      code_encoded.concat(words.join(" "))
-      code_encoded.concat(' ')
+      encode_line = words.join(" ").concat(' ')
+      code_encoded.concat(encode_line)
+      charlist.concat(encode_line.split('').map { |char| [idx, char] })
     end
     code_encoded
   end

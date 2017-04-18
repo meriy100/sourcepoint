@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418102747) do
+ActiveRecord::Schema.define(version: 20170418133709) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "code",                          default: "",    null: false
@@ -31,18 +31,20 @@ ActiveRecord::Schema.define(version: 20170418102747) do
   end
 
   create_table "attempts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.datetime "submitted",                                         null: false
-    t.binary   "file1",         limit: 65535
-    t.binary   "messages",      limit: 65535
-    t.string   "status",                      default: "unchecked", null: false
-    t.float    "mark",          limit: 24
-    t.text     "comment",       limit: 65535
-    t.integer  "assignment_id",                                     null: false
-    t.integer  "user_id",                                           null: false
+    t.datetime "submitted",                                                 null: false
+    t.binary   "file1",                 limit: 65535
+    t.binary   "messages",              limit: 65535
+    t.string   "status",                              default: "unchecked", null: false
+    t.float    "mark",                  limit: 24
+    t.text     "comment",               limit: 65535
+    t.integer  "assignment_id",                                             null: false
+    t.integer  "user_id",                                                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "encode_code",   limit: 65535
+    t.text     "encode_code",           limit: 65535
+    t.integer  "current_assignment_id"
     t.index ["assignment_id"], name: "index_attempts_on_assignment_id", using: :btree
+    t.index ["current_assignment_id"], name: "index_attempts_on_current_assignment_id", using: :btree
     t.index ["user_id"], name: "index_attempts_on_user_id", using: :btree
   end
 
