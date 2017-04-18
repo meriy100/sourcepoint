@@ -46,5 +46,26 @@ C
         expect(encode_code).to include('23')
       end
     end
+
+    context 'with <= => && ' do
+    let(:src) {
+<<C
+/*
+comment of multiple
+*/
+21==31
+21<=31
+21>=31
+21&&31
+21||31
+21!=31
+// comment
+C
+}
+      it do
+        encode_code = subject.split(' ')
+        expect(encode_code.count).to eq(18)
+      end
+    end
   end
 end

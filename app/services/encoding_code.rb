@@ -128,7 +128,7 @@ class EncodingCode
       # TODO : 数字はエンコーディングするのかどうか
       words = line
         .gsub(%r{("[\w\W\s\S]*")}, " @s ")
-        .gsub(/(?<first>[\(|\)|\{|\}|\[|\]|;|:])/, ' \k<first> ')
+        .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
         .gsub(/'\w'/, ' $c ')
         .gsub(/(?<prev>[^=!<>])=(?<next>[^=])/, '\k<prev> = \k<next>')
         .gsub(/(?<prev>[^+])\+(?<next>[^+=])/, '\k<prev> + \k<next>')
@@ -148,13 +148,9 @@ class EncodingCode
         .gsub(/,/, ' , ')
         .gsub(/\./, ' . ')
         .gsub(/(?<num>\d+)/, ' \k<num> ')
-        .gsub(/=/, ' = ')
-        .gsub(/\+/, ' + ')
-        .gsub(/-/, ' - ')
         .gsub(/\*/, ' * ')
         .gsub(/\//, ' / ')
         .gsub(/%/, ' % ')
-        .gsub(/&/, ' & ')
         .split(" ").map do |word|
         if EXPECT_CHARS.include? word
           word
