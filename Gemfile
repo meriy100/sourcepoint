@@ -52,6 +52,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'timecop'
 
+  gem 'annotate'
 end
 
 

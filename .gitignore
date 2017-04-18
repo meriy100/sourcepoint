@@ -21,3 +21,4 @@
 config/database.yml
 
 vendor/bundle
+dump.sql
