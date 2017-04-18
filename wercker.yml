@@ -1,0 +1,48 @@
+# This references the default Ruby container from
+# the Docker Hub.
+# https://registry.hub.docker.com/_/ruby/
+# If you want to use a specific version you would use a tag:
+box: ruby:2.3.3
+# You can also use services such as databases. Read more on our dev center:
+# http://devcenter.wercker.com/docs/services/index.html
+services:
+  - id: mysql
+    env:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testuser
+      MYSQL_DATABASE: testdb
+build:
+  # Steps make up the actions in your pipeline
+  # Read more about steps on our dev center:
+  # http://devcenter.wercker.com/docs/steps/index.html
+  steps:
+    - install-packages:
+      packages: nodejs
+    # Install Qt library
+    # feature spec
+    # - install-packages:
+    #     packages: libqtwebkit-dev
+    - rails-database-yml
+    - bundle-install
+    # - script:
+    #     name: copy database.yml
+    #     code: cp config/database.yml.default config/database.yml
+    - script:
+      name: echo ruby information
+      code: |
+        echo "ruby version $(ruby --version) running"
+        echo "from location $(which ruby)"
+        echo -p "gem list: $(gem list)"
+    - script:
+      name: Set up db
+      code: RAILS_ENV=test bundle exec rake db:schema:load
+    - script:
+      name: rspec
+      code: bundle exec rspec spec/
+  # after-steps:
+  #   # notify to Slack
+  #   - wantedly/pretty-slack-notify:
+  #     webhook_url: $SLACK_WEBHOOK_URL
+  #     channel: note-sw
+
