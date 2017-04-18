@@ -27,7 +27,7 @@ Things you may want to cover:
 ### memo
 
 ```
-$ bin/rake encode:benchmark
-Running via Spring preloader in process 10703
-188.860000  59.230000 248.090000 (282.664246)
+$bin/rake encode:benchmark
+Running via Spring preloader in process 16385
+183.580000  58.250000 241.830000 (275.604207)
 ```
