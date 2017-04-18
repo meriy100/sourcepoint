@@ -13,6 +13,7 @@
 #  user_id       :integer          not null
 #  created_at    :datetime
 #  updated_at    :datetime
+#  encode_code   :text(65535)
 #
 # Indexes
 #

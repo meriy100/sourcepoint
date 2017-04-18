@@ -1,7 +1,7 @@
 class Dictionary < Hash
   class EmptyHasList < StandardError; end
   def initialize
-    @hash_list = ("A".."Z").to_a.concat(("a".."z").to_a) # TODO : 二桁にする (16進数にすればいいかも)
+    @hash_list = ("A".."Z").to_a.concat(("a".."z").to_a).combination(2).map{|a, b|[a,b]}.shuffle(random: Random.new(100))
     reserve_word
   end
 
@@ -130,7 +130,7 @@ class EncodingCode
         .gsub(%r{("[\w\W\s\S]*")}, " @s ")
         .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
         .gsub(/'\w'/, ' $c ')
-        .gsub(/(?<prev>[^=!<>])=(?<next>[^=])/, '\k<prev> = \k<next>')
+        .gsub(/(?<prev>[^=!<>+-])=(?<next>[^=])/, '\k<prev> = \k<next>')
         .gsub(/(?<prev>[^+])\+(?<next>[^+=])/, '\k<prev> + \k<next>')
         .gsub(/(?<prev>[^-])-(?<next>[^-=])/, '\k<prev> - \k<next>')
         .gsub(/(?<prev>[^&])&(?<next>[^&])/, '\k<prev> & \k<next>')
@@ -145,6 +145,8 @@ class EncodingCode
         .gsub(/\|\|/, " || ")
         .gsub(/\+\+/, " ++ ")
         .gsub(/--/, " -- ")
+        .gsub(/\+=/, " += ")
+        .gsub(/-=/, " -- ")
         .gsub(/,/, ' , ')
         .gsub(/\./, ' . ')
         .gsub(/(?<num>\d+)/, ' \k<num> ')

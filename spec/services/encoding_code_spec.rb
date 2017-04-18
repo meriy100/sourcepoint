@@ -48,23 +48,21 @@ C
     end
 
     context 'with <= => && ' do
-    let(:src) {
+      let(:src) {
 <<C
 /*
 comment of multiple
 */
-21==31
-21<=31
-21>=31
-21&&31
-21||31
-21!=31
+100+=1
+100-=1
+100++1
+100--1
 // comment
 C
-}
+      }
       it do
         encode_code = subject.split(' ')
-        expect(encode_code.count).to eq(18)
+        expect(encode_code.count).to eq(12)
       end
     end
   end
