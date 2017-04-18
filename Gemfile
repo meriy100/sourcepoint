@@ -24,6 +24,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 
+# UI/UX
+gem 'bootstrap-sass'
+gem 'bourbon'
+gem 'font-awesome-rails'
+gem 'bootstrap_form'
+
 
 # Service
 # levenshtein distance
@@ -43,6 +49,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-remote'
   gem 'awesome_print'
+  gem 'better_errors'
 
   # test
   gem 'rspec-rails'

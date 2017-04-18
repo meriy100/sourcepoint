@@ -42,8 +42,21 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (7.1.4)
+    autoprefixer-rails (6.7.7.2)
+      execjs
     awesome_print (1.7.0)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
+    bootstrap_form (2.6.0)
+    bourbon (4.3.4)
+      sass (~> 3.4)
+      thor (~> 0.19)
     builder (3.2.3)
     bullet (5.5.1)
       activesupport (>= 3.0.0)
@@ -80,6 +93,8 @@ GEM
     faker (1.7.3)
       i18n (~> 0.5)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.1)
+      railties (>= 3.2, < 5.1)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.1)
@@ -242,6 +257,10 @@ PLATFORMS
 DEPENDENCIES
   annotate
   awesome_print
+  better_errors
+  bootstrap-sass
+  bootstrap_form
+  bourbon
   bullet
   byebug
   coffee-rails (~> 4.2)
@@ -249,6 +268,7 @@ DEPENDENCIES
   diff-lcs
   factory_girl_rails
   faker
+  font-awesome-rails
   jquery-rails
   levenshtein_ruby (~> 0.1.4)
   listen (~> 3.0.5)
