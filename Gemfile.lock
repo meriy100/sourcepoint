@@ -121,6 +121,7 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    parallel (1.11.1)
     power_assert (1.0.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -273,6 +274,7 @@ DEPENDENCIES
   levenshtein_ruby (~> 0.1.4)
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
+  parallel
   pry
   pry-byebug
   pry-doc

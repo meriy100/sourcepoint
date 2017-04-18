@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+### memo
+
+```
+$ bin/rake encode:benchmark
+Running via Spring preloader in process 10703
+188.860000  59.230000 248.090000 (282.664246)
+```

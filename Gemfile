@@ -37,6 +37,9 @@ gem 'levenshtein_ruby', '~>0.1.4'
 # diff
 gem 'diff-lcs'
 
+# multi Processes
+gem 'parallel'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
