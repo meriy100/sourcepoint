@@ -16,4 +16,6 @@
 #
 
 class Submission < ApplicationRecord
+  has_many :lines
+  has_many :attempts, through: :lines
 end

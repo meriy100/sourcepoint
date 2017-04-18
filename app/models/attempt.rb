@@ -24,4 +24,5 @@
 #
 
 class Attempt < ApplicationRecord
+  has_many :liens
 end

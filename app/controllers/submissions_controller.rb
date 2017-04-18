@@ -12,11 +12,12 @@ class SubmissionsController < ApplicationController
     if @submission.save
       encoding_code = EncodingCode.new(@submission.file1)
       encode = encoding_code.encode
-      nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).map { |attempt|
-        [attempt, Levenshtein.normalized_distance(encode, attempt.encode_code)]
-      }.sort_by { |_, weight| weight }
+      nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).sort_by { |attempt|
+        Levenshtein.normalized_distance(encode, attempt.encode_code)
+      }
 
-      diffs = Diff::LCS.sdiff(nearest_attempts.first.first.encode_code, encode)
+      diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
+
       line_list = diffs.map { |context_change|
         case context_change.action
         when '='
@@ -29,6 +30,11 @@ class SubmissionsController < ApplicationController
         else
         end
       }.compact.uniq
+
+      binding.pry
+      line_list.each do |line_no|
+        @submission.lines.create!(number: line_no, attempt_id: nearest_attempts.first.id)
+      end
 
       redirect_to @submission
     else
