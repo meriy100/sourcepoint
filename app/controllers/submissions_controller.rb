@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
   def show
-    find_submission
+    @line_numbers = find_submission.lines.pluck(:number)
   end
 
   def new

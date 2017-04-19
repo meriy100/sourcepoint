@@ -1,0 +1,9 @@
+pre
+  - @submission.file1.each_line.with_index(1) do |line, idx|
+    code
+      - if @line_numbers.include?(idx)
+        | *
+      - else
+        | =
+      = line
+
