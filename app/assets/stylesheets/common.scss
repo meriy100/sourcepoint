@@ -3,6 +3,10 @@
 @import 'font-awesome';
 @import 'bourbon';
 
+textarea.form-control {
+  height: 400px;
+}
+
 pre.diffcode {
   code.diffline {
     background-color: #ffecec;
