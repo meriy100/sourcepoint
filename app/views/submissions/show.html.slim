@@ -1,9 +1,18 @@
-pre
-  - @submission.file1.each_line.with_index(1) do |line, idx|
-    code
-      - if @line_numbers.include?(idx)
-        | *
-      - else
-        | =
-      = line
-
+.row
+  .col-sm-6
+    h3 提出ファイル
+    pre.diffcode
+      - @submission.file1.each_line.with_index(1) do |line, idx|
+        - if @line_numbers.map(&:number).include?(idx)
+          code.diffline
+            | *
+            = line
+        - else
+          code
+            | =
+            = line
+  .col-sm-6
+    h3 参考ファイル
+    pre
+      code
+        = @line_numbers.first.attempt.file1

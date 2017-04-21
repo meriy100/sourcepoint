@@ -2,3 +2,10 @@
 @import 'bootstrap';
 @import 'font-awesome';
 @import 'bourbon';
+
+pre.diffcode {
+  code.diffline {
+    background-color: #ffecec;
+  }
+}
+

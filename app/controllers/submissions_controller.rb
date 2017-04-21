@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
   def show
-    @line_numbers = find_submission.lines.pluck(:number)
+    @line_numbers = find_submission.lines
   end
 
   def new
@@ -17,7 +17,6 @@ class SubmissionsController < ApplicationController
       }
 
       diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
-
       line_list = diffs.map { |context_change|
         case context_change.action
         when '='
@@ -28,10 +27,10 @@ class SubmissionsController < ApplicationController
         when '!'
           encoding_code.charlist[context_change.new_position].first
         else
+          raise StandardError.new('要確認')
         end
       }.compact.uniq
 
-      binding.pry
       line_list.each do |line_no|
         @submission.lines.create!(number: line_no, attempt_id: nearest_attempts.first.id)
       end

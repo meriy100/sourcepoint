@@ -166,6 +166,8 @@ class EncodingCode
         end
       end
       encode_line = words.join(" ").concat(' ')
+      encode_line.gsub!(/ +/, ' ')
+      encode_line.gsub!(/\A +/, '')
       code_encoded.concat(encode_line)
       charlist.concat(encode_line.split('').map { |char| [idx, char] })
     end
