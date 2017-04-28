@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+  layout nil, only: :create
   def show
     @line_numbers = find_submission.lines
   end
@@ -17,24 +18,16 @@ class SubmissionsController < ApplicationController
       }
 
       diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
-      line_list = diffs.map { |context_change|
-        case context_change.action
-        when '='
-        when '-'
-          encoding_code.charlist[context_change.new_position].first
-        when '+'
-          encoding_code.charlist[context_change.new_position].first
-        when '!'
-          encoding_code.charlist[context_change.new_position].first
-        else
-          raise StandardError.new('要確認')
-        end
-      }.compact.uniq
+      line_list = diffs_to_line_diffs(diffs, encoding_code).compact.uniq
 
       line_list.each do |line_no|
         @submission.lines.create!(number: line_no, attempt_id: nearest_attempts.first.id)
       end
 
+      if params[:response_type] == 'partial'
+        @line_numbers = find_submission.lines
+        render 'diffs'
+      end
       redirect_to @submission
     else
       render :new
@@ -42,6 +35,22 @@ class SubmissionsController < ApplicationController
   end
 
   private
+
+  def diffs_to_line_diffs(diffs, encoding_code)
+    diffs.map { |context_change|
+      case context_change.action
+      when '='
+      when '-'
+        encoding_code.charlist[context_change.new_position].first
+      when '+'
+        encoding_code.charlist[context_change.new_position].first
+      when '!'
+        encoding_code.charlist[context_change.new_position].first
+      else
+        raise StandardError.new('要確認')
+      end
+    }
+  end
 
   def submission_params
     params.require(:submission).permit(

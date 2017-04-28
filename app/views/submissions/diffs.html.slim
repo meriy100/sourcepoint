@@ -1,0 +1,12 @@
+h3 提出ファイル
+pre.diffcode
+  - @submission.file1.each_line.with_index(1) do |line, idx|
+    - if @line_numbers.map(&:number).include?(idx)
+      code.diffline
+        | *
+        = line
+    - else
+      code
+        | =
+        = line
+
