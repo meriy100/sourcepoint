@@ -105,6 +105,7 @@ class EncodingCode
     ">",
     "<",
     "!",
+    "@s",
   ].freeze
 
   def initialize(src, dictionary = Dictionary.new)
@@ -150,7 +151,7 @@ class EncodingCode
         .gsub(/-=/, " -- ")
         .gsub(/,/, ' , ')
         .gsub(/\./, ' . ')
-        .gsub(/(?<num>\d+)/, ' \k<num> ')
+        .gsub(/ (?<num>\d+) /, ' \k<num> ')
         .gsub(/\*/, ' * ')
         .gsub(/\//, ' / ')
         .gsub(/%/, ' % ')

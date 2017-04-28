@@ -23,12 +23,12 @@ class SubmissionsController < ApplicationController
       line_list.each do |line_no|
         @submission.lines.create!(number: line_no, attempt_id: nearest_attempts.first.id)
       end
-
-      if params[:response_type] == 'partial'
+      if params[:response_type]
         @line_numbers = find_submission.lines
         render 'diffs'
+      else
+        redirect_to @submission
       end
-      redirect_to @submission
     else
       render :new
     end
