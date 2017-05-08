@@ -1,5 +1,4 @@
 class SubmissionsController < ApplicationController
-  layout nil, only: :create
   def show
     @line_numbers = find_submission.lines
   end
@@ -25,7 +24,7 @@ class SubmissionsController < ApplicationController
       end
       if params[:response_type]
         @line_numbers = find_submission.lines
-        render 'diffs'
+        render 'diffs', layout: nil
       else
         redirect_to @submission
       end
