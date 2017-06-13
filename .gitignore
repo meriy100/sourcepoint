@@ -22,3 +22,4 @@ config/database.yml
 
 vendor/bundle
 dump.sql
+sourcepoint_development_dump
