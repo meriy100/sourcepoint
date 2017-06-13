@@ -3,16 +3,20 @@
     h3 提出ファイル
     pre.diffcode
       - @submission.file1.each_line.with_index(1) do |line, idx|
+        - if @line_numbers.select { |line_number| line_number.number == idx && line_number.deleted_line  }.present?
+          span
+            | * ----
+            br
         - if @line_numbers.map(&:number).include?(idx)
-          code.diffline
+          span.diffline
             | *
             = line
         - else
-          code
+          span
             | =
             = line
   .col-sm-6
     h3 参考ファイル
     pre
-      code
+      span
         = @line_numbers.first&.attempt&.file1

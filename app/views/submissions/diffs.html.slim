@@ -1,12 +1,14 @@
 h3 提出ファイル
 pre.diffcode
   - @submission.file1.each_line.with_index(1) do |line, idx|
+    - if @line_numbers.select { |line_number| line_number.number == idx && line_number.deleted_line  }
+      | \\\\
     - if @line_numbers.map(&:number).include?(idx)
-      code.diffline
+      span.diffline
         | *
         = line
     - else
-      code
+      span
         | =
         = line
 

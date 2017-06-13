@@ -19,8 +19,8 @@ class SubmissionsController < ApplicationController
       diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
       line_list = diffs_to_line_diffs(diffs, encoding_code).compact.uniq
 
-      line_list.each do |line_no|
-        @submission.lines.create!(number: line_no, attempt_id: nearest_attempts.first.id)
+      line_list.each do |line_attributes|
+        @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
       end
       if params[:response_type]
         @line_numbers = find_submission.lines
@@ -39,12 +39,14 @@ class SubmissionsController < ApplicationController
     diffs.map { |context_change|
       case context_change.action
       when '='
+      when '+', '!'
+        { number: encoding_code.charlist[context_change.new_position].first }
       when '-'
-        encoding_code.charlist[context_change.new_position].first
-      when '+'
-        encoding_code.charlist[context_change.new_position].first
-      when '!'
-        encoding_code.charlist[context_change.new_position].first
+        if encoding_code.charlist[context_change.new_position] == encoding_code.charlist[context_change.new_position - 1]
+          { number: encoding_code.charlist[context_change.new_position].first }
+        else
+          { number: encoding_code.charlist[context_change.new_position].first, deleted_line: true }
+        end
       else
         raise StandardError.new('要確認')
       end
