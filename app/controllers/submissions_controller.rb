@@ -8,7 +8,11 @@ class SubmissionsController < ApplicationController
   end
 
   def create
-    @submission = Submission.new(submission_params)
+    @submission = if params[:submission].nil?
+      Submission.new(submission_params)
+    else
+      Submission.new(params.require(:submission).permit(:file1, :messages, :status, :mark, :comment, :assignment_id, :user_id))
+    end
     if @submission.save
       encoding_code = EncodingCode.new(@submission.file1)
       encode = encoding_code.encode
