@@ -18,4 +18,12 @@
 class Submission < ApplicationRecord
   has_many :lines
   has_many :attempts, through: :lines
+
+  before_create :set_submitted
+
+  private
+
+  def set_submitted
+    self.submitted = Time.zone.now
+  end
 end
