@@ -58,9 +58,7 @@ class SubmissionsController < ApplicationController
   end
 
   def submission_params
-    params.require(:submission).permit(
-      :submitted, :file1, :messages, :status, :mark, :comment, :assignment_id, :user_id
-    )
+    params.permit(:submitted, :file1, :messages, :status, :mark, :comment, :assignment_id, :user_id)
   end
 
   def find_submission
