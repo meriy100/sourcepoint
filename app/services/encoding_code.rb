@@ -48,7 +48,7 @@ class Dictionary < Hash
       "enum",
       "union",
       "sizeof",
-      "include",
+      "#include",
       "printf",
       "scanf",
       "fgets",
@@ -61,6 +61,12 @@ class Dictionary < Hash
       "stdio",
       "math",
       "string",
+      "stdlib",
+      "malloc",
+      "main",
+      "EOF",
+      "NULL",
+      "free",
     ].each do |word|
       set(word)
     end
@@ -70,6 +76,14 @@ class Dictionary < Hash
     raise EmptyHasList if @hash_list.blank?
     "$#{@hash_list.pop}"
   end
+end
+
+class SplitFunction
+  attr_accessor :code
+  def initialize(code)
+    self.code = code
+  end
+
 end
 
 class EncodingCode
@@ -120,12 +134,17 @@ class EncodingCode
     code.gsub!(/(^\/\/.*$|\/\*(.|\n)*\*\/)/, '')
   end
 
+  def main_norm
+    code.gsub!(/int\s*main\s*\(\)/, "int main(void)")
+  end
+
   def num?(word)
     word =~ /\A-?\d+(.\d+)?\Z/
   end
 
   def encode
     remove_comment
+    main_norm
     code.each_line.with_index(1) do |line, idx|
       # TODO : 数字はエンコーディングするのかどうか
       words = line
