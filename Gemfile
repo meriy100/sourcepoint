@@ -29,6 +29,7 @@ gem 'bootstrap-sass'
 gem 'bourbon'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
+gem'lazy_high_charts'
 
 
 # Service
