@@ -23,11 +23,7 @@ class SubmissionsController < ApplicationController
       diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
       line_list = diffs_to_line_diffs(diffs, encoding_code).compact.uniq
 
-      line_list = nearest_attempts[0..2].map do |nearest_attempt|
-        diffs = Diff::LCS.sdiff(nearest_attempt.encode_code, encode)
-        diffs_to_line_diffs(diffs, encoding_code).compact.uniq
-      end
-      line_list.flatten.group_by{|i| i}.reject{|k,v| v.one?}.keys.each do |line_attributes|
+      line_list.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
       end
       if params[:response_type]
