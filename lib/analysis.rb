@@ -1,4 +1,5 @@
 require './data'
+require './pre_data'
 
 class Array
   def average
@@ -40,7 +41,7 @@ def all_diff_clear_to_frist(assignemnts)
     assignemnt.attempts.group_by(&:user_id).values.map do |attempts|
       next unless attempts.any? { |a| a.status == "checked" }
       attempts.sort_by!(&:created_at)
-      next unless attempts.last.created_at.wday == 4
+      # next unless attempts.last.created_at.wday == 4
       attempts.last.created_at - attempts.first.created_at
     end
     .compact
@@ -58,9 +59,23 @@ def minute_count(clear_times)
   minute_count
 end
 
+def martin_data_clear_time(martin_data)
+  martin_data.group_by{|h| h[:user]}.values.map do |attempts|
+    next unless attempts.any? { |a| a[:status] == "checked" }
+    attempts.sort_by!{|a| a[:time]}
+    # next unless attempts.last[:time].since(9.hours).wday == 4
+    attempts.last[:time] - attempts.first[:time]
+  end
+  .compact
+end
+
 def main
   target_assignment_ids = [466, 392, 320]
-  clear_times = all_diff_clear_to_frist(Assignment.where.not(id: target_assignment_ids).sample(100))
+  # clear_times = all_diff_clear_to_frist(Assignment.where.not(id: target_assignment_ids).sample(100))
+  clear_times = all_diff_clear_to_frist(Assignment.where(id: [36, 106, 177, 247, 319, 391, 465]))
+  puts "size #{clear_times.count}"
+  puts clear_times.average
+  puts clear_times[clear_times.length/2]
   File.open("data1.csv", "w") do |f|
     clear_times.each do |time|
       f.puts time
@@ -74,16 +89,45 @@ def main
 
   target_assignment_ids = [466, 392, 320]
   clear_times = all_diff_clear_to_frist(Assignment.where(id: target_assignment_ids).sample(100))
-  # File.open("data3.csv", "w") do |f|
-  #   clear_times.each do |time|
-  #     f.puts time
-  #   end
-  # end
-  # File.open("data4.csv", "w") do |f|
-  #   minute_count(clear_times).each do |time, count_and_times|
-  #      f.puts "#{time}, #{count_and_times.join(", ")}"
-  #   end
-  # end
+  puts "size #{clear_times.count}"
+  puts clear_times.average
+  puts clear_times[clear_times.length/2]
+  File.open("data3.csv", "w") do |f|
+    clear_times.each do |time|
+      f.puts time
+    end
+  end
+  File.open("data4.csv", "w") do |f|
+    minute_count(clear_times).each do |time, count_and_times|
+       f.puts "#{time}, #{count_and_times.join(", ")}"
+    end
+  end
+
+  data_09other = []
+  data_09B1 = []
+  pre_data.map do |hash|
+    hash[:time] = Time.zone.parse(hash[:time])
+    hash
+  end
+    .each do |hash|
+      case hash[:code]
+      when '09B1'
+        data_09B1.push  hash
+      else
+        data_09other.push hash
+      end
+    end
+
+  clear_times = martin_data_clear_time(data_09other)
+  puts "09other"
+  puts "size #{clear_times.count}"
+  puts clear_times.average
+  puts clear_times[clear_times.length/2]
+  clear_times = martin_data_clear_time(data_09B1)
+  puts "09B1"
+  puts "size #{clear_times.count}"
+  puts clear_times.average
+  puts clear_times[clear_times.length/2]
 end
 
 if __FILE__ == $0
