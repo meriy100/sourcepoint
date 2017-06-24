@@ -131,7 +131,7 @@ class EncodingCode
   end
 
   def remove_comment
-    code.gsub!(/(^\/\/.*$|\/\*(.|\n)*\*\/)/, '')
+    code.gsub!(/(\/\/.*$|\/\*(.|\n)*\*\/)/, '')
   end
 
   def main_norm

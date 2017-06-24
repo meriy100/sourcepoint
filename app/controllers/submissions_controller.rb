@@ -21,7 +21,7 @@ class SubmissionsController < ApplicationController
       }
 
       diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
-      line_list = diffs_to_line_diffs(diffs, encoding_code).compact.uniq
+      line_list = diffs_to_line_diffs(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
 
       line_list.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
@@ -39,7 +39,55 @@ class SubmissionsController < ApplicationController
 
   private
 
-  def diffs_to_line_diffs(diffs, encoding_code)
+  def three_different(one, two, three)
+    if one == three
+      :all
+    elsif one == two
+      :top
+    elsif two == three
+      :bottom
+    else
+      :no
+    end
+  end
+
+  def minus_check(diffs)
+    diff = diffs.pop
+    return [] if diff.nil? # TODO : check
+    if diff.action == '-'
+      [diff].concat(minus_check(diffs))
+    else
+      [diff]
+    end
+  end
+
+  def diffs_to_line_diffs(diffs, encoding_code, expect_code, before = nil)
+    diff = diffs.shift
+    before = diff if before.nil?
+    case diff.action
+    when '='
+      []
+    when '+', '!'
+      [{ number: encoding_code.charlist[context_change.new_position].first }].concat(diffs_to_line_diffs(diffs, encoding_code, expect_code, diff))
+    when '-'
+      minuses = minus_check(diffs.dup)
+      diff.new_position
+      minuses.last.new_position
+      case three_different(before.new_position, diff.new_position, minuses.last.new_position)
+      when :top
+      when :all
+      when :bottom
+      end
+      minuses.last.old_position
+      diff.old_position
+    else
+      raise StandardError.new('要確認')
+    end
+  end
+
+  def diffs_to_line_diffs(diffs, encoding_code, expect_encode)
+    expect_encode.encode
+    binding.pry
     diffs.map { |context_change|
       case context_change.action
       when '='
