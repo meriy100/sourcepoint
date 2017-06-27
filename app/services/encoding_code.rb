@@ -74,7 +74,7 @@ class Dictionary < Hash
 
   def next_encode
     raise EmptyHasList if @hash_list.blank?
-    "$#{@hash_list.pop}"
+    "#{@hash_list.pop}"
   end
 end
 

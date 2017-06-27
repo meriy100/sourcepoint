@@ -25,3 +25,4 @@ dump.sql
 sourcepoint_development_dump
 *.csv
 data*
+.idea

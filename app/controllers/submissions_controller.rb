@@ -21,7 +21,7 @@ class SubmissionsController < ApplicationController
       }
 
       diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
-      line_list = diffs_to_line_diffs(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
+      line_list = diffs_to_line_diffs2(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
 
       line_list.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
@@ -41,18 +41,18 @@ class SubmissionsController < ApplicationController
 
   def three_different(one, two, three)
     if one == three
-      :all
-    elsif one == two
-      :top
-    elsif two == three
-      :bottom
-    else
       :no
+    elsif one == two
+      :bottom
+    elsif two == three
+      :top
+    else
+      :all
     end
   end
 
   def minus_check(diffs)
-    diff = diffs.pop
+    diff = diffs.shift
     return [] if diff.nil? # TODO : check
     if diff.action == '-'
       [diff].concat(minus_check(diffs))
@@ -61,25 +61,44 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  def diffs_to_line_diffs(diffs, encoding_code, expect_code, before = nil)
+  def diffs_to_line_diffs2(diffs, encoding_code, expect_code, before = nil)
+    expect_code.encode if before.nil?
     diff = diffs.shift
-    before = diff if before.nil?
+    return [] if diff.nil?
     case diff.action
     when '='
-      []
+      [].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
     when '+', '!'
-      [{ number: encoding_code.charlist[context_change.new_position].first }].concat(diffs_to_line_diffs(diffs, encoding_code, expect_code, diff))
-    when '-'
+      [{ number: encoding_code.charlist[diff.new_position].first }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+      when '-'
       minuses = minus_check(diffs.dup)
       diff.new_position
       minuses.last.new_position
-      case three_different(before.new_position, diff.new_position, minuses.last.new_position)
+
+      case three_different(encoding_code.charlist[before.new_position].first, encoding_code.charlist[diff.new_position].first, encoding_code.charlist[minuses.last.new_position].first)
       when :top
+        case three_different(expect_code.charlist[before.old_position].first, expect_code.charlist[diff.old_position].first, expect_code.charlist[minuses.last.old_position].first)
+        when :top, :no
+          [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        when :all
+          [{ number: encoding_code.charlist[diff.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        when :bottom
+          [{ number: encoding_code.charlist[before.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        end
       when :all
+        [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
       when :bottom
+        case three_different(expect_code.charlist[before.old_position].first, expect_code.charlist[diff.old_position].first, expect_code.charlist[minuses.last.old_position].first)
+        when :top, :no
+          [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        when :all
+          [{ number: encoding_code.charlist[minuses.last.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        when :bottom
+          [{ number: encoding_code.charlist[minuses.last.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
       end
-      minuses.last.old_position
-      diff.old_position
+      when :no
+        [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+      end
     else
       raise StandardError.new('要確認')
     end
@@ -87,7 +106,6 @@ class SubmissionsController < ApplicationController
 
   def diffs_to_line_diffs(diffs, encoding_code, expect_encode)
     expect_encode.encode
-    binding.pry
     diffs.map { |context_change|
       case context_change.action
       when '='
