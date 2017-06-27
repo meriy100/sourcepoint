@@ -63,6 +63,7 @@ class SubmissionsController < ApplicationController
 
   def diffs_to_line_diffs2(diffs, encoding_code, expect_code, before = nil)
     expect_code.encode if before.nil?
+
     diff = diffs.shift
     return [] if diff.nil?
     case diff.action
@@ -70,16 +71,19 @@ class SubmissionsController < ApplicationController
       [].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
     when '+', '!'
       [{ number: encoding_code.charlist[diff.new_position].first }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-      when '-'
-      minuses = minus_check(diffs.dup)
+    when '-'
+      minuses = minus_check(diffs)
+      diffs.unshift minuses.pop
       diff.new_position
       minuses.last.new_position
 
       case three_different(encoding_code.charlist[before.new_position].first, encoding_code.charlist[diff.new_position].first, encoding_code.charlist[minuses.last.new_position].first)
       when :top
         case three_different(expect_code.charlist[before.old_position].first, expect_code.charlist[diff.old_position].first, expect_code.charlist[minuses.last.old_position].first)
-        when :top, :no
+        when :top
           [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        when :no
+          [{ number: encoding_code.charlist[minuses.last.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
         when :all
           [{ number: encoding_code.charlist[diff.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
         when :bottom
@@ -97,7 +101,12 @@ class SubmissionsController < ApplicationController
           [{ number: encoding_code.charlist[minuses.last.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
       end
       when :no
-        [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        case three_different(expect_code.charlist[before.old_position].first, expect_code.charlist[diff.old_position].first, expect_code.charlist[minuses.last.old_position].first)
+        when :all, :no, :top
+          [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        when :bottom
+          [{ number: encoding_code.charlist[minuses.last.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
+        end
       end
     else
       raise StandardError.new('要確認')
