@@ -142,7 +142,54 @@ class EncodingCode
     word =~ /\A-?\d+(.\d+)?\Z/
   end
 
+  def create_directory
+    remove_comment
+    main_norm
+    code.split("\n").reverse.each do |line|
+      # TODO : 数字はエンコーディングするのかどうか
+      words = line
+        .gsub(%r{("[\w\W\s\S]*")}, " @s ")
+        .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
+        .gsub(/'\w'/, ' $c ')
+        .gsub(/(?<prev>[^=!<>+-])=(?<next>[^=])/, '\k<prev> = \k<next>')
+        .gsub(/(?<prev>[^+])\+(?<next>[^+=])/, '\k<prev> + \k<next>')
+        .gsub(/(?<prev>[^-])-(?<next>[^-=])/, '\k<prev> - \k<next>')
+        .gsub(/(?<prev>[^&])&(?<next>[^&])/, '\k<prev> & \k<next>')
+        .gsub(/<(?<next>[^=])/, ' < \k<next>')
+        .gsub(/>(?<next>[^=])/, ' > \k<next>')
+        .gsub(/!(?<next>[^=])/, ' ! \k<next>')
+        .gsub(/==/, " == ")
+        .gsub(/<=/, " <= ")
+        .gsub(/>=/, " >= ")
+        .gsub(/!=/, " != ")
+        .gsub(/&&/, " && ")
+        .gsub(/\|\|/, " || ")
+        .gsub(/\+\+/, " ++ ")
+        .gsub(/--/, " -- ")
+        .gsub(/\+=/, " += ")
+        .gsub(/-=/, " -- ")
+        .gsub(/,/, ' , ')
+        .gsub(/\./, ' . ')
+        .gsub(/ (?<num>\d+) /, ' \k<num> ')
+        .gsub(/\*/, ' * ')
+        .gsub(/\//, ' / ')
+        .gsub(/%/, ' % ')
+        .split(" ").map do |word|
+        if EXPECT_CHARS.include? word
+          word
+        elsif num?(word)
+          word
+        elsif dictionary.include? word
+          dictionary[word][:encode]
+        else
+          dictionary.set(word)
+        end
+      end
+    end
+  end
+
   def encode
+    create_directory
     remove_comment
     main_norm
     code.each_line.with_index(1) do |line, idx|
