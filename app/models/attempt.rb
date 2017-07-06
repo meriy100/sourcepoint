@@ -26,4 +26,5 @@
 class Attempt < ApplicationRecord
   belongs_to :assignment
   has_many :liens
+  attr_accessor :dist
 end

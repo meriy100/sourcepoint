@@ -17,14 +17,17 @@ class SubmissionsController < ApplicationController
       encoding_code = EncodingCode.new(@submission.file1)
       encode = encoding_code.encode
       nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).sort_by { |attempt|
-        Levenshtein.normalized_distance(encode, attempt.encode_code)
+        dist = Levenshtein.normalized_distance(encode, attempt.encode_code)
+        attempt.dist = dist
       }
 
-      diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
-      line_list = diffs_to_line_diffs2(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
+      if @submission.assignment_id != 0 || nearest_attempts.first.dist < 0.3
+        diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
+        line_list = diffs_to_line_diffs2(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
 
-      line_list.each do |line_attributes|
-        @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
+        line_list.each do |line_attributes|
+          @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
+        end
       end
       if params[:response_type]
         @line_numbers = find_submission.lines

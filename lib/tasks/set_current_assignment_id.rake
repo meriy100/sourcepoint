@@ -8,3 +8,12 @@ namespace :set_current_assignment_id do
     end
   end
 end
+
+# 12A1
+# assignment_ids = [120, 189, 260, 332, 404, 477]
+
+# 12A2
+# assignment_id = [121, 190, 261, 333, 405, 478]
+#
+# 12C1
+# assignment_id = [54, 123, 192, 263, 335, 408, 481
