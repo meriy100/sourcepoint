@@ -20,8 +20,8 @@ class SubmissionsController < ApplicationController
         dist = Levenshtein.normalized_distance(encode, attempt.encode_code)
         attempt.dist = dist
       }
-
-      if @submission.assignment_id != 0 || nearest_attempts.first.dist < 0.3
+      puts nearest_attempts.first.dist
+      if run?(nearest_attempts)
         diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
         line_list = diffs_to_line_diffs2(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
 
@@ -142,5 +142,16 @@ class SubmissionsController < ApplicationController
 
   def find_submission
     @submission ||= Submission.find(params[:id])
+  end
+
+  def run?(nearest_attempts)
+    case @submission.assignment_id
+    when 617
+      nearest_attempts.first.dist < 0.3
+    when 0
+      nearest_attempts.first.dist < 0.5
+    else
+      true
+    end
   end
 end
