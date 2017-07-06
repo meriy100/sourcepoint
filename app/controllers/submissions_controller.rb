@@ -146,9 +146,9 @@ class SubmissionsController < ApplicationController
 
   def run?(nearest_attempts)
     case @submission.assignment_id
-    when 617
+    when 623
       nearest_attempts.first.dist < 0.3
-    when 0
+    when 624
       nearest_attempts.first.dist < 0.5
     else
       true
