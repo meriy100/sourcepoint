@@ -1,46 +1,37 @@
-class SubmissionsController < ApplicationController
-  def show
-    @line_numbers = find_submission.lines
+class SubmissionCreator
+  def initialize(attempt)
+    @submission = Submission.new(submission_params(attempt))
   end
-
-  def new
-    @submission = Submission.new(submitted: Time.zone.now)
-  end
-
   def create
-    @submission = if params[:submission].nil?
-      Submission.new(submission_params)
-    else
-      Submission.new(params.require(:submission).permit(:file1, :messages, :status, :mark, :comment, :assignment_id, :user_id))
-    end
-    if @submission.save
-      encoding_code = EncodingCode.new(@submission.file1)
-      encode = encoding_code.encode
-      nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).sort_by { |attempt|
-        dist = Levenshtein.normalized_distance(encode, attempt.encode_code)
-        attempt.dist = dist
-      }
-      puts nearest_attempts.first.dist
-      if run?(nearest_attempts)
-        diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
-        line_list = diffs_to_line_diffs2(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
+    @submission.save
+    encoding_code = EncodingCode.new(@submission.file1)
+    encode = encoding_code.encode
+    nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id, status: "checked").sort_by { |attempt|
+      dist = Levenshtein.normalized_distance(encode, attempt.encode_code)
+      attempt.dist = dist
+    }
+    puts nearest_attempts.first.dist
+    if run?(nearest_attempts)
+      diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
+      line_list = diffs_to_line_diffs2(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
 
-        line_list.each do |line_attributes|
-          @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
-        end
+      line_list.each do |line_attributes|
+        @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
       end
-      if params[:response_type]
-        @line_numbers = find_submission.lines
-        render 'diffs', layout: nil
-      else
-        redirect_to @submission
-      end
-    else
-      render :new
     end
   end
 
   private
+
+  def submission_params(attempt)
+    {
+      file1: attempt.file1,
+      messages: '',
+      status: attempt.status,
+      assignment_id: attempt.assignment_id,
+      user_id: attempt.user_id
+    }
+  end
 
   def three_different(one, two, three)
     if one == three
@@ -136,15 +127,15 @@ class SubmissionsController < ApplicationController
     }
   end
 
-  def submission_params
-    params.permit(:file1, :messages, :status, :mark, :comment, :assignment_id, :user_id)
-  end
-
-  def find_submission
-    @submission ||= Submission.find(params[:id])
-  end
-
   def run?(nearest_attempts)
-    (nearest_attempts.first&.dist || 1.0) < 0.3
+    case @submission.assignment_id
+    when 623
+      nearest_attempts.first.dist < 0.3
+    when 624
+      nearest_attempts.first.dist < 0.5
+    else
+      true
+    end
   end
+
 end
