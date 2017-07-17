@@ -20,7 +20,7 @@ class SubmissionsController < ApplicationController
         dist = Levenshtein.normalized_distance(encode, attempt.encode_code)
         attempt.dist = dist
       }
-      puts nearest_attempts.first.dist
+      Rails.logger.info nearest_attempts.first.dist
       if run?(nearest_attempts)
         diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
         line_list = diffs_to_line_diffs2(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
@@ -145,6 +145,6 @@ class SubmissionsController < ApplicationController
   end
 
   def run?(nearest_attempts)
-    (nearest_attempts.first&.dist || 1.0) < 0.3
+    (nearest_attempts.first&.dist || 1.0) < 0.5
   end
 end
