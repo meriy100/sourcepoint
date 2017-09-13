@@ -1,4 +1,7 @@
 .row
+  ul
+    li = "dist: #{@dist}"
+    li = "line count: #{@line_numbers.length}"
   .col-sm-6
     h3 提出ファイル
     == render "part"

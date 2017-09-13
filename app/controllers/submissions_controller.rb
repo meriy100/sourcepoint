@@ -1,6 +1,9 @@
 class SubmissionsController < ApplicationController
   def show
     @line_numbers = find_submission.lines
+    encoding_code = EncodingCode.new(@submission.file1)
+    attempt = @line_numbers.first.attempt
+    @dist = Levenshtein.normalized_distance(encoding_code.encode, attempt.encode_code)
   end
 
   def new

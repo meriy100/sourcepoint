@@ -1,0 +1,6 @@
+table.table
+  - @submissions.sort_by{|s|s.lines.length}.each do |submission|
+    tr
+      td  = link_to submission.id, submission_path(submission)
+      td  = submission.user_id
+      td  = submission.lines.length
