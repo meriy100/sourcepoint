@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613085126) do
+ActiveRecord::Schema.define(version: 20170913075759) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "code",                          default: "",    null: false
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 20170613085126) do
     t.index ["assignment_id"], name: "index_attempts_on_assignment_id", using: :btree
     t.index ["current_assignment_id"], name: "index_attempts_on_current_assignment_id", using: :btree
     t.index ["user_id"], name: "index_attempts_on_user_id", using: :btree
+  end
+
+  create_table "checks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.boolean "valiable_order",               default: false, null: false
+    t.boolean "blacket",                      default: false, null: false
+    t.boolean "success",                      default: false, null: false
+    t.boolean "near",                         default: false, null: false
+    t.boolean "complete",                     default: false, null: false
+    t.text    "remarks",        limit: 65535
   end
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -87,6 +96,7 @@ ActiveRecord::Schema.define(version: 20170613085126) do
     t.integer  "user_id",                                           null: false
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.integer  "check_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

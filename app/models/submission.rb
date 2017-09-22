@@ -13,11 +13,13 @@
 #  user_id       :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  check_id      :integer
 #
 
 class Submission < ApplicationRecord
   has_many :lines
   has_many :attempts, through: :lines
+  belongs_to :check
 
   before_create :set_submitted
 

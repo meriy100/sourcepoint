@@ -1,6 +1,9 @@
+= paginate @submissions
 table.table
   - @submissions.sort_by{|s|s.lines.length}.each do |submission|
-    tr
-      td  = link_to submission.id, submission_path(submission)
+    tr[style="background-color:#{submission.check_id ? '#e00' : '#fff'}"]
+      td = link_to "Show", submission_path(submission), class: 'btn btn-primary'
+      td  = submission.id
       td  = submission.user_id
       td  = submission.lines.length
+      td = submission.check_id ? 'check' : 'uncheck'

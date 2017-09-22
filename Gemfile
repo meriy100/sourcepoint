@@ -43,6 +43,8 @@ gem 'parallel'
 
 gem 'dotenv'
 
+gem 'kaminari'
+
 gem 'ransack'
 
 group :development, :test do

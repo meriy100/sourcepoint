@@ -13,6 +13,7 @@
 #  user_id       :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  check_id      :integer
 #
 
 require 'rails_helper'
