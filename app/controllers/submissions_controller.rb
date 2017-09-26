@@ -7,16 +7,16 @@ class SubmissionsController < ApplicationController
   end
 
   def new
-    @submission = Submission.new(submitted: Time.zone.now)
+    @submission = Submission.new()
   end
 
   def create
-    @submission = if params[:submission].nil?
+    @submission = if params[:submission].blank?
       Submission.new(submission_params)
     else
       Submission.new(params.require(:submission).permit(:file1, :messages, :status, :mark, :comment, :assignment_id, :user_id))
     end
-    if @submission.save
+    if @submission.save!
       encoding_code = EncodingCode.new(@submission.file1)
       encode = encoding_code.encode
       nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).sort_by { |attempt|
@@ -25,8 +25,15 @@ class SubmissionsController < ApplicationController
       }
       Rails.logger.info nearest_attempts.first.dist
       if run?(nearest_attempts)
-        diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, encode)
-        line_list = diffs_to_line_diffs2(diffs, encoding_code, EncodingCode.new(nearest_attempts.first.file1)).compact.uniq
+        nearest_attempt_encoding = EncodingCode.new(nearest_attempts.first.file1)
+        puts encoding_code.dictionary.valiable_list
+        # line_list = encoding_code.dictionary.valiable_order_changes.map do |dic|
+        line_list = [encoding_code.dictionary].map do |dic|
+          puts "1"
+          diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, EncodingCode.new(@submission.file1, dic).encode)
+          diffs_to_line_diffs2(diffs, encoding_code, nearest_attempt_encoding).compact.uniq
+        end
+        .sort_by { |ll| ll.count }.first
 
         line_list.each do |line_attributes|
           @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))

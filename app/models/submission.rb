@@ -19,7 +19,7 @@
 class Submission < ApplicationRecord
   has_many :lines
   has_many :attempts, through: :lines
-  belongs_to :check
+  belongs_to :check, optional: true
 
   before_create :set_submitted
 

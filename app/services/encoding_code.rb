@@ -2,7 +2,6 @@ class Dictionary < Hash
   attr_accessor :valiable_list
   class EmptyHasList < StandardError; end
   def initialize
-    @valiable_list = []
     @hash_list = ("A".."Z").to_a.concat(("a".."z").to_a).combination(2).map{|a, b|"#{a}#{b}"}.shuffle(random: Random.new(100))
     reserve_word
   end
@@ -11,6 +10,23 @@ class Dictionary < Hash
     unless include?(word)
       self[word] = { encode: next_encode, word: word, valiable: true }
       self[word][:encode]
+    end
+  end
+
+  def valiable_list
+    self.select do |word, value|
+      value[:valiable]
+    end
+  end
+
+  def valiable_order_changes
+    code_list = valiable_list.map { |_, value| value[:encode] }
+    valiable_list.keys.permutation(valiable_list.count).map do |words|
+      dup_dic = self.dup
+      words.zip(code_list).map do |word, code|
+        dup_dic[word] = code
+      end
+      dup_dic
     end
   end
 
@@ -261,7 +277,6 @@ class EncodingCode
       charlist.concat(encode_line.split('').map { |char| [idx, char] })
     end
 
-    binding.pry
     code_encoded
   end
 end
