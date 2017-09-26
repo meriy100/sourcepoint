@@ -1,18 +1,31 @@
 class Dictionary < Hash
+  attr_accessor :valiable_list
   class EmptyHasList < StandardError; end
   def initialize
+    @valiable_list = []
     @hash_list = ("A".."Z").to_a.concat(("a".."z").to_a).combination(2).map{|a, b|"#{a}#{b}"}.shuffle(random: Random.new(100))
     reserve_word
   end
 
   def set(word)
     unless include?(word)
-      self[word] = { encode: next_encode, word: word }
+      self[word] = { encode: next_encode, word: word, valiable: true }
       self[word][:encode]
     end
   end
 
   private
+
+  def for_while_if
+    if m = line.match(/for.*(\n|){((.|\n)*)}/)
+      if m[2].lines.count < 1
+      end
+    end
+  end
+
+  def reserve_word_set(word)
+    self[word] = { encode: next_encode, word: word }
+  end
 
   def reserve_word
     [
@@ -67,8 +80,16 @@ class Dictionary < Hash
       "EOF",
       "NULL",
       "free",
+      "strcpy",
+      "strcat",
+      "stdin",
+      "#define",
+      "h",
+      "pow",
+      "@s",
+      "$c",
     ].each do |word|
-      set(word)
+      reserve_word_set(word)
     end
   end
 
@@ -102,6 +123,7 @@ class EncodingCode
     "==",
     "||",
     "&&",
+    "%",
     "!=",
     "<=",
     ">=",
@@ -238,6 +260,8 @@ class EncodingCode
       code_encoded.concat(encode_line)
       charlist.concat(encode_line.split('').map { |char| [idx, char] })
     end
+
+    binding.pry
     code_encoded
   end
 end
