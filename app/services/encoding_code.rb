@@ -24,7 +24,7 @@ class Dictionary < Hash
     valiable_list.keys.permutation(valiable_list.count).map do |words|
       dup_dic = self.dup
       words.zip(code_list).map do |word, code|
-        dup_dic[word] = code
+        dup_dic[word] = { encode: code, word: word, valiable: true }
       end
       dup_dic
     end
@@ -104,6 +104,15 @@ class Dictionary < Hash
       "pow",
       "@s",
       "$c",
+      "fp",
+      "fwrite",
+      "fseek",
+      "SEEK_SET",
+      "clean_string",
+      "fprintf",
+      "stderr",
+      "'\\0'",
+      "'\\n'",
     ].each do |word|
       reserve_word_set(word)
     end
@@ -173,7 +182,12 @@ class EncodingCode
   end
 
   def main_norm
+    return_norm
     code.gsub!(/int\s*main\s*\(\)/, "int main(void)")
+  end
+
+  def return_norm
+    code.gsub!(/return\s*0\s*/, "return(0)")
   end
 
   def num?(word)
@@ -183,7 +197,7 @@ class EncodingCode
   def create_directory
     remove_comment
     main_norm
-    code.split("\n").reverse.each do |line|
+    code.split("\n").each do |line|
       # TODO : 数字はエンコーディングするのかどうか
       words = line
         .gsub(%r{("[\w\W\s\S]*")}, " @s ")

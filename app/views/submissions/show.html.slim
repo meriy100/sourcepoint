@@ -32,4 +32,4 @@
     h3 参考ファイル
     pre
       span
-        = @line_numbers.first&.attempt&.file1
+        = @line_numbers.first&.attempt&.file1.encode("UTF-8")

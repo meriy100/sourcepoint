@@ -27,13 +27,17 @@ class SubmissionsController < ApplicationController
       if run?(nearest_attempts)
         nearest_attempt_encoding = EncodingCode.new(nearest_attempts.first.file1)
         puts encoding_code.dictionary.valiable_list
-        # line_list = encoding_code.dictionary.valiable_order_changes.map do |dic|
-        line_list = [encoding_code.dictionary].map do |dic|
+
+        puts nearest_attempts.first.encode_code
+        line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
+        # line_lists = [encoding_code.dictionary].map do |dic|
           puts "1"
-          diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, EncodingCode.new(@submission.file1, dic).encode)
+          e =  EncodingCode.new(@submission.file1, dic).encode
+          puts e
+          diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, e)
           diffs_to_line_diffs2(diffs, encoding_code, nearest_attempt_encoding).compact.uniq
         end
-        .sort_by { |ll| ll.count }.first
+        line_list = line_lists .sort_by { |ll| ll.count }.first
 
         line_list.each do |line_attributes|
           @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
