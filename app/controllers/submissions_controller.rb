@@ -38,7 +38,6 @@ class SubmissionsController < ApplicationController
           diffs_to_line_diffs2(diffs, encoding_code, nearest_attempt_encoding).compact.uniq
         end
         line_list = line_lists .sort_by { |ll| ll.count }.first
-        binding.pry
 
         line_list.each do |line_attributes|
           @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
@@ -152,7 +151,7 @@ class SubmissionsController < ApplicationController
   end
 
   def submission_params
-    params.permit(:file1, :messages, :status, :mark, :comment, :assignment_id, :user_id)
+    params.permit(:file1, :messages, :status, :mark, :comment, :assignment_id, :user_id, :template_id)
   end
 
   def find_submission

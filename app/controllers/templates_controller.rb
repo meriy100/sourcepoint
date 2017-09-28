@@ -9,6 +9,11 @@ class TemplatesController < ApplicationController
   # GET /templates/1
   def show
     @template_lines = @template.template_lines
+    @submission = Submission.new(
+      @template.attributes.select{ |key, _|
+        [:file1, :messages, :status, :mark, :comment, :user_id].include?(key.to_sym)
+      }.merge(template_id: @template.id, assignment_id: @template.current_assignment_id)
+    )
   end
 
   # GET /templates/new

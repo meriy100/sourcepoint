@@ -14,6 +14,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  check_id      :integer
+#  template_id   :integer
 #
 
 require 'rails_helper'

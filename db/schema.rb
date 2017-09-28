@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928074015) do
+ActiveRecord::Schema.define(version: 20170928091040) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "code",                          default: "",    null: false
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170928074015) do
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
     t.integer  "check_id"
+    t.integer  "template_id"
   end
 
   create_table "template_lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

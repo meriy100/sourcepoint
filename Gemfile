@@ -71,6 +71,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'timecop'
 
+  gem 'binding_of_caller'
   gem 'annotate'
 end
 
