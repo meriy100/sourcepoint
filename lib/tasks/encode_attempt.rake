@@ -4,7 +4,9 @@ namespace :encode do
   desc "set encode_code"
   task attempts: :environment do
     # Parallel.each(Attempt.where(assignment_id: 397), in_processes: 4) do |attempt|
-    Parallel.each(Attempt.where(assignment_id: [253, 325, 397, 471]), in_processes: 4) do |attempt|
+    _427 = [74, 147, 215, 282, 354]
+    _441 = [22, 87, 163, 228, 295, 367]
+    Parallel.each(Attempt.where(assignment_id: _441), in_processes: 4) do |attempt|
     # Attempt.all.each do |attempt|
       print "#"
       encode_code = EncodingCode.new(attempt.file1).encode

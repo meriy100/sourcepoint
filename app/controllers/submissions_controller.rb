@@ -29,8 +29,8 @@ class SubmissionsController < ApplicationController
         puts encoding_code.dictionary.valiable_list
 
         puts nearest_attempts.first.encode_code
-        line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
-        # line_lists = [encoding_code.dictionary].map do |dic|
+        # line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
+        line_lists = [encoding_code.dictionary].map do |dic|
           puts "1"
           e =  EncodingCode.new(@submission.file1, dic).encode
           puts e
@@ -38,6 +38,7 @@ class SubmissionsController < ApplicationController
           diffs_to_line_diffs2(diffs, encoding_code, nearest_attempt_encoding).compact.uniq
         end
         line_list = line_lists .sort_by { |ll| ll.count }.first
+        binding.pry
 
         line_list.each do |line_attributes|
           @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
