@@ -1,0 +1,20 @@
+h1 Listing template_lines
+
+table
+  thead
+    tr
+      th Template
+      th Number
+      th Deleted line
+      th
+      th
+      th
+
+  tbody
+    - @template_lines.each do |template_line|
+      tr
+        td = template_line.template
+        td = template_line.number
+        td = template_line.deleted_line
+        td = link_to 'Destroy', template_template_line_path(@template, template_line), data: { confirm: 'Are you sure?' }, method: :delete
+

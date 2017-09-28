@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Template:
+  = @template_line.template
+p
+  strong Number:
+  = @template_line.number
+p
+  strong Deleted line:
+  = @template_line.deleted_line
+
+= link_to 'Edit', edit_template_line_path(@template_line)
+'  |
+= link_to 'Back', template_lines_path

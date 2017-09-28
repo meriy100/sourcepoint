@@ -3,11 +3,12 @@ class TemplatesController < ApplicationController
 
   # GET /templates
   def index
-    @templates = Template.all
+    @templates = Template.where(status: ['internal_error', 'executed']).includes(:template_lines)
   end
 
   # GET /templates/1
   def show
+    @template_lines = @template.template_lines
   end
 
   # GET /templates/new

@@ -14,6 +14,7 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 
 # Template Engine
 gem 'slim'
+gem 'slim-rails'
 
 # form
 gem 'reform'
@@ -30,6 +31,7 @@ gem 'bourbon'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
 gem'lazy_high_charts'
+gem 'clipboard-rails'
 
 
 # Service

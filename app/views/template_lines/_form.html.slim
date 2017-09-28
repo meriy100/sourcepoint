@@ -1,0 +1,18 @@
+= form_for @template_line do |f|
+  - if @template_line.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@template_line.errors.count, "error")} prohibited this template_line from being saved:"
+      ul
+        - @template_line.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :template
+    = f.text_field :template
+  .field
+    = f.label :number
+    = f.number_field :number
+  .field
+    = f.label :deleted_line
+    = f.check_box :deleted_line
+  .actions = f.submit
