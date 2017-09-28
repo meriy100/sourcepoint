@@ -1,0 +1,37 @@
+p#notice
+  = notice
+p
+  strong
+    | File1:
+  table
+    tbody
+      - @template.file1.each_line.with_index(1) do |line, idx|
+        tr
+          td
+            = link_to idx, templates_path, class: 'btn btn-default btn-xs'
+          td
+            pre
+              = line
+p
+  strong
+    | Status:
+  = @template.status
+p
+  strong
+    | User:
+  = @template.user_id
+p
+  strong
+    | Encode code:
+  = @template.encode_code
+p
+  strong
+    | Current assignment:
+  = @template.current_assignment_id
+p
+  strong
+    | Assignment:
+  = @template.assignment_id
+= link_to 'Edit', edit_template_path(@template)
+|  |
+= link_to 'Back', templates_path

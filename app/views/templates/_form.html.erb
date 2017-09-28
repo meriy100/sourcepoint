@@ -1,4 +1,4 @@
-<%= form_for(template) do |f| %>
+<%= bootstrap_form_for(template) do |f| %>
   <% if template.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(template.errors.count, "error") %> prohibited this template from being saved:</h2>
@@ -12,32 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :file1 %>
-    <%= f.text_field :file1 %>
+    <%= f.text_area :file1 %>
   </div>
 
   <div class="field">
-    <%= f.label :status %>
     <%= f.text_field :status %>
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
     <%= f.number_field :user_id %>
   </div>
 
   <div class="field">
-    <%= f.label :encode_code %>
     <%= f.text_field :encode_code %>
   </div>
 
   <div class="field">
-    <%= f.label :current_assignment_id %>
     <%= f.number_field :current_assignment_id %>
   </div>
 
   <div class="field">
-    <%= f.label :assignment_id %>
     <%= f.number_field :assignment_id %>
   </div>
 

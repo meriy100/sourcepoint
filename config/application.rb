@@ -23,5 +23,8 @@ module Sourcepoint
     # -- all .rb files in that directory are automatically loaded.
     #
     config.time_zone = 'Tokyo'
+    config.generators do |g|
+      g.template_engine :slim
+    end
   end
 end
