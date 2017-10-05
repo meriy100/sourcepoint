@@ -19,7 +19,7 @@ class SubmissionsController < ApplicationController
     if @submission.save!
       encoding_code = EncodingCode.new(@submission.file1)
       encode = encoding_code.encode
-      nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).sort_by { |attempt|
+      nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).where.not(user_id: @submission.user_id).sort_by { |attempt|
         dist = Levenshtein.normalized_distance(encode, attempt.encode_code)
         attempt.dist = dist
       }
