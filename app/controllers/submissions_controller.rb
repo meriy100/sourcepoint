@@ -38,6 +38,7 @@ class SubmissionsController < ApplicationController
           e =  EncodingCode.new(@submission.file1, dic).encode
           puts e
           diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, e)
+
           diffs_to_line_diffs2(diffs, encoding_code, nearest_attempt_encoding).compact.uniq
         end
         line_list = line_lists .sort_by { |ll| ll.count }.first

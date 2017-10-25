@@ -2,6 +2,10 @@
 
 <h1>Templates</h1>
 
+<% @current_assignment_ids.each do |ca_id|  %>
+  <%= link_to ca_id, templates_path(current_assignment_id: ca_id), class: %{btn btn-info} %>
+<% end %>
+
 <table class='table table-striped'>
   <thead>
     <tr>
