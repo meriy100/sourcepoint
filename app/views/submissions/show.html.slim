@@ -2,7 +2,8 @@
   = link_to 'Back', assignment_path(@submission.assignment_id), class: 'btn btn-info'
   ul
     li = "dist: #{@dist}"
-    li = "line count: #{@line_numbers.length}"
+    li = "analize line count: #{@line_numbers.length}"
+    li = "line count #{@submission.file1.lines.size}"
   = form_for(@submission.check || @submission.build_check, url: submission_check_path(@submission)) do |f|
     .form-group
       = f.label :valiable_order
@@ -32,4 +33,4 @@
     h3 参考ファイル
     pre
       span
-        = @line_numbers.first&.attempt&.file1.encode("UTF-8", "UTF-8")
+        = @line_numbers.first&.attempt&.file1&.encode("UTF-8", "UTF-8")

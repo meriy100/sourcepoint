@@ -49,6 +49,8 @@ gem 'kaminari'
 
 gem 'ransack'
 
+gem 'activerecord-import'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -62,6 +64,7 @@ group :development, :test do
   gem 'pry-remote'
   gem 'awesome_print'
   gem 'better_errors'
+  gem 'binding_of_caller'
 
   # test
   gem 'rspec-rails'
@@ -71,7 +74,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'timecop'
 
-  gem 'binding_of_caller'
   gem 'annotate'
 end
 
