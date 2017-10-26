@@ -6,8 +6,11 @@ namespace :encode do
     # Parallel.each(Attempt.where(assignment_id: 397), in_processes: 4) do |attempt|
     _427 = [74, 147, 215, 282, 354]
     _441 = [22, 87, 163, 228, 295, 367]
+    _573 =  [74, 147, 215, 282, 354, 427]
     _595 = [30, 95, 171, 236, 303, 375, 449]
-    Parallel.each(Attempt.where(assignment_id: _595), in_processes: 4) do |attempt|
+    _600 = [101, 242, 308, 380, 454]
+    _609 = [99, 240, 312, 384, 458]
+    Parallel.each(Attempt.where(assignment_id: _573), in_processes: 4) do |attempt|
     # Attempt.all.each do |attempt|
       print "#"
       encode_code = EncodingCode.new(attempt.file1).encode
