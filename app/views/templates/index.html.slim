@@ -1,0 +1,41 @@
+p#notice
+  = notice
+h1
+  | Templates
+- @current_assignment_ids.each do |ca_id|
+  = link_to ca_id, templates_path(current_assignment_id: ca_id), class: %{btn btn-info}
+table.table.table-striped
+  thead
+    tr
+      th id
+      th Status
+      th User
+      th Current assignment
+      th Assignment
+      th Line count
+      th File1 lines count
+      th[colspan="3"]
+  tbody
+    - @templates.each do |template|
+      tr
+        td
+          = template.id
+        td
+          = template.status
+        td
+          = template.user_id
+        td
+          = template.current_assignment_id
+        td
+          = template.assignment_id
+        td
+          = template.template_lines.length
+        td = template.file1.lines.count
+        td
+          = link_to 'Show', template
+        td
+          = link_to 'Edit', edit_template_path(template)
+        td
+          = link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Template', new_template_path

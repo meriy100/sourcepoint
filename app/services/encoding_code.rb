@@ -1,3 +1,4 @@
+$string_encode_word = YAML.load_file(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml'))[:string_encode_word]
 class Dictionary < Hash
   attr_accessor :valiable_list
   class EmptyHasList < StandardError; end
@@ -102,6 +103,8 @@ class Dictionary < Hash
       "#define",
       "h",
       "pow",
+      "@573_1",
+      "@573_2",
       "@s",
       "$c",
       "fp",
@@ -111,9 +114,11 @@ class Dictionary < Hash
       "clean_string",
       "fprintf",
       "stderr",
+      'stdlib',
       "'\\0'",
       "'\\n'",
-    ].each do |word|
+    ]
+    .each do |word|
       reserve_word_set(word)
     end
   end
@@ -167,7 +172,7 @@ class EncodingCode
     "<",
     "!",
     "@s",
-  ].freeze
+  ].concat($string_encode_word.flat_map{|co| co[:objects]}.flat_map{|o|o[:encode_word]}).freeze
 
   def initialize(src, dictionary = Dictionary.new)
     self.code_encoded ||= ""
@@ -178,7 +183,7 @@ class EncodingCode
   end
 
   def remove_comment
-    code.gsub!(/(\/\/.*$|\/\*(.|\n)*\*\/)/, '')
+    code.gsub!(/(\/\/.*$|\/\*(.|\n)*\*\/)/, '') # TODO : gcc -なんとか
   end
 
   def main_norm
@@ -194,12 +199,23 @@ class EncodingCode
     word =~ /\A-?\d+(.\d+)?\Z/
   end
 
+  def string_encode_word_gsubs(line, sews)
+    return line if sews.blank?
+    sew = sews.pop
+    string_encode_word_gsubs(
+      line.gsub(sew[:string].encode('UTF-8', 'UTF-8'), sew[:encode_word]),
+      sews
+    )
+  end
+
   def create_directory
     remove_comment
     main_norm
     code.split("\n").each do |line|
       # TODO : 数字はエンコーディングするのかどうか
-      words = line
+      words = string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word.flat_map{|co| co[:objects]}.dup)
+        .gsub("\"%2d is not a prime number.\\n\"", ' @573_1 ')
+        .gsub("\"%2d is a prime number.\\n\"", " @573_2 ")
         .gsub(%r{("[\w\W\s\S]*")}, " @s ")
         .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
         .gsub(/'\w'/, ' $c ')
@@ -226,6 +242,7 @@ class EncodingCode
         .gsub(/\*/, ' * ')
         .gsub(/\//, ' / ')
         .gsub(/%/, ' % ')
+        .gsub(/FP/, 'fp')
         .split(" ").map do |word|
         if EXPECT_CHARS.include? word
           word
@@ -246,7 +263,9 @@ class EncodingCode
     main_norm
     code.each_line.with_index(1) do |line, idx|
       # TODO : 数字はエンコーディングするのかどうか
-      words = line
+      words = string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word.flat_map{|co| co[:objects]}.dup)
+        .gsub("\"%2d is not a prime number.\\n\"", ' @573_1 ')
+        .gsub("\"%2d is a prime number.\\n\"", " @573_2 ")
         .gsub(%r{("[\w\W\s\S]*")}, " @s ")
         .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
         .gsub(/'\w'/, ' $c ')
@@ -273,6 +292,7 @@ class EncodingCode
         .gsub(/\*/, ' * ')
         .gsub(/\//, ' / ')
         .gsub(/%/, ' % ')
+        .gsub(/FP/, 'fp')
         .split(" ").map do |word|
         if EXPECT_CHARS.include? word
           word

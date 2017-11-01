@@ -2,16 +2,21 @@ namespace :set_current_assignment_id do
   desc "set current_assignment_id"
   task run: :environment do
 
-    _573 = [74, 147, 215, 282, 354, 427]
-    current_assignment_id = 573
-    assignment_ids = _573
+    _623 = [332, 404, 477]
+    _573 = [30, 95, 171, 236, 303, 375, 449]
+    _609 = [99, 240, 312, 384, 458]
+    _600 = [101, 242, 308, 380, 454]
+    _632 = [340, 413, 486]
+    _578 = [79, 152, 220, 287, 359, 432]
+
+    _609 = [34, 104, 175]
+    _570 =  [68,      142,      210,      279,      351]
+    current_assignment_id = 570
+    assignment_ids = _570
     Attempt.where(assignment_id: assignment_ids).each do |attempt|
       attempt.update!(current_assignment_id: current_assignment_id)
     end
 
-    # _573 = [30, 95, 171, 236, 303, 375, 449]
-    # _609 = [99, 240, 312, 384, 458]
-    # _600 = [101, 242, 308, 380, 454]
     # current_assignment_id = 600
 
     # current_assignment_id = 441
