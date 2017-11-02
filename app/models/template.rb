@@ -15,4 +15,5 @@
 
 class Template < ApplicationRecord
   has_many :template_lines
+  has_one :submission
 end

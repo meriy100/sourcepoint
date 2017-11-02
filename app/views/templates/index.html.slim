@@ -14,6 +14,7 @@ table.table.table-striped
       th Assignment
       th Line count
       th File1 lines count
+      th submission?
       th[colspan="3"]
   tbody
     - @templates.each do |template|
@@ -31,6 +32,10 @@ table.table.table-striped
         td
           = template.template_lines.length
         td = template.file1.lines.count
+        - if template.submission.present?
+          td = link_to "Submission: L#{template.submission.lines.length}", submission_path(template.submission), class: %{btn btn-info}
+        - else
+          td none
         td
           = link_to 'Show', template
         td

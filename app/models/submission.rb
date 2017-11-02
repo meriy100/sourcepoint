@@ -18,9 +18,10 @@
 #
 
 class Submission < ApplicationRecord
-  has_many :lines
+  has_many :lines, dependent: :destroy
   has_many :attempts, through: :lines
   belongs_to :check, optional: true
+  belongs_to :template, optional: true
 
   before_create :set_submitted
 

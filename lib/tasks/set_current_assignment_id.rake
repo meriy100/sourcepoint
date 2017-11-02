@@ -11,8 +11,9 @@ namespace :set_current_assignment_id do
 
     _609 = [34, 104, 175]
     _570 =  [68,      142,      210,      279,      351]
-    current_assignment_id = 570
-    assignment_ids = _570
+    _574 = [75, 148, 216, 283, 355, 428]
+    current_assignment_id = 574
+    assignment_ids = _574
     Attempt.where(assignment_id: assignment_ids).each do |attempt|
       attempt.update!(current_assignment_id: current_assignment_id)
     end

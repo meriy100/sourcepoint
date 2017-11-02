@@ -126,6 +126,7 @@ class Dictionary < Hash
   def next_encode
     raise EmptyHasList if @hash_list.blank?
     "#{@hash_list.pop}"
+    # "#{@hash_list.last}"
   end
 end
 
@@ -179,7 +180,7 @@ class EncodingCode
     self.dictionary = dictionary
     self.charlist = []
 
-    self.code = src
+    self.code = src.gsub(/^#include .*$/, '')
   end
 
   def remove_comment

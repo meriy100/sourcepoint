@@ -4,7 +4,7 @@ class TemplatesController < ApplicationController
   # GET /templates
   def index
     @current_assignment_ids = Template.pluck(:current_assignment_id).uniq
-    @templates = Template.where(status: ['internal_error', 'executed'], current_assignment_id: params[:current_assignment_id]).includes(:template_lines)
+    @templates = Template.where(status: ['internal_error', 'executed'], current_assignment_id: params[:current_assignment_id]).includes(:template_lines, submission: :lines)
   end
 
   # GET /templates/1
