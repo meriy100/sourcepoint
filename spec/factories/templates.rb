@@ -11,6 +11,7 @@
 #  assignment_id         :integer
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
+#  is_check              :boolean          default("0"), not null
 #
 
 FactoryGirl.define do
