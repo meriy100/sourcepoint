@@ -51,6 +51,16 @@ class RpcsHTTPS
     req['Cookie'] = "_rpcsr_session=#{@cookie}"
     req.body = post_body_json
     res = Net::HTTP.start(uri.host, uri.port, use_ssl: true) { |http| http.request(req) }
+    res.get_fields('set-cookie').each do |cookie|
+      cookie.split('; ').each do |param|
+          pair = param.split('=')
+          if pair[0] == '_rpcsr_session'
+              @cookie = pair[1]
+              break
+          end
+      end
+      break unless @cookie.nil?
+    end
     res
   end
 
@@ -68,25 +78,17 @@ class RpcsHTTPS
   end
 
   def create_attempt(file)
-
     doc = Nokogiri::HTML(get('/attempts/new').body)
     nodes = doc.xpath('//*[@id="new_attempt"]/div/input')
 
     authenticity_token = nodes.first.attributes['value'].value
     binary_file = File.open("binary_file_path.c", "rb")
     puts authenticity_token
-    # data = [
-    #   ['authenticity_token', authenticity_token],
-    #   [ "attempt[assignment_id]", '441' ],
-    #   [ "attempt[file1]", binary_file, { filename: "file.c" } ],
-    # ]
-
-    post_body_hash = {
-      {'authenticity_token' => authenticity_token},
-      { "attempt[assignment_id]" => '441' },
-      { "attempt[file1]" => binary_file },
-    }
-    post_body_json = JSON.pretty_generate(post_body_hash)
+    data = [
+      ['authenticity_token', authenticity_token],
+      [ "attempt[assignment_id]", '594' ],
+      [ "attempt[file1]", binary_file, { filename: "file.c" } ],
+    ]
 
     url = BASE_URI.merge('/attempts')
 
