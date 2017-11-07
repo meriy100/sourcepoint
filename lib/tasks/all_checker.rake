@@ -9,7 +9,6 @@ namespace :all_checker do
     end
     Submission.import(submissions_attrs)
     submissions = Submission.search(id_gt: before_submission_id).result
-    binding.pry
     submissions.each do |s|
       puts s.id
       SubmissionCreate.new(s.clone).run

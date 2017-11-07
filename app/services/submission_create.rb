@@ -16,13 +16,12 @@ class SubmissionCreate
     if run?(nearest_attempts)
       nearest_attempt_encoding = EncodingCode.new(nearest_attempts.first.file1)
       puts encoding_code.dictionary.valiable_list
-
-      puts nearest_attempts.first.encode_code
+      puts "\e[31m#{nearest_attempts.first.encode_code}\e[0m"
       # line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
       dic = encoding_code.dictionary
       puts "1"
       e =  EncodingCode.new(@submission.file1, dic).encode
-      puts e
+      puts "\e[31m#{e}\e[0m"
       diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, e)
 
       line_list =  diffs_to_line_diffs2(diffs, encoding_code, nearest_attempt_encoding).compact.uniq
@@ -138,7 +137,7 @@ class SubmissionCreate
 
 
   def run?(nearest_attempts)
-    (nearest_attempts.first&.dist || 1.0) < 0.3
+    (nearest_attempts.first&.dist || 1.0) < 0.3 || true
   end
 
 end

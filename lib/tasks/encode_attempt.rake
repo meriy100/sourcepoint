@@ -10,8 +10,9 @@ namespace :encode do
     _595 = [30, 95, 171, 236, 303, 375, 449]
     _600 = [101, 242, 308, 380, 454]
     _609 = [99, 240, 312, 384, 458]
-    # Parallel.each(Attempt.where(assignment_id: _573), in_processes: 4) do |attempt|
-    Parallel.each(Attempt.where(current_assignment_id: 574), in_processes: 4) do |attempt|
+    id = ENV['ID'] || 441
+    Parallel.each(Attempt.where(current_assignment_id: id), in_processes: 4) do |attempt|
+    # Attempt.where(current_assignment_id: 574).each do |attempt|
     # Attempt.all.each do |attempt|
       print "#"
       encode_code = EncodingCode.new(attempt.file1).encode

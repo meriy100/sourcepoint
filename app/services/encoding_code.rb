@@ -1,3 +1,4 @@
+require 'json'
 $string_encode_word = YAML.load_file(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml'))[:string_encode_word]
 class Dictionary < Hash
   attr_accessor :valiable_list
@@ -32,13 +33,6 @@ class Dictionary < Hash
   end
 
   private
-
-  def for_while_if
-    if m = line.match(/for.*(\n|){((.|\n)*)}/)
-      if m[2].lines.count < 1
-      end
-    end
-  end
 
   def reserve_word_set(word)
     self[word] = { encode: next_encode, word: word }
@@ -172,6 +166,7 @@ class EncodingCode
     ">",
     "<",
     "!",
+    "^",
     "@s",
   ].concat($string_encode_word.flat_map{|co| co[:objects]}.flat_map{|o|o[:encode_word]}).freeze
 
@@ -179,9 +174,18 @@ class EncodingCode
     self.code_encoded ||= ""
     self.dictionary = dictionary
     self.charlist = []
-
     self.code = src.gsub(/^#include .*$/, '')
+    # for_while_if
   end
+
+  def for_while_if
+    Tempfile.open do |f|
+      File.write f, self.code
+      path = '/Users/meriy100/Downloads/cparser/pycparser/examples'
+      puts `cd #{path} && ruby deep_trace.rb #{f.path}`
+    end
+  end
+
 
   def remove_comment
     code.gsub!(/(\/\/.*$|\/\*(.|\n)*\*\/)/, '') # TODO : gcc -なんとか
@@ -202,6 +206,7 @@ class EncodingCode
 
   def string_encode_word_gsubs(line, sews)
     return line if sews.blank?
+    return line
     sew = sews.pop
     string_encode_word_gsubs(
       line.gsub(sew[:string].encode('UTF-8', 'UTF-8'), sew[:encode_word]),
@@ -209,51 +214,80 @@ class EncodingCode
     )
   end
 
+  def remove_decl(str)
+    # return str
+    json = ''
+    Tempfile.open do |f|
+      pdg_generator_path = %{/Users/meriy100/.ghq/github.com/meriy100/pdggenerator/pdg_generator}
+      File.write f, str.encode('UTF-8', 'UTF-8')
+      json = `cd #{pdg_generator_path} && python main.py #{f.path} | jq '.nodes | map(select(.tag == "Decl"))| map(.position| .line)'| cat`
+      if json.blank?
+        puts "\e[31m エラー \e[0m"
+        return str
+      end
+    end
+
+    raise StandardError unless lines = JSON[json].presence
+
+    str.split("\n").map.with_index(1) do |line, idx|
+      if lines.include?(idx)
+        ''
+      else
+        line
+      end
+    end
+    .join("\n")
+  end
+
   def create_directory
     remove_comment
     main_norm
-    code.split("\n").each do |line|
+    remove_decl(code).split("\n").each do |line|
       # TODO : 数字はエンコーディングするのかどうか
-      words = string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word.flat_map{|co| co[:objects]}.dup)
-        .gsub("\"%2d is not a prime number.\\n\"", ' @573_1 ')
-        .gsub("\"%2d is a prime number.\\n\"", " @573_2 ")
-        .gsub(%r{("[\w\W\s\S]*")}, " @s ")
-        .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
-        .gsub(/'\w'/, ' $c ')
-        .gsub(/(?<prev>[^=!<>+-])=(?<next>[^=])/, '\k<prev> = \k<next>')
-        .gsub(/(?<prev>[^+])\+(?<next>[^+=])/, '\k<prev> + \k<next>')
-        .gsub(/(?<prev>[^-])-(?<next>[^-=])/, '\k<prev> - \k<next>')
-        .gsub(/(?<prev>[^&])&(?<next>[^&])/, '\k<prev> & \k<next>')
-        .gsub(/<(?<next>[^=])/, ' < \k<next>')
-        .gsub(/>(?<next>[^=])/, ' > \k<next>')
-        .gsub(/!(?<next>[^=])/, ' ! \k<next>')
-        .gsub(/==/, " == ")
-        .gsub(/<=/, " <= ")
-        .gsub(/>=/, " >= ")
-        .gsub(/!=/, " != ")
-        .gsub(/&&/, " && ")
-        .gsub(/\|\|/, " || ")
-        .gsub(/\+\+/, " ++ ")
-        .gsub(/--/, " -- ")
-        .gsub(/\+=/, " += ")
-        .gsub(/-=/, " -- ")
-        .gsub(/,/, ' , ')
-        .gsub(/\./, ' . ')
-        .gsub(/ (?<num>\d+) /, ' \k<num> ')
-        .gsub(/\*/, ' * ')
-        .gsub(/\//, ' / ')
-        .gsub(/%/, ' % ')
-        .gsub(/FP/, 'fp')
-        .split(" ").map do |word|
-        if EXPECT_CHARS.include? word
-          word
-        elsif num?(word)
-          word
-        elsif dictionary.include? word
-          dictionary[word][:encode]
-        else
-          dictionary.set(word)
-        end
+      token_set(line)
+    end
+  end
+
+  def token_set(line)
+    string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word.flat_map{|co| co[:objects]}.dup)
+      .gsub(%r{("[\w\W\s\S]*")}, " @s ")
+      .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
+      .gsub(/'\w'/, ' $c ')
+      .gsub(/(?<prev>[^=!<>+-])=(?<next>[^=])/, '\k<prev> = \k<next>')
+      .gsub(/(?<prev>[^+])\+(?<next>[^+=])/, '\k<prev> + \k<next>')
+      .gsub(/(?<prev>[^-])-(?<next>[^-=])/, '\k<prev> - \k<next>')
+      .gsub(/(?<prev>[^&])&(?<next>[^&])/, '\k<prev> & \k<next>')
+      .gsub(/<</, ' << ')
+      .gsub(/<(?<next>[^=])/, ' < \k<next>')
+      .gsub(/>(?<next>[^=])/, ' > \k<next>')
+      .gsub(/!(?<next>[^=])/, ' ! \k<next>')
+      .gsub(/\^/, " ^ ")
+      .gsub(/==/, " == ")
+      .gsub(/<=/, " <= ")
+      .gsub(/>=/, " >= ")
+      .gsub(/!=/, " != ")
+      .gsub(/&&/, " && ")
+      .gsub(/\|\|/, " || ")
+      .gsub(/\+\+/, " ++ ")
+      .gsub(/--/, " -- ")
+      .gsub(/\+=/, " += ")
+      .gsub(/-=/, " -- ")
+      .gsub(/,/, ' , ')
+      .gsub(/\./, ' . ')
+      .gsub(/ (?<num>\d+) /, ' \k<num> ')
+      .gsub(/\*/, ' * ')
+      .gsub(/\//, ' / ')
+      .gsub(/%/, ' % ')
+      .gsub(/FP/, 'fp')
+      .split(" ").map do |word|
+      if EXPECT_CHARS.include? word
+        word
+      elsif num?(word)
+        word
+      elsif dictionary.include? word
+        dictionary[word][:encode]
+      else
+        dictionary.set(word)
       end
     end
   end
@@ -264,47 +298,7 @@ class EncodingCode
     main_norm
     code.each_line.with_index(1) do |line, idx|
       # TODO : 数字はエンコーディングするのかどうか
-      words = string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word.flat_map{|co| co[:objects]}.dup)
-        .gsub("\"%2d is not a prime number.\\n\"", ' @573_1 ')
-        .gsub("\"%2d is a prime number.\\n\"", " @573_2 ")
-        .gsub(%r{("[\w\W\s\S]*")}, " @s ")
-        .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
-        .gsub(/'\w'/, ' $c ')
-        .gsub(/(?<prev>[^=!<>+-])=(?<next>[^=])/, '\k<prev> = \k<next>')
-        .gsub(/(?<prev>[^+])\+(?<next>[^+=])/, '\k<prev> + \k<next>')
-        .gsub(/(?<prev>[^-])-(?<next>[^-=])/, '\k<prev> - \k<next>')
-        .gsub(/(?<prev>[^&])&(?<next>[^&])/, '\k<prev> & \k<next>')
-        .gsub(/<(?<next>[^=])/, ' < \k<next>')
-        .gsub(/>(?<next>[^=])/, ' > \k<next>')
-        .gsub(/!(?<next>[^=])/, ' ! \k<next>')
-        .gsub(/==/, " == ")
-        .gsub(/<=/, " <= ")
-        .gsub(/>=/, " >= ")
-        .gsub(/!=/, " != ")
-        .gsub(/&&/, " && ")
-        .gsub(/\|\|/, " || ")
-        .gsub(/\+\+/, " ++ ")
-        .gsub(/--/, " -- ")
-        .gsub(/\+=/, " += ")
-        .gsub(/-=/, " -- ")
-        .gsub(/,/, ' , ')
-        .gsub(/\./, ' . ')
-        .gsub(/ (?<num>\d+) /, ' \k<num> ')
-        .gsub(/\*/, ' * ')
-        .gsub(/\//, ' / ')
-        .gsub(/%/, ' % ')
-        .gsub(/FP/, 'fp')
-        .split(" ").map do |word|
-        if EXPECT_CHARS.include? word
-          word
-        elsif num?(word)
-          word
-        elsif dictionary.include? word
-          dictionary[word][:encode]
-        else
-          dictionary.set(word)
-        end
-      end
+      words = token_set(line)
       encode_line = words.join(" ").concat(' ')
       encode_line.gsub!(/ +/, ' ')
       encode_line.gsub!(/\A +/, '')
