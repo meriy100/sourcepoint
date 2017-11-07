@@ -4,7 +4,9 @@ class TemplatesController < ApplicationController
   # GET /templates
   def index
     @current_assignment_ids = Template.pluck(:current_assignment_id).uniq
-    @templates = Template.where(status: ['internal_error', 'executed'], current_assignment_id: params[:current_assignment_id]).includes(:template_lines, submission: :lines)
+    @templates = Template.where(status: ['internal_error', 'executed'], current_assignment_id: params[:current_assignment_id])
+      .order(is_check: :desc)
+      .includes(:template_lines, submission: :lines)
   end
 
   # GET /templates/1
@@ -60,6 +62,6 @@ class TemplatesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def template_params
-      params.require(:template).permit(:file1, :status, :user_id, :encode_code, :current_assignment_id, :assignment_id)
+      params.require(:template).permit(:file1, :status, :user_id, :encode_code, :current_assignment_id, :assignment_id, :is_check)
     end
 end

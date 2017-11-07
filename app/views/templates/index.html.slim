@@ -18,7 +18,7 @@ table.table.table-striped
       th[colspan="3"]
   tbody
     - @templates.each do |template|
-      tr
+      tr class="#{template.is_check ? 'info' : 'danger'}"
         td
           = template.id
         td

@@ -5,7 +5,7 @@
 #  id           :integer          not null, primary key
 #  template_id  :integer          not null
 #  number       :integer          not null
-#  deleted_line :boolean          default("1"), not null
+#  deleted_line :boolean          default("0"), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

@@ -14,7 +14,10 @@ button.clipboard-btn.btn.btn-default[data-clipboard-action="copy" data-clipboard
   = f.hidden_field :assignment_id
   = f.hidden_field :user_id
   = f.submit
-
+- if @template.is_check
+  = link_to 'check remove', template_path(@template, template: { is_check: false } ), method: :patch, class: %w{btn btn-danger}
+- else
+  = link_to 'check on', template_path(@template, template: { is_check: true } ), method: :patch, class: %w{btn btn-info}
 p
   strong
     | File1:
@@ -23,7 +26,14 @@ p
       - @template.file1.each_line.with_index(1) do |line, idx|
         tr
           td
-            - if tl =  @template_lines.select {|t| t.number == idx}.first
+            - if tl = @template_lines.select {|t| t.number == idx && t.deleted_line }.first
+              = link_to '^', template_template_line_path(@template, tl),
+                method: :delete, class: 'btn btn-info btn-xs'
+            - else
+              = link_to '^', template_template_lines_path(@template, { template_line: { number: idx, deleted_line: 1 } }),
+                method: :post, class: 'btn btn-default btn-xs'
+
+            - if tl =  @template_lines.select {|t| t.number == idx && !t.deleted_line}.first
               = link_to idx, template_template_line_path(@template, tl),
                 method: :delete, class: 'btn btn-info btn-xs'
             - else
