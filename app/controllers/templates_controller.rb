@@ -60,9 +60,11 @@ class TemplatesController < ApplicationController
 
     Tempfile.open do |tmp|
       File.write tmp, @template.file1.encode('UTF-8', 'UTF-8')
-      res = rh.create_attempt(tmp.path, @template.current_assignment_id)
+      res = rh.create_attempt(tmp.path, @template.current_assignment_id == 441 ? 587: @template.current_assignment_id)
       if res['location'].present?
         redirect_to res['location']
+      else
+        raise
       end
     end
   end
