@@ -16,4 +16,12 @@
 
 class TemplateLine < ApplicationRecord
   belongs_to :template
+
+  def ==(other)
+    if other.class == Line
+      [other.number, other.deleted_line] == [number, deleted_line]
+    else
+      super
+    end
+  end
 end

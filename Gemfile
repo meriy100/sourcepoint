@@ -50,6 +50,7 @@ gem 'kaminari'
 gem 'ransack'
 
 gem 'activerecord-import'
+gem 'active_hash'
 
 gem 'config'
 
