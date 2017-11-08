@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :templates do
+    member do
+      post 'rpcsr_check'
+    end
     resources :template_lines
   end
 

@@ -18,6 +18,8 @@ button.clipboard-btn.btn.btn-default[data-clipboard-action="copy" data-clipboard
   = link_to 'check remove', template_path(@template, template: { is_check: false } ), method: :patch, class: %w{btn btn-danger}
 - else
   = link_to 'check on', template_path(@template, template: { is_check: true } ), method: :patch, class: %w{btn btn-info}
+
+= link_to 'rpcsr check', rpcsr_check_template_path(@template), method: :post, class: %w{btn btn-warning}
 p
   strong
     | File1:

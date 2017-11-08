@@ -77,16 +77,15 @@ class RpcsHTTPS
     res
   end
 
-  def create_attempt(file)
+  def create_attempt(file_path, assignment_id)
     doc = Nokogiri::HTML(get('/attempts/new').body)
     nodes = doc.xpath('//*[@id="new_attempt"]/div/input')
-
     authenticity_token = nodes.first.attributes['value'].value
-    binary_file = File.open("binary_file_path.c", "rb")
+    binary_file = File.open(file_path, "rb")
     puts authenticity_token
     data = [
       ['authenticity_token', authenticity_token],
-      [ "attempt[assignment_id]", '594' ],
+      [ "attempt[assignment_id]", assignment_id.to_s ],
       [ "attempt[file1]", binary_file, { filename: "file.c" } ],
     ]
 
@@ -96,9 +95,7 @@ class RpcsHTTPS
     # req['Content-Type'] = req['Accept'] = 'application/json'
     req['Cookie'] = "_rpcsr_session=#{@cookie}"
     req.set_form(data, "multipart/form-data")
-    binding.pry
 
     Net::HTTP.start(url.host, url.port, use_ssl: true) { |http| http.request(req) }
   end
-
 end

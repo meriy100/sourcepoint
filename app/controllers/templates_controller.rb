@@ -1,5 +1,5 @@
 class TemplatesController < ApplicationController
-  before_action :set_template, only: [:show, :edit, :update, :destroy]
+  before_action :set_template, only: [:show, :edit, :update, :destroy, :rpcsr_check]
 
   # GET /templates
   def index
@@ -52,6 +52,19 @@ class TemplatesController < ApplicationController
   def destroy
     @template.destroy
     redirect_to templates_url, notice: 'Template was successfully destroyed.'
+  end
+
+
+  def rpcsr_check
+    rh = RpcsHTTPS.new('126hahaha')
+
+    Tempfile.open do |tmp|
+      File.write tmp, @template.file1.encode('UTF-8', 'UTF-8')
+      res = rh.create_attempt(tmp.path, @template.current_assignment_id)
+      if res['location'].present?
+        redirect_to res['location']
+      end
+    end
   end
 
   private
