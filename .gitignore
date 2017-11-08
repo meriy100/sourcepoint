@@ -26,6 +26,7 @@ sourcepoint_development_dump
 *.csv
 data*
 .idea
+.svn/
 
 config/settings.local.yml
 config/settings/*.local.yml

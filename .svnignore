@@ -1,0 +1,4 @@
+.git
+svn-commit*.tmp
+/vendor/bundle
+/tmp
