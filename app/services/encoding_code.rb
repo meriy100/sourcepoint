@@ -128,6 +128,12 @@ class Dictionary < Hash
   end
 end
 
+class CharSet < Array
+  def number
+    self.first
+  end
+end
+
 class SplitFunction
   attr_accessor :code
   def initialize(code)
@@ -303,6 +309,7 @@ class EncodingCode
   end
 
   def encode
+    return code_encoded if charlist.present?
     create_directory
     remove_comment
     main_norm
@@ -313,7 +320,7 @@ class EncodingCode
       encode_line.gsub!(/ +/, ' ')
       encode_line.gsub!(/\A +/, '')
       code_encoded.concat(encode_line)
-      charlist.concat(encode_line.split('').map { |char| [idx, char] })
+      charlist.concat(encode_line.split('').map { |char| CharSet.new([idx, char]) })
     end
 
     code_encoded

@@ -22,10 +22,18 @@ class SubmissionCreate
       puts "1"
       e =  EncodingCode.new(@submission.file1, dic).encode
       puts "\e[31m#{e}\e[0m"
-      diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, e)
+      diffs = Diff::LCS.sdiff(nearest_attempt_encoding.encode, e)
 
-      binding.pry if @f.nil?
-      diff_block_split(diffs.dup)
+      #############
+      f = foo(diffs.dup, encoding_code, nearest_attempt_encoding)
+      b = bar(f)
+
+      b.each do |numbers|
+        e = exchange_encode(nearest_attempt_encoding, encoding_code, numbers).map(&:last).join
+        # TODO : ここで チェッキングシステムチェック!!!!!!!!!
+      end
+      #############
+
       line_list =  diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
 
       line_list.each do |line_attributes|
@@ -35,13 +43,37 @@ class SubmissionCreate
     end
   end
 
+  def foo(diffs, actual, expect)
+    diffs_list = diff_block_split(diffs.dup)
+    diffs_list.flat_map do |diffs|
+      diffs.map do |diff|
+        {
+          actual: actual.charlist[diff.new_position],
+          expect: expect.charlist[diff.old_position]
+        }
+      end
+    end
+    .reject(&:empty?)
+  end
+
+  def bar(blocks)
+    blocks.sort_by{|b|b[:expect].number}.collection_map { |first, second| first[:expect].number.between?(second[:expect].number, second[:expect].number+ 1) }
+  end
+
+  def exchange_encode(target, other, numbers)
+    result = []
+    before = target.charlist.select{|charset| charset.number < numbers.first[:expect].number}
+    middle = other.charlist.select{|charset| numbers.map{|n|n[:actual].number}.include?(charset.number)}
+    after = target.charlist.select{|charset| charset.number > numbers.last[:expect].number}
+    result.concat(before).concat(middle).concat(after)
+  end
+
   def diff_block_split(diffs, stacks=[], block=[])
     diff = diffs.shift
     return stacks if diff.nil?
     case diff.action
     when '='
-      stacks.push(block)
-      diff_block_split(diffs, stacks)
+      diff_block_split(diffs, stacks.push(block))
     else
       diff_block_split(diffs, stacks, block.push(diff))
     end
