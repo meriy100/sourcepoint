@@ -32,6 +32,10 @@ class Dictionary < Hash
     end
   end
 
+  def to_reverse
+    self.values.each_with_object({}) { |s, rd| rd[s[:encode]] = s[:word] }
+  end
+
   private
 
   def reserve_word_set(word)
@@ -186,6 +190,13 @@ class EncodingCode
     end
   end
 
+  def recode(token_line)
+    reverse_dic = self.dictionary.to_reverse
+    token_line.split(' ').map do |token|
+      reverse_dic[token].presence || token
+    end
+      .join(' ')
+  end
 
   def remove_comment
     code.gsub!(/(\/\/.*$|\/\*(.|\n)*\*\/)/, '') # TODO : gcc -なんとか
