@@ -262,7 +262,6 @@ class EncodingCode
   def token_set(line)
     string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word.flat_map{|co| co[:objects]}.dup)
       .gsub(%r{("[\w\W\s\S]*")}, " @s ")
-      .gsub(/(?<num>\d+(\.\d+)?)/, ' \k<num> ')
       .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
       .gsub(/'\w'/, ' $c ')
       .gsub(/(?<prev>[^=!<>+-])=(?<next>[^=])/, '\k<prev> = \k<next>')
@@ -288,6 +287,7 @@ class EncodingCode
       .gsub(/\*/, ' * ')
       .gsub(/\//, ' / ')
       .gsub(/%/, ' % ')
+      .gsub(/ (?<num>\d+(\.\d+)?) /, ' \k<num> ')
       .gsub(/FP/, 'fp')
       .split(" ").map do |word|
       if EXPECT_CHARS.include? word
