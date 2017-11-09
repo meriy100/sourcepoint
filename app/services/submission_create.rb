@@ -24,12 +24,26 @@ class SubmissionCreate
       puts "\e[31m#{e}\e[0m"
       diffs = Diff::LCS.sdiff(nearest_attempts.first.encode_code, e)
 
-      line_list =  diffs_to_line_diffs2(diffs, encoding_code, nearest_attempt_encoding).compact.uniq
+      binding.pry if @f.nil?
+      diff_block_split(diffs.dup)
+      line_list =  diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
 
       line_list.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
       end
       @submission
+    end
+  end
+
+  def diff_block_split(diffs, stacks=[], block=[])
+    diff = diffs.shift
+    return stacks if diff.nil?
+    case diff.action
+    when '='
+      stacks.push(block)
+      diff_block_split(diffs, stacks)
+    else
+      diff_block_split(diffs, stacks, block.push(diff))
     end
   end
 
