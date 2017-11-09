@@ -2,3 +2,4 @@
 svn-commit*.tmp
 /vendor/bundle
 /tmp
+log/
