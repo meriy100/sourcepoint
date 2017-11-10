@@ -143,7 +143,7 @@ class SplitFunction
 end
 
 class EncodingCode
-  attr_accessor :code, :code_encoded, :dictionary, :charlist
+  attr_accessor :code, :code_encoded, :dictionary, :charlist, :headers
 
   EXPECT_CHARS = [
     "{",
@@ -185,7 +185,11 @@ class EncodingCode
     self.dictionary = dictionary
     self.charlist = []
     self.code = src.gsub(/^#include .*$/, '')
-    # for_while_if
+    self.headers = src.scan(/^#include .*$/)
+  end
+
+  def headers_str
+    headers.join("\n")
   end
 
   def for_while_if

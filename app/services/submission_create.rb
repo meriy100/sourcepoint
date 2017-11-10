@@ -28,13 +28,26 @@ class SubmissionCreate
       f = foo(diffs.dup, encoding_code, nearest_attempt_encoding)
       b = bar(f)
 
+
+
+      rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
       b.each do |numbers|
         e = exchange_encode(nearest_attempt_encoding, encoding_code, numbers).map(&:last).join
         # TODO : ここで チェッキングシステムチェック!!!!!!!!!
+
+        Tempfile.open do |tmp|
+          File.write tmp, nearest_attempt_encoding.headers_str.concat(nearest_attempt_encoding.recode(e)).encode('UTF-8', 'UTF-8')
+          res = rh.create_attempt(tmp.path, @submission.assignment_id == 441 ? 587: @submission.assignment_id)
+          if res['location'].present?
+            binding.pry
+          else
+            raise
+          end
+        end
       end
       #############
 
-      line_list =  diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
+      line_list = diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
 
       line_list.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))

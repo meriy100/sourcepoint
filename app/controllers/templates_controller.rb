@@ -56,7 +56,7 @@ class TemplatesController < ApplicationController
 
 
   def rpcsr_check
-    rh = RpcsHTTPS.new('126hahaha')
+    rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
 
     Tempfile.open do |tmp|
       File.write tmp, @template.file1.encode('UTF-8', 'UTF-8')
