@@ -1,7 +1,7 @@
 class SubmissionsController < ApplicationController
   def show
     @line_numbers = find_submission.lines
-    encoding_code = EncodingCode.new(@submission.file1)
+    encoding_code = EncodingCode.new(@submission.file1, @submission.assignment_id)
     if attempt = @line_numbers.first&.attempt.presence
       @dist = Levenshtein.normalized_distance(encoding_code.encode, attempt.encode_code)
     else

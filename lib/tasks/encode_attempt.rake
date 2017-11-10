@@ -10,12 +10,26 @@ namespace :encode do
     _595 = [30, 95, 171, 236, 303, 375, 449]
     _600 = [101, 242, 308, 380, 454]
     _609 = [99, 240, 312, 384, 458]
-    id = ENV['ID'] || 441
+    id = ENV['ID']&.to_i || 441
+
+    list = Attempt.where(current_assignment_id: id).map { |a| a.file1.lines.map { |s| s.match(%r{("[\w\W\s\S]*")}) } }.flatten.compact.group_by {|m| m[1]}.map {|s, data| [s, data.length]}.sort_by{|s, length| 0 - length}.map(&:first).map.with_index(0){|s,i| {string: s, encode_word: "@#{id}_#{i}"}}
+    yaml = YAML.load_file(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml')) || { string_encode_word: {} }
+
+    if yaml[:string_encode_word].nil?
+      yaml[:string_encode_word] = { id => list }
+    else
+      yaml[:string_encode_word][id] = list
+    end
+    File.open(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml'), 'w') do |f|
+      f.puts yaml.to_yaml
+    end
+    binding.pry
+
     Parallel.each(Attempt.where(current_assignment_id: id), in_processes: 4) do |attempt|
     # Attempt.where(current_assignment_id: 574).each do |attempt|
     # Attempt.all.each do |attempt|
       print "#"
-      encode_code = EncodingCode.new(attempt.file1).encode
+      encode_code = EncodingCode.new(attempt.file1, id).encode
       attempt.update!(encode_code: encode_code)
     end
     puts ""

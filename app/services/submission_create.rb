@@ -1,12 +1,13 @@
 class SubmissionCreate
-  attr_accessor :submission
+  attr_accessor :submission, :assignment_id
 
   def initialize(submission)
     self.submission = submission
+    self.assignment_id = submission.assignment_id
   end
 
   def run
-    encoding_code = EncodingCode.new(@submission.file1)
+    encoding_code = EncodingCode.new(@submission.file1, assignment_id)
     encode = encoding_code.encode
     nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).where.not(user_id: @submission.user_id).sort_by { |attempt|
       dist = Levenshtein.normalized_distance(encode, attempt.encode_code)
@@ -14,21 +15,22 @@ class SubmissionCreate
     }
     Rails.logger.info nearest_attempts.first.dist
     if run?(nearest_attempts)
-      nearest_attempt_encoding = EncodingCode.new(nearest_attempts.first.file1)
+      nearest_attempt_encoding = EncodingCode.new(nearest_attempts.first.file1, assignment_id)
       puts encoding_code.dictionary.valiable_list
       puts "\e[31m#{nearest_attempts.first.encode_code}\e[0m"
       # line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
       dic = encoding_code.dictionary
       puts "1"
-      e =  EncodingCode.new(@submission.file1, dic).encode
+      e =  EncodingCode.new(@submission.file1, assignment_id, dic).encode
       puts "\e[31m#{e}\e[0m"
       diffs = Diff::LCS.sdiff(nearest_attempt_encoding.encode, e)
+
+
+      line_list = diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
 
       #############
       f = foo(diffs.dup, encoding_code, nearest_attempt_encoding)
       b = bar(f)
-
-
 
       rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
       b.each do |numbers|
@@ -36,18 +38,22 @@ class SubmissionCreate
         # TODO : ここで チェッキングシステムチェック!!!!!!!!!
 
         Tempfile.open do |tmp|
-          File.write tmp, nearest_attempt_encoding.headers_str.concat(nearest_attempt_encoding.recode(e)).encode('UTF-8', 'UTF-8')
-          res = rh.create_attempt(tmp.path, @submission.assignment_id == 441 ? 587: @submission.assignment_id)
+          recode = nearest_attempt_encoding.headers_str.concat(nearest_attempt_encoding.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
+          File.write tmp, recode
+          res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
           if res['location'].present?
-            binding.pry
+            m = res['location'].match(%r{/(?<id>\d+)\z})
+            status = rh.get_attempt_status(m[:id])
+            puts status
+            if status == 'checked'
+              line_list.reject! { |line| numbers.map{|n| n[:actual].number}.include?(line[:number]) } # TODO : 要検証
+            end
           else
             raise
           end
         end
       end
       #############
-
-      line_list = diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
 
       line_list.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
@@ -70,7 +76,7 @@ class SubmissionCreate
   end
 
   def bar(blocks)
-    blocks.sort_by{|b|b[:expect].number}.collection_map { |first, second| first[:expect].number.between?(second[:expect].number, second[:expect].number+ 1) }
+    blocks.sort_by{|b|b[:expect].number}.collection_map { |first, second| first[:expect].number.between?(second[:expect].number-1, second[:expect].number) }
   end
 
   def exchange_encode(target, other, numbers)

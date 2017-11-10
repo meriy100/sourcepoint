@@ -43,7 +43,6 @@ class RpcsHTTPS
 
   def get(path='/', params={})
     uri = BASE_URI.merge(path)
-    puts  uri
 
     post_body_json = JSON.pretty_generate(params)
     req = Net::HTTP::Get.new(uri)
@@ -82,7 +81,6 @@ class RpcsHTTPS
     nodes = doc.xpath('//*[@id="new_attempt"]/div/input')
     authenticity_token = nodes.first.attributes['value'].value
     binary_file = File.open(file_path, "rb")
-    puts authenticity_token
     data = [
       ['authenticity_token', authenticity_token],
       [ "attempt[assignment_id]", assignment_id.to_s ],
@@ -97,5 +95,11 @@ class RpcsHTTPS
     req.set_form(data, "multipart/form-data")
 
     Net::HTTP.start(url.host, url.port, use_ssl: true) { |http| http.request(req) }
+  end
+
+  def get_attempt_status(id)
+    res = get("/attempts/#{id}")
+    doc = Nokogiri::HTML(res.body)
+    doc.xpath('/html/body/p').find { |p|p.text.match(/\AStatus:/) }.at_xpath('//span').text
   end
 end

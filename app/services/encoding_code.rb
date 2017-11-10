@@ -1,11 +1,16 @@
 require 'json'
 $string_encode_word = YAML.load_file(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml'))[:string_encode_word]
 class Dictionary < Hash
-  attr_accessor :valiable_list
+  attr_accessor :valiable_list, :assignment_id
   class EmptyHasList < StandardError; end
-  def initialize
+
+  def initialize(assignment_id)
     @hash_list = ("A".."Z").to_a.concat(("a".."z").to_a).combination(2).map{|a, b|"#{a}#{b}"}.shuffle(random: Random.new(100))
+    self.assignment_id = assignment_id
     reserve_word
+    $string_encode_word[assignment_id.to_s].each do |list|
+      reserve_word_set_string(list[:encode_word], list[:string])
+    end
   end
 
   def set(word)
@@ -33,10 +38,14 @@ class Dictionary < Hash
   end
 
   def to_reverse
-    self.values.each_with_object({}) { |s, rd| rd[s[:encode]] = s[:word] }
+    self.values.each_with_object({}) { |s, rd| rd[s[:encode]] = (s[:string] || s[:word]) }
   end
 
   private
+
+  def reserve_word_set_string(word, string)
+    self[word] = { encode: next_encode, word: word, string: string }
+  end
 
   def reserve_word_set(word)
     self[word] = { encode: next_encode, word: word }
@@ -101,8 +110,6 @@ class Dictionary < Hash
       "#define",
       "h",
       "pow",
-      "@573_1",
-      "@573_2",
       "@s",
       "$c",
       "fp",
@@ -115,6 +122,8 @@ class Dictionary < Hash
       'stdlib',
       "'\\0'",
       "'\\n'",
+      'sqrt',
+      'abs',
     ]
     .each do |word|
       reserve_word_set(word)
@@ -125,6 +134,11 @@ class Dictionary < Hash
     raise EmptyHasList if @hash_list.blank?
     "#{@hash_list.pop}"
     # "#{@hash_list.last}"
+  end
+
+  def tail_encode
+    raise EmptyHasList if @hash_list.blank?
+    "#{@hash_list.shift}"
   end
 end
 
@@ -143,7 +157,7 @@ class SplitFunction
 end
 
 class EncodingCode
-  attr_accessor :code, :code_encoded, :dictionary, :charlist, :headers
+  attr_accessor :code, :code_encoded, :dictionary, :charlist, :headers, :assignment_id
 
   EXPECT_CHARS = [
     "{",
@@ -177,15 +191,15 @@ class EncodingCode
     "<",
     "!",
     "^",
-    "@s",
-  ].concat($string_encode_word.flat_map{|co| co[:objects]}.flat_map{|o|o[:encode_word]}).freeze
+  ].freeze
 
-  def initialize(src, dictionary = Dictionary.new)
+  def initialize(src, assignment_id, dictionary = nil)
     self.code_encoded ||= ""
-    self.dictionary = dictionary
+    self.dictionary = dictionary || Dictionary.new(assignment_id)
     self.charlist = []
     self.code = src.gsub(/^#include .*$/, '')
     self.headers = src.scan(/^#include .*$/)
+    self.assignment_id = assignment_id
   end
 
   def headers_str
@@ -227,7 +241,6 @@ class EncodingCode
 
   def string_encode_word_gsubs(line, sews)
     return line if sews.blank?
-    return line
     sew = sews.pop
     string_encode_word_gsubs(
       line.gsub(sew[:string].encode('UTF-8', 'UTF-8'), sew[:encode_word]),
@@ -270,7 +283,7 @@ class EncodingCode
   end
 
   def token_set(line)
-    string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word.flat_map{|co| co[:objects]}.dup)
+    string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word[assignment_id.to_s].dup)
       .gsub(%r{("[\w\W\s\S]*")}, " @s ")
       .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
       .gsub(/'\w'/, ' $c ')
