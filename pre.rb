@@ -1,12 +1,21 @@
-def average(ary)
-  (ary.inject(:+) * 1.0 / ary.count)
+attempts = CurrentAssignment.last.attempts
+max = attempts.count
+idx = 0
+as = attempts.reject do |attempt|
+  idx += 1
+  print "\r(#{idx}:#{max})".concat('#'.*(idx * 50 / max))
+  status = false
+  Tempfile.open do |temp|
+    File.write temp, attempt.file1.encode('UTF-8', 'UTF-8')
+    rh = RpcsHTTPS.new('126hahaha')
+    res = rh.create_attempt(temp.path, 587)
+    if m = res['location'].match(/(?<id>\d+\z)/)
+      status = rh.get_attempt_status(m[:id])
+    end
+  end
+  print " #{status}                           "
+  status == 'checked'
 end
-
-values = Submission.where(assignment_id: ARGV.first.to_i).includes(:lines).map{|s| {user_id: s.user_id, line_count: s.lines.length}}.group_by{|i| i[:user_id]}.values
-puts values.map { |user_data|
-  {
-    user_id: user_data.first[:user_id],
-    line_count: average(user_data.map { |data| data[:line_count]})
-  }
-}.to_json
-
+binding.pry
+print as.map(&:id)
+puts

@@ -1,4 +1,5 @@
 class CurrentAssignment < ActiveHash::Base
+  include ActiveHash::Associations
   self.data = [
     {
       id: 594,
@@ -42,4 +43,7 @@ class CurrentAssignment < ActiveHash::Base
       assignment_ids: [22, 87, 163, 228, 295, 367],
     },
   ]
+
+  has_many :templates
+  has_many :attempts
 end

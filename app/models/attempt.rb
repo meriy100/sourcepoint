@@ -24,7 +24,9 @@
 #
 
 class Attempt < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :assignment
   has_many :liens
+  belongs_to :current_assignment
   attr_accessor :dist
 end

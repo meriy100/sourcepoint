@@ -31,6 +31,10 @@ table.table.table-striped
           = template.assignment_id
         td
           = template.template_lines.length
+          - if template.is_check
+            = link_to 'check remove', template_path(template, template: { is_check: false } ), method: :patch, class: %w{btn btn-danger}
+          - else
+            = link_to 'check on', template_path(template, template: { is_check: true } ), method: :patch, class: %w{btn btn-info}
         td = template.file1.lines.count
         - if template.submission.present?
           td = link_to "Submission: L#{template.submission.lines.length}", submission_path(template.submission), class: %{btn btn-info}

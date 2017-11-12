@@ -47,6 +47,9 @@ class SubmissionCreate
             puts status
             if status == 'checked'
               line_list.reject! { |line| numbers.map{|n| n[:actual].number}.include?(line[:number]) } # TODO : 要検証
+              attempt = nearest_attempts.first.dup
+              attempt.file1 = recode
+              attempt.save!
             end
           else
             raise

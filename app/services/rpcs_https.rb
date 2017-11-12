@@ -76,7 +76,7 @@ class RpcsHTTPS
     res
   end
 
-  def create_attempt(file_path, assignment_id)
+  def create_attempt(file_path, assignment_id, try=0)
     doc = Nokogiri::HTML(get('/attempts/new').body)
     nodes = doc.xpath('//*[@id="new_attempt"]/div/input')
     authenticity_token = nodes.first.attributes['value'].value
@@ -95,6 +95,13 @@ class RpcsHTTPS
     req.set_form(data, "multipart/form-data")
 
     Net::HTTP.start(url.host, url.port, use_ssl: true) { |http| http.request(req) }
+  rescue Net::ReadTimeout
+    if try < 5
+      sleep(1.0)
+      create_attempt(file_path, assignment_id, try+1)
+    else
+      binding.pry
+    end
   end
 
   def get_attempt_status(id)
