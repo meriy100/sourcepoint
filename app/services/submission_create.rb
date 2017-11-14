@@ -29,30 +29,41 @@ class SubmissionCreate
       line_list = diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
 
       #############
-      f = foo(diffs.dup, encoding_code, nearest_attempt_encoding)
-      b = bar(f)
+      unless ENV['NOSPLIT'] == '1'
+        f = foo(diffs.dup, encoding_code, nearest_attempt_encoding)
+        b = bar(f)
 
-      rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
-      b.each do |numbers|
-        e = exchange_encode(nearest_attempt_encoding, encoding_code, numbers).map(&:last).join
-        # TODO : ここで チェッキングシステムチェック!!!!!!!!!
+        rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
+        b.each do |numbers|
+          next if numbers.blank?
+          e = exchange_encode(nearest_attempt_encoding, encoding_code, numbers).collection_map { |first, last|
+            first.number == last.number
+          }.map{|sets| sets.map(&:last).join}.join("\n")
 
-        Tempfile.open do |tmp|
-          recode = nearest_attempt_encoding.headers_str.concat(nearest_attempt_encoding.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
-          File.write tmp, recode
-          res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
-          if res['location'].present?
-            m = res['location'].match(%r{/(?<id>\d+)\z})
-            status = rh.get_attempt_status(m[:id])
-            puts status
-            if status == 'checked'
-              line_list.reject! { |line| numbers.map{|n| n[:actual].number}.include?(line[:number]) } # TODO : 要検証
-              attempt = nearest_attempts.first.dup
-              attempt.file1 = recode
-              attempt.save!
+          # TODO : ここで チェッキングシステムチェック!!!!!!!!!
+
+          Tempfile.open do |tmp|
+            recode = nearest_attempt_encoding.headers_str.concat(nearest_attempt_encoding.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
+            File.write tmp, recode
+            res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
+            if res['location'].present?
+              m = res['location'].match(%r{/(?<id>\d+)\z})
+              status = rh.get_attempt_status(m[:id])
+              puts status
+              if status == 'checked'
+                line_list.reject! { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) } # TODO : 要検証
+                attempt = nearest_attempts.first.dup
+                # Tempfile.open do |tmp_reindent|
+                #   Open3.capture3('indent', tmp.path, tmp_reindent.path)
+                #   attempt.file1 = File.read(tmp_reindent.path)
+                # end
+                attempt.file1 = recode
+                attempt.encode_code = EncodingCode.new(attempt.file1, assignment_id).encode
+                attempt.save!
+              end
+            else
+              raise
             end
-          else
-            raise
           end
         end
       end
@@ -85,7 +96,7 @@ class SubmissionCreate
   def exchange_encode(target, other, numbers)
     result = []
     before = target.charlist.select{|charset| charset.number < numbers.first[:expect].number}
-    middle = other.charlist.select{|charset| numbers.map{|n|n[:actual].number}.include?(charset.number)}
+    middle = other.charlist.select{|charset| numbers.map{|n|n[:actual].number}.include?(charset.number)}.each{|charset|charset.number *= -1}
     after = target.charlist.select{|charset| charset.number > numbers.last[:expect].number}
     result.concat(before).concat(middle).concat(after)
   end
@@ -102,7 +113,6 @@ class SubmissionCreate
   end
 
   private
-
 
   def three_different(one, two, three)
     if one == three

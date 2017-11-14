@@ -15,15 +15,15 @@ namespace :encode do
     list = Attempt.where(current_assignment_id: id).map { |a| a.file1.lines.map { |s| s.match(%r{("[\w\W\s\S]*")}) } }.flatten.compact.group_by {|m| m[1]}.map {|s, data| [s, data.length]}.sort_by{|s, length| 0 - length}.map(&:first).map.with_index(0){|s,i| {string: s, encode_word: "@#{id}_#{i}"}}
     yaml = YAML.load_file(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml')) || { string_encode_word: {} }
 
+    binding.pry
     if yaml[:string_encode_word].nil?
-      yaml[:string_encode_word] = { id => list }
+      yaml[:string_encode_word] = { id.to_s => list }
     else
-      yaml[:string_encode_word][id] = list
+      yaml[:string_encode_word][id.to_s] = list
     end
     File.open(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml'), 'w') do |f|
       f.puts yaml.to_yaml
     end
-    binding.pry
 
     Parallel.each(Attempt.where(current_assignment_id: id), in_processes: 4) do |attempt|
     # Attempt.where(current_assignment_id: 574).each do |attempt|

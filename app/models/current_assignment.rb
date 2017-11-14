@@ -27,7 +27,7 @@ class CurrentAssignment < ActiveHash::Base
       assignment_ids: [340, 413, 486],
     }, {
       id: 574,
-      code: '',
+      code: '02C1',
       assignment_ids: [75, 148, 216, 283, 355, 428],
     }, {
       id: 570,
@@ -38,7 +38,7 @@ class CurrentAssignment < ActiveHash::Base
       code: '',
       assignment_ids: [34, 104, 175],
     }, {
-      id: 441,
+      id: 587,
       code: '05A1',
       assignment_ids: [22, 87, 163, 228, 295, 367],
     },

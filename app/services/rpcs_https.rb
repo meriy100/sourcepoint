@@ -41,7 +41,7 @@ class RpcsHTTPS
     res
   end
 
-  def get(path='/', params={})
+  def get(path='/', params={}, try=0)
     uri = BASE_URI.merge(path)
 
     post_body_json = JSON.pretty_generate(params)
@@ -61,6 +61,13 @@ class RpcsHTTPS
       break unless @cookie.nil?
     end
     res
+  rescue Net::ReadTimeout, Errno::ETIMEDOUT, Net::OpenTimeout
+    if try < 5
+      sleep(1.0)
+      get(path, params, try+1)
+    else
+      binding.pry
+    end
   end
 
 
@@ -95,7 +102,7 @@ class RpcsHTTPS
     req.set_form(data, "multipart/form-data")
 
     Net::HTTP.start(url.host, url.port, use_ssl: true) { |http| http.request(req) }
-  rescue Net::ReadTimeout
+  rescue Net::ReadTimeout, Errno::ETIMEDOUT, Net::OpenTimeout
     if try < 5
       sleep(1.0)
       create_attempt(file_path, assignment_id, try+1)

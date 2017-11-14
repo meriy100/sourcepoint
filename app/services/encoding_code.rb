@@ -146,6 +146,10 @@ class CharSet < Array
   def number
     self.first
   end
+
+  def number=(other)
+    self[0] = other
+  end
 end
 
 class SplitFunction
@@ -186,6 +190,7 @@ class EncodingCode
     "--",
     "+=",
     "-=",
+    "*=",
     "&",
     ">",
     "<",
@@ -197,13 +202,13 @@ class EncodingCode
     self.code_encoded ||= ""
     self.dictionary = dictionary || Dictionary.new(assignment_id)
     self.charlist = []
-    self.code = src.gsub(/^#include .*$/, '')
+    self.code = src.gsub(/\r[^$]/, "\n").gsub(/^#include .*$/, '')
     self.headers = src.scan(/^#include .*$/)
     self.assignment_id = assignment_id
   end
 
   def headers_str
-    headers.join("\n")
+    headers.join("\n").concat("\n")
   end
 
   def for_while_if
@@ -214,12 +219,13 @@ class EncodingCode
     end
   end
 
-  def recode(token_line)
+  def recode(token_str)
     reverse_dic = self.dictionary.to_reverse
-    token_line.split(' ').map do |token|
-      reverse_dic[token].presence || token
-    end
-      .join(' ')
+    token_str.split("\n").map do |line|
+      line.split(' ').map do |token|
+        reverse_dic[token].presence || token
+      end.join(' ')
+    end.join("\n")
   end
 
   def remove_comment
@@ -252,16 +258,11 @@ class EncodingCode
     # return str
     json = ''
     Tempfile.open do |f|
-      pdg_generator_path = %{/Users/meriy100/.ghq/github.com/meriy100/pdggenerator/pdg_generator}
       File.write f, str.encode('UTF-8', 'UTF-8')
-      json = `cd #{pdg_generator_path} && python main.py #{f.path} | jq '.nodes | map(select(.tag == "Decl"))| map(.position| .line)'| cat`
-      if json.blank?
-        puts "\e[31m エラー \e[0m"
-        return str
-      end
+      json = PyTool.pdggenerator(f)
     end
-
-    raise StandardError unless lines = JSON[json].presence
+    lines = json['nodes'].select{|node| node['tag'] == 'Decl'}.map{|decl_node| decl_node['position']}.map{|position|position['line']}
+    raise StandardError unless lines.is_a?(Array)
 
     str.split("\n").map.with_index(1) do |line, idx|
       if lines.include?(idx)
@@ -270,7 +271,9 @@ class EncodingCode
         line
       end
     end
-    .join("\n")
+      .join("\n")
+  rescue PyTool::ConvertError => e
+    return str
   end
 
   def create_directory
@@ -287,8 +290,9 @@ class EncodingCode
       .gsub(%r{("[\w\W\s\S]*")}, " @s ")
       .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
       .gsub(/'\w'/, ' $c ')
-      .gsub(/(?<prev>[^=!<>+-])=(?<next>[^=])/, '\k<prev> = \k<next>')
+      .gsub(/(?<prev>[^\*=!<>+-])=(?<next>[^=])/, '\k<prev> = \k<next>')
       .gsub(/(?<prev>[^+])\+(?<next>[^+=])/, '\k<prev> + \k<next>')
+      .gsub(/(?<prev>[^*])\*(?<next>[^*=])/, '\k<prev> * \k<next>')
       .gsub(/(?<prev>[^-])-(?<next>[^-=])/, '\k<prev> - \k<next>')
       .gsub(/(?<prev>[^&])&(?<next>[^&])/, '\k<prev> & \k<next>')
       .gsub(/<</, ' << ')
@@ -305,9 +309,9 @@ class EncodingCode
       .gsub(/\+\+/, " ++ ")
       .gsub(/--/, " -- ")
       .gsub(/\+=/, " += ")
+      .gsub(/\*=/, " *= ")
       .gsub(/-=/, " -- ")
       .gsub(/,/, ' , ')
-      .gsub(/\*/, ' * ')
       .gsub(/\//, ' / ')
       .gsub(/%/, ' % ')
       .gsub(/ (?<num>\d+(\.\d+)?) /, ' \k<num> ')

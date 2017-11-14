@@ -3,8 +3,8 @@ namespace :all_checker do
   task run: :environment do
     before_submission_id = Submission.last.id
     current_assignment_id = ENV['ID']
-    # templates = Template.where(status: ['internal_error', 'executed']).where(current_assignment_id: current_assignment_id, is_check: true)
-    templates = Template.where(status: ['internal_error', 'executed']).where(current_assignment_id: current_assignment_id)
+    templates = Template.where(status: ['internal_error', 'executed']).where(current_assignment_id: current_assignment_id, is_check: true)
+    # templates = Template.where(status: ['internal_error', 'executed']).where(current_assignment_id: current_assignment_id)
     Submission.where(template_id: templates.map(&:id)).destroy_all
     submissions_attrs = templates.map do |template|
         common_column = %w{file1 messages status mark comment user_id}
@@ -23,6 +23,7 @@ namespace :all_checker do
         SubmissionCreate.new(sc).run
       end
     end
+    ActiveRecord::Base.clear_active_connections!
 
     data = Template.where(id: templates.map(&:id)).map do |template|
       submission_lines = template.submission.lines
@@ -35,12 +36,21 @@ namespace :all_checker do
         submission_id: template.id,
         template_lines: template_lines.length,
         submission_lines: submission_lines.length,
+        true_lines: true_lines.length,
         recall: recall,
         precision: precision,
         f: (2.0 / ( (1.0 / recall) + (1.0 / precision) ) ),
       }
     end
+    if Dir["data/#{current_assignment_id}"].empty?
+      if Dir.mkdir("data/#{current_assignment_id}") != 0
+        binding.pry
+      end
+    end
 
-    puts data
+    File.open("./data/#{current_assignment_id}/#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.json", 'w')  do |file|
+      file.write data.to_json
+    end
   end
 end
+# 641
