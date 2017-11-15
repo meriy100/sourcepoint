@@ -25,6 +25,29 @@ class SubmissionCreate
       puts "\e[31m#{e}\e[0m"
       diffs = Diff::LCS.sdiff(nearest_attempt_encoding.encode, e)
 
+      #########################
+      diffs = diffs.map do |diff|
+        case diff.action
+        when '+'
+          if ['{','}', ' '].include?(diff.new_element)
+            Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
+          else
+            diff
+          end
+        when '-'
+          if ['{','}', ' '].include?(diff.old_element)
+            Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
+          else
+            diff
+          end
+        else
+          diff
+        end
+      end
+      #########################
+      puts diff_to_s(diffs).join
+
+      binding.pry
 
       line_list = diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
 
@@ -77,16 +100,12 @@ class SubmissionCreate
   end
 
   def foo(diffs, actual, expect)
-    diffs_list = diff_block_split(diffs.dup)
-    diffs_list.flat_map do |diffs|
-      diffs.map do |diff|
-        {
-          actual: actual.charlist[diff.new_position],
-          expect: expect.charlist[diff.old_position]
-        }
-      end
+     diffs.dup.reject(&:unchanged?).map do |diff|
+      {
+        actual: actual.charlist[diff.new_position],
+        expect: expect.charlist[diff.old_position]
+      }
     end
-    .reject(&:empty?)
   end
 
   def bar(blocks)
@@ -218,4 +237,27 @@ class SubmissionCreate
     (nearest_attempts.first&.dist || 1.0) < 0.3 || true
   end
 
+
+  def diff_to_s(diffs)
+    diffs.map do |diff|
+      case diff.action
+      when '='
+        diff.new_element
+      when '+'
+        if ['{','}'].include?(diff.new_element)
+          diff.new_element
+        else
+          "\e[32m#{diff.new_element}\e[0m"
+        end
+      when '-'
+        if ['{','}'].include?(diff.old_element)
+          diff.old_element
+        else
+          "\e[31m#{diff.old_element}\e[0m"
+        end
+      when '!'
+        "\e[33m#{diff.new_element}\e[0m"
+      end
+    end
+  end
 end
