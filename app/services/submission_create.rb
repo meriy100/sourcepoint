@@ -29,13 +29,13 @@ class SubmissionCreate
       diffs = diffs.map do |diff|
         case diff.action
         when '+'
-          if ['{','}', ' '].include?(diff.new_element)
+          if ['{', '}', ' '].include?(diff.new_element)
             Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
           else
             diff
           end
         when '-'
-          if ['{','}', ' '].include?(diff.old_element)
+          if ['{', '}', ' '].include?(diff.old_element)
             Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
           else
             diff
@@ -46,8 +46,6 @@ class SubmissionCreate
       end
       #########################
       puts diff_to_s(diffs).join
-
-      binding.pry
 
       line_list = diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
 

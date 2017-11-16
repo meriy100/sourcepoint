@@ -1,30 +1,33 @@
 .row
-  = link_to 'Back', assignment_path(@submission.assignment_id), class: 'btn btn-info'
+  .button-group
+    = link_to 'Back', assignment_path(@submission.assignment_id), class: 'btn btn-info'
+    - if @submission.template.present?
+      = link_to 'Template', template_path(@submission.template), class: 'btn btn-success'
   ul
     li = "dist: #{@dist}"
     li = "analize line count: #{@line_numbers.length}"
     li = "line count #{@submission.file1.lines.size}"
-  = form_for(@submission.check || @submission.build_check, url: submission_check_path(@submission)) do |f|
-    .form-group
-      = f.label :valiable_order
-      = f.check_box :valiable_order
-    .form-group
-      = f.label :blacket
-      = f.check_box :blacket
-    .form-group
-      = f.label :success
-      = f.check_box :success
-    .form-group
-      = f.label :near
-      = f.check_box :near
-    .form-group
-      = f.label :complete
-      = f.check_box :complete
-    .form-group
-      = f.label :remarks
-      = f.text_area :remarks
-    .form-group
-      = f.submit class: 'btn btn-primary'
+  /= form_for(@submission.check || @submission.build_check, url: submission_check_path(@submission)) do |f|
+  /  .form-group
+  /    = f.label :valiable_order
+  /    = f.check_box :valiable_order
+  /  .form-group
+  /    = f.label :blacket
+  /    = f.check_box :blacket
+  /  .form-group
+  /    = f.label :success
+  /    = f.check_box :success
+  /  .form-group
+  /    = f.label :near
+  /    = f.check_box :near
+  /  .form-group
+  /    = f.label :complete
+  /    = f.check_box :complete
+  /  .form-group
+  /    = f.label :remarks
+  /    = f.text_area :remarks
+  /  .form-group
+  /    = f.submit class: 'btn btn-primary'
 
   .col-sm-6
     h3 提出ファイル

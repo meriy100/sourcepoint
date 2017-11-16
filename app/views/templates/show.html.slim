@@ -5,6 +5,9 @@ p#notice
 button.clipboard-btn.btn.btn-default[data-clipboard-action="copy" data-clipboard-target="#clipbordTarget"]
   Copy to clipboard
 
+- if @template.submission.present?
+  = link_to 'Submission', submission_path(@template.submission), class: 'btn btn-success'
+
 = bootstrap_form_for(@submission) do |f|
   = f.hidden_field :file1
   = f.hidden_field :messages
