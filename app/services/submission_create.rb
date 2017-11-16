@@ -73,6 +73,59 @@ class SubmissionCreate
       end
       .join
     end
+
+    def number_split
+      self.with_number.collection_map { |first, second|
+        first.actual_number == second.actual_number
+      }.map { |eb|
+        eb.collection_map { |first, second|
+         first.expect_number == second.expect_number
+       }
+     }
+    end
+
+    def with_number
+      self.map do |diff|
+        DiffWithNumber.new(diff, actual, expect)
+      end
+    end
+
+    def split_block(block, stack = [])
+      b = block.shift
+      if b.action == '='
+        stack.push(b)
+        split_block(bloc, stack)
+      elsif b.actual_element.nil?
+        if nb = block.find { |nb| nb.actual_element.present? }.presence
+          b.expect_element == nb.actual_element
+        else
+        end
+      else
+      end
+    end
+
+    def to_lines
+      number_split.map do |actual_split|
+        next if actual_split.flatten.all?(&:unchanged?)
+        if actual_split.length > 1
+          block =  actual_split.flatten
+        else
+          actual_split.flatten.map(&:actual_number)
+        end
+      end
+    end
+  end
+
+  class DiffWithNumber
+    attr_accessor :diff, :actual_number, :expect_number
+    def initialize(diff, actual, expect)
+      self.diff = diff
+      self.actual_number = actual.charlist[diff.new_position].number
+      self.expect_number = expect.charlist[diff.old_position].number
+    end
+    delegate :action, :new_element, :old_element, :unchanged?, to: :diff
+    alias :actual_element :new_element
+    alias :expect_element :old_element
   end
 
   attr_accessor :submission, :assignment_id
@@ -274,29 +327,5 @@ class SubmissionCreate
 
   def run?(nearest_attempts)
     (nearest_attempts.first&.dist || 1.0) < 0.3 || true
-  end
-
-
-  def diff_to_s(diffs)
-    diffs.map do |diff|
-      case diff.action
-      when '='
-        diff.new_element
-      when '+'
-        if ['{','}'].include?(diff.new_element)
-          diff.new_element
-        else
-          "\e[32m#{diff.new_element}\e[0m"
-        end
-      when '-'
-        if ['{','}'].include?(diff.old_element)
-          diff.old_element
-        else
-          "\e[31m#{diff.old_element}\e[0m"
-        end
-      when '!'
-        "\e[33m#{diff.new_element}\e[0m"
-      end
-    end
   end
 end
