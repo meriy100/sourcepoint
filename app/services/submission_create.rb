@@ -1,42 +1,36 @@
 class SubmissionCreate
-  attr_accessor :submission, :assignment_id
+  class Diffs < Array
+    attr_accessor :actual, :expect
+    def self.generate(actual, expect)
+      Diffs.new(Diff::LCS.sdiff(expect.encode, actual.encode)).tap do |diffs|
+        diffs.actual = actual
+        diffs.expect = expect
+      end
+    end
 
-  def initialize(submission)
-    self.submission = submission
-    self.assignment_id = submission.assignment_id
-  end
+    def block_split(stacks=[], block=[])
+      diff = self.first
+      return stacks if diff.nil?
+      case diff.action
+      when '='
+        self[1..-1].diff_block_split(stacks.push(block))
+      else
+        self[1..-1].diff_block_split(stacks, block.push(diff))
+      end
+    end
 
-  def run
-    encoding_code = EncodingCode.new(@submission.file1, assignment_id)
-    encode = encoding_code.encode
-    nearest_attempts = Attempt.where(current_assignment_id: @submission.assignment_id).where.not(user_id: @submission.user_id).sort_by { |attempt|
-      dist = Levenshtein.normalized_distance(encode, attempt.encode_code)
-      attempt.dist = dist
-    }
-    Rails.logger.info nearest_attempts.first.dist
-    if run?(nearest_attempts)
-      nearest_attempt_encoding = EncodingCode.new(nearest_attempts.first.file1, assignment_id)
-      puts encoding_code.dictionary.valiable_list
-      puts "\e[31m#{nearest_attempts.first.encode_code}\e[0m"
-      # line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
-      dic = encoding_code.dictionary
-      puts "1"
-      e =  EncodingCode.new(@submission.file1, assignment_id, dic).encode
-      puts "\e[31m#{e}\e[0m"
-      diffs = Diff::LCS.sdiff(nearest_attempt_encoding.encode, e)
-
-      #########################
-      diffs = diffs.map do |diff|
+    def blacket_is_none_change!
+      self.collect! do |diff|
         case diff.action
         when '+'
           if ['{', '}', ' '].include?(diff.new_element)
-            Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
+             Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
           else
-            diff
+           diff
           end
         when '-'
           if ['{', '}', ' '].include?(diff.old_element)
-            Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
+            diff = Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
           else
             diff
           end
@@ -44,27 +38,98 @@ class SubmissionCreate
           diff
         end
       end
-      #########################
-      puts diff_to_s(diffs).join
+    end
 
-      line_list = diffs_to_line_diffs2(diffs.dup, encoding_code, nearest_attempt_encoding).compact.uniq
+
+    def foo
+       self.reject(&:unchanged?).map do |diff|
+        {
+          actual: actual.charlist[diff.new_position],
+          expect: expect.charlist[diff.old_position]
+        }
+      end
+    end
+
+    def to_s
+      self.map do |diff|
+        case diff.action
+        when '='
+          diff.new_element
+        when '+'
+          if ['{','}'].include?(diff.new_element)
+            diff.new_element
+          else
+            "\e[32m#{diff.new_element}\e[0m"
+          end
+        when '-'
+          if ['{','}'].include?(diff.old_element)
+            diff.old_element
+          else
+            "\e[31m#{diff.old_element}\e[0m"
+          end
+        when '!'
+          "\e[33m#{diff.new_element}\e[0m"
+        end
+      end
+      .join
+    end
+  end
+
+  attr_accessor :submission, :assignment_id
+
+  def initialize(submission)
+    self.submission = submission
+    self.assignment_id = submission.assignment_id
+  end
+
+  def actual
+    @actual ||= EncodingCode.new(@submission.file1, assignment_id).tap(&:encode)
+  end
+
+  def expect
+    @expect ||= EncodingCode.new(nearest_attempts.first.file1, assignment_id)
+  end
+
+  def diffs
+    @diffs ||= Diffs.generate(actual, expect)
+  end
+
+  def nearest_attempts
+    @nearest_attempts ||= Attempt.where(current_assignment_id: @submission.assignment_id).where.not(user_id: @submission.user_id).sort_by { |attempt|
+      dist = Levenshtein.normalized_distance(actual.encode, attempt.encode_code)
+      attempt.dist = dist
+    }
+  end
+
+  def run
+    Rails.logger.info nearest_attempts.first.dist
+    if run?(nearest_attempts)
+      puts actual.dictionary.valiable_list
+      puts "\e[32m#{actual.encode}\e[0m"
+      puts "\e[31m#{nearest_attempts.first.encode_code}\e[0m"
+      # line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
+      # encoding_code =  EncodingCode.new(@submission.file1, assignment_id, dic)
+      diffs.blacket_is_none_change!
+      puts diffs.to_s
+
+      line_list = diffs_to_line_diffs2(diffs.dup, actual, expect).compact.uniq
 
       #############
       unless ENV['NOSPLIT'] == '1'
-        f = foo(diffs.dup, encoding_code, nearest_attempt_encoding)
+        f = diffs.foo
         b = bar(f)
 
         rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
         b.each do |numbers|
           next if numbers.blank?
-          e = exchange_encode(nearest_attempt_encoding, encoding_code, numbers).collection_map { |first, last|
+          e = exchange_encode(expect, actual, numbers).collection_map { |first, last|
             first.number == last.number
           }.map{|sets| sets.map(&:last).join}.join("\n")
 
           # TODO : ここで チェッキングシステムチェック!!!!!!!!!
 
           Tempfile.open do |tmp|
-            recode = nearest_attempt_encoding.headers_str.concat(nearest_attempt_encoding.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
+            recode = expect.headers_str.concat(expect.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
             File.write tmp, recode
             res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
             if res['location'].present?
@@ -97,15 +162,6 @@ class SubmissionCreate
     end
   end
 
-  def foo(diffs, actual, expect)
-     diffs.dup.reject(&:unchanged?).map do |diff|
-      {
-        actual: actual.charlist[diff.new_position],
-        expect: expect.charlist[diff.old_position]
-      }
-    end
-  end
-
   def bar(blocks)
     blocks.sort_by{|b|b[:expect].number}.collection_map { |first, second| first[:expect].number.between?(second[:expect].number-1, second[:expect].number) }
   end
@@ -116,17 +172,6 @@ class SubmissionCreate
     middle = other.charlist.select{|charset| numbers.map{|n|n[:actual].number}.include?(charset.number)}.each{|charset|charset.number *= -1}
     after = target.charlist.select{|charset| charset.number > numbers.last[:expect].number}
     result.concat(before).concat(middle).concat(after)
-  end
-
-  def diff_block_split(diffs, stacks=[], block=[])
-    diff = diffs.shift
-    return stacks if diff.nil?
-    case diff.action
-    when '='
-      diff_block_split(diffs, stacks.push(block))
-    else
-      diff_block_split(diffs, stacks, block.push(diff))
-    end
   end
 
   private
@@ -204,10 +249,6 @@ class SubmissionCreate
     else
       raise StandardError.new('要確認')
     end
-  # rescue NoMethodError => e
-  #   puts e
-  #   puts "NoMethodError : submission_id: #{submission.id}, template_id: #{submission.template_id}"
-  #   []
   end
 
   def diffs_to_line_diffs(diffs, encoding_code, expect_encode)
