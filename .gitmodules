@@ -1,3 +1,6 @@
 [submodule "vendor/python/pdggenerator"]
 	path = vendor/python/pdggenerator
 	url = git@github.com:meriy100/pdggenerator.git
+[submodule "vendor/python/pycparser"]
+	path = vendor/python/pycparser
+	url = git@github.com:eliben/pycparser.git
