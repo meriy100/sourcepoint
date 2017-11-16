@@ -1,0 +1,3 @@
+[submodule "vendor/python/pdggenerator"]
+	path = vendor/python/pdggenerator
+	url = git@github.com:meriy100/pdggenerator.git
