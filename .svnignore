@@ -1,5 +1,6 @@
 .git
 svn-commit*.tmp
-/vendor/bundle
-/tmp
-log/
+vendor
+.env
+tmp
+log
