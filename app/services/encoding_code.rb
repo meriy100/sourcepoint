@@ -152,14 +152,6 @@ class CharSet < Array
   end
 end
 
-class SplitFunction
-  attr_accessor :code
-  def initialize(code)
-    self.code = code
-  end
-
-end
-
 class EncodingCode
   attr_accessor :code, :code_encoded, :dictionary, :charlist, :headers, :assignment_id
 
@@ -202,9 +194,12 @@ class EncodingCode
     self.code_encoded ||= ""
     self.dictionary = dictionary || Dictionary.new(assignment_id)
     self.charlist = []
-    self.code = src.gsub(/\r[^$]/, "\n").gsub(/^#include .*$/, '')
-    self.headers = src.scan(/^#include .*$/)
+    self.code = src.gsub(/\r[^$]/, "\n").gsub(/^\s*#include .*$/, '')
+    self.headers = src.scan(/^\s*#include .*$/)
     self.assignment_id = assignment_id
+    if code.lines.count != src.lines.count
+      binding.pry
+    end
   end
 
   def headers_str
@@ -254,26 +249,20 @@ class EncodingCode
     )
   end
 
-  def remove_decl(str)
-    # return str
-    json = ''
+  def decl_lines
+    return @decl_lines if @decl_lines.present?
+    json = nil
     Tempfile.open do |f|
-      File.write f, str.encode('UTF-8', 'UTF-8')
+      File.write f, code.encode('UTF-8', 'UTF-8')
       json = PyTool.pdggenerator(f)
     end
-    lines = json['nodes'].select{|node| node['tag'] == 'Decl'}.map{|decl_node| decl_node['position']}.map{|position|position['line']}
-    raise StandardError unless lines.is_a?(Array)
-
-    str.split("\n").map.with_index(1) do |line, idx|
-      if lines.include?(idx)
-        ''
-      else
-        line
-      end
-    end
-      .join("\n")
+    @decl_lines = json['nodes'].select{|node| node['tag'] == 'Decl'}.map{|decl_node| decl_node['position']}.map{|position|position['line']}.compact.uniq
   rescue PyTool::ConvertError => e
-    return str
+    return []
+  end
+
+  def remove_decl(str)
+    str.split("\n").map.with_index(1) { |line, idx| decl_lines.include?(idx) ?  '' : line }.join("\n")
   end
 
   def create_directory

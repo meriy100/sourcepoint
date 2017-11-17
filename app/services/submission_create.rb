@@ -170,7 +170,9 @@ class SubmissionCreate
       #############
       unless ENV['NOSPLIT'] == '1'
         f = diffs.foo
-        b = bar(f)
+        # TODO : ここで 定義とその他で分割(それ以外のロジックブロックで分けたいときも)
+        b = bar(f.select { |ff| actual.decl_lines.include?(ff[:actual].number) })
+          .concat(bar(f.reject { |ff| actual.decl_lines.include?(ff[:actual].number) }))
 
         rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
         b.each do |numbers|
@@ -178,8 +180,6 @@ class SubmissionCreate
           e = exchange_encode(expect, actual, numbers).collection_map { |first, last|
             first.number == last.number
           }.map{|sets| sets.map(&:last).join}.join("\n")
-
-          # TODO : ここで チェッキングシステムチェック!!!!!!!!!
 
           Tempfile.open do |tmp|
             recode = expect.headers_str.concat(expect.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
