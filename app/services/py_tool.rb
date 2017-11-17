@@ -139,6 +139,10 @@ module PyTool
     def set_token!
       @token ||= "F#{FUNC_TOEKNS.pop}"
     end
+
+    def to_sets
+      [].concat(args).concat(body).push(self)
+    end
   end
 
   class Val
@@ -154,6 +158,8 @@ module PyTool
     def set_token!
       @token ||= "D#{DECL_TOEKNS.pop}"
     end
+
+    def to_sets; self end
   end
 
   def self.ext(ext)
