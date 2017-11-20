@@ -195,9 +195,9 @@ class EncodingCode
     self.code_encoded ||= ""
     self.dictionary = dictionary || Dictionary.new(assignment_id)
     self.charlist = []
-    self.code = src.encode('UTF-8', 'UTF-8').gsub(/\r[^$]/, "\n").gsub(/^(\s*)#include .*$/, '\1')
+    self.code = src.encode('UTF-8', 'UTF-8').gsub(/\r[^$]/, "\n").gsub(/^(\s*)#\s*include\s*.*$/, '\1')
     remove_comment!
-    self.headers = src.scan(/^\s*#include .*$/)
+    self.headers = src.scan(/^\s*#\s*include\s*.*$/)
     self.assignment_id = assignment_id
     if code.lines.count != src.lines.count
       binding.pry if $0 == 'rails_console'
@@ -213,9 +213,12 @@ class EncodingCode
     headers.join("\n").concat("\n")
   end
 
+  def ext
+    @ext ||= PyTool.pycparser(code.to_tmp)['ext']
+  end
+
   def vars
     return @vars if @vars.present?
-    ext = PyTool.pycparser(code.to_tmp)['ext']
     @vars ||= PyTool.main(ext).flat_map(&:to_sets).map{|s| { name: s.name, p: s.p, token: s.token }}
       .reject{|v|v.token.nil?}
       .reject{|v|v.name == 'main'}
@@ -225,17 +228,19 @@ class EncodingCode
 
   def var_change(line, idx)
     this_lines_vars = vars.select{|var| var[:p].first == idx}.sort_by{|v|v.p.last}
-    result = line.dup
+    result = split_token(line)
     cut_num = 0
     this_lines_vars.each do |var|
-      position = var[:p].last - 1 - cut_num
-      range = position + var.name.length
-      unless result[position...range] == var.name
-        binding.pry if $0 == 'rails_console'
-        raise PyTool::ConvertError
-      end
-      result.gsub!(/^(.{#{position}})(#{var.name})/, "\\1#{var.token}")
-      cut_num += var.name.length - var.token.length
+      # position = var[:p].last - 1 - cut_num
+      # range = position + var.name.length
+      # unless result[position...range] == var.name
+      #   binding.pry if $0 == 'rails_console'
+      #   raise PyTool::ConvertError
+      # end
+      # result.gsub!(/^(.{#{position}})(#{var.name})/, "\\1#{var.token}")
+      # cut_num += var.name.length - var.token.length
+      #
+      result.gsub!(/\s#{var.name}\s/, " #{var.token} ")
     end
     result
   end
@@ -277,16 +282,33 @@ class EncodingCode
     )
   end
 
-  def decl_lines
-    return @decl_lines if @decl_lines.present?
-    json = nil
-    Tempfile.open do |f|
-      File.write f, code.encode('UTF-8', 'UTF-8')
-      json = PyTool.pdggenerator(f)
+  def decl_search(ext)
+    result = []
+    case ext
+    when Array
+      result.concat(
+        ext.flat_map do |e|
+          decl_search(e)
+        end
+      )
+    when Hash
+      if ext._nodetype == 'Decl'
+        [PyTool::COORD_PARSE.(ext.coord).first]
+      else
+        result.concat(
+          ext.values.flat_map { |e| decl_search(e) }
+        )
+      end
+    else
+      result
     end
-    @decl_lines = json['nodes'].select{|node| node['tag'] == 'Decl'}.map{|decl_node| decl_node['position']}.map{|position|position['line']}.compact.uniq
-  rescue PyTool::ConvertError => e
-    return []
+  end
+
+  def decl_lines
+    return @decl_lines unless @decl_lines.nil?
+    @decl_lines = decl_search(ext)
+  # rescue PyTool::ConvertError => e
+  #   return @decl_lines = []
   end
 
   def remove_decl(str)
@@ -302,9 +324,6 @@ class EncodingCode
   end
 
   def split_token(line)
-  end
-
-  def token_set(line)
     string_encode_word_gsubs(line.encode('UTF-8', 'UTF-8'), $string_encode_word[assignment_id.to_s].dup)
       .gsub(%r{("[\w\W\s\S]*")}, " @s ")
       .gsub(/(?<first>[\(\)\{\}\[\];:])/, ' \k<first> ')
@@ -331,12 +350,15 @@ class EncodingCode
       .gsub(/\*=/, " *= ")
       .gsub(/-=/, " -- ")
       .gsub(/,/, ' , ')
-      .gsub(/(?<prev>.)\.(?<next>\w)/, '\k<prev> . \<next>')
+      .gsub(/(?<prev>.)\.(?<next>\w)/, '\k<prev> . \k<next>')
       .gsub(/\//, ' / ')
       .gsub(/%/, ' % ')
       .gsub(/ (?<num>\d+(\.\d+)?) /, ' \k<num> ')
       .gsub(/FP/, 'fp')
-      .split(" ").map do |word|
+  end
+
+  def token_set(line)
+    split_token(line).split(" ").map do |word|
       if EXPECT_CHARS.include? word
         word
       elsif num?(word)

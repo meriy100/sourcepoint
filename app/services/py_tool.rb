@@ -39,11 +39,21 @@ module PyTool
     end
   end
 
+  def self.type_names(decl)
+    if decl.dig('type', '_nodetype') == 'TypeDecl' && (type = decl.dig('type', 'type')) && (names = type['names'])
+      names.map do |name|
+        Val.new(type: 'TypeName', name: name, p: COORD_PARSE.(type.coord))
+      end
+    else
+      []
+    end
+  end
+
   def self.params_var(params)
-    params.map do |param|
+    params.flat_map do |param|
       case param._nodetype
       when 'Decl'
-        Val.new(type: param._nodetype, name: param.name, p: COORD_PARSE.(param.coord))
+        [Val.new(type: param._nodetype, name: param.name, p: COORD_PARSE.(param.coord))].concat(type_names(param))
       when 'TypeName'
         {
           typename: param
@@ -53,7 +63,7 @@ module PyTool
   end
 
   def self.vars(ext)
-    ext.map { |e| func_var(e) }
+    ext.flat_map { |e| func_var(e) }
   end
 
   def self.var_stacks(list)
@@ -73,6 +83,8 @@ module PyTool
   end
 
   def self.main(ext)
+    $decl_tokens = DECL_TOKENS.dup
+    $func_tokens = FUNC_TOKENS.dup
     list = vars(ext)
     stacks = var_stacks(list)
     list.map do |item|
@@ -107,21 +119,25 @@ module PyTool
     coord_parse = ->(coord) { coord&.match(/(\d+):(\d+)\z/)[1..2].map(&:to_i) }
     case nodes
     when Array
-      nodes.map do |node|
+      nodes.flat_map do |node|
         search_var(node)
       end
     when Hash
       if nodes.keys.include?('name')
         case nodes.name
         when String
-          Val.new(type: nodes._nodetype, name: nodes.name, p: coord_parse.(nodes.coord))
+          [
+            Val.new(type: nodes._nodetype, name: nodes.name, p: coord_parse.(nodes.coord))
+          ].concat(
+            type_names(nodes)
+          )
         else
-          nodes.map do |_, node|
+          nodes.flat_map do |_, node|
             search_var(node)
           end
         end
       else
-        nodes.map do |_, node|
+        nodes.flat_map do |_, node|
           search_var(node)
         end
       end
@@ -132,8 +148,43 @@ module PyTool
     end
   end
 
-  DECL_TOEKNS = "xkeEKMaDQSCqVdjAWuzgJyXNsbOwIThorFPtcipnGZBHYUvlmfLR".split('')
-  FUNC_TOEKNS = "xkeEKMaDQSCqVdjAWuzgJyXNsbOwIThorFPtcipnGZBHYUvlmfLR".split('')
+  DECL_TOKENS = "xkeEKMaDQSCqVdjAWuzgJyXNsbOwIThorFPtcipnGZBHYUvlmfLR".split('')
+  FUNC_TOKENS = "xkeEKMaDQSCqVdjAWuzgJyXNsbOwIThorFPtcipnGZBHYUvlmfLR".split('')
+
+  RESERVE_WORDS = %w{
+    void
+    char
+    short
+    int
+    long
+    float
+    double
+    auto
+    static
+    const
+    signed
+    unsigned
+    extern
+    volatile
+    register
+    return
+    goto
+    if
+    else
+    switch
+    case
+    default
+    break
+    for
+    while
+    do
+    continue
+    typedef
+    struct
+    enum
+    union
+    sizeof
+  }
 
   class FuncDef
     include ActiveModel::Model
@@ -150,7 +201,9 @@ module PyTool
     def struct_def?; false end
 
     def set_token!
-      @token ||= "F#{FUNC_TOEKNS.pop}"
+      unless RESERVE_WORDS.include?(name)
+        @token ||= "F#{$func_tokens.pop}"
+      end
     end
 
     def to_sets
@@ -160,7 +213,7 @@ module PyTool
 
   class Val
     include ActiveModel::Model
-    attr_accessor :type, :name, :p, :token
+    attr_accessor :type, :name, :p, :token, :type_names
 
     def decl?
       type == 'Decl'
@@ -171,7 +224,9 @@ module PyTool
     def struct_def?; false end
 
     def set_token!
-      @token ||= "D#{DECL_TOEKNS.pop}"
+      unless RESERVE_WORDS.include?(name)
+        @token ||= "D#{$decl_tokens.pop}"
+      end
     end
 
     def to_sets; self end
@@ -201,7 +256,7 @@ module PyTool
     def struct_def?; true end
 
     def set_token!
-      @token ||= "F#{DECL_TOEKNS.pop}"
+      @token ||= "F#{$decl_tokens.pop}"
     end
 
     def to_sets

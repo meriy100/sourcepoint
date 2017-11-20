@@ -186,9 +186,13 @@ class SubmissionCreate
             File.write tmp, recode
             res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
             if res['location'].present?
+              puts res['location']
               m = res['location'].match(%r{/(?<id>\d+)\z})
               status = rh.get_attempt_status(m[:id])
-              puts status
+              print (status == 'checked' ? "\e[32m" : "\e[31m")
+              print status
+              puts "\e[0m"
+              puts recode
               if status == 'checked'
                 line_list.reject! { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) } # TODO : 要検証
                 attempt = nearest_attempts.first.dup
@@ -197,7 +201,6 @@ class SubmissionCreate
                 #   attempt.file1 = File.read(tmp_reindent.path)
                 # end
                 attempt.file1 = recode
-                puts recode
                 attempt.encode_code = EncodingCode.new(attempt.file1, assignment_id).encode
                 attempt.save!
               end
