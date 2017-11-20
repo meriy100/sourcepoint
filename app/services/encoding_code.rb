@@ -218,6 +218,8 @@ class EncodingCode
     code.to_tmp do |tmp|
       @ext = PyTool.pycparser(tmp)['ext']
     end
+  rescue PyTool::ConvertError => e
+    return []
   end
 
   def vars

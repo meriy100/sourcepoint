@@ -42,11 +42,24 @@ class SubmissionCreate
 
 
     def foo
-       self.reject(&:unchanged?).map do |diff|
-        {
-          actual: actual.charlist[diff.new_position],
-          expect: expect.charlist[diff.old_position]
-        }
+      self.reject(&:unchanged?).map do |diff|
+        case diff.action
+        when '+'
+          {
+            actual: actual.charlist[diff.new_position],
+            expect: expect.charlist[diff.old_position - 1]
+          }
+        when '-'
+          {
+            actual: actual.charlist[diff.new_position - 1],
+            expect: expect.charlist[diff.old_position]
+          }
+        else
+          {
+            actual: actual.charlist[diff.new_position],
+            expect: expect.charlist[diff.old_position]
+          }
+        end
       end
     end
 

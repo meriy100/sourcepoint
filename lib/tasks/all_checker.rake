@@ -20,7 +20,12 @@ namespace :all_checker do
       puts "#{$i}/#{max}"
       puts s.id
       Parallel.each([s.clone], in_processes: 1) do |sc|
-        SubmissionCreate.new(sc).run
+        begin
+          SubmissionCreate.new(sc).run
+        rescue => e
+          puts "\e[31m#{sc.id}\e[0m"
+          raise e
+        end
       end
     end
     ActiveRecord::Base.clear_active_connections!
