@@ -3,6 +3,7 @@ $string_encode_word = YAML.load_file(Rails.root.join('app', 'dictionaries', 'str
 class Dictionary < Hash
   attr_accessor :valiable_list, :assignment_id
   class EmptyHasList < StandardError; end
+  class LineCountUnsame < StandardError; end
 
   def initialize(assignment_id)
     @hash_list = ("A".."Z").to_a.concat(("a".."z").to_a).combination(2).map{|a, b|"#{a}#{b}"}.shuffle(random: Random.new(100))
@@ -194,24 +195,49 @@ class EncodingCode
     self.code_encoded ||= ""
     self.dictionary = dictionary || Dictionary.new(assignment_id)
     self.charlist = []
-    self.code = src.gsub(/\r[^$]/, "\n").gsub(/^\s*#include .*$/, '')
+    self.code = src.encode('UTF-8', 'UTF-8').gsub(/\r[^$]/, "\n").gsub(/^(\s*)#include .*$/, '\1')
+    remove_comment!
     self.headers = src.scan(/^\s*#include .*$/)
     self.assignment_id = assignment_id
     if code.lines.count != src.lines.count
-      binding.pry
+      binding.pry if $0 == 'rails_console'
+      raise LineCountUnsame
     end
+    self.code = self.code.split("\n").map.with_index(1) do |line, idx|
+      var_change(line, idx)
+    end
+      .join("\n")
   end
 
   def headers_str
     headers.join("\n").concat("\n")
   end
 
-  def for_while_if
-    Tempfile.open do |f|
-      File.write f, self.code
-      path = '/Users/meriy100/Downloads/cparser/pycparser/examples'
-      puts `cd #{path} && ruby deep_trace.rb #{f.path}`
+  def vars
+    return @vars if @vars.present?
+    ext = PyTool.pycparser(code.to_tmp)['ext']
+    @vars ||= PyTool.main(ext).flat_map(&:to_sets).map{|s| { name: s.name, p: s.p, token: s.token }}
+      .reject{|v|v.token.nil?}
+      .reject{|v|v.name == 'main'}
+  rescue PyTool::ConvertError => e
+    return []
+  end
+
+  def var_change(line, idx)
+    this_lines_vars = vars.select{|var| var[:p].first == idx}.sort_by{|v|v.p.last}
+    result = line.dup
+    cut_num = 0
+    this_lines_vars.each do |var|
+      position = var[:p].last - 1 - cut_num
+      range = position + var.name.length
+      unless result[position...range] == var.name
+        binding.pry if $0 == 'rails_console'
+        raise PyTool::ConvertError
+      end
+      result.gsub!(/^(.{#{position}})(#{var.name})/, "\\1#{var.token}")
+      cut_num += var.name.length - var.token.length
     end
+    result
   end
 
   def recode(token_str)
@@ -223,13 +249,15 @@ class EncodingCode
     end.join("\n")
   end
 
-  def remove_comment
-    code.gsub!(/(\/\/.*$|\/\*(.|\n)*\*\/)/, '') # TODO : gcc -なんとか
+  def remove_comment!
+    code.gsub!(%r{(/\*[\s\S]*?\*/|//.*)}) do |m|
+      m.split('').select{|c|c=="\n"}.join
+    end
   end
 
   def main_norm
     return_norm
-    code.gsub!(/int\s*main\s*\(\)/, "int main(void)")
+    code.gsub!(/int\s*main\s*\(\s*\)/, "int main(void)")
   end
 
   def return_norm
@@ -266,12 +294,14 @@ class EncodingCode
   end
 
   def create_directory
-    remove_comment
     main_norm
     remove_decl(code).split("\n").each do |line|
       # TODO : 数字はエンコーディングするのかどうか
       token_set(line)
     end
+  end
+
+  def split_token(line)
   end
 
   def token_set(line)
@@ -301,6 +331,7 @@ class EncodingCode
       .gsub(/\*=/, " *= ")
       .gsub(/-=/, " -- ")
       .gsub(/,/, ' , ')
+      .gsub(/(?<prev>.)\.(?<next>\w)/, '\k<prev> . \<next>')
       .gsub(/\//, ' / ')
       .gsub(/%/, ' % ')
       .gsub(/ (?<num>\d+(\.\d+)?) /, ' \k<num> ')
@@ -321,7 +352,6 @@ class EncodingCode
   def encode
     return code_encoded if charlist.present?
     create_directory
-    remove_comment
     main_norm
     code.each_line.with_index(1) do |line, idx|
       # TODO : 数字はエンコーディングするのかどうか

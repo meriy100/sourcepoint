@@ -25,6 +25,8 @@
 
 class Attempt < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  include Concerns::CFile
+
   belongs_to :assignment
   has_many :liens
   belongs_to :current_assignment

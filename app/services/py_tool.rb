@@ -26,7 +26,13 @@ module PyTool
         body: self.search_var(nodes.body).flatten.compact,
         name: nodes.decl.name,
         p: COORD_PARSE.(nodes.decl.coord),
-        args: params_var(nodes.decl.type.args.params).compact,
+        args: params_var(nodes.decl.type.args&.params || []).compact, # 引数無しの場合 空
+      )
+    elsif nodes.type&.type&._nodetype == 'Struct'
+      StructDef.new(
+        name: nodes.name,
+        p: COORD_PARSE.(nodes.coord),
+        decls: params_var(nodes.type.type.decls || []).compact
       )
     else
       search_var(nodes)
@@ -53,6 +59,8 @@ module PyTool
   def self.var_stacks(list)
     {
       globals:  list.select(&:decl?),
+      structs: list.select(&:struct_def?),
+      struct_decls: list.select(&:struct_def?).flat_map(&:decls),
       func: list.select(&:func_def?),
       func_body: list.select(&:func_def?).map do |func|
         {
@@ -71,6 +79,9 @@ module PyTool
       case item.type
       when 'Decl'
         item.set_token!
+      when 'StructDef'
+        item.set_token!
+        item.decls.map(&:set_token!)
       when 'FuncDef'
         item.set_token!
         item.args.map(&:set_token!)
@@ -82,7 +93,7 @@ module PyTool
             if func = stacks.func_body.find{|s| s.name == item.name }
               dec = func.body.find{|d|d.name == var.name}.presence || func.args.find{|a|a.name == var.name}.presence
             end
-            dec ||= stacks.func.find{|f|f.name == var.name}.presence || stacks.globals.find { |g| g.name == var.name }
+            dec ||= stacks.func.find{|f|f.name == var.name}.presence || stacks.structs.find{|s| s.name == var.name} || stacks.struct_decls.find{|sd| sd.name == var.name} || stacks.globals.find { |g| g.name == var.name }
             var.token = dec.token if dec.present?
           end
         end
@@ -136,6 +147,8 @@ module PyTool
 
     def func_def?; true end
 
+    def struct_def?; false end
+
     def set_token!
       @token ||= "F#{FUNC_TOEKNS.pop}"
     end
@@ -155,6 +168,8 @@ module PyTool
 
     def func_def?; false end
 
+    def struct_def?; false end
+
     def set_token!
       @token ||= "D#{DECL_TOEKNS.pop}"
     end
@@ -168,6 +183,29 @@ module PyTool
       when 'FuncDef'
         FuncDef.new(e)
       end
+    end
+  end
+
+  class StructDef
+    include ActiveModel::Model
+    attr_accessor :name, :p, :decls, :token
+
+    def type; 'StructDef' end
+
+    def decl?
+      false
+    end
+
+    def func_def?; false end
+
+    def struct_def?; true end
+
+    def set_token!
+      @token ||= "F#{DECL_TOEKNS.pop}"
+    end
+
+    def to_sets
+      [].concat(decls).push(self)
     end
   end
 end

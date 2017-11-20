@@ -18,6 +18,8 @@
 #
 
 class Submission < ApplicationRecord
+  include Concerns::CFile
+
   has_many :lines, dependent: :destroy
   has_many :attempts, through: :lines
   belongs_to :check, optional: true

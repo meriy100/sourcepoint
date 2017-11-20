@@ -159,7 +159,7 @@ class SubmissionCreate
     if run?(nearest_attempts)
       puts actual.dictionary.valiable_list
       puts "\e[32m#{actual.encode}\e[0m"
-      puts "\e[31m#{nearest_attempts.first.encode_code}\e[0m"
+      puts "\e[31m#{expect.encode}\e[0m"
       # line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
       # encoding_code =  EncodingCode.new(@submission.file1, assignment_id, dic)
       diffs.blacket_is_none_change!
@@ -197,6 +197,7 @@ class SubmissionCreate
                 #   attempt.file1 = File.read(tmp_reindent.path)
                 # end
                 attempt.file1 = recode
+                puts recode
                 attempt.encode_code = EncodingCode.new(attempt.file1, assignment_id).encode
                 attempt.save!
               end

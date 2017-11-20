@@ -16,6 +16,8 @@
 
 class Template < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  include Concerns::CFile
+
   has_many :template_lines
   has_one :submission
   belongs_to_active_hash :current_assignment
