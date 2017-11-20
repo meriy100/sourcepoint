@@ -214,7 +214,10 @@ class EncodingCode
   end
 
   def ext
-    @ext ||= PyTool.pycparser(code.to_tmp)['ext']
+    return @ext unless @ext.nil?
+    code.to_tmp do |tmp|
+      @ext = PyTool.pycparser(tmp)['ext']
+    end
   end
 
   def vars

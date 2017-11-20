@@ -3,7 +3,7 @@ class String
     if block_given?
       Tempfile.create('sourcepoint-') do |tempfile|
         File.write(tempfile, self)
-        yield(tempfile)
+        return yield(tempfile)
       end
     else
       Tempfile.create('sourcepoint-').tap { |tempfile| File.write(tempfile, self) }

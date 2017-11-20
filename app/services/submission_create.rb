@@ -181,7 +181,7 @@ class SubmissionCreate
             first.number == last.number
           }.map{|sets| sets.map(&:last).join}.join("\n")
 
-          Tempfile.open do |tmp|
+          Tempfile.create("sourcepoint-") do |tmp|
             recode = expect.headers_str.concat(expect.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
             File.write tmp, recode
             res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
