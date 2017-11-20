@@ -243,7 +243,7 @@ class EncodingCode
       # result.gsub!(/^(.{#{position}})(#{var.name})/, "\\1#{var.token}")
       # cut_num += var.name.length - var.token.length
       #
-      result.gsub!(/\s#{var.name}\s/, " #{var.token} ")
+      result.gsub!(/(^|\s)#{var.name}($|\s)/, " #{var.token} ")
     end
     result
   end
