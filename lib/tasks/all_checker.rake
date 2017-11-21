@@ -3,7 +3,7 @@ namespace :all_checker do
   task run: :environment do
     before_submission_id = Submission.last.id
     current_assignment_id = ENV['ID']
-    templates = Template.where(status: ['internal_error', 'executed']).where(current_assignment_id: current_assignment_id, is_check: true)
+    templates = Template.where(status: ['internal_error', 'executed']).where(current_assignment_id: current_assignment_id, is_check: true).limit(22)
     # templates = Template.where(status: ['internal_error', 'executed']).where(current_assignment_id: current_assignment_id)
     Submission.where(template_id: templates.map(&:id)).destroy_all
     submissions_attrs = templates.map do |template|

@@ -83,8 +83,8 @@ module PyTool
   end
 
   def self.main(ext)
-    $decl_tokens = DECL_TOKENS.dup
-    $func_tokens = FUNC_TOKENS.dup
+    $decl_tokens = DECL_TOKENS.dup.shuffle
+    $func_tokens = FUNC_TOKENS.dup.shuffle
     list = vars(ext)
     stacks = var_stacks(list)
     list.map do |item|
