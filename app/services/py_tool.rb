@@ -36,7 +36,7 @@ module PyTool
     end
 
     def token_gen!
-      ->(obj) { obj.token.blank?  ? obj.set_token!(@tokens.pop) : obj.token }
+      ->(obj) { obj.token.blank? ? obj.set_token!(@tokens.pop) : obj.token }
     end
 
     def func_var(nodes)
