@@ -82,39 +82,57 @@ module PyTool
       end
     end
 
-    def vars
-      ext.flat_map { |node| func_var(node) }
+    def variable_sets
+      @variable_sets ||= ext.flat_map { |node| func_var(node) }
     end
 
-    def var_stacks(list)
-      {
-        globals:  list.select(&:decl?),
-        func_decls:  list.select(&:func_decl?),
-        structs: list.select(&:struct_def?),
-        struct_decls: list.select(&:struct_def?).flat_map(&:decls),
-        func: list.select(&:func_def?),
-        func_body: list.select(&:func_def?).map do |func|
-          {
+
+    def globals
+      @globals ||= variable_sets.select(&:decl?)
+    end
+
+    def func_decls
+      @func_decls ||= variable_sets.select(&:func_decl?)
+    end
+
+    def structs
+      @structs ||= variable_sets.select(&:struct_def?)
+    end
+
+    def struct_decls
+      @struct_decls ||= variable_sets.select(&:struct_def?).flat_map(&:decls)
+    end
+
+    def funcs
+      @funcs ||= variable_sets.select(&:func_def?)
+    end
+
+    def func_body
+      @func_body ||= variable_sets.select(&:func_def?).map do |func|
+        {
             name: func.name,
             args: func.args,
             body: func.body.select(&:decl?),
-          }
-        end
-      }
+        }
+      end
     end
 
+
+
     def main
-      list = vars
-      stacks = var_stacks(list)
-      stacks.globals.map(&token_gen!)
-      stacks.func_decls.map(&token_gen!)
-      stacks.structs.map(&token_gen!)
-      stacks.struct_decls.map(&token_gen!)
-      stacks.func.map(&token_gen!)
-      list.map do |item|
+      globals.each(&token_gen!)
+      func_decls.each(&token_gen!)
+      structs.each(&token_gen!)
+      struct_decls.each(&token_gen!)
+      funcs.each do |func|
+        if func_decl = func_decls.find {|func_decl| func_decl.name == func.name }.presence
+          func.token = func_decl.token
+        else
+          token_gen!.(func)
+        end
+      end
+      variable_sets.each do |item|
         case item.type
-          when 'Decl'
-            token_gen!.(item)
           when 'StructDef'
             token_gen!.(item)
             item.decls.map(&token_gen!)
@@ -126,16 +144,16 @@ module PyTool
                 when 'Decl'
                   token_gen!.(var)
                 else
-                  if func = stacks.func_body.find{|s| s.name == item.name }
+                  if func = func_body.find{|s| s.name == item.name }
                     dec = func.body.find{|d|d.name == var.name}.presence || func.args.find{|a|a.name == var.name}.presence
                   end
-                  dec ||= stacks.func.find{|f|f.name == var.name}.presence || stacks.structs.find{|s| s.name == var.name} || stacks.struct_decls.find{|sd| sd.name == var.name} || stacks.globals.find { |g| g.name == var.name }
+                  dec ||= funcs.find{|f|f.name == var.name}.presence || structs.find{|s| s.name == var.name} || struct_decls.find{|sd| sd.name == var.name} || globals.find { |g| g.name == var.name }
                   var.token = dec.token if dec.present?
               end
             end
         end
       end
-      list
+      variable_sets
     end
 
 
@@ -181,68 +199,14 @@ module PyTool
       end
     end
 
-
-    class FuncDef
-      include ActiveModel::Model
-      attr_accessor :body, :name, :p, :args, :token
-
-      def type; 'FuncDef' end
-
-      def decl?
-        false
-      end
-
-      def func_decl?; false end
-      def func_def?; true end
-
-      def struct_def?; false end
-
-      def set_token!(token)
-        unless RESERVE_WORDS.include?(name)
-          @token ||= "F#{token}"
-        end
-      end
-
-      def to_sets
-        [].concat(args).concat(body).push(self)
-      end
-    end
-
-    class FuncDecl
+    class VariableSet
       include ActiveModel::Model
       attr_accessor :name, :p, :token
 
-      def type; 'FuncDecl' end
+      def decl?; false end
 
-      def decl?
-        false
-      end
-
-      def func_def?; false end
-      def func_decl?; true end
-      def struct_def?; false end
-
-      def set_token!(token)
-        unless RESERVE_WORDS.include?(name)
-          @token ||= "F#{token}"
-        end
-      end
-
-      def to_sets
-        [].concat(args).concat(body).push(self)
-      end
-    end
-
-    class Val
-      include ActiveModel::Model
-      attr_accessor :type, :name, :p, :token, :type_names
-
-      def decl?
-        type == 'Decl'
-      end
-
-      def func_def?; false end
       def func_decl?; false end
+      def func_def?; false end
       def struct_def?; false end
 
       def set_token!(token)
@@ -254,17 +218,51 @@ module PyTool
       def to_sets; self end
     end
 
-    class StructDef
-      include ActiveModel::Model
-      attr_accessor :name, :p, :decls, :token
+    class FuncDef < VariableSet
+      attr_accessor :body, :args
 
-      def type; 'StructDef' end
+      def type; 'FuncDef' end
+      def func_def?; true end
 
-      def decl?
-        false
+      def set_token!(token)
+        unless RESERVE_WORDS.include?(name)
+          @token ||= "F#{token}"
+        end
       end
 
-      def func_def?; false end
+      def to_sets
+        [].concat(args).concat(body).push(self)
+      end
+    end
+
+    class FuncDecl < VariableSet
+      def type; 'FuncDecl' end
+      def func_decl?; true end
+
+      def set_token!(token)
+        unless RESERVE_WORDS.include?(name)
+          @token ||= "F#{token}"
+        end
+      end
+    end
+
+    class Val < VariableSet
+      attr_accessor :type
+      def decl?
+        type == 'Decl'
+      end
+
+      def set_token!(token)
+        unless RESERVE_WORDS.include?(name)
+          @token ||= "D#{token}"
+        end
+      end
+    end
+
+    class StructDef < VariableSet
+      attr_accessor :decls
+
+      def type; 'StructDef' end
 
       def struct_def?; true end
 

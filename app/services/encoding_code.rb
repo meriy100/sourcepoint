@@ -298,7 +298,7 @@ class EncodingCode
       )
     when Hash
       if ext._nodetype == 'Decl'
-        [PyTool::COORD_PARSE.(ext.coord).first]
+        [PyTool::ExtVars::COORD_PARSE.(ext.coord).first]
       else
         result.concat(
           ext.values.flat_map { |e| decl_search(e) }
