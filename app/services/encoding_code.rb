@@ -224,7 +224,7 @@ class EncodingCode
 
   def vars
     return @vars if @vars.present?
-    @vars ||= PyTool.main(ext).flat_map(&:to_sets).map{|s| { name: s.name, p: s.p, token: s.token }}
+    @vars ||= PyTool::ExtVars.main(ext).flat_map(&:to_sets).map{|s| { name: s.name, p: s.p, token: s.token }}
       .reject{|v|v.token.nil?}
       .reject{|v|v.name == 'main'}
   rescue PyTool::ConvertError => e
@@ -355,7 +355,7 @@ class EncodingCode
       .gsub(/\*=/, " *= ")
       .gsub(/-=/, " -- ")
       .gsub(/,/, ' , ')
-      .gsub(/(?<prev>.)\.(?<next>\w)/, '\k<prev> . \k<next>')
+      .gsub(/(?<prev>.)\.(?<next>[a-zA-Z])/, '\k<prev> . \k<next>')
       .gsub(/\//, ' / ')
       .gsub(/%/, ' % ')
       .gsub(/ (?<num>\d+(\.\d+)?) /, ' \k<num> ')
