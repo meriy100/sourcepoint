@@ -167,7 +167,7 @@ module PyTool
           end
         when Hash
           if nodes.keys.include?('name')
-            if nodes.dig('type', '_nodetype') == 'FuncDecl'
+            if nodes.dig('type').try(:dig, '_nodetype') == 'FuncDecl'
               [
                   FuncDecl.new(name: nodes.name, p: coord_parse.(nodes.coord))
               ].concat(
