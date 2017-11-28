@@ -12,11 +12,19 @@ class Dictionary < Hash
     $string_encode_word[assignment_id.to_s].each do |list|
       reserve_word_set_string(list[:encode_word], list[:string])
     end
+    buf = @hash_list.each_slice(20).to_a
+    @func_list = buf.pop
+    @var_list = buf
   end
 
-  def set(word)
+  def set(word, type=nil)
     unless include?(word)
-      self[word] = { encode: next_encode, word: word, valiable: true }
+      case type
+      when "FuncDef", "FuncDecl"
+        self[word] = { encode: next_func_name_token, word: word, valiable: true, func: true }
+      else
+        self[word] = { encode: next_var_name_token, word: word, valiable: true }
+      end
       self[word][:encode]
     end
   end
@@ -45,11 +53,11 @@ class Dictionary < Hash
   private
 
   def reserve_word_set_string(word, string)
-    self[word] = { encode: next_encode, word: word, string: string }
+    self[word] = { encode: tail_encode, word: word, string: string }
   end
 
   def reserve_word_set(word)
-    self[word] = { encode: next_encode, word: word }
+    self[word] = { encode: tail_encode, word: word }
   end
 
   def reserve_word
@@ -133,13 +141,23 @@ class Dictionary < Hash
 
   def next_encode
     raise EmptyHasList if @hash_list.blank?
-    "#{@hash_list.pop}"
+    "#{@hash_list.shift}"
     # "#{@hash_list.last}"
+  end
+
+  def next_func_name_token
+    raise EmptyHasList if @func_list.blank?
+    "#{@func_list.shift}"
+  end
+
+  def next_var_name_token(order=0)
+    raise EmptyHasList if @var_list[order].blank?
+    "#{@var_list[order].shift}"
   end
 
   def tail_encode
     raise EmptyHasList if @hash_list.blank?
-    "#{@hash_list.shift}"
+    "#{@hash_list.pop}"
   end
 end
 
@@ -222,13 +240,20 @@ class EncodingCode
     return []
   end
 
+  # @return [Array<{:name, :token, :p, :type}>] vars
   def vars
     return @vars if @vars.present?
-    @vars ||= PyTool::ExtVars.main(ext).flat_map(&:to_sets).map{|s| { name: s.name, p: s.p, token: s.token }}
+    @vars ||= PyTool::ExtVars.main(ext).flat_map(&:to_sets).map{|s| { name: s.name, p: s.p, token: s.token, decl_type: (s.decl_type || s.type) }}
       .reject{|v|v.token.nil?}
       .reject{|v|v.name == 'main'}
   rescue PyTool::ConvertError => e
     return []
+  end
+
+  # @params [String(able to reverse) | String(unable to reverse)] var_token
+  # @params [String(original name)   | var_token ] name
+  def var_reverse(var_token)
+    vars.find { |var| var[:token] == var_token }.try(:[], :name) || var_token
   end
 
   def var_change(line, idx)
@@ -253,9 +278,11 @@ class EncodingCode
   def recode(token_str)
     reverse_dic = self.dictionary.to_reverse
     token_str.split("\n").map do |line|
-      line.split(' ').map do |token|
+      line.split(' ').map { |token|
         reverse_dic[token].presence || token
-      end.join(' ')
+      }.map { |name|
+       var_reverse(name)
+      }.join(' ')
     end.join("\n")
   end
 
@@ -371,7 +398,8 @@ class EncodingCode
       elsif dictionary.include? word
         dictionary[word][:encode]
       else
-        dictionary.set(word)
+        type = vars.find { |var| var[:token] == word }&.[](:decl_type)
+        dictionary.set(word, type)
       end
     end
   end

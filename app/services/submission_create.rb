@@ -141,11 +141,12 @@ class SubmissionCreate
     alias :expect_element :old_element
   end
 
-  attr_accessor :submission, :assignment_id
+  attr_accessor :submission, :assignment_id, :expect_attempts
 
-  def initialize(submission)
+  def initialize(submission, attempts = nil)
     self.submission = submission
     self.assignment_id = submission.assignment_id
+    self.expect_attempts = attempts || Attempt.where(current_assignment_id: @submission.assignment_id)
   end
 
   def actual
@@ -161,7 +162,7 @@ class SubmissionCreate
   end
 
   def nearest_attempts
-    @nearest_attempts ||= Attempt.where(current_assignment_id: @submission.assignment_id).where.not(user_id: @submission.user_id).sort_by { |attempt|
+    @nearest_attempts ||= expect_attempts.reject { |a| a.user_id ==  @submission.user_id }.sort_by { |attempt|
       dist = Levenshtein.normalized_distance(actual.encode, attempt.encode_code)
       attempt.dist = dist
     }

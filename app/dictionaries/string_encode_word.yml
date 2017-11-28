@@ -3208,25 +3208,25 @@
     :encode_word: "@587_3"
   - :string: '"%ld"'
     :encode_word: "@587_4"
-  - :string: '"%d! = %d"'
-    :encode_word: "@587_5"
-  - :string: '"%d! = %ld"'
-    :encode_word: "@587_6"
-  - :string: '"%ld! = %ld"'
-    :encode_word: "@587_7"
-  - :string: '"%l"'
-    :encode_word: "@587_8"
-  - :string: '"%ld! = %ld\n"'
-    :encode_word: "@587_9"
-  - :string: '"%1d! = %d\n"'
-    :encode_word: "@587_10"
   - :string: '"%d! = %1d\n"'
-    :encode_word: "@587_11"
-  - :string: '""'
-    :encode_word: "@587_12"
+    :encode_word: "@587_5"
+  - :string: '"%d! = %d"'
+    :encode_word: "@587_6"
+  - :string: '"%d! = %ld"'
+    :encode_word: "@587_7"
   - :string: '"%d! = "'
-    :encode_word: "@587_13"
+    :encode_word: "@587_8"
+  - :string: '"%1d! = %d\n"'
+    :encode_word: "@587_9"
+  - :string: '"%ld! = %ld"'
+    :encode_word: "@587_10"
   - :string: '"%ld\n"'
+    :encode_word: "@587_11"
+  - :string: '"%ld! = %ld\n"'
+    :encode_word: "@587_12"
+  - :string: '"%l"'
+    :encode_word: "@587_13"
+  - :string: '""'
     :encode_word: "@587_14"
   - :string: '"%d\n"'
     :encode_word: "@587_15"

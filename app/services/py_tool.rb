@@ -148,7 +148,10 @@ module PyTool
                     dec = func.body.find{|d|d.name == var.name}.presence || func.args.find{|a|a.name == var.name}.presence
                   end
                   dec ||= funcs.find{|f|f.name == var.name}.presence || structs.find{|s| s.name == var.name} || struct_decls.find{|sd| sd.name == var.name} || globals.find { |g| g.name == var.name }
-                  var.token = dec.token if dec.present?
+                  if dec.present?
+                    var.token = dec.token
+                    var.decl_type = dec.type
+                  end
               end
             end
         end
@@ -201,7 +204,7 @@ module PyTool
 
     class VariableSet
       include ActiveModel::Model
-      attr_accessor :name, :p, :token
+      attr_accessor :name, :p, :token, :decl_type
 
       def decl?; false end
 

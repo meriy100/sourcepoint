@@ -31,4 +31,8 @@ class Attempt < ApplicationRecord
   has_many :liens
   belongs_to :current_assignment
   attr_accessor :dist
+
+  def to_submission
+    Submission.new(file1: file1, messages: messages, assignment_id: current_assignment_id, user_id: user_id)
+  end
 end
