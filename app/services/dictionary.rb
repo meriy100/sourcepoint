@@ -10,7 +10,7 @@ class Dictionary < Hash
       stdlib sqrt abs
     }.freeze
 
-  HASH_LIST = ('A'..'Z').to_a.concat(('a'..'z').to_a).combination(2).map{|a, b|'#{a}#{b}'}.shuffle(random: Random.new(100)).freeze
+  HASH_LIST = ('A'..'Z').to_a.concat(('a'..'z').to_a).combination(2).map{|a, b|"#{a}#{b}"}.shuffle(random: Random.new(100)).freeze
 
   def initialize(assignment_id)
     self.assignment_id = assignment_id
@@ -78,24 +78,23 @@ class Dictionary < Hash
 
   def next_encode
     raise EmptyHasList if @hash_list.blank?
-    "#{@hash_list.shift}"
-    # "#{@hash_list.last}"
+    @hash_list.shift
   end
 
   def next_func_name_token
     raise EmptyHasList if @func_list.blank?
-    "#{@func_list.shift}"
+    @func_list.shift
   end
 
-  def next_var_name_token(order=0)
+  def next_var_name_token(order = 0)
     binding.pry if @var_list[order].blank?
     raise EmptyHasList if @var_list[order].blank?
-    "#{@var_list[order].shift}"
+    @var_list[order].shift
   end
 
   def tail_encode
     raise EmptyHasList if @hash_list.blank?
-    "#{@hash_list.pop}"
+    @hash_list.pop
   end
 end
 
