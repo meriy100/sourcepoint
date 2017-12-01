@@ -1,4 +1,5 @@
 class Dictionary < Hash
+  $string_encode_word = YAML.load_file(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml'))[:string_encode_word]
   attr_accessor :valiable_list, :assignment_id
   class EmptyHasList < StandardError; end
   class LineCountUnsame < StandardError; end
@@ -12,8 +13,8 @@ class Dictionary < Hash
   HASH_LIST = ('A'..'Z').to_a.concat(('a'..'z').to_a).combination(2).map{|a, b|'#{a}#{b}'}.shuffle(random: Random.new(100)).freeze
 
   def initialize(assignment_id)
-    hash_list_init
     self.assignment_id = assignment_id
+    hash_list_init
     reserve_word
     $string_encode_word[assignment_id.to_s].each do |list|
       reserve_word_set_string(list[:encode_word], list[:string])
@@ -30,7 +31,7 @@ class Dictionary < Hash
   def set(word, type=nil)
     unless include?(word)
       case type
-      when "FuncDef", "FuncDecl"
+      when 'FuncDef', 'FuncDecl'
         self[word] = { encode: next_func_name_token, word: word, valiable: true, func: true }
       else
         self[word] = { encode: next_var_name_token, word: word, valiable: true }
@@ -40,9 +41,7 @@ class Dictionary < Hash
   end
 
   def valiable_list
-    self.select do |word, value|
-      value[:valiable]
-    end
+    self.select { |_, value| value[:valiable] }
   end
 
   def valiable_order_changes

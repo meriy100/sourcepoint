@@ -1,5 +1,4 @@
 require 'json'
-$string_encode_word = YAML.load_file(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml'))[:string_encode_word]
 class CharSet < Array
   def number
     self.first
