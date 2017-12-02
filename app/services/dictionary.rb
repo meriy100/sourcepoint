@@ -25,7 +25,7 @@ class Dictionary < Hash
   end
 
   def hash_list_init
-    @hash_list = HASH_LIST.dump
+    @hash_list = HASH_LIST.dup
   end
 
   def set(word, type=nil)
@@ -71,7 +71,7 @@ class Dictionary < Hash
 
 
   def reserve_word
-    RESERVE_WORDS.each do |word|
+    RESERVED_WORDS.each do |word|
       reserve_word_set(word)
     end
   end
