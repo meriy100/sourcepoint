@@ -361,6 +361,8 @@ DEPENDENCIES
   rails (~> 5.0.2)
   ransack
   reform
+  rspec
+  rspec-mocks
   rspec-power_assert
   rspec-rails
   sass-rails (~> 5.0)

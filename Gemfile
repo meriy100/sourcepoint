@@ -70,6 +70,7 @@ group :development, :test do
   gem 'binding_of_caller'
 
   # test
+  gem 'rspec'
   gem 'rspec-rails'
   gem 'rspec-power_assert'
   gem 'factory_girl_rails'
@@ -80,6 +81,10 @@ group :development, :test do
   gem 'annotate'
 end
 
+
+group :test do
+  gem 'rspec-mocks'
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

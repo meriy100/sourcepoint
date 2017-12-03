@@ -173,6 +173,11 @@ class SubmissionCreate
     end
 
     def search_lines
+      diffs.blacket_is_none_change!
+      diffs_to_line_diffs2(diffs.dup, actual, expect ).compact.uniq
+    end
+
+    def diffs_to_line_diffs2(diffs, actual, expect, before=nil)
       expect.encode if before.nil?
 
       diff = diffs.shift
@@ -261,11 +266,10 @@ class SubmissionCreate
       puts "\e[31m#{expect.encode}\e[0m"
       # line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
       # encoding_code =  EncodingCode.new(@submission.file1, assignment_id, dic)
-      diffs.blacket_is_none_change!
       puts diffs.to_s
 
       #####
-      line_list = DiffsToLineDiffs2.new(diffs.dup, actual, expect)
+      line_list = DiffsToLineDiffs2.new(diffs.dup, actual, expect).search_lines
       # line_list = diffs_to_line_diffs2(diffs.dup, actual, expect).compact.uniq
 
       #############
@@ -282,7 +286,7 @@ class SubmissionCreate
             first.number == last.number
           }.map{|sets| sets.map(&:last).join}.join("\n")
 
-          Tempfile.create("sourcepoint-") do |tmp|
+          Tempfile.create('sourcepoint-') do |tmp|
             recode = expect.headers_str.concat(expect.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
             File.write tmp, recode
             res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
