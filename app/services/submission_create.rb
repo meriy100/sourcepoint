@@ -141,6 +141,91 @@ class SubmissionCreate
     alias :expect_element :old_element
   end
 
+  class DiffsToLineDiffs2
+    attr_accessor :diffs, :actual, :expect
+
+    def initialize(diffs, actual, expect)
+      self.diffs = diffs
+      self.actual = actual
+      self.expect = expect
+    end
+
+    def three_different(one, two, three)
+      if one == three
+        :no
+      elsif one == two
+        :bottom
+      elsif two == three
+        :top
+      else
+        :all
+      end
+    end
+
+    def minus_check(diffs)
+      diff = diffs.shift
+      return [] if diff.nil? # TODO : check
+      if diff.action == '-'
+        [diff].concat(minus_check(diffs))
+      else
+        [diff]
+      end
+    end
+
+    def search_lines
+      expect.encode if before.nil?
+
+      diff = diffs.shift
+      return [] if diff.nil?
+      case diff.action
+        when '='
+          [].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+        when '+', '!'
+          [{ number: actual.charlist[diff.new_position].first }].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+        when '-'
+          minuses = minus_check(diffs)
+          diffs.unshift minuses.pop
+          if minuses.blank?
+            [{ number: actual.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+          else
+            case before.nil? ? :all : three_different(actual.charlist[before.new_position].first, actual.charlist[diff.new_position].first, actual.charlist[minuses.last.new_position].first)
+              when :top
+                case three_different(expect.charlist[before.old_position].first, expect.charlist[diff.old_position].first, expect.charlist[minuses.last.old_position].first)
+                  when :top
+                    [{ number: actual.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                  when :no
+                    [{ number: actual.charlist[minuses.last.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                  when :all
+                    [{ number: actual.charlist[diff.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                  when :bottom
+                    [{ number: actual.charlist[before.new_position].first}].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                end
+              when :all
+                [{ number: actual.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+              when :bottom
+                case three_different(expect.charlist[before.old_position].first, expect.charlist[diff.old_position].first, expect.charlist[minuses.last.old_position].first)
+                  when :top, :no
+                    [{ number: actual.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                  when :all
+                    [{ number: actual.charlist[minuses.last.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                  when :bottom
+                    [{ number: actual.charlist[minuses.last.new_position].first}].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                end
+              when :no
+                case three_different(expect.charlist[before.old_position].first, expect.charlist[diff.old_position].first, expect.charlist[minuses.last.old_position].first)
+                  when :all, :no, :top
+                    [{ number: actual.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                  when :bottom
+                    [{ number: actual.charlist[minuses.last.new_position].first + 1, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, actual, expect, diff))
+                end
+            end
+          end
+        else
+          raise StandardError.new('要確認')
+      end
+    end
+  end
+
   attr_accessor :submission, :assignment_id, :expect_attempts
 
   def initialize(submission, attempts = nil)
@@ -150,7 +235,7 @@ class SubmissionCreate
   end
 
   def actual
-    @actual ||= EncodingCode.new(@submission.file1, assignment_id).tap(&:encode)
+    @actual ||= EncodingCode.new(self.submission.file1, assignment_id).tap(&:encode)
   end
 
   def expect
@@ -162,7 +247,7 @@ class SubmissionCreate
   end
 
   def nearest_attempts
-    @nearest_attempts ||= expect_attempts.reject { |a| a.user_id ==  @submission.user_id }.sort_by { |attempt|
+    @nearest_attempts ||= expect_attempts.reject { |a| a.user_id ==  self.submission.user_id }.sort_by { |attempt|
       dist = Levenshtein.normalized_distance(actual.encode, attempt.encode_code)
       attempt.dist = dist
     }
@@ -179,7 +264,9 @@ class SubmissionCreate
       diffs.blacket_is_none_change!
       puts diffs.to_s
 
-      line_list = diffs_to_line_diffs2(diffs.dup, actual, expect).compact.uniq
+      #####
+      line_list = DiffsToLineDiffs2.new(diffs.dup, actual, expect)
+      # line_list = diffs_to_line_diffs2(diffs.dup, actual, expect).compact.uniq
 
       #############
       unless ENV['NOSPLIT'] == '1'
@@ -246,81 +333,6 @@ class SubmissionCreate
   end
 
   private
-
-  def three_different(one, two, three)
-    if one == three
-      :no
-    elsif one == two
-      :bottom
-    elsif two == three
-      :top
-    else
-      :all
-    end
-  end
-
-  def minus_check(diffs)
-    diff = diffs.shift
-    return [] if diff.nil? # TODO : check
-    if diff.action == '-'
-      [diff].concat(minus_check(diffs))
-    else
-      [diff]
-    end
-  end
-
-  def diffs_to_line_diffs2(diffs, encoding_code, expect_code, before = nil)
-    expect_code.encode if before.nil?
-
-    diff = diffs.shift
-    return [] if diff.nil?
-    case diff.action
-    when '='
-      [].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-    when '+', '!'
-      [{ number: encoding_code.charlist[diff.new_position].first }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-    when '-'
-      minuses = minus_check(diffs)
-      diffs.unshift minuses.pop
-      if minuses.blank?
-        [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-      else
-        case before.nil? ? :all : three_different(encoding_code.charlist[before.new_position].first, encoding_code.charlist[diff.new_position].first, encoding_code.charlist[minuses.last.new_position].first)
-        when :top
-          case three_different(expect_code.charlist[before.old_position].first, expect_code.charlist[diff.old_position].first, expect_code.charlist[minuses.last.old_position].first)
-          when :top
-            [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-          when :no
-            [{ number: encoding_code.charlist[minuses.last.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-          when :all
-            [{ number: encoding_code.charlist[diff.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-          when :bottom
-            [{ number: encoding_code.charlist[before.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-          end
-        when :all
-          [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-        when :bottom
-          case three_different(expect_code.charlist[before.old_position].first, expect_code.charlist[diff.old_position].first, expect_code.charlist[minuses.last.old_position].first)
-          when :top, :no
-            [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-          when :all
-            [{ number: encoding_code.charlist[minuses.last.new_position].first, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-          when :bottom
-            [{ number: encoding_code.charlist[minuses.last.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-        end
-        when :no
-          case three_different(expect_code.charlist[before.old_position].first, expect_code.charlist[diff.old_position].first, expect_code.charlist[minuses.last.old_position].first)
-          when :all, :no, :top
-            [{ number: encoding_code.charlist[diff.new_position].first}].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-          when :bottom
-            [{ number: encoding_code.charlist[minuses.last.new_position].first + 1, deleted_line: true }].concat(diffs_to_line_diffs2(diffs, encoding_code, expect_code, diff))
-          end
-        end
-      end
-    else
-      raise StandardError.new('要確認')
-    end
-  end
 
   def diffs_to_line_diffs(diffs, encoding_code, expect_encode)
     expect_encode.encode
