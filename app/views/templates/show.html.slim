@@ -1,77 +1,91 @@
 p#notice
   = notice
 
-= link_to 'Back', templates_path(current_assignment_id: @template.current_assignment_id), class: 'btn btn-default'
-button.clipboard-btn.btn.btn-default[data-clipboard-action="copy" data-clipboard-target="#clipbordTarget"]
-  Copy to clipboard
-
-- if @template.submission.present?
-  = link_to 'Submission', submission_path(@template.submission), class: 'btn btn-success'
-
-= bootstrap_form_for(@submission) do |f|
-  = f.hidden_field :file1
-  = f.hidden_field :messages
-  = f.hidden_field :status
-  = f.hidden_field :mark
-  = f.hidden_field :comment
-  = f.hidden_field :assignment_id
-  = f.hidden_field :user_id
-  = f.submit
-- if @template.is_check
-  = link_to 'check remove', template_path(@template, template: { is_check: false } ), method: :patch, class: %w{btn btn-danger}
-- else
-  = link_to 'check on', template_path(@template, template: { is_check: true } ), method: :patch, class: %w{btn btn-info}
-
-= link_to 'rpcsr check', rpcsr_check_template_path(@template), method: :post, class: %w{btn btn-warning}
-p
-  strong
-    | File1:
-  table
-    tbody
-      - @template.file1.each_line.with_index(1) do |line, idx|
-        tr
-          td
-            - if tl = @template_lines.select {|t| t.number == idx && t.deleted_line }.first
-              = link_to '^', template_template_line_path(@template, tl),
-                method: :delete, class: 'btn btn-info btn-xs'
-            - else
-              = link_to '^', template_template_lines_path(@template, { template_line: { number: idx, deleted_line: 1 } }),
-                method: :post, class: 'btn btn-default btn-xs'
-
-            - if tl =  @template_lines.select {|t| t.number == idx && !t.deleted_line}.first
-              = link_to idx, template_template_line_path(@template, tl),
-                method: :delete, class: 'btn btn-info btn-xs'
-            - else
-              = link_to idx, template_template_lines_path(@template, { template_line: { number: idx } }),
-                method: :post, class: 'btn btn-default btn-xs'
-          td
-            pre
-              = line
-p
-  strong
-    | Status:
-  = @template.status
-p
-  strong
-    | User:
-  = @template.user_id
-p
-  strong
-    | Encode code:
-  = @template.encode_code
-p
-  strong
-    | Current assignment:
-  = @template.current_assignment_id
-p
-  strong
-    | Assignment:
-  = @template.assignment_id
-= link_to 'Edit', edit_template_path(@template)
-|  |
-
 .row
-  textarea#clipbordTarget
-    = @template.file1
+  .col-md-6
+    = link_to 'Back', templates_path(current_assignment_id: @template.current_assignment_id), class: 'btn btn-default'
+    button.clipboard-btn.btn.btn-default[data-clipboard-action="copy" data-clipboard-target="#clipbordTarget"]
+      Copy to clipboard
 
+    - if @template.submission.present?
+      = link_to 'Submission', submission_path(@template.submission), class: 'btn btn-success'
+
+    = bootstrap_form_for(@submission) do |f|
+      = f.hidden_field :file1
+      = f.hidden_field :messages
+      = f.hidden_field :status
+      = f.hidden_field :mark
+      = f.hidden_field :comment
+      = f.hidden_field :assignment_id
+      = f.hidden_field :user_id
+      = f.submit
+    - if @template.is_check
+      = link_to 'check remove', template_path(@template, template: { is_check: false } ), method: :patch, class: %w{btn btn-danger}
+    - else
+      = link_to 'check on', template_path(@template, template: { is_check: true } ), method: :patch, class: %w{btn btn-info}
+
+    = link_to 'rpcsr check', rpcsr_check_template_path(@template), method: :post, class: %w{btn btn-warning}
+    p
+      strong
+        | File1:
+      table
+        tbody
+          - @template.file1.each_line.with_index(1) do |line, idx|
+            tr
+              td
+                - if tl = @template_lines.select {|t| t.number == idx && t.deleted_line }.first
+                  = link_to '^', template_template_line_path(@template, tl),
+                    method: :delete, class: 'btn btn-info btn-xs'
+                - else
+                  = link_to '^', template_template_lines_path(@template, { template_line: { number: idx, deleted_line: 1 } }),
+                    method: :post, class: 'btn btn-default btn-xs'
+
+                - if tl =  @template_lines.select {|t| t.number == idx && !t.deleted_line}.first
+                  = link_to idx, template_template_line_path(@template, tl),
+                    method: :delete, class: 'btn btn-info btn-xs'
+                - else
+                  = link_to idx, template_template_lines_path(@template, { template_line: { number: idx } }),
+                    method: :post, class: 'btn btn-default btn-xs'
+              td
+                pre
+                  = line
+    p
+      strong
+        | Status:
+      = @template.status
+    p
+      strong
+        | User:
+      = @template.user_id
+    p
+      strong
+        | Encode code:
+      = @template.encode_code
+    p
+      strong
+        | Current assignment:
+      = @template.current_assignment_id
+    p
+      strong
+        | Assignment:
+      = @template.assignment_id
+    = link_to 'Edit', edit_template_path(@template)
+    |  |
+
+    .row
+      textarea#clipbordTarget
+        = @template.file1
+
+  .col-md-6
+    = bootstrap_form_for(@rpcsr_attempt, url: rpcsr_check_template_path) do |f|
+      = f.text_area :file1
+      = f.hidden_field :assignment_id
+      = f.hidden_field :current_assignment_id
+      = f.submit
+
+    - if @rpcsr_check_result.present?
+      .panel
+        = raw @rpcsr_check_result[:messege_body]
+        = @rpcsr_check_result[:status]
+        = link_to 'browse', @rpcsr_check_result[:url]
 

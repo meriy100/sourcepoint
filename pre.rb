@@ -6,7 +6,7 @@ def main(argv)
     idx += 1
     print "\r(#{idx}:#{max})".concat('#'.*(idx * 50 / max))
     status = false
-    Tempfile.open do |temp|
+    Tempfile.create('sourcepoint-')do |temp|
       File.write temp, attempt.file1.encode('UTF-8', 'UTF-8')
       rh = RpcsHTTPS.new('126hahaha')
       res = rh.create_attempt(temp.path, argv.first)

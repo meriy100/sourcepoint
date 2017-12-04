@@ -11,6 +11,10 @@ class TemplatesController < ApplicationController
 
   # GET /templates/1
   def show
+    if params[:rpcsr_check].present?
+      @rpcsr_check_result = params[:rpcsr_check]
+    end
+    @rpcsr_attempt = params[:rpcsr_attempt].present? ? Template.new(params.require(:rpcsr_attempt).permit(:file1, :current_assignment_id)) : @template.dup
     @template_lines = @template.template_lines
     @submission = Submission.new(
       @template.attributes.select{ |key, _|
@@ -57,12 +61,13 @@ class TemplatesController < ApplicationController
 
   def rpcsr_check
     rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
+    check_template = params[:template].present? ? Template.new(template_params) : @template
 
     Tempfile.create('sourcepoint-') do |tmp|
-      File.write tmp, @template.file1.encode('UTF-8', 'UTF-8')
-      res = rh.create_attempt(tmp.path, @template.current_assignment_id == 441 ? 587: @template.current_assignment_id)
-      if res['location'].present?
-        redirect_to res['location']
+      File.write tmp, check_template.file1.encode('UTF-8', 'UTF-8')
+      res = rh.create_attempt(tmp.path, check_template.current_assignment_id == 441 ? 587: check_template.current_assignment_id)
+      if m = res['location'].match(/(?<id>\d+\z)/)
+        redirect_to template_path(@template, rpcsr_check: rh.get_attempt(m[:id]), rpcsr_attempt: { file1: check_template.file1, current_assignment_id: check_template.current_assignment_id })
       else
         raise
       end

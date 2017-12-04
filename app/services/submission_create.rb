@@ -24,13 +24,13 @@ class SubmissionCreate
         case diff.action
         when '+'
           if ['{', '}', ' '].include?(diff.new_element)
-             Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
+             Diff::LCS::ContextChange.new('=', diff.old_position, diff.old_element, diff.new_position, diff.new_element)
           else
            diff
           end
         when '-'
           if ['{', '}', ' '].include?(diff.old_element)
-            Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
+            Diff::LCS::ContextChange.new('=', diff.old_position, diff.old_element, diff.new_position, diff.new_element)
           else
             diff
           end

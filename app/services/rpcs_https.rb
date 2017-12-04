@@ -111,6 +111,18 @@ class RpcsHTTPS
     end
   end
 
+  def get_attempt(id)
+    res = get("/attempts/#{id}")
+    doc = Nokogiri::HTML(res.body)
+    status = doc.xpath('/html/body/p').find { |p|p.text.match(/\AStatus:/) }.at_xpath('//span').text
+    messege_body = doc.xpath('/html/body/pre[1]').to_s
+    {
+      url: "https://rpcsr.sw.it.aoyama.ac.jp/attempts/#{id}",
+      status: status,
+      messege_body: messege_body
+    }
+  end
+
   def get_attempt_status(id)
     res = get("/attempts/#{id}")
     doc = Nokogiri::HTML(res.body)

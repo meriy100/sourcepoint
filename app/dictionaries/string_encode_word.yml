@@ -2140,3 +2140,91 @@
     :encode_word: "@574_15"
   - :string: '"%d" "%d"'
     :encode_word: "@574_16"
+  '570':
+  - :string: '"The sum of odd numbers up to %d is %d.\n"'
+    :encode_word: "@570_0"
+  - :string: '"The sum of odd numbers up to %d is %d."'
+    :encode_word: "@570_1"
+  - :string: '"\n"'
+    :encode_word: "@570_2"
+  - :string: '"The sum of odd numbers up to %d is %-d.\n"'
+    :encode_word: "@570_3"
+  - :string: '"The sum of odd numbers up to %2d is %d.\n"'
+    :encode_word: "@570_4"
+  - :string: '"The sum of odd numbers up to 1 is 1.\n"'
+    :encode_word: "@570_5"
+  - :string: '"The sum of odd numbers up to%2d is %d.\n"'
+    :encode_word: "@570_6"
+  - :string: '"The sum of odd numbers up to %d "'
+    :encode_word: "@570_7"
+  - :string: '"is %d.\n"'
+    :encode_word: "@570_8"
+  - :string: '"The sum of odd numbers up to %d is "'
+    :encode_word: "@570_9"
+  - :string: '"%d.\n"'
+    :encode_word: "@570_10"
+  - :string: '"The sum of odd numbers up to 1 is %d.\n"'
+    :encode_word: "@570_11"
+  - :string: '"%d"'
+    :encode_word: "@570_12"
+  '572':
+  - :string: '"%3d points -> %5.1lf points\n"'
+    :encode_word: "@572_0"
+  - :string: '"%3d points ->%6.1lf points\n"'
+    :encode_word: "@572_1"
+  - :string: '"%3d points -> %5.1f points\n"'
+    :encode_word: "@572_2"
+  - :string: '"%3.0lf points -> %5.1lf points\n"'
+    :encode_word: "@572_3"
+  - :string: '"%3.0f points -> %5.1f points\n"'
+    :encode_word: "@572_4"
+  - :string: '"%3d points ->%6.1f points\n"'
+    :encode_word: "@572_5"
+  - :string: '"%3.0lf points ->%6.1lf points\n"'
+    :encode_word: "@572_6"
+  - :string: '"\n"'
+    :encode_word: "@572_7"
+  - :string: '"%3.0lf points -> %5.1lf points"'
+    :encode_word: "@572_8"
+  - :string: '"%3.0f points -> %5.1lf points\n"'
+    :encode_word: "@572_9"
+  - :string: '"100 points -> 100.0 points\n"'
+    :encode_word: "@572_10"
+  - :string: '"%3.0f points ->%6.1f points\n"'
+    :encode_word: "@572_11"
+  - :string: '"%3.f points -> %5.1f points\n"'
+    :encode_word: "@572_12"
+  - :string: '"%3d points -> "'
+    :encode_word: "@572_13"
+  - :string: '"%5.1f points\n"'
+    :encode_word: "@572_14"
+  - :string: '"100.0 points\n"'
+    :encode_word: "@572_15"
+  - :string: '"%3.0f points ->%6.1lf points\n"'
+    :encode_word: "@572_16"
+  - :string: '"%3.lf points -> %5.1lf points\n"'
+    :encode_word: "@572_17"
+  - :string: '"  0 points ->   0.0 points\n"'
+    :encode_word: "@572_18"
+  - :string: '" %2d points ->  %3.1lf points\n"'
+    :encode_word: "@572_19"
+  - :string: '"%3.1d points ->%6.1lf points\n"'
+    :encode_word: "@572_20"
+  - :string: '"%3d points ->%6.1lf points"'
+    :encode_word: "@572_21"
+  - :string: '"%lf\n"'
+    :encode_word: "@572_22"
+  - :string: '"%3lf"'
+    :encode_word: "@572_23"
+  - :string: '" %d points ->  %0.1lf points\n"'
+    :encode_word: "@572_24"
+  - :string: '"%3d points ->  %4.1f points\n"'
+    :encode_word: "@572_25"
+  - :string: '"%d points -> %0.1lf points\n"'
+    :encode_word: "@572_26"
+  - :string: '"  %d points ->  %0.1lf points\n"'
+    :encode_word: "@572_27"
+  - :string: '"  %d points ->   %0.1lf points\n"'
+    :encode_word: "@572_28"
+  - :string: '"%3d points -> %5.1f points"'
+    :encode_word: "@572_29"

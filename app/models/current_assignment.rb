@@ -31,8 +31,8 @@ class CurrentAssignment < ActiveHash::Base
       assignment_ids: [75, 148, 216, 283, 355, 428],
     }, {
       id: 570,
-      code: '',
-      assignment_ids: [68, 142, 210, 279, 351],
+      code: '01B1',
+      assignment_ids: [4, 68, 142, 210, 279, 351, 424],
     }, {
       id: 609,
       code: '',
@@ -41,9 +41,19 @@ class CurrentAssignment < ActiveHash::Base
       id: 587,
       code: '05A1',
       assignment_ids: [22, 87, 163, 228, 295, 367],
-    },
+    }, {
+      id: 572,
+      code: '1C2',
+      assignment_ids: [6, 70, 144, 212, 281, 353, 426],
+    }
   ]
 
   has_many :templates
   has_many :attempts
+
+
+  def set_current_assignment_id
+    Attempt.where(assignment_id: assignment_ids).update_all(current_assignment_id: id)
+  end
+
 end
