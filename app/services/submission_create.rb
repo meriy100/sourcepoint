@@ -30,7 +30,7 @@ class SubmissionCreate
           end
         when '-'
           if ['{', '}', ' '].include?(diff.old_element)
-            diff = Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
+            Diff::LCS::ContextChange.new("=", diff.old_position, diff.old_element, diff.new_position, diff.new_element)
           else
             diff
           end
@@ -63,6 +63,36 @@ class SubmissionCreate
       end
     end
 
+    def foo2
+      self.reject(&:unchanged?).map do |diff|
+        case diff.action
+          when '+'
+            {
+                actual: actual.charlist[diff.new_position],
+                expect: expect.charlist[diff.old_position - 1]
+            }
+          when '-'
+            if actual.charlist[diff.new_position - 1] == actual.charlist[diff.new_position]
+              {
+                  actual: actual.charlist[diff.new_position],
+                  expect: expect.charlist[diff.old_position]
+              }
+            else
+              {
+                  actual: actual.charlist[diff.new_position - 1],
+                  deleted_line: true,
+                  expect: expect.charlist[diff.old_position]
+              }
+            end
+          else
+            {
+                actual: actual.charlist[diff.new_position],
+                expect: expect.charlist[diff.old_position]
+            }
+        end
+      end
+    end
+
     def to_s
       self.map do |diff|
         case diff.action
@@ -87,16 +117,6 @@ class SubmissionCreate
       .join
     end
 
-    def number_split
-      self.with_number.collection_map { |first, second|
-        first.actual_number == second.actual_number
-      }.map { |eb|
-        eb.collection_map { |first, second|
-         first.expect_number == second.expect_number
-       }
-     }
-    end
-
     def with_number
       self.map do |diff|
         DiffWithNumber.new(diff, actual, expect)
@@ -114,17 +134,6 @@ class SubmissionCreate
         else
         end
       else
-      end
-    end
-
-    def to_lines
-      number_split.map do |actual_split|
-        next if actual_split.flatten.all?(&:unchanged?)
-        if actual_split.length > 1
-          block =  actual_split.flatten
-        else
-          actual_split.flatten.map(&:actual_number)
-        end
       end
     end
   end
@@ -150,6 +159,21 @@ class SubmissionCreate
       self.expect = expect
     end
 
+    def search_lines
+      diffs.blacket_is_none_change!
+      expect.encode
+      # diffs.foo2.map { |f|
+      #   if f[:deleted_line]
+      #     { number: f[:actual].first + 1, deleted_line: true }
+      #   else
+      #     { number: f[:actual].first }
+      #   end
+      # }.uniq
+      diffs_to_line_diffs2(diffs.dup, actual, expect ).compact.uniq
+    end
+
+    private
+
     def three_different(one, two, three)
       if one == three
         :no
@@ -172,14 +196,8 @@ class SubmissionCreate
       end
     end
 
-    def search_lines
-      diffs.blacket_is_none_change!
-      diffs_to_line_diffs2(diffs.dup, actual, expect ).compact.uniq
-    end
 
     def diffs_to_line_diffs2(diffs, actual, expect, before=nil)
-      expect.encode if before.nil?
-
       diff = diffs.shift
       return [] if diff.nil?
       case diff.action
@@ -337,27 +355,6 @@ class SubmissionCreate
   end
 
   private
-
-  def diffs_to_line_diffs(diffs, encoding_code, expect_encode)
-    expect_encode.encode
-    diffs.map { |context_change|
-      case context_change.action
-      when '='
-      when '+', '!'
-        { number: encoding_code.charlist[context_change.new_position].first }
-      when '-'
-        if encoding_code.charlist[context_change.new_position] == encoding_code.charlist[context_change.new_position - 1]
-          { number: encoding_code.charlist[context_change.new_position].first }
-        else
-          { number: encoding_code.charlist[context_change.new_position].first, deleted_line: true }
-        end
-      else
-        raise StandardError.new('要確認')
-      end
-    }
-  end
-
-
 
   def run?(nearest_attempts)
     (nearest_attempts.first&.dist || 1.0) < 0.3 || true
