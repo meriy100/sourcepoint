@@ -34,6 +34,7 @@ RSpec.describe SubmissionCreate do
 
 
       it {
+        binding.pry
         expect(subject).to match_array([ {number: 3}, {number: 5}, {number: 14}, {number: 15}, {number: 16, deleted_line: true}])
       }
     end

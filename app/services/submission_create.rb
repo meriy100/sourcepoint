@@ -249,12 +249,22 @@ class SubmissionCreate
     end
   end
 
-  attr_accessor :submission, :assignment_id, :expect_attempts
+  attr_accessor :submission, :assignment_id, :expect_attempts, :same_search, :print_output
 
-  def initialize(submission, attempts = nil)
+  def initialize(submission, attempts = nil, same_search: true)
+    self.same_search = same_search
     self.submission = submission
     self.assignment_id = submission.assignment_id
     self.expect_attempts = attempts || Attempt.where(current_assignment_id: @submission.assignment_id)
+    self.print_output = true
+  end
+
+  def stdoutputln(str)
+    puts str if print_output
+  end
+
+  def stdoutput(str)
+    print str if print_output
   end
 
   def actual
@@ -273,7 +283,56 @@ class SubmissionCreate
     @nearest_attempts ||= expect_attempts.reject { |a| a.user_id ==  self.submission.user_id }.sort_by { |attempt|
       dist = Levenshtein.normalized_distance(actual.encode, attempt.encode_code)
       attempt.dist = dist
-    }
+    }.reject { |attempt| same_search ? false  : attempt.dist == 0.0 }
+  end
+
+  def block_split_create_attempts(line_list)
+    f = diffs.foo
+    # TODO : ここで 定義とその他で分割(それ以外のロジックブロックで分けたいときも)
+    b = bar(f.select { |ff| actual.decl_lines.include?(ff[:actual].number) })
+            .concat(bar(f.reject { |ff| actual.decl_lines.include?(ff[:actual].number) }))
+
+    rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
+    b.each do |numbers|
+      next if numbers.blank?
+      e = exchange_encode(expect, actual, numbers).collection_map { |first, last|
+        first.number == last.number
+      }.map{|sets| sets.map(&:last).join}.join("\n")
+
+      Tempfile.create('sourcepoint-') do |tmp|
+        recode = expect.headers_str.concat(expect.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
+        File.write tmp, recode
+        res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
+        if res['location'].present?
+          stdoutputln res['location']
+          m = res['location'].match(%r{/(?<id>\d+)\z})
+          status = rh.get_attempt_status(m[:id])
+          stdoutput (status == 'checked' ? "\e[32m" : "\e[31m")
+          stdoutput status
+          stdoutputln "\e[0m"
+          stdoutputln recode
+          if status == 'checked'
+            line_list.reject! { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) } # TODO : 要検証
+            attempt = nearest_attempts.first.dup
+            # Tempfile.open do |tmp_reindent|
+            #   Open3.capture3('indent', tmp.path, tmp_reindent.path)
+            #   attempt.file1 = File.read(tmp_reindent.path)
+            # end
+            attempt.file1 = recode
+            attempt.encode_code = EncodingCode.new(attempt.file1, assignment_id).encode
+            attempt.save!
+          end
+        else
+          raise
+        end
+      end
+    end
+  end
+
+  def pre_run(attempts_create = false)
+    self.print_output = false
+    line_list = DiffsToLineDiffs2.new(diffs.dup, actual, expect).search_lines
+    block_split_create_attempts(line_list)
   end
 
   def run
@@ -292,46 +351,7 @@ class SubmissionCreate
 
       #############
       unless ENV['NOSPLIT'] == '1'
-        f = diffs.foo
-        # TODO : ここで 定義とその他で分割(それ以外のロジックブロックで分けたいときも)
-        b = bar(f.select { |ff| actual.decl_lines.include?(ff[:actual].number) })
-          .concat(bar(f.reject { |ff| actual.decl_lines.include?(ff[:actual].number) }))
-
-        rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
-        b.each do |numbers|
-          next if numbers.blank?
-          e = exchange_encode(expect, actual, numbers).collection_map { |first, last|
-            first.number == last.number
-          }.map{|sets| sets.map(&:last).join}.join("\n")
-
-          Tempfile.create('sourcepoint-') do |tmp|
-            recode = expect.headers_str.concat(expect.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
-            File.write tmp, recode
-            res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
-            if res['location'].present?
-              puts res['location']
-              m = res['location'].match(%r{/(?<id>\d+)\z})
-              status = rh.get_attempt_status(m[:id])
-              print (status == 'checked' ? "\e[32m" : "\e[31m")
-              print status
-              puts "\e[0m"
-              puts recode
-              if status == 'checked'
-                line_list.reject! { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) } # TODO : 要検証
-                attempt = nearest_attempts.first.dup
-                # Tempfile.open do |tmp_reindent|
-                #   Open3.capture3('indent', tmp.path, tmp_reindent.path)
-                #   attempt.file1 = File.read(tmp_reindent.path)
-                # end
-                attempt.file1 = recode
-                attempt.encode_code = EncodingCode.new(attempt.file1, assignment_id).encode
-                attempt.save!
-              end
-            else
-              raise
-            end
-          end
-        end
+        block_split_create_attempts(line_list)
       end
       #############
 
