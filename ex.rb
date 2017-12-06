@@ -17,7 +17,7 @@ attempts_sliced = Attempt.where(current_assignment_id: [595]).pluck(:id).each_sl
 #   end
 # end
 
-attempts = Attempt.where(current_assignment_id: [595])
+attempts = Attempt.where(current_assignment_id: [587, 572, 594, 574, 595])
 max = attempts.count * 1.0
 
 def least_minutes(max, idx)
@@ -32,8 +32,12 @@ Parallel.each_with_index(attempts, in_processes: 2) do |attempt, idx|
   GC.start;
   _, stderr, status = Open3.capture3('bin/rails', 'r', %{SubmissionCreate.new(Attempt.find(#{attempt.id}).to_submission, same_search: false).pre_run})
   unless status.success?
+    STDERR.puts "*"* 10
     STDERR.puts stderr
+    Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "attempt_id: #{attempt.id}\n#####################\n\n#{stderr}")
     exit
   end
 end
 
+
+Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "おわったよ")

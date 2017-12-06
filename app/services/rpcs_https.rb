@@ -21,9 +21,7 @@ class RpcsHTTPS
       http.request(req)
     }
     case res
-    when Net::HTTPSuccess
-      puts JSON.pretty_generate(JSON.parse(res.body))
-    when Net::HTTPFound
+    when Net::HTTPSuccess, Net::HTTPFound
       res.get_fields('set-cookie').each do |cookie|
           cookie.split('; ').each do |param|
               pair = param.split('=')
