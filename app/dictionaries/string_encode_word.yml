@@ -11,29 +11,29 @@
     :encode_word: "@587_3"
   - :string: '"%ld"'
     :encode_word: "@587_4"
-  - :string: '"%d! = %d"'
-    :encode_word: "@587_5"
   - :string: '"%d! = "'
-    :encode_word: "@587_6"
+    :encode_word: "@587_5"
   - :string: '"%ld\n"'
+    :encode_word: "@587_6"
+  - :string: '"%d! = %d"'
     :encode_word: "@587_7"
-  - :string: '"%d! = %ld"'
-    :encode_word: "@587_8"
-  - :string: '"%d! = %1d\n"'
-    :encode_word: "@587_9"
   - :string: '"%1d! = %d\n"'
-    :encode_word: "@587_10"
+    :encode_word: "@587_8"
   - :string: '"%ld! = %ld"'
+    :encode_word: "@587_9"
+  - :string: '"%d! = %ld"'
+    :encode_word: "@587_10"
+  - :string: '"%d! = %1d\n"'
     :encode_word: "@587_11"
   - :string: '"%ld! = %ld\n"'
     :encode_word: "@587_12"
-  - :string: '"%l"'
-    :encode_word: "@587_13"
   - :string: '""'
+    :encode_word: "@587_13"
+  - :string: '"%l"'
     :encode_word: "@587_14"
-  - :string: '"%d\n"'
-    :encode_word: "@587_15"
   - :string: '"%ld! = "'
+    :encode_word: "@587_15"
+  - :string: '"%d\n"'
     :encode_word: "@587_16"
   '595':
   - :string: '"%lf"'
@@ -62,1029 +62,1029 @@
     :encode_word: "@595_7"
   - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi)"'
     :encode_word: "@595_8"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi)\n"'
-    :encode_word: "@595_9"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhOOAglxuIg==
+    :encode_word: "@595_9"
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi)\n"'
     :encode_word: "@595_10"
-  - :string: '"%f"'
+  - :string: '"+"'
     :encode_word: "@595_11"
-  - :string: '"%d"'
+  - :string: '"(%.2lf"'
     :encode_word: "@595_12"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
       hOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG4i
     :encode_word: "@595_13"
-  - :string: !binary |-
-      IuiZmuaVsOmDqCA9ICI=
+  - :string: '"%f"'
     :encode_word: "@595_14"
   - :string: !binary |-
-      IuasoeOBruikh+e0oOaVsFxu5a6f5pWw6YOo77ydIg==
+      IuiZmuaVsOmDqCA9ICI=
     :encode_word: "@595_15"
-  - :string: '"(%.2lf"'
+  - :string: !binary |-
+      Ilxu6Jma5pWw6YOo77ydIg==
     :encode_word: "@595_16"
-  - :string: '"+"'
+  - :string: !binary |-
+      IuasoeOBruikh+e0oOaVsFxu5a6f5pWw6YOo77ydIg==
     :encode_word: "@595_17"
   - :string: !binary |-
       IuWun+aVsOmDqCA9ICI=
     :encode_word: "@595_18"
-  - :string: '"(%.2f%+.2fi) + (%.2f%+.2fi) = (%.2f%+.2fi)"'
+  - :string: '"\n(%.2f%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
     :encode_word: "@595_19"
   - :string: !binary |-
-      IuasoeOBruikh+e0oOaVsFxu5a6f5pWw6YOoPSI=
+      IuasoeOBruikh+e0oOaVsCI=
     :encode_word: "@595_20"
-  - :string: '"(%.2f%+.2fi) + (%.2f%+.2fi) = (%.2f%+.2fi)\n"'
+  - :string: '"\n(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)\n"'
     :encode_word: "@595_21"
-  - :string: '"%.2lfi)"'
+  - :string: '"\n(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
     :encode_word: "@595_22"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
-      hOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6jvvJ0i
+  - :string: '"\n(%.2f+%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
     :encode_word: "@595_23"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD1cbiI=
+  - :string: '"(%.2f%+.2fi) + (%.2f%+.2fi) = (%.2f%+.2fi)"'
     :encode_word: "@595_24"
+  - :string: '"%.2lfi)"'
+    :encode_word: "@595_25"
+  - :string: '"\n(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
+    :encode_word: "@595_26"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhFxuIg==
-    :encode_word: "@595_25"
+    :encode_word: "@595_27"
+  - :string: '"%.2lfi) + (%.2lf"'
+    :encode_word: "@595_28"
+  - :string: !binary |-
+      IuiZmuaVsOmDqCA9Ig==
+    :encode_word: "@595_29"
+  - :string: '"%.2lfi) = (%.2lf"'
+    :encode_word: "@595_30"
+  - :string: '"\n(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_31"
+  - :string: '"\n(%.2f%.2fi) + (%.2f%.2fi) = (%.2f+%.2fi)\n"'
+    :encode_word: "@595_32"
+  - :string: !binary |-
+      IuasoeOBruikh+e0oOaVsFxu5a6f5pWw6YOoPSI=
+    :encode_word: "@595_33"
+  - :string: '"%.2lfi)\n"'
+    :encode_word: "@595_34"
+  - :string: '"+%.2lfi"'
+    :encode_word: "@595_35"
+  - :string: '"+%.2lfi)"'
+    :encode_word: "@595_36"
+  - :string: '"%d"'
+    :encode_word: "@595_37"
+  - :string: '"%.2lfi"'
+    :encode_word: "@595_38"
+  - :string: '"\n(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f+%.2fi)\n"'
+    :encode_word: "@595_39"
+  - :string: '"\n(%.2f%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
+    :encode_word: "@595_40"
+  - :string: '"\n(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
+    :encode_word: "@595_41"
+  - :string: '"(%.2f%+.2fi) + (%.2f%+.2fi) = (%.2f%+.2fi)\n"'
+    :encode_word: "@595_42"
+  - :string: !binary |-
+      IuiZmuaVsOmDqCI=
+    :encode_word: "@595_43"
+  - :string: '"(%.2lf+%.2lfi)"'
+    :encode_word: "@595_44"
+  - :string: '" + "'
+    :encode_word: "@595_45"
+  - :string: '" = "'
+    :encode_word: "@595_46"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)"'
+    :encode_word: "@595_47"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
+      hOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6jvvJ0i
+    :encode_word: "@595_48"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG4i
-    :encode_word: "@595_26"
-  - :string: '"+%.2lfi)"'
-    :encode_word: "@595_27"
+    :encode_word: "@595_49"
+  - :string: '"\n(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
+    :encode_word: "@595_50"
   - :string: !binary |-
-      IuiZmuaVsOmDqCI=
-    :encode_word: "@595_28"
-  - :string: '"+%.2lfi"'
-    :encode_word: "@595_29"
+      Ilxu5qyh44Gu6KSH57Sg5pWwIg==
+    :encode_word: "@595_51"
+  - :string: !binary |-
+      IuiZmuaVsOmDqD1cbiI=
+    :encode_word: "@595_52"
+  - :string: '"\n(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
+    :encode_word: "@595_53"
+  - :string: '"(%.2lf%+.2lfi)"'
+    :encode_word: "@595_54"
   - :string: !binary |-
       IuWun+aVsOmDqD1cbiI=
-    :encode_word: "@595_30"
-  - :string: '"%.2lfi"'
-    :encode_word: "@595_31"
-  - :string: '"(%.2lf%+.2lfi)"'
-    :encode_word: "@595_32"
-  - :string: '"%.2lfi) + (%.2lf"'
-    :encode_word: "@595_33"
-  - :string: '"%lf %lf"'
-    :encode_word: "@595_34"
-  - :string: '"%.2lfi)\n"'
-    :encode_word: "@595_35"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
-      leOBhOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
-    :encode_word: "@595_36"
-  - :string: '" + "'
-    :encode_word: "@595_37"
-  - :string: '" = "'
-    :encode_word: "@595_38"
-  - :string: '"%.2lfi) = (%.2lf"'
-    :encode_word: "@595_39"
-  - :string: '"\n"'
-    :encode_word: "@595_40"
-  - :string: !binary |-
-      IuasoeOBruikh+e0oOaVsCI=
-    :encode_word: "@595_41"
-  - :string: '"\n(%.2f+%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
-    :encode_word: "@595_42"
-  - :string: '"\n(%.2f%.2fi) + (%.2f%.2fi) = (%.2f+%.2fi)\n"'
-    :encode_word: "@595_43"
-  - :string: '"\n(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f+%.2fi)\n"'
-    :encode_word: "@595_44"
-  - :string: '"\n(%.2f%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
-    :encode_word: "@595_45"
-  - :string: '"\n(%.2f%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
-    :encode_word: "@595_46"
-  - :string: '"\n(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
-    :encode_word: "@595_47"
-  - :string: !binary |-
-      IuWIneOCgeOBruikh+e0oOaVsFxuIg==
-    :encode_word: "@595_48"
-  - :string: !binary |-
-      Ilxu6Jma5pWw6YOo77ydIg==
-    :encode_word: "@595_49"
-  - :string: '"\n(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_50"
-  - :string: '"(%4.2lf%+4.2lfi) + (%4.2lf%+4.2lfi) = (%4.2lf%+4.2lfi)"'
-    :encode_word: "@595_51"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = "'
-    :encode_word: "@595_52"
-  - :string: '"\n(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
-    :encode_word: "@595_53"
-  - :string: '"\n(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
-    :encode_word: "@595_54"
-  - :string: '"\n(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
     :encode_word: "@595_55"
-  - :string: '"(%0.2lf%+0.2lfi) + (%0.2lf%+0.2lfi) = (%0.2lf%+0.2lfi)\n"'
+  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
     :encode_word: "@595_56"
-  - :string: '"(%.2lf%+.2lfi) = "'
+  - :string: '"%.2lf"'
     :encode_word: "@595_57"
-  - :string: '"(%.2lf%+.2lfi) + "'
+  - :string: '"(%.2lf%.2lfi)"'
     :encode_word: "@595_58"
-  - :string: '"\n(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
+  - :string: '"+%.2lf"'
     :encode_word: "@595_59"
-  - :string: '"\n(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)\n"'
+  - :string: '") + (%.2lf"'
     :encode_word: "@595_60"
   - :string: '") = (%.2lf"'
     :encode_word: "@595_61"
-  - :string: '") + (%.2lf"'
+  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)"'
     :encode_word: "@595_62"
-  - :string: !binary |-
-      IuWun+aVsOmDqFxuIg==
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)\n"'
     :encode_word: "@595_63"
+  - :string: '"%lf %lf"'
+    :encode_word: "@595_64"
+  - :string: !binary |-
+      Ilxu5a6f5pWw6YOo77ydIg==
+    :encode_word: "@595_65"
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)"'
+    :encode_word: "@595_66"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
+      leOBhOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
+    :encode_word: "@595_67"
+  - :string: !binary |-
+      IuWIneOCgeOBruikh+e0oOaVsFxuIg==
+    :encode_word: "@595_68"
+  - :string: !binary |-
+      IuWun+aVsOmDqCA9Ig==
+    :encode_word: "@595_69"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi)"'
+    :encode_word: "@595_70"
+  - :string: !binary |-
+      Ilxu5qyh44Gu6KSH57Sg5pWwXG4i
+    :encode_word: "@595_71"
+  - :string: !binary |-
+      IuasoeOBruOBruikh+e0oOaVsFxu5a6f5pWw6YOoID0gIg==
+    :encode_word: "@595_72"
   - :string: !binary |-
       IuiZmuaVsOmDqFxuIg==
-    :encode_word: "@595_64"
-  - :string: '"(%0.2f%+0.2fi) + (%0.2f%+0.2fi) = (%0.2f%+0.2fi)\n"'
-    :encode_word: "@595_65"
+    :encode_word: "@595_73"
+  - :string: !binary |-
+      IuWun+aVsOmDqFxuIg==
+    :encode_word: "@595_74"
+  - :string: !binary |-
+      IuWun+aVsOmDqCI=
+    :encode_word: "@595_75"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lLjJsZlxuIg==
+    :encode_word: "@595_76"
+  - :string: !binary |-
+      IuOBr+OBmOOCgeOBruikh+e0oOaVsFxu5a6f5pWw6YOo77ydIg==
+    :encode_word: "@595_77"
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = "'
+    :encode_word: "@595_78"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
       hOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
-    :encode_word: "@595_66"
-  - :string: '"%.2lf"'
-    :encode_word: "@595_67"
+    :encode_word: "@595_79"
+  - :string: '"(%3.2lf%3.2lfi)\n"'
+    :encode_word: "@595_80"
   - :string: !binary |-
-      IuOBr+OBmOOCgeOBruikh+e0oOaVsFxu5a6f5pWw6YOo77ydIg==
-    :encode_word: "@595_68"
+      IuiZmuaVsOmDqD0lLjJsZlxuIg==
+    :encode_word: "@595_81"
+  - :string: '"(%.2lf%+-.2lfi) + (%.2lf%+-.2lfi) = (%.2lf%+-.2lfi)"'
+    :encode_word: "@595_82"
+  - :string: '"(%0.2lf%+0.2lfi) + (%0.2lf%+0.2lfi) = (%0.2lf%+0.2lfi)\n"'
+    :encode_word: "@595_83"
   - :string: !binary |-
-      IuWun+aVsOmDqCI=
-    :encode_word: "@595_69"
-  - :string: !binary |-
-      IuasoeOBruOBruikh+e0oOaVsFxu5a6f5pWw6YOoID0gIg==
-    :encode_word: "@595_70"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)"'
-    :encode_word: "@595_71"
+      IuiZmuaVsOmDqO+8nSVsZlxuIg==
+    :encode_word: "@595_84"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhOOAglxu5Yid44KB44Gu6KSH57Sg5pWwXG4i
-    :encode_word: "@595_72"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)"'
-    :encode_word: "@595_73"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0lLjJsZlxuIg==
-    :encode_word: "@595_74"
-  - :string: '"(%.2f%+.2fi)"'
-    :encode_word: "@595_75"
-  - :string: '"(%d.00%+d.00i) + (%d.00%+d.00i) = (%d.00%+d.00i)"'
-    :encode_word: "@595_76"
-  - :string: !binary |-
-      IuasoeOBruiZmuaVsOmDqFxuIg==
-    :encode_word: "@595_77"
-  - :string: '"+%.2lfi)\n"'
-    :encode_word: "@595_78"
-  - :string: '"(%.2lf+%.2lfi)"'
-    :encode_word: "@595_79"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0lLjJsZlxuIg==
-    :encode_word: "@595_80"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_81"
-  - :string: !binary |-
-      IuiZmuaVsOmDqCA9Ig==
-    :encode_word: "@595_82"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)"'
-    :encode_word: "@595_83"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)"'
-    :encode_word: "@595_84"
-  - :string: !binary |-
-      IuOBr+OBmOOCgeOBruikh+e0oOaVsFxu5a6f5pWw6YOoPSI=
     :encode_word: "@595_85"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)"'
-    :encode_word: "@595_86"
-  - :string: '"+%.2lf"'
-    :encode_word: "@595_87"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)"'
-    :encode_word: "@595_88"
-  - :string: '"(%.2lf%.2lfi)"'
-    :encode_word: "@595_89"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_90"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_91"
-  - :string: '"(%.2lf%+.2lfi)\n"'
-    :encode_word: "@595_92"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
-    :encode_word: "@595_93"
-  - :string: !binary |-
-      IuWun+aVsOmDqOOAgD0gIg==
-    :encode_word: "@595_94"
-  - :string: '"%lf %lf %lf %lf"'
-    :encode_word: "@595_95"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
-    :encode_word: "@595_96"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0lMC4wZlxuIg==
-    :encode_word: "@595_97"
-  - :string: '"+ (%3.2lf%3.2lfi) = "'
-    :encode_word: "@595_98"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0lMC4wZlxuIg==
-    :encode_word: "@595_99"
-  - :string: '"(%3.2lf+%3.2lfi)\n"'
-    :encode_word: "@595_100"
-  - :string: '"(%0.2f%+0.2fi) + (%0.2f%+0.2fi) = (%0.2f%+0.2fi)"'
-    :encode_word: "@595_101"
-  - :string: '"+ (%3.2lf+%3.2lfi) = "'
-    :encode_word: "@595_102"
-  - :string: '"(%3.2lf%3.2lfi)\n"'
-    :encode_word: "@595_103"
   - :string: !binary |-
       IuWun+aVsOmDqO+8nSVsZlxuIg==
-    :encode_word: "@595_104"
-  - :string: '"(%d.00%+d.00i) + (%d.00%+d.00i) = (%d.00%+d.00i)\n"'
-    :encode_word: "@595_105"
-  - :string: '"(%4.2lf%+4.2lfi) + (%4.2lf%+4.2lfi) = (%4.2lf%+4.2lfi)\n"'
-    :encode_word: "@595_106"
-  - :string: !binary |-
-      IuiZmuaVsOmDqO+8nSVsZlxuIg==
-    :encode_word: "@595_107"
-  - :string: !binary |-
-      Ilxu5a6f5pWw6YOo77ydIg==
-    :encode_word: "@595_108"
-  - :string: !binary |-
-      IuWun+aVsOmDqD06XG4i
-    :encode_word: "@595_109"
+    :encode_word: "@595_86"
+  - :string: '"+%.2lfi)\n"'
+    :encode_word: "@595_87"
+  - :string: '"(%.2f%+.2fi)"'
+    :encode_word: "@595_88"
+  - :string: '"(%3.2lf+%3.2lfi)\n"'
+    :encode_word: "@595_89"
   - :string: !binary |-
       IuiZmuaVsOmDqD06XG4i
+    :encode_word: "@595_90"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_91"
+  - :string: !binary |-
+      IuWun+aVsOmDqD06XG4i
+    :encode_word: "@595_92"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
+      leOBhOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6ggPSAi
+    :encode_word: "@595_93"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_94"
+  - :string: '"\n"'
+    :encode_word: "@595_95"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)"'
+    :encode_word: "@595_96"
+  - :string: '"(%.2f+%.2fi)"'
+    :encode_word: "@595_97"
+  - :string: '"(%.2lf%+.2lfi) + "'
+    :encode_word: "@595_98"
+  - :string: '"(%.2lf%+.2lfi) = "'
+    :encode_word: "@595_99"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)"'
+    :encode_word: "@595_100"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)"'
+    :encode_word: "@595_101"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
+      hC5cbiI=
+    :encode_word: "@595_102"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
+    :encode_word: "@595_103"
+  - :string: !binary |-
+      IuOBr+OBmOOCgeOBruikh+e0oOaVsFxu5a6f5pWw6YOoPSI=
+    :encode_word: "@595_104"
+  - :string: '"+ (%3.2lf%3.2lfi) = "'
+    :encode_word: "@595_105"
+  - :string: '"+ (%3.2lf+%3.2lfi) = "'
+    :encode_word: "@595_106"
+  - :string: '"(%.2lf%+.2lfi)\n"'
+    :encode_word: "@595_107"
+  - :string: '"(%.2f%+.2fi) + (%.2f%+.2fi) = "'
+    :encode_word: "@595_108"
+  - :string: '" = (%.2lf%+.2lfi)"'
+    :encode_word: "@595_109"
+  - :string: '"(%0.2f%+0.2fi) + (%0.2f%+0.2fi) = (%0.2f%+0.2fi)\n"'
     :encode_word: "@595_110"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6jvvJ0i
     :encode_word: "@595_111"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
-      leOBhOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6ggPSAi
+  - :string: '"i) = (%.2lf"'
     :encode_word: "@595_112"
-  - :string: '"(%.2f+%.2fi)"'
+  - :string: !binary |-
+      IuWun+aVsOmDqO+8nSUuMGxmXG7omZrmlbDpg6jvvJ0lLjBsZlxuIg==
     :encode_word: "@595_113"
-  - :string: !binary |-
-      IuWIneOCgeOBruikh+e0oOaVsFxu5a6f5pWw6YOo77ydIg==
+  - :string: '"i) + (%.2lf"'
     :encode_word: "@595_114"
-  - :string: !binary |-
-      Ilxu5qyh44Gu6KSH57Sg5pWwXG4i
+  - :string: '"i)\n"'
     :encode_word: "@595_115"
-  - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf%+0.2lfi) = (%0.2lf%+0.2lfi)"'
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi) \n"'
     :encode_word: "@595_116"
+  - :string: '"%.f\n"'
+    :encode_word: "@595_117"
+  - :string: !binary |-
+      IuasoeOBruikh+e0oOaVsFxu5a6f5pWw6YOoID0gIg==
+    :encode_word: "@595_118"
+  - :string: '"%lf %lf %lf %lf"'
+    :encode_word: "@595_119"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
       hFxuIg==
-    :encode_word: "@595_117"
-  - :string: !binary |-
-      Ilxu5qyh44Gu6KSH57Sg5pWwIg==
-    :encode_word: "@595_118"
-  - :string: '"(%3.2lf+%3.2lfi) "'
-    :encode_word: "@595_119"
-  - :string: '"(%.2lf%+-.2lfi) + (%.2lf%+-.2lfi) = (%.2lf%+-.2lfi)"'
     :encode_word: "@595_120"
-  - :string: '"%lf\n"'
+  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)"'
     :encode_word: "@595_121"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
+  - :string: '"(%4.2lf%+4.2lfi) + (%4.2lf%+4.2lfi) = (%4.2lf%+4.2lfi)"'
     :encode_word: "@595_122"
   - :string: !binary |-
-      IuasoeOBruOBruikh+e0oOaVsFxuIg==
+      IuWIneOCgeOBruikh+e0oOaVsFxu5a6f5pWw6YOo77ydIg==
     :encode_word: "@595_123"
-  - :string: '"(%.2f%+.2lfi) + (%.2f%+.2fi) = (%.2f%+.2fi)\n"'
+  - :string: '" + (%.2lf%+.2lfi)"'
     :encode_word: "@595_124"
-  - :string: '"(%.2f%+.2fi) + (%.2f%+.2fi) = "'
+  - :string: !binary |-
+      IuOBr+OBmOOCgeOBruikh+e0oOaVsDogXG4i
     :encode_word: "@595_125"
   - :string: !binary |-
-      IuWun+aVsOmDqCA9Ig==
+      IuWun+aVsOmDqO+8nSUuMmxmXG4i
     :encode_word: "@595_126"
   - :string: !binary |-
-      IuWun+aVsOmDqO+8nSUuMGxmXG7omZrmlbDpg6jvvJ0lLjBsZlxuIg==
+      IuiZmuaVsOmDqO+8nSUuMmxmXG4i
     :encode_word: "@595_127"
-  - :string: '"(%.2f%.2fi)"'
+  - :string: !binary |-
+      IuasoeOBruiZmuaVsOmDqFxuIg==
     :encode_word: "@595_128"
   - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuioiOeul+OBl+OBpuOBj+OBoOOB
-      leOBhOOAglxuIg==
+      IuasoeOBruOBruikh+e0oOaVsFxuIg==
     :encode_word: "@595_129"
-  - :string: '"(%.2f%+.2fi)\n"'
+  - :string: '"(%.2lf%.2lfi) "'
     :encode_word: "@595_130"
-  - :string: '"(%.2f+%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
+  - :string: '"(%.2f+%.2fi) + (%.2f%+.2fi) = (%.2f%+.2fi)"'
     :encode_word: "@595_131"
-  - :string: !binary |-
-      IuiZmuaVsOmDqO+8nSUuMmxmXG4i
+  - :string: '"(%0.2lf%+0.2lfi) + (%0.2lf%+0.2lfi) = (%0.2lf%+0.2lfi)"'
     :encode_word: "@595_132"
   - :string: !binary |-
-      IuWun+aVsOmDqO+8nSUuMmxmXG4i
+      IuWun+aVsOmDqOOAgD0gIg==
     :encode_word: "@595_133"
-  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
     :encode_word: "@595_134"
+  - :string: '"(%0.2f%+0.2fi) + (%0.2f%+0.2fi) = (%0.2f%+0.2fi)"'
+    :encode_word: "@595_135"
+  - :string: !binary |-
+      IuWun+aVsOmDqO+8nSAi
+    :encode_word: "@595_136"
+  - :string: '"%lf\n"'
+    :encode_word: "@595_137"
+  - :string: '"%+.2lfi)"'
+    :encode_word: "@595_138"
+  - :string: '"(%.2f%+.2lfi) + (%.2f%+.2fi) = (%.2f%+.2fi)\n"'
+    :encode_word: "@595_139"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+aVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhOOA
       glxuIg==
-    :encode_word: "@595_135"
-  - :string: '"(%.2f%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
-    :encode_word: "@595_136"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0iKTtzY2FuZigiJWxmIg==
-    :encode_word: "@595_137"
+    :encode_word: "@595_140"
   - :string: !binary |-
       Iuikh+e0oOaVsD0i
-    :encode_word: "@595_138"
-  - :string: '"(%.2f+%.2fi) + (%.2f%+.2fi) = (%.2f%+.2fi)"'
-    :encode_word: "@595_139"
-  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f+%.2fi)\n"'
-    :encode_word: "@595_140"
-  - :string: '"(%.2f%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
     :encode_word: "@595_141"
-  - :string: '"(%.2f%.2fi) + (%.2f%.2fi) = (%.2f+%.2fi)\n"'
+  - :string: '"(%.2lf+%.2lfi) "'
     :encode_word: "@595_142"
-  - :string: !binary |-
-      IuWun+aVsOmDqO+8nVxuIg==
+  - :string: '"(%4.2lf%+4.2lfi) + (%4.2lf%+4.2lfi) = (%4.2lf%+4.2lfi)\n"'
     :encode_word: "@595_143"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) "'
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%+.2lfi) = (%.2lf%.2lfi)"'
     :encode_word: "@595_144"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi)"'
+  - :string: '"(%d.00%+d.00i) + (%d.00%+d.00i) = (%d.00%+d.00i)\n"'
     :encode_word: "@595_145"
-  - :string: '"(%0.2lf%+0.2lfi) + (%0.2lf%+0.2lfi) = (%0.2lf%+0.2lfi)"'
+  - :string: '"(%.2f%+.2fi)\n"'
     :encode_word: "@595_146"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi) \n"'
+  - :string: !binary |-
+      IuasoeaVsOmDqO+8nSI=
     :encode_word: "@595_147"
   - :string: !binary |-
-      IuiZmuaVsOmDqO+8nVxuIg==
+      IuiZmuWun+mDqD0i
     :encode_word: "@595_148"
-  - :string: '"(%.2lf%.2lfi) "'
+  - :string: !binary |-
+      IuiZmuaVsOmDqO+8nSAi
     :encode_word: "@595_149"
+  - :string: '"(%3.2lf+%3.2lfi) "'
+    :encode_word: "@595_150"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0iKTtzY2FuZigiJWxmIg==
+    :encode_word: "@595_151"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lMC4wZlxuIg==
+    :encode_word: "@595_152"
+  - :string: !binary |-
+      IuiZmuaVsOmDqD0lMC4wZlxuIg==
+    :encode_word: "@595_153"
+  - :string: !binary |-
+      IuiZmuaVsOmDqD0iKTtzY2FuZigiJWxmIg==
+    :encode_word: "@595_154"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lLjBmXG4i
+    :encode_word: "@595_155"
+  - :string: !binary |-
+      IuiZmuaVsOmDqD0lLjBmXG4i
+    :encode_word: "@595_156"
+  - :string: '"(%d.00%+d.00i) + (%d.00%+d.00i) = (%d.00%+d.00i)"'
+    :encode_word: "@595_157"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
       hFxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG4i
-    :encode_word: "@595_150"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0lLmZcbiI=
-    :encode_word: "@595_151"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0iKTtzY2FuZigiJWxmIg==
-    :encode_word: "@595_152"
-  - :string: '"%1lf"'
-    :encode_word: "@595_153"
-  - :string: !binary |-
-      IuiZmumDqD0i
-    :encode_word: "@595_154"
-  - :string: !binary |-
-      IuiZmuWun+mDqD0i
-    :encode_word: "@595_155"
-  - :string: '"(%.2lf+%.2lfi) = "'
-    :encode_word: "@595_156"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0lLmZcbiI=
-    :encode_word: "@595_157"
-  - :string: '"(%.2lf+%.2lfi) + "'
     :encode_word: "@595_158"
-  - :string: '"(%3.2lf%+3.2lfi) + (%3.2lf%+3.2lfi) = (%3.2lf%+3.2lfi)"'
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuioiOeul+OBl+OBpuOBj+OBoOOB
+      leOBhOOAglxuIg==
     :encode_word: "@595_159"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
-      hC5cbiI=
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%.2lfi) = (%.2lf%+.2lfi)"'
     :encode_word: "@595_160"
-  - :string: '"i) = (%.2lf"'
-    :encode_word: "@595_161"
-  - :string: '" = (%.2lf%+.2lfi)"'
-    :encode_word: "@595_162"
-  - :string: !binary |-
-      IuOBr+OBmOOCgeOBruikh+e0oOaVsDogXG4i
-    :encode_word: "@595_163"
-  - :string: '"(%.2lf%.2lfi) = "'
-    :encode_word: "@595_164"
-  - :string: '"(%3.2lf%3.2lfi) "'
-    :encode_word: "@595_165"
-  - :string: '"%.2lfi) = "'
-    :encode_word: "@595_166"
-  - :string: !binary |-
-      IuOBpOOBjuOBruikh+e0oOaVsFxuIg==
-    :encode_word: "@595_167"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi)"'
-    :encode_word: "@595_168"
-  - :string: !binary |-
-      IuiZmuaVsOmDqO+8nSUuMGxmXG4i
-    :encode_word: "@595_169"
-  - :string: !binary |-
-      IuWun+aVsOmDqO+8nSUuMGxmXG4i
-    :encode_word: "@595_170"
-  - :string: !binary |-
-      IuasoeOBruikh+e0oOaVsFxu5a6f5pWw6YOoID0gIg==
-    :encode_word: "@595_171"
-  - :string: '"%.f\n"'
-    :encode_word: "@595_172"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
-      hOOAgiI=
-    :encode_word: "@595_173"
-  - :string: '"i)\n"'
-    :encode_word: "@595_174"
-  - :string: '"+%0.2lfi)"'
-    :encode_word: "@595_175"
-  - :string: '"%0.2lfi)"'
-    :encode_word: "@595_176"
-  - :string: '"i) + (%.2lf"'
-    :encode_word: "@595_177"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
-      leOBhFxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG4i
-    :encode_word: "@595_178"
-  - :string: '"= (%.2lf%+.2lfi)\n"'
-    :encode_word: "@595_179"
-  - :string: !binary |-
-      IuOBr+OBmOOCgeOBruikh+e0oOaVsCI=
-    :encode_word: "@595_180"
-  - :string: '"(%1.2lf%+1.2lfi) + (%1.2lf%+1.2lfi) = (%1.2lf%+1.2lfi)\n"'
-    :encode_word: "@595_181"
-  - :string: '"(%.2lf%.2lfi) + "'
-    :encode_word: "@595_182"
-  - :string: !binary |-
-      IuWun+mDqD0i
-    :encode_word: "@595_183"
-  - :string: '" = (%.2lf%+.2lfi)\n"'
-    :encode_word: "@595_184"
-  - :string: !binary |-
-      IuWun+aVsOmDqO+8nSAi
-    :encode_word: "@595_185"
-  - :string: '"(%3.2f%+3.2fi) + (%3.2f%+3.2fi) = (%3.2f%+3.2fi)\n"'
-    :encode_word: "@595_186"
-  - :string: '"(%.2lf+%.2lfi) "'
-    :encode_word: "@595_187"
-  - :string: '"%+.2lfi)\n"'
-    :encode_word: "@595_188"
-  - :string: '"(%-.2f%+.2fi) + (%-.2f%+.2fi) = (%-.2f%+.2fi)"'
-    :encode_word: "@595_189"
-  - :string: !binary |-
-      IuWun+aVsOmDqDoi
-    :encode_word: "@595_190"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0iKTsgc2NhbmYoIiVsZiI=
-    :encode_word: "@595_191"
-  - :string: !binary |-
-      IuWun+aVsOmDqD1cbuiZmuaVsOmDqD1cbiI=
-    :encode_word: "@595_192"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0iKTsgc2NhbmYoIiVsZiI=
-    :encode_word: "@595_193"
-  - :string: !binary |-
-      IuiZmuaVsOmDqDoi
-    :encode_word: "@595_194"
-  - :string: '"+%.2lfi) = "'
-    :encode_word: "@595_195"
-  - :string: '"(%4.2lf%+4.2lfi) + (%4.2lf%+4.2lfi) = (%4.2lf%+5.2lfi)\n"'
-    :encode_word: "@595_196"
-  - :string: !binary |-
-      IuiZmuaVsOmDqCDvvJ0gIg==
-    :encode_word: "@595_197"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0lLjBmXG4i
-    :encode_word: "@595_198"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0lLjBmXG4i
-    :encode_word: "@595_199"
-  - :string: '"%+.2lfi)"'
-    :encode_word: "@595_200"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi)"'
-    :encode_word: "@595_201"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0lbGZcbiI=
-    :encode_word: "@595_202"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0lbGZcbiI=
-    :encode_word: "@595_203"
   - :string: !binary |-
       IuOBr+OBmOOCgeOBruikh+e0oOaVsFxu5a6f5pWw6YOoID0gIg==
-    :encode_word: "@595_204"
+    :encode_word: "@595_161"
   - :string: !binary |-
-      IuasoeOBruOBruikh+e0oOaVsFxu5a6f5pWw6YOo77ydIg==
-    :encode_word: "@595_205"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0lMS4wbGZcbuiZmuaVsOmDqD0lMS4wbGZcbiI=
-    :encode_word: "@595_206"
-  - :string: '"%lf%lf"'
-    :encode_word: "@595_207"
-  - :string: '"(%.2f"'
-    :encode_word: "@595_208"
-  - :string: '"\n(%0.2lf%+0.2lfi) + (%0.2lf%+0.2lfi) = (%0.2lf%+0.2lfi)"'
-    :encode_word: "@595_209"
-  - :string: !binary |-
-      IuasoeOBq+ikh+e0oOaVsFxuIg==
-    :encode_word: "@595_210"
-  - :string: !binary |-
-      Iuikh+aVsOmDqD0i
-    :encode_word: "@595_211"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
-      hOOAglxu5Yid44KB44Gu6KSH57Sg5pWwXG4i
-    :encode_word: "@595_212"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0iKTtpZihzY2FuZigiJWxmIg==
-    :encode_word: "@595_213"
-  - :string: '"(%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_214"
-  - :string: '"(%.2lf%.2lfi)\n"'
-    :encode_word: "@595_215"
-  - :string: '"(%.2lf% + .2lfi) + (%.2lf% + .2lfi) = (%.2lf%+.2lfi)"'
-    :encode_word: "@595_216"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0iKTtpZihzY2FuZigiJWxmIg==
-    :encode_word: "@595_217"
-  - :string: !binary |-
-      IuWun+aVsOmDqCDvvJ0gIg==
-    :encode_word: "@595_218"
-  - :string: '"(%d.00%d.00i) + "'
-    :encode_word: "@595_219"
-  - :string: '"(%3.2lf%+3.2lfi) + (%3.2lf%+3.2lfi) = (%3.2lf%+3.2lfi)\n"'
-    :encode_word: "@595_220"
-  - :string: !binary |-
-      IuasoeaVsOmDqO+8nSI=
-    :encode_word: "@595_221"
-  - :string: '"(%.2f%+.2fi) + "'
-    :encode_word: "@595_222"
-  - :string: '"(%d.00+%d.00i) + "'
-    :encode_word: "@595_223"
-  - :string: '"(%d.00+%d.00i) = "'
-    :encode_word: "@595_224"
-  - :string: '"(%d.00%d.00i) = "'
-    :encode_word: "@595_225"
-  - :string: '"(%d.00+%d.00i)"'
-    :encode_word: "@595_226"
-  - :string: '"(%d.00%d.00i)"'
-    :encode_word: "@595_227"
-  - :string: '"(%0.2lf"'
-    :encode_word: "@595_228"
-  - :string: '" + (%0.2lf"'
-    :encode_word: "@595_229"
-  - :string: '" = (%0.2lf"'
-    :encode_word: "@595_230"
-  - :string: '"%0.2lfi)\n"'
-    :encode_word: "@595_231"
-  - :string: '"+%0.2lfi)\n"'
-    :encode_word: "@595_232"
+      IuOBr+OBmOOCgeOBruikh+e0oOaVsCI=
+    :encode_word: "@595_162"
+  - :string: '"(%3.2lf%+3.2lfi) + (%3.2lf%+3.2lfi) = (%3.2lf%+3.2lfi)"'
+    :encode_word: "@595_163"
+  - :string: '"%+.2lfi)\n"'
+    :encode_word: "@595_164"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhOOAglxu5Yid44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
-    :encode_word: "@595_233"
+    :encode_word: "@595_165"
   - :string: !binary |-
-      IuiZmuaVsOmDqO+8nSAi
-    :encode_word: "@595_234"
-  - :string: '"(%.2f%+.2fi) = "'
-    :encode_word: "@595_235"
-  - :string: '"(%d.00"'
-    :encode_word: "@595_236"
-  - :string: '"(%+d.00"'
-    :encode_word: "@595_237"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi)"'
-    :encode_word: "@595_238"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi)"'
-    :encode_word: "@595_239"
+      IuiZmumDqD0i
+    :encode_word: "@595_166"
+  - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf%+0.2lfi) = (%0.2lf%+0.2lfi)"'
+    :encode_word: "@595_167"
+  - :string: '"(%3.2lf%3.2lfi) "'
+    :encode_word: "@595_168"
   - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
-      hOOAguOBr+OBmOOCgeOBruikh+e0oOaVsFxuIg==
-    :encode_word: "@595_240"
-  - :string: '" = (%.2lf%.2lfi)"'
-    :encode_word: "@595_241"
-  - :string: '" = (%.2lf+%.2lfi)"'
-    :encode_word: "@595_242"
-  - :string: '"+%.2lfi) + "'
-    :encode_word: "@595_243"
-  - :string: '"%.2lfi) + "'
-    :encode_word: "@595_244"
-  - :string: '"(%3.2lf"'
-    :encode_word: "@595_245"
-  - :string: '"%3.2lfi)"'
-    :encode_word: "@595_246"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_247"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
-    :encode_word: "@595_248"
-  - :string: '")\n"'
-    :encode_word: "@595_249"
-  - :string: '"= (%.2lf%+.2lfi)"'
-    :encode_word: "@595_250"
-  - :string: '"("'
-    :encode_word: "@595_251"
-  - :string: '"(%.2lf%+.2lfi) "'
-    :encode_word: "@595_252"
+      IuiZmuaVsOmDqO+8nVxuIg==
+    :encode_word: "@595_169"
+  - :string: '"(%1.2lf%+1.2lfi) + (%1.2lf%+1.2lfi) = (%1.2lf%+1.2lfi)\n"'
+    :encode_word: "@595_170"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lbGZcbiI=
+    :encode_word: "@595_171"
+  - :string: '"%1lf"'
+    :encode_word: "@595_172"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi)"'
+    :encode_word: "@595_173"
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) "'
+    :encode_word: "@595_174"
   - :string: !binary |-
       IuWun+aVsOmDqD0lZlxuIg==
-    :encode_word: "@595_253"
+    :encode_word: "@595_175"
   - :string: !binary |-
       IuiZmuaVsOmDqD0lZlxuIg==
-    :encode_word: "@595_254"
-  - :string: '" + (%.2f%+.2fi)"'
-    :encode_word: "@595_255"
-  - :string: '" = (%.2f%+.2fi)\n"'
-    :encode_word: "@595_256"
-  - :string: '"%+.2lfi) + (%.2lf"'
-    :encode_word: "@595_257"
-  - :string: '"%+.2lfi) = "'
-    :encode_word: "@595_258"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)"'
-    :encode_word: "@595_259"
-  - :string: '"\n(%.2f%+.2fi) + (%.2f%+.2fi) = (%.2f%+.2fi)\n"'
-    :encode_word: "@595_260"
-  - :string: '") + ("'
-    :encode_word: "@595_261"
-  - :string: '") = ("'
-    :encode_word: "@595_262"
+    :encode_word: "@595_176"
   - :string: !binary |-
-      IuOBr+OBmOOCgeOBruOBruikh+e0oOaVsOOAglxuIg==
-    :encode_word: "@595_263"
+      IuWun+aVsOmDqO+8nVxuIg==
+    :encode_word: "@595_177"
+  - :string: '"(%.2lf+%.2lfi) + "'
+    :encode_word: "@595_178"
+  - :string: '"(%.2lf%+.2lfi) "'
+    :encode_word: "@595_179"
+  - :string: '"(%3.2lf%+3.2lfi) + (%3.2lf%+3.2lfi) = (%3.2lf%+3.2lfi)\n"'
+    :encode_word: "@595_180"
+  - :string: '"(%.2f%.2fi)"'
+    :encode_word: "@595_181"
+  - :string: '"+ (%.2lf%+.2lfi) = "'
+    :encode_word: "@595_182"
   - :string: !binary |-
-      IuasoeOBruikh+e0oOaVsOOAglxuIg==
-    :encode_word: "@595_264"
-  - :string: '"%.2fi)"'
-    :encode_word: "@595_265"
+      IuOBpOOBjuOBruikh+e0oOaVsFxuIg==
+    :encode_word: "@595_183"
   - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
-      hOOAgjpcbuWIneOCgeOBruikh+e0oOaVsFxuIg==
-    :encode_word: "@595_266"
-  - :string: '"(%.2f+%.2fi)\n"'
-    :encode_word: "@595_267"
-  - :string: '"%.2lfi) = (%.2lf%.2lfi)\n"'
-    :encode_word: "@595_268"
-  - :string: !binary |-
-      IuWYmOaVsOmDqD0iKTtzY2FuZigiJWxmIg==
-    :encode_word: "@595_269"
-  - :string: '" + (%.2lf%+.2lfi)"'
-    :encode_word: "@595_270"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
-      leOBhFxu5Yid44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
-    :encode_word: "@595_271"
-  - :string: '"%d %d"'
-    :encode_word: "@595_272"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0lZFxuIg==
-    :encode_word: "@595_273"
-  - :string: !binary |-
-      IuiZmuaVsOmDqD0lZFxuIg==
-    :encode_word: "@595_274"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+S4i+OBleOBhOOAglxu
-      Ig==
-    :encode_word: "@595_275"
-  - :string: !binary |-
-      IuWun+aVsOmDqO+8nTMi
-    :encode_word: "@595_276"
-  - :string: !binary |-
-      IuiZmuaVsOmDqO+8nTUi
-    :encode_word: "@595_277"
-  - :string: !binary |-
-      IuOBr+OBmOOCgeOBrue0oOaVsFxuIg==
-    :encode_word: "@595_278"
-  - :string: !binary |-
-      IuasoeOBruikh+e0oOaVsFxu5a6f5pWw6YOoPVxuIg==
-    :encode_word: "@595_279"
-  - :string: !binary |-
-      IuOBr+OBmOOCgeOBpuOBruikh+e0oOaVsFxuIg==
-    :encode_word: "@595_280"
+      IuiZmuaVsOmDqD0lbGZcbiI=
+    :encode_word: "@595_184"
   - :string: !binary |-
       IuasoeOBruikh+e0oOW3o1xu5a6f5pWw6YOoPSI=
-    :encode_word: "@595_281"
+    :encode_word: "@595_185"
+  - :string: '"(%.2lf+%.2lfi) = "'
+    :encode_word: "@595_186"
   - :string: !binary |-
-      IuWYmOaVsOmDqCA9ICI=
-    :encode_word: "@595_282"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi)"'
-    :encode_word: "@595_283"
+      IuasoeOBq+ikh+e0oOaVsFxuIg==
+    :encode_word: "@595_187"
+  - :string: '"(%.2lf%.2lfi) = "'
+    :encode_word: "@595_188"
+  - :string: !binary |-
+      IuWun+mDqD0i
+    :encode_word: "@595_189"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
-      hCI=
-    :encode_word: "@595_284"
-  - :string: '"(%4.2f%+4.2fi) + (%4.2f%+4.2fi) = (%4.2f%+4.2fi)"'
-    :encode_word: "@595_285"
-  - :string: '"(%.2f%.2fi) + (%.2f+%.2fi)"'
-    :encode_word: "@595_286"
-  - :string: '"(%.2f+%.2fi) + (%.2f%.2fi)"'
-    :encode_word: "@595_287"
-  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi)"'
-    :encode_word: "@595_288"
-  - :string: '"(%.2f%.2fi) + (%.2f%.2fi)"'
-    :encode_word: "@595_289"
-  - :string: '" = (%.2f+%.2fi)\n"'
-    :encode_word: "@595_290"
-  - :string: '" = (%.2f%.2fi)\n"'
-    :encode_word: "@595_291"
-  - :string: '"+ (%.2lf%+.2lfi) = "'
-    :encode_word: "@595_292"
+      hOOAgiI=
+    :encode_word: "@595_190"
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi)"'
+    :encode_word: "@595_191"
+  - :string: !binary |-
+      Iuikh+aVsOmDqD0i
+    :encode_word: "@595_192"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhC5cbiI=
-    :encode_word: "@595_293"
-  - :string: !binary |-
-      IuiZmuaVsOmDqOWIhu+8nSI=
-    :encode_word: "@595_294"
-  - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOBruWFpeWKm+OCkuOBl+OBpuOBj+OB
-      oOOBleOBhOOAglxuIg==
-    :encode_word: "@595_295"
-  - :string: '"(%3.2f%+3.2fi) + (%3.2f%+3.2fi) = (%3.2f%+3.2fi)"'
-    :encode_word: "@595_296"
-  - :string: !binary |-
-      IuWYmOaVsOmDqD0lMC4wbGZcbiI=
-    :encode_word: "@595_297"
-  - :string: !binary |-
-      IuWun+aVsOmDqOWIhu+8nSI=
-    :encode_word: "@595_298"
+    :encode_word: "@595_193"
   - :string: !binary |-
       IuWun+aVsOmDqD0lMC4wbGZcbiI=
-    :encode_word: "@595_299"
-  - :string: '" = (%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_300"
-  - :string: '"(%.2f%.2fi)\n"'
-    :encode_word: "@595_301"
+    :encode_word: "@595_194"
   - :string: !binary |-
-      IuasoeOBrue0oOaVsFxuIg==
-    :encode_word: "@595_302"
-  - :string: '" (%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi) "'
-    :encode_word: "@595_303"
+      IuWYmOaVsOmDqD0lMC4wbGZcbiI=
+    :encode_word: "@595_195"
+  - :string: '"(%4.2lf%+4.2lfi) + (%4.2lf%+4.2lfi) = (%4.2lf%+5.2lfi)\n"'
+    :encode_word: "@595_196"
+  - :string: '"(%3.2f%+3.2fi) + (%3.2f%+3.2fi) = (%3.2f%+3.2fi)\n"'
+    :encode_word: "@595_197"
   - :string: !binary |-
-      IuWun+aVsOmDqCA9ICUubGZcbiI=
-    :encode_word: "@595_304"
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
+      hOOAglxu5Yid44KB44Gu6KSH57Sg5pWwXG4i
+    :encode_word: "@595_198"
   - :string: !binary |-
-      IuiZmuaVsOmDqCA9ICUubGZcbiI=
-    :encode_word: "@595_305"
-  - :string: '"(%.2lf%+1.2lfi) + (%.2lf%+1.2lfi) = (%.2lf%+1.2lfi)"'
-    :encode_word: "@595_306"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi) "'
-    :encode_word: "@595_307"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf%+.2lfi) = "'
-    :encode_word: "@595_308"
+      IuWun+aVsOmDqD0iKTtpZihzY2FuZigiJWxmIg==
+    :encode_word: "@595_199"
   - :string: !binary |-
-      IuWun+aVsOmDqO+8nSUyLjBmXG4i
-    :encode_word: "@595_309"
+      IuiZmuaVsOmDqD0iKTtpZihzY2FuZigiJWxmIg==
+    :encode_word: "@595_200"
   - :string: !binary |-
-      IuiZmuaVsOmDqO+8nSUyLjBmXG4i
-    :encode_word: "@595_310"
+      IuWun+aVsOmDqD1cbuiZmuaVsOmDqD1cbiI=
+    :encode_word: "@595_201"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi)"'
+    :encode_word: "@595_202"
   - :string: !binary |-
-      IuiZmuaVsOmDqO+8nSIpOyAgc2NhbmYoIiVsZiI=
-    :encode_word: "@595_311"
-  - :string: '" = (%.2lf%.2lfi)\n"'
-    :encode_word: "@595_312"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi)"'
-    :encode_word: "@595_313"
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
+      hOOAguOBr+OBmOOCgeOBruikh+e0oOaVsFxuIg==
+    :encode_word: "@595_203"
+  - :string: '"\n(%0.2lf%+0.2lfi) + (%0.2lf%+0.2lfi) = (%0.2lf%+0.2lfi)"'
+    :encode_word: "@595_204"
+  - :string: '"(%-.2f%+.2fi) + (%-.2f%+.2fi) = (%-.2f%+.2fi)"'
+    :encode_word: "@595_205"
+  - :string: '"= (%.2lf%+.2lfi)\n"'
+    :encode_word: "@595_206"
   - :string: !binary |-
-      IuWun+aVsOmDqO+8nSIpOyAgc2NhbmYoIiVsZiI=
-    :encode_word: "@595_314"
-  - :string: '"(%4.2lf+%4.2lfi)"'
-    :encode_word: "@595_315"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%+.2lfi) = (%.2lf%.2lfi)"'
-    :encode_word: "@595_316"
-  - :string: '"(%4.2lf%4.2lfi)"'
-    :encode_word: "@595_317"
+      IuOBr+OBmOOCgeOBrue0oOaVsFxuIg==
+    :encode_word: "@595_207"
+  - :string: !binary |-
+      IuasoeOBruOBruikh+e0oOaVsFxu5a6f5pWw6YOo77ydIg==
+    :encode_word: "@595_208"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi)"'
+    :encode_word: "@595_209"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi)"'
+    :encode_word: "@595_210"
   - :string: !binary |-
       IuiZmuaVsOmDqOOAgD0gIg==
-    :encode_word: "@595_318"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%.2lfi) = (%.2lf%+.2lfi)"'
-    :encode_word: "@595_319"
-  - :string: '"(%d.00+%d.00i) + (%d.00%+d.00i) = (%d.00%+d.00i)"'
-    :encode_word: "@595_320"
-  - :string: '"(%.2lf% + .2lfi) + (%.2lf% + .2lfi) = (%.2lf% + .2lfi)"'
-    :encode_word: "@595_321"
+    :encode_word: "@595_211"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+S4i+OBleOBhOOAglxu
+      Ig==
+    :encode_word: "@595_212"
+  - :string: !binary |-
+      IuWun+aVsOmDqO+8nTMi
+    :encode_word: "@595_213"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi)"'
+    :encode_word: "@595_214"
+  - :string: '" = (%.2lf%.2lfi)\n"'
+    :encode_word: "@595_215"
+  - :string: '" = (%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_216"
+  - :string: '"(%.2f%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
+    :encode_word: "@595_217"
+  - :string: '"(%.2f%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
+    :encode_word: "@595_218"
+  - :string: '"(%.2f%.2fi) + (%.2f%.2fi) = (%.2f+%.2fi)\n"'
+    :encode_word: "@595_219"
+  - :string: '"(%.2f+%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
+    :encode_word: "@595_220"
+  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f+%.2fi)\n"'
+    :encode_word: "@595_221"
+  - :string: '"(%.2lf%.2lfi) + "'
+    :encode_word: "@595_222"
+  - :string: '"%.2lfi) = "'
+    :encode_word: "@595_223"
+  - :string: !binary |-
+      IuWun+aVsOmDqCDvvJ0gIg==
+    :encode_word: "@595_224"
+  - :string: '"= (%.2lf%+.2lfi)"'
+    :encode_word: "@595_225"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
+      leOBhFxu44Gv44GY44KB44Gu6KSH57Sg5pWwXG4i
+    :encode_word: "@595_226"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
+      hOOAgjpcbuWIneOCgeOBruikh+e0oOaVsFxuIg==
+    :encode_word: "@595_227"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
+      leOBhFxu5Yid44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
+    :encode_word: "@595_228"
+  - :string: '"(%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_229"
+  - :string: '"(%.2lf%.2lfi)\n"'
+    :encode_word: "@595_230"
+  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
+    :encode_word: "@595_231"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lLmZcbiI=
+    :encode_word: "@595_232"
+  - :string: !binary |-
+      IuiZmuaVsOmDqD0lLmZcbiI=
+    :encode_word: "@595_233"
   - :string: '"(%+.2lf%+.2lfi) + (%+.2lf%+.2lfi) = (%+.2lf%+.2lfi)\n"'
-    :encode_word: "@595_322"
-  - :string: '"(%.2lf%+.2lfi) + (%+.2lf%+.2lfi) = (%+.2lf%+.2lfi)\n"'
-    :encode_word: "@595_323"
+    :encode_word: "@595_234"
   - :string: !binary |-
-      IuWun+aVsOmDqD0lLS4yZlxu6Jma5pWw6YOoPSUtLjJmXG4i
-    :encode_word: "@595_324"
-  - :string: !binary |-
-      IuWun+mDqO+8nSI=
-    :encode_word: "@595_325"
-  - :string: !binary |-
-      IuiZmumDqO+8nSI=
-    :encode_word: "@595_326"
-  - :string: '"(%0.2lf%0.2lfi) + (%0.2lf%0.2lfi) = (%0.2lf%0.2lfi)"'
-    :encode_word: "@595_327"
-  - :string: '"%lf,%lf,%lf,%lf"'
-    :encode_word: "@595_328"
-  - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf%0.2lfi) = (%0.2lf%0.2lfi)"'
-    :encode_word: "@595_329"
-  - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf%0.2lfi) = (%0.2lf+%0.2lfi)"'
-    :encode_word: "@595_330"
-  - :string: '"+ "'
-    :encode_word: "@595_331"
-  - :string: '"= "'
-    :encode_word: "@595_332"
-  - :string: '"(%.2f%.2fi) "'
-    :encode_word: "@595_333"
-  - :string: '"(%.2f+%.2fi) "'
-    :encode_word: "@595_334"
-  - :string: '"(%0.2lf%0.2lfi) + (%0.2lf+%0.2lfi) = (%0.2lf%0.2lfi)"'
-    :encode_word: "@595_335"
-  - :string: '"+%.2lfi) + (%.2lf"'
-    :encode_word: "@595_336"
-  - :string: '"(%+.2lf%+.2lfi) "'
-    :encode_word: "@595_337"
-  - :string: '"+ (%+.2lf%+.2lfi) "'
-    :encode_word: "@595_338"
-  - :string: '"+ (%.2lf%+.2lfi) "'
-    :encode_word: "@595_339"
-  - :string: '"= (%+.2lf%+.2lfi)\n "'
-    :encode_word: "@595_340"
-  - :string: '"= (%.2lf%+.2lfi)\n "'
-    :encode_word: "@595_341"
-  - :string: '" + (%.2lf%.2lfi)"'
-    :encode_word: "@595_342"
-  - :string: '" + (%.2lf+%.2lfi)"'
-    :encode_word: "@595_343"
-  - :string: '"(%0.2lf%0.2lfi) + (%0.2lf+%0.2lfi) = (%0.2lf+%0.2lfi)"'
-    :encode_word: "@595_344"
+      IuWun+aVsOmDqDoi
+    :encode_word: "@595_235"
+  - :string: '" + (%.2f%+.2fi)"'
+    :encode_word: "@595_236"
+  - :string: '" = (%.2f%+.2fi)\n"'
+    :encode_word: "@595_237"
+  - :string: '"(%.2f%.2fi) + (%.2f+%.2fi)"'
+    :encode_word: "@595_238"
+  - :string: '"(%.2f+%.2fi) + (%.2f%.2fi)"'
+    :encode_word: "@595_239"
+  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi)"'
+    :encode_word: "@595_240"
+  - :string: '"(%.2f%.2fi) + (%.2f%.2fi)"'
+    :encode_word: "@595_241"
+  - :string: '" = (%.2f+%.2fi)\n"'
+    :encode_word: "@595_242"
+  - :string: '" = (%.2f%.2fi)\n"'
+    :encode_word: "@595_243"
   - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf+%0.2lfi) = (%0.2lf+%0.2lfi)"'
-    :encode_word: "@595_345"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%)"'
-    :encode_word: "@595_346"
+    :encode_word: "@595_244"
+  - :string: '"(%0.2lf%0.2lfi) + (%0.2lf+%0.2lfi) = (%0.2lf+%0.2lfi)"'
+    :encode_word: "@595_245"
   - :string: !binary |-
-      IuOBr+OBmOOCgeOBruikh+e0oOaVsFxuIiLlrp/mlbDpg6g9Ig==
-    :encode_word: "@595_347"
+      IuWun+aVsOmDqD0iKTsgc2NhbmYoIiVsZiI=
+    :encode_word: "@595_246"
+  - :string: !binary |-
+      IuiZmuaVsOmDqD0iKTsgc2NhbmYoIiVsZiI=
+    :encode_word: "@595_247"
+  - :string: '"(%.2lf% + .2lfi) + (%.2lf% + .2lfi) = (%.2lf%+.2lfi)"'
+    :encode_word: "@595_248"
+  - :string: !binary |-
+      IuiZmuaVsOmDqO+8nTUi
+    :encode_word: "@595_249"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm1xu44Gv44GY44KB44Gu
       6KSH57Sg5pWwXG4i
-    :encode_word: "@595_348"
-  - :string: '"(%3.2lf%+3.2lfi) + (%3.2lf%+3.2lfi) = (%3.2lf% + 3.2lfi)\n"'
-    :encode_word: "@595_349"
-  - :string: '"%+.2lfi"'
-    :encode_word: "@595_350"
-  - :string: '"+%.2lfi) = (%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_351"
-  - :string: '"%.2f%+.2fi"'
-    :encode_word: "@595_352"
+    :encode_word: "@595_250"
+  - :string: '"(%0.2lf%0.2lfi) + (%0.2lf+%0.2lfi) = (%0.2lf%0.2lfi)"'
+    :encode_word: "@595_251"
+  - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf%0.2lfi) = (%0.2lf+%0.2lfi)"'
+    :encode_word: "@595_252"
+  - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf%0.2lfi) = (%0.2lf%0.2lfi)"'
+    :encode_word: "@595_253"
+  - :string: '"(%0.2lf%0.2lfi) + (%0.2lf%0.2lfi) = (%0.2lf%0.2lfi)"'
+    :encode_word: "@595_254"
+  - :string: '"(%.2f%+.2fi) + "'
+    :encode_word: "@595_255"
+  - :string: '"(%.2f%+.2fi) = "'
+    :encode_word: "@595_256"
+  - :string: '" = (%.2lf%+.2lfi)\n"'
+    :encode_word: "@595_257"
   - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
-      leOBhOOAglxu5aeL44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
-    :encode_word: "@595_353"
-  - :string: '"(%d.00%d.00i) + (%d.00%d.00i) = (%d.00%d.00i)"'
-    :encode_word: "@595_354"
-  - :string: '"(%d.00%d.00i) + (%d.00+%d.00i) = (%d.00%d.00i)"'
-    :encode_word: "@595_355"
-  - :string: '"(%d.00%d.00i) + (%d.00%d.00i) = (%d.00+%d.00i)"'
-    :encode_word: "@595_356"
-  - :string: '"Enter real part of a complex number:"'
-    :encode_word: "@595_357"
-  - :string: '"Enter imaginary part:"'
-    :encode_word: "@595_358"
-  - :string: '"(%.2lf-%.2lfi) + "'
-    :encode_word: "@595_359"
-  - :string: '"(%.2lf-%.2lfi) = "'
-    :encode_word: "@595_360"
-  - :string: '"(%.2lf-%.2lfi)"'
-    :encode_word: "@595_361"
-  - :string: '"Enter second real part of a complex number:"'
-    :encode_word: "@595_362"
-  - :string: '"Enter second imaginary part:"'
-    :encode_word: "@595_363"
-  - :string: '"(%d.00%d.00i) + (%d.00+%d.00i) = (%d.00+%d.00i)"'
-    :encode_word: "@595_364"
-  - :string: '"(%d.00+%d.00i) + (%d.00%d.00i) = (%d.00%d.00i)"'
-    :encode_word: "@595_365"
-  - :string: '"(%d.00+%d.00i) + (%d.00+%d.00i) = (%d.00%d.00i)"'
-    :encode_word: "@595_366"
-  - :string: '"(%+.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%+.2lf%+.2lfi)\n"'
-    :encode_word: "@595_367"
-  - :string: '"(%d.00+%d.00i) + (%d.00%d.00i) = (%d.00+%d.00i)"'
-    :encode_word: "@595_368"
-  - :string: '"(%d.00+%d.00i) + (%d.00+%d.00i) = (%d.00+%d.00i)"'
-    :encode_word: "@595_369"
-  - :string: '"%d%d%d%d"'
-    :encode_word: "@595_370"
-  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = "'
-    :encode_word: "@595_371"
-  - :string: '"(%.2f%.2fi) + (%.2f+%.2fi) = "'
-    :encode_word: "@595_372"
-  - :string: '"+ (%.2lf%.2lfi) "'
-    :encode_word: "@595_373"
-  - :string: '"+ (%.2lf+%.2lfi) "'
-    :encode_word: "@595_374"
-  - :string: '"= (%.2lf%.2lfi)"'
-    :encode_word: "@595_375"
-  - :string: '"= (%.2lf+%.2lfi)"'
-    :encode_word: "@595_376"
-  - :string: '"(%.2f+%.2fi) + (%.2f%.2fi) = "'
-    :encode_word: "@595_377"
-  - :string: '"(%.2f%.2fi) + (%.2f%.2fi) = "'
-    :encode_word: "@595_378"
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOBruWFpeWKm+OCkuOBl+OBpuOBj+OB
+      oOOBleOBhOOAglxuIg==
+    :encode_word: "@595_258"
   - :string: !binary |-
-      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
-      leOBhOOAglxu44Gv44GY44KB44Gu6KiI566XXG4i
-    :encode_word: "@595_379"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = "'
-    :encode_word: "@595_380"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)"'
-    :encode_word: "@595_381"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = "'
-    :encode_word: "@595_382"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)"'
-    :encode_word: "@595_383"
-  - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf+%0.2lfi) = (%0.2lf+%0.2lfi)\n"'
-    :encode_word: "@595_384"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = "'
-    :encode_word: "@595_385"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = "'
-    :encode_word: "@595_386"
+      IuWun+aVsOmDqO+8nSUuMGxmXG4i
+    :encode_word: "@595_259"
+  - :string: !binary |-
+      IuiZmuaVsOmDqO+8nSUuMGxmXG4i
+    :encode_word: "@595_260"
+  - :string: !binary |-
+      IuiZmuaVsOmDqDoi
+    :encode_word: "@595_261"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
-      hOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwIg==
-    :encode_word: "@595_387"
+      hCI=
+    :encode_word: "@595_262"
+  - :string: '"(%4.2f%+4.2fi) + (%4.2f%+4.2fi) = (%4.2f%+4.2fi)"'
+    :encode_word: "@595_263"
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi) "'
+    :encode_word: "@595_264"
+  - :string: !binary |-
+      IuiZmuaVsOmDqCDvvJ0gIg==
+    :encode_word: "@595_265"
+  - :string: '"\n(%.2f%+.2fi) + (%.2f%+.2fi) = (%.2f%+.2fi)\n"'
+    :encode_word: "@595_266"
+  - :string: '"(%3.2f%+3.2fi) + (%3.2f%+3.2fi) = (%3.2f%+3.2fi)"'
+    :encode_word: "@595_267"
+  - :string: '"%0.2lfi)"'
+    :encode_word: "@595_268"
+  - :string: '"+%0.2lfi)"'
+    :encode_word: "@595_269"
+  - :string: !binary |-
+      IuasoeOBruikh+e0oOaVsFxu5a6f5pWw6YOoPVxuIg==
+    :encode_word: "@595_270"
+  - :string: '"(%.2lf%+1.2lfi) + (%.2lf%+1.2lfi) = (%.2lf%+1.2lfi)"'
+    :encode_word: "@595_271"
+  - :string: !binary |-
+      IuOBr+OBmOOCgeOBruOBruikh+e0oOaVsOOAglxuIg==
+    :encode_word: "@595_272"
+  - :string: !binary |-
+      IuasoeOBruikh+e0oOaVsOOAglxuIg==
+    :encode_word: "@595_273"
+  - :string: '"%lf%lf"'
+    :encode_word: "@595_274"
+  - :string: '"(%d.00%d.00i) + "'
+    :encode_word: "@595_275"
+  - :string: '"(%4.2lf%4.2lfi)"'
+    :encode_word: "@595_276"
+  - :string: '"(%4.2lf+%4.2lfi)"'
+    :encode_word: "@595_277"
+  - :string: '"(%.2lf%+.2lfi) + (%+.2lf%+.2lfi) = (%+.2lf%+.2lfi)\n"'
+    :encode_word: "@595_278"
+  - :string: '"(%0.2lf+%0.2lfi) + (%0.2lf+%0.2lfi) = (%0.2lf+%0.2lfi)\n"'
+    :encode_word: "@595_279"
+  - :string: '"(%.2lf% + .2lfi) + (%.2lf% + .2lfi) = (%.2lf% + .2lfi)"'
+    :encode_word: "@595_280"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_281"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
+    :encode_word: "@595_282"
+  - :string: '"(%.2f"'
+    :encode_word: "@595_283"
+  - :string: !binary |-
+      IuWun+aVsOmDqO+8nSIpOyAgc2NhbmYoIiVsZiI=
+    :encode_word: "@595_284"
+  - :string: !binary |-
+      IuiZmuaVsOmDqO+8nSIpOyAgc2NhbmYoIiVsZiI=
+    :encode_word: "@595_285"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lMS4wbGZcbuiZmuaVsOmDqD0lMS4wbGZcbiI=
+    :encode_word: "@595_286"
+  - :string: '" = (%.2lf%.2lfi)"'
+    :encode_word: "@595_287"
+  - :string: '" = (%.2lf+%.2lfi)"'
+    :encode_word: "@595_288"
+  - :string: '"+%.2lfi) = "'
+    :encode_word: "@595_289"
+  - :string: '")\n"'
+    :encode_word: "@595_290"
+  - :string: !binary |-
+      IuWun+aVsOmDqCA9ICUubGZcbiI=
+    :encode_word: "@595_291"
+  - :string: !binary |-
+      IuiZmuaVsOmDqCA9ICUubGZcbiI=
+    :encode_word: "@595_292"
+  - :string: !binary |-
+      IuWun+aVsOmDqO+8nSUyLjBmXG4i
+    :encode_word: "@595_293"
+  - :string: !binary |-
+      IuiZmuaVsOmDqO+8nSUyLjBmXG4i
+    :encode_word: "@595_294"
+  - :string: '"%+.2lfi) + (%.2lf"'
+    :encode_word: "@595_295"
+  - :string: '"%+.2lfi) = "'
+    :encode_word: "@595_296"
+  - :string: '"(%d.00+%d.00i) + "'
+    :encode_word: "@595_297"
+  - :string: '"(%d.00+%d.00i) = "'
+    :encode_word: "@595_298"
+  - :string: '"(%d.00%d.00i) = "'
+    :encode_word: "@595_299"
+  - :string: '"(%d.00+%d.00i)"'
+    :encode_word: "@595_300"
+  - :string: '"(%d.00%d.00i)"'
+    :encode_word: "@595_301"
+  - :string: '"(%0.2lf"'
+    :encode_word: "@595_302"
+  - :string: '" + (%0.2lf"'
+    :encode_word: "@595_303"
+  - :string: '" = (%0.2lf"'
+    :encode_word: "@595_304"
+  - :string: '"%0.2lfi)\n"'
+    :encode_word: "@595_305"
+  - :string: '"+%0.2lfi)\n"'
+    :encode_word: "@595_306"
+  - :string: '" (%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi) "'
+    :encode_word: "@595_307"
+  - :string: '"(%d.00"'
+    :encode_word: "@595_308"
+  - :string: '"(%+d.00"'
+    :encode_word: "@595_309"
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi);"'
+    :encode_word: "@595_310"
+  - :string: '"(%d.00+%d.00i) + (%d.00%+d.00i) = (%d.00%+d.00i)"'
+    :encode_word: "@595_311"
+  - :string: '"+%.2lfi) + "'
+    :encode_word: "@595_312"
+  - :string: '"%.2lfi) + "'
+    :encode_word: "@595_313"
+  - :string: '"(%3.2lf"'
+    :encode_word: "@595_314"
+  - :string: '"%3.2lfi)"'
+    :encode_word: "@595_315"
+  - :string: '"("'
+    :encode_word: "@595_316"
+  - :string: '"Enter real part of a complex number:"'
+    :encode_word: "@595_317"
+  - :string: '"Enter imaginary part:"'
+    :encode_word: "@595_318"
+  - :string: '"Enter second real part of a complex number:"'
+    :encode_word: "@595_319"
+  - :string: '"%.2lfi) = (%.2lf%.2lfi)\n"'
+    :encode_word: "@595_320"
+  - :string: !binary |-
+      IuWYmOaVsOmDqCA9ICI=
+    :encode_word: "@595_321"
+  - :string: '"A=%.0lf\n"'
+    :encode_word: "@595_322"
+  - :string: '"B=%.0lf\n"'
+    :encode_word: "@595_323"
+  - :string: '"C=%.0lf\n"'
+    :encode_word: "@595_324"
+  - :string: '"D=%.0lf\n"'
+    :encode_word: "@595_325"
+  - :string: '"%.2fi)"'
+    :encode_word: "@595_326"
+  - :string: !binary |-
+      IuWun+aVsOmDqOWIhu+8nSI=
+    :encode_word: "@595_327"
+  - :string: !binary |-
+      IuiZmuaVsOmDqOWIhu+8nSI=
+    :encode_word: "@595_328"
+  - :string: !binary |-
+      IuOBr+OBmOOCgeOBpuOBruikh+e0oOaVsFxuIg==
+    :encode_word: "@595_329"
+  - :string: '"(%.2f%.2fi)\n"'
+    :encode_word: "@595_330"
+  - :string: '"(%.2f+%.2fi)\n"'
+    :encode_word: "@595_331"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf%+.2lfi) = "'
+    :encode_word: "@595_332"
+  - :string: !binary |-
+      IuWYmOaVsOmDqD0iKTtzY2FuZigiJWxmIg==
+    :encode_word: "@595_333"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
       hOOAgjpcbiI=
-    :encode_word: "@595_388"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi);"'
-    :encode_word: "@595_389"
-  - :string: '"%+d.00i)\n"'
-    :encode_word: "@595_390"
-  - :string: '"%+d.00i) = "'
-    :encode_word: "@595_391"
-  - :string: '"%+d.00i) + "'
-    :encode_word: "@595_392"
+    :encode_word: "@595_334"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lLS4yZlxu6Jma5pWw6YOoPSUtLjJmXG4i
+    :encode_word: "@595_335"
+  - :string: !binary |-
+      IuasoeOBrue0oOaVsFxuIg==
+    :encode_word: "@595_336"
+  - :string: '") + ("'
+    :encode_word: "@595_337"
+  - :string: '") = ("'
+    :encode_word: "@595_338"
+  - :string: '"(%2.2lf%+2.2lfi) + (%2.2lf%+2.2lfi) = (%2.2lf%+2.2lfi)\n"'
+    :encode_word: "@595_339"
+  - :string: !binary |-
+      IuWun+mDqO+8nSI=
+    :encode_word: "@595_340"
+  - :string: !binary |-
+      IuiZmumDqO+8nSI=
+    :encode_word: "@595_341"
+  - :string: '"%d %d"'
+    :encode_word: "@595_342"
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lZFxuIg==
+    :encode_word: "@595_343"
+  - :string: !binary |-
+      IuiZmuaVsOmDqD0lZFxuIg==
+    :encode_word: "@595_344"
+  - :string: '" + (%.2lf%.2lfi)"'
+    :encode_word: "@595_345"
+  - :string: '" + (%.2lf+%.2lfi)"'
+    :encode_word: "@595_346"
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%)"'
+    :encode_word: "@595_347"
+  - :string: '"(%3.2lf%+3.2lfi) + (%3.2lf%+3.2lfi) = (%3.2lf% + 3.2lfi)\n"'
+    :encode_word: "@595_348"
+  - :string: '"+%.2lfi) + (%.2lf"'
+    :encode_word: "@595_349"
+  - :string: '"%.2lfi) = (%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_350"
+  - :string: '"+%.2lfi) = (%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_351"
+  - :string: '"(%.2lf%c%.2lfi) + (%.2lf%c%.2lfi) = (%.2lf%c%.2lfi)"'
+    :encode_word: "@595_352"
+  - :string: '"(%.2f%c%.2fi) + (%.2f%c%.2fi) = (%.2f%c%.2fi)\n"'
+    :encode_word: "@595_353"
+  - :string: '"(%.2lf)"'
+    :encode_word: "@595_354"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf-%.2lfi) = (%.2lf+%.2lfi)"'
+    :encode_word: "@595_355"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf-%.2lfi) = (%.2lf-%.2lfi)"'
+    :encode_word: "@595_356"
+  - :string: '"(%.2lf-%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)"'
+    :encode_word: "@595_357"
+  - :string: '"(%.2lf-%.2lfi) + (%.2lf+%.2lfi) = (%.2lf-%.2lfi)"'
+    :encode_word: "@595_358"
+  - :string: '"+%.2fi) + "'
+    :encode_word: "@595_359"
+  - :string: '"%.2fi)  + "'
+    :encode_word: "@595_360"
+  - :string: '"+%.2fi) = "'
+    :encode_word: "@595_361"
+  - :string: '"%.2fi) = "'
+    :encode_word: "@595_362"
   - :string: '"+%.2fi)"'
+    :encode_word: "@595_363"
+  - :string: '"%+d.00i) + "'
+    :encode_word: "@595_364"
+  - :string: '"%+d.00i) = "'
+    :encode_word: "@595_365"
+  - :string: '"%+d.00i)\n"'
+    :encode_word: "@595_366"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = "'
+    :encode_word: "@595_367"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi) = "'
+    :encode_word: "@595_368"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf%.2lfi) = "'
+    :encode_word: "@595_369"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = "'
+    :encode_word: "@595_370"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
+      leOBhOOAglxu44Gv44GY44KB44Gu6KiI566XXG4i
+    :encode_word: "@595_371"
+  - :string: '"(%.2f%.2fi) + (%.2f%.2fi) = "'
+    :encode_word: "@595_372"
+  - :string: '"(%.2f+%.2fi) + (%.2f%.2fi) = "'
+    :encode_word: "@595_373"
+  - :string: '"(%.2f%.2fi) + (%.2f+%.2fi) = "'
+    :encode_word: "@595_374"
+  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = "'
+    :encode_word: "@595_375"
+  - :string: '"%d%d%d%d"'
+    :encode_word: "@595_376"
+  - :string: '"(%d.00+%d.00i) + (%d.00+%d.00i) = (%d.00+%d.00i)"'
+    :encode_word: "@595_377"
+  - :string: '"(%d.00+%d.00i) + (%d.00%d.00i) = (%d.00+%d.00i)"'
+    :encode_word: "@595_378"
+  - :string: '"(%d.00+%d.00i) + (%d.00+%d.00i) = (%d.00%d.00i)"'
+    :encode_word: "@595_379"
+  - :string: '"(%d.00+%d.00i) + (%d.00%d.00i) = (%d.00%d.00i)"'
+    :encode_word: "@595_380"
+  - :string: '"(%d.00%d.00i) + (%d.00+%d.00i) = (%d.00+%d.00i)"'
+    :encode_word: "@595_381"
+  - :string: '"(%d.00%d.00i) + (%d.00%d.00i) = (%d.00+%d.00i)"'
+    :encode_word: "@595_382"
+  - :string: '"(%d.00%d.00i) + (%d.00+%d.00i) = (%d.00%d.00i)"'
+    :encode_word: "@595_383"
+  - :string: '"(%d.00%d.00i) + (%d.00%d.00i) = (%d.00%d.00i)"'
+    :encode_word: "@595_384"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
+      leOBhOOAglxu5aeL44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
+    :encode_word: "@595_385"
+  - :string: '"(%.2lf-%.2lfi) + "'
+    :encode_word: "@595_386"
+  - :string: '"(%.2lf-%.2lfi) = "'
+    :encode_word: "@595_387"
+  - :string: '"(%.2lf-%.2lfi)"'
+    :encode_word: "@595_388"
+  - :string: '"(%+.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%+.2lf%+.2lfi)\n"'
+    :encode_word: "@595_389"
+  - :string: '"+ (%.2lf%.2lfi) "'
+    :encode_word: "@595_390"
+  - :string: '"+ (%.2lf+%.2lfi) "'
+    :encode_word: "@595_391"
+  - :string: '"= (%.2lf%.2lfi)"'
+    :encode_word: "@595_392"
+  - :string: '"= (%.2lf+%.2lfi)"'
     :encode_word: "@595_393"
+  - :string: !binary |-
+      IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
+      hOOAglxu44Gv44GY44KB44Gu6KSH57Sg5pWwIg==
+    :encode_word: "@595_394"
+  - :string: '"(%d.00%+d.00i) + "'
+    :encode_word: "@595_395"
+  - :string: '"(%d.00%+d.00i) = "'
+    :encode_word: "@595_396"
+  - :string: '"(%d.00%+d.00i) "'
+    :encode_word: "@595_397"
+  - :string: '"i) + (%.2lf%"'
+    :encode_word: "@595_398"
+  - :string: '"i)"'
+    :encode_word: "@595_399"
+  - :string: '"%.2fi) + (%.2f"'
+    :encode_word: "@595_400"
+  - :string: '"%.2fi) = (%.2f"'
+    :encode_word: "@595_401"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = %.2lf%.2lfi"'
+    :encode_word: "@595_402"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = %.2lf+%.2lfi"'
+    :encode_word: "@595_403"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf + %.2lfi) = %.2lf+%.2lfi"'
+    :encode_word: "@595_404"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf + %.2lfi) = %.2lf%.2lfi"'
+    :encode_word: "@595_405"
+  - :string: '"(%.2lf + %.2lfi) + (%.2lf%.2lfi) = %.2lf%.2lfi"'
+    :encode_word: "@595_406"
+  - :string: '"(%.2lf + %.2lfi) + (%.2lf%.2lfi) = %.2lf+%.2lfi"'
+    :encode_word: "@595_407"
+  - :string: '"(%.2lf + %.2lfi) + (%.2lf + %.2lfi) = %.2lf%.2lfi"'
+    :encode_word: "@595_408"
+  - :string: '"(%.2lf + %.2lfi) + (%.2lf + %.2lfi) = %.2lf+%.2lfi"'
+    :encode_word: "@595_409"
+  - :string: '"%d.00+%d.00i"'
+    :encode_word: "@595_410"
+  - :string: '"%d.00%d.00i"'
+    :encode_word: "@595_411"
+  - :string: '"%d.00"'
+    :encode_word: "@595_412"
+  - :string: '")"'
+    :encode_word: "@595_413"
+  - :string: '"%lf,%lf,%lf,%lf"'
+    :encode_word: "@595_414"
+  - :string: '"+ "'
+    :encode_word: "@595_415"
+  - :string: '"= "'
+    :encode_word: "@595_416"
+  - :string: '"(%.2f%.2fi) "'
+    :encode_word: "@595_417"
+  - :string: '"(%.2f+%.2fi) "'
+    :encode_word: "@595_418"
+  - :string: '"(%+.2lf%+.2lfi) "'
+    :encode_word: "@595_419"
+  - :string: '"+ (%+.2lf%+.2lfi) "'
+    :encode_word: "@595_420"
+  - :string: '"+ (%.2lf%+.2lfi) "'
+    :encode_word: "@595_421"
+  - :string: '"= (%+.2lf%+.2lfi)\n "'
+    :encode_word: "@595_422"
+  - :string: '"= (%.2lf%+.2lfi)\n "'
+    :encode_word: "@595_423"
+  - :string: !binary |-
+      IuOBr+OBmOOCgeOBruikh+e0oOaVsFxuIiLlrp/mlbDpg6g9Ig==
+    :encode_word: "@595_424"
+  - :string: '"%+.2lfi"'
+    :encode_word: "@595_425"
+  - :string: '"%.2f%+.2fi"'
+    :encode_word: "@595_426"
+  - :string: '"Enter second imaginary part:"'
+    :encode_word: "@595_427"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)"'
+    :encode_word: "@595_428"
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)"'
+    :encode_word: "@595_429"
   - :string: !binary |-
       Iuikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhOOAglxu44Gv
       44GY44KB44Gu6KSH57Sg5pWwXG7lrp/mlbDpg6g9Ig==
-    :encode_word: "@595_394"
-  - :string: '"%.2fi) = "'
-    :encode_word: "@595_395"
-  - :string: '"+%.2fi) = "'
-    :encode_word: "@595_396"
-  - :string: '"%.2fi)  + "'
-    :encode_word: "@595_397"
-  - :string: '"+%.2fi) + "'
-    :encode_word: "@595_398"
-  - :string: '"(%d.00%+d.00i) + "'
-    :encode_word: "@595_399"
-  - :string: '"(%d.00%+d.00i) = "'
-    :encode_word: "@595_400"
-  - :string: '"(%d.00%+d.00i) "'
-    :encode_word: "@595_401"
-  - :string: '"D=%.0lf\n"'
-    :encode_word: "@595_402"
-  - :string: '"C=%.0lf\n"'
-    :encode_word: "@595_403"
-  - :string: '"i) + (%.2lf%"'
-    :encode_word: "@595_404"
-  - :string: '"B=%.0lf\n"'
-    :encode_word: "@595_405"
-  - :string: '"i)"'
-    :encode_word: "@595_406"
-  - :string: '"A=%.0lf\n"'
-    :encode_word: "@595_407"
-  - :string: '"(%.2lf-%.2lfi) + (%.2lf+%.2lfi) = (%.2lf-%.2lfi)"'
-    :encode_word: "@595_408"
-  - :string: '"(%.2lf-%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)"'
-    :encode_word: "@595_409"
+    :encode_word: "@595_430"
   - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%+.2lfi)\n" , s . a1 , s .
       b1 , s . a2 , s . b2 , s . a1 + s . a2 , s . b1 + s . b2 ) ; printf ( "(%.2f%+.2fi)
       + (%.2f%+.2fi) = (%.2f%+.2fi)"'
-    :encode_word: "@595_410"
-  - :string: '"%.2fi) + (%.2f"'
-    :encode_word: "@595_411"
-  - :string: '"%.2fi) = (%.2f"'
-    :encode_word: "@595_412"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf-%.2lfi) = (%.2lf-%.2lfi)"'
-    :encode_word: "@595_413"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf-%.2lfi) = (%.2lf+%.2lfi)"'
-    :encode_word: "@595_414"
-  - :string: '"(%.2lf)"'
-    :encode_word: "@595_415"
-  - :string: '"(%.2f%c%.2fi) + (%.2f%c%.2fi) = (%.2f%c%.2fi)\n"'
-    :encode_word: "@595_416"
-  - :string: '"(%.2lf%c%.2lfi) + (%.2lf%c%.2lfi) = (%.2lf%c%.2lfi)"'
-    :encode_word: "@595_417"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = %.2lf%.2lfi"'
-    :encode_word: "@595_418"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = %.2lf+%.2lfi"'
-    :encode_word: "@595_419"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf + %.2lfi) = %.2lf+%.2lfi"'
-    :encode_word: "@595_420"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf + %.2lfi) = %.2lf%.2lfi"'
-    :encode_word: "@595_421"
-  - :string: '"(%.2lf + %.2lfi) + (%.2lf%.2lfi) = %.2lf%.2lfi"'
-    :encode_word: "@595_422"
-  - :string: '"(%.2lf + %.2lfi) + (%.2lf%.2lfi) = %.2lf+%.2lfi"'
-    :encode_word: "@595_423"
-  - :string: '"(%.2lf + %.2lfi) + (%.2lf + %.2lfi) = %.2lf%.2lfi"'
-    :encode_word: "@595_424"
-  - :string: '"(%.2lf + %.2lfi) + (%.2lf + %.2lfi) = %.2lf+%.2lfi"'
-    :encode_word: "@595_425"
-  - :string: '"(%2.2lf%+2.2lfi) + (%2.2lf%+2.2lfi) = (%2.2lf%+2.2lfi)\n"'
-    :encode_word: "@595_426"
-  - :string: '"%d.00+%d.00i"'
-    :encode_word: "@595_427"
-  - :string: '"%d.00%d.00i"'
-    :encode_word: "@595_428"
-  - :string: '"%d.00"'
-    :encode_word: "@595_429"
-  - :string: '")"'
-    :encode_word: "@595_430"
-  - :string: '"%.2lfi) = (%.2lf+%.2lfi)\n"'
     :encode_word: "@595_431"
   '594':
   - :string: '"%lf %lf"'
     :encode_word: "@594_0"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogIg==
+      Iue1gueCueW6p+aomSAoeCB5KTogIg==
     :encode_word: "@594_1"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogIg==
+      IuWni+eCueW6p+aomSAoeCB5KTogIg==
     :encode_word: "@594_2"
   - :string: !binary |-
       Iui3nemboiA9ICUuMmxmIg==
@@ -1092,10 +1092,10 @@
   - :string: '"%lf"'
     :encode_word: "@594_4"
   - :string: !binary |-
-      Iui3nemboiA9ICUuMmxmXG4i
+      IuWni+eCueW6p+aomSAoeCB5KToi
     :encode_word: "@594_5"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KToi
+      Iui3nemboiA9ICUuMmxmXG4i
     :encode_word: "@594_6"
   - :string: !binary |-
       Iue1gueCueW6p+aomSAoeCB5KToi
@@ -1103,1007 +1103,1007 @@
   - :string: !binary |-
       IuWni+eCueW6p+aomSh4IHkpOiI=
     :encode_word: "@594_8"
-  - :string: '"%lf%lf"'
-    :encode_word: "@594_9"
   - :string: !binary |-
       Iue1gueCueW6p+aomSh4IHkpOiI=
+    :encode_word: "@594_9"
+  - :string: '"%lf%lf"'
     :encode_word: "@594_10"
   - :string: !binary |-
       IuWni+eCueW6p+aomeOAgCh4IHkpOiI=
     :encode_word: "@594_11"
   - :string: !binary |-
-      Iui3nemboiA9ICUuMmYi
+      Iue1gueCueW6p+aomeOAgCh4IHkpOiI=
     :encode_word: "@594_12"
   - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkpOiI=
+      IuWni+eCueW6p+aomSAoeCB5Ke+8miI=
     :encode_word: "@594_13"
   - :string: !binary |-
-      Iui3nemboiA9ICUuMmZcbiI=
+      Iui3nemboiA9ICUuMmYi
     :encode_word: "@594_14"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IHkpOiAi
+      Iue1gueCueW6p+aomSAoeCB5Ke+8miI=
     :encode_word: "@594_15"
   - :string: !binary |-
       Iue1gueCueW6p+aomSh4IHkpOiAi
     :encode_word: "@594_16"
   - :string: !binary |-
-      Iui3nemboj0lLjJsZiI=
+      IuWni+eCueW6p+aomSh4IHkpOiAi
     :encode_word: "@594_17"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5Ke+8miI=
+      Iui3nemboiA9ICUuMmZcbiI=
     :encode_word: "@594_18"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5Ke+8miI=
+      Iui3nemboj0lLjJsZiI=
     :encode_word: "@594_19"
-  - :string: '"%f %f"'
-    :encode_word: "@594_20"
   - :string: '"%.2lf"'
+    :encode_word: "@594_20"
+  - :string: !binary |-
+      Iui3nemboiA9ICUwLjJsZlxuIg==
     :encode_word: "@594_21"
   - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpOiAi
+      Iue1gueCueW6p+aomSAoeCx5KToi
     :encode_word: "@594_22"
   - :string: !binary |-
       Iue1gueCueW6p+aomeOAgCh4IHkpOiAi
     :encode_word: "@594_23"
   - :string: !binary |-
-      Iui3nemboiA9ICUwLjJsZlxuIg==
+      IuWni+eCueW6p+aomeOAgCh4IHkpOiAi
     :encode_word: "@594_24"
-  - :string: '" %lf %lf"'
-    :encode_word: "@594_25"
   - :string: '"\n"'
+    :encode_word: "@594_25"
+  - :string: '" %lf %lf"'
     :encode_word: "@594_26"
   - :string: !binary |-
-      Iui3nembouOAgO+8neOAgCUuMmxmIg==
+      Iui3nembou+8nSUuMmxmIg==
     :encode_word: "@594_27"
   - :string: !binary |-
-      Iui3nembou+8nSUuMmxmIg==
+      IuWni+eCueW6p+aomSAoeCx5KToi
     :encode_word: "@594_28"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCx5KToi
+      Iui3nembouOAgO+8neOAgCUuMmxmIg==
     :encode_word: "@594_29"
   - :string: !binary |-
-      Iui3nembouOAgD0gJS4ybGYi
+      Iui3nembouOAgO+8neOAgCUuMmxmXG4i
     :encode_word: "@594_30"
   - :string: !binary |-
-      Iui3nembou+8nSUuMmxmXG4i
+      Iui3nembouOAgD0gJS4ybGYi
     :encode_word: "@594_31"
   - :string: !binary |-
-      Iui3nemboiDvvJ0gJS4ybGZcbiI=
+      Iui3nemboj0lLjJsZlxuIg==
     :encode_word: "@594_32"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCx5KToi
+      Iui3nembou+8nSUuMmxmXG4i
     :encode_word: "@594_33"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IHkp77yaIg==
+  - :string: '"%f %f"'
     :encode_word: "@594_34"
   - :string: !binary |-
-      Iui3nembouOAgO+8neOAgCUuMmxmXG4i
+      IuWni+eCueW6p+aome+8iHggee+8ie+8miI=
     :encode_word: "@594_35"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCx5KTogIg==
+      Iui3nemboiA9JS4ybGYi
     :encode_word: "@594_36"
   - :string: !binary |-
-      Iui3nemboj0lLjJsZlxuIg==
+      IuWni+eCueW6p+aomSh4IHkp77yaIg==
     :encode_word: "@594_37"
   - :string: !binary |-
-      Iui3nemboiA9JS4ybGYi
+      IuWni+eCueW6p+aomSAoeCx5KTogIg==
     :encode_word: "@594_38"
   - :string: !binary |-
-      Iui3nemboiA9ICUzLjJsZiI=
+      Iue1gueCueW6p+aome+8iHggee+8ie+8miI=
     :encode_word: "@594_39"
-  - :string: '"%lf %lf %lf %lf"'
+  - :string: '"x:"'
     :encode_word: "@594_40"
-  - :string: '"%.2lf\n"'
+  - :string: '"y:"'
     :encode_word: "@594_41"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KSA6ICI=
+  - :string: '"%.2lf\n"'
     :encode_word: "@594_42"
   - :string: !binary |-
-      Iui3nemboiDvvJ0gJS4ybGYi
+      Iue1gueCueW6p+aomSAoeCB5KSA6ICI=
     :encode_word: "@594_43"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KSA6ICI=
+      Iui3nemboiA9ICUzLjJsZiI=
     :encode_word: "@594_44"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJS4xbGYgJS4xbGZcbiI=
+      Iui3nemboiDvvJ0gJS4ybGZcbiI=
     :encode_word: "@594_45"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJS4xbGYgJS4xbGZcbiI=
+      IuWni+eCueW6p+aomSAoeCB5KTogJS4xbGYgJS4xbGZcbiI=
     :encode_word: "@594_46"
   - :string: !binary |-
-      Ilxu6Led6ZuiID0gJTAuMmZcbiI=
+      Iue1gueCueW6p+aomSAoeCB5KTogJS4xbGYgJS4xbGZcbiI=
     :encode_word: "@594_47"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IFkpOiI=
+      IuWni+eCueW6p+aomSAoeCx5KSA6Ig==
     :encode_word: "@594_48"
   - :string: !binary |-
-      Iui3nemboj0lLjJmXG4i
+      Iui3nemboiA9ICUwLjJsZiI=
     :encode_word: "@594_49"
-  - :string: '"x:"'
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSh4IHkp77yaIg==
     :encode_word: "@594_50"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCx5KTogIg==
+      IuWni+eCueW6p+aomSAoeCB5KSA6ICI=
     :encode_word: "@594_51"
   - :string: !binary |-
       Iue1gueCueW6p+aomSAoeCB5KTogXG4i
     :encode_word: "@594_52"
-  - :string: '"y:"'
-    :encode_word: "@594_53"
-  - :string: !binary |-
-      Iue1gueCueW6p+aome+8iHggee+8iToi
-    :encode_word: "@594_54"
-  - :string: !binary |-
-      IuWni+eCueW6p+aome+8iHggee+8iToi
-    :encode_word: "@594_55"
   - :string: !binary |-
       Ilxu57WC54K55bqn5qiZICh4IHkpOiAi
+    :encode_word: "@594_53"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8iSI=
+    :encode_word: "@594_54"
+  - :string: '"%lf %lf %lf %lf"'
+    :encode_word: "@594_55"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCx5KSA6Ig==
     :encode_word: "@594_56"
   - :string: !binary |-
-      Iui3nemboiA9ICUwLjJsZiI=
+      Iui3nemboiDvvJ0gJS4ybGYi
     :encode_word: "@594_57"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IHkp77yaIg==
+      IuWni+eCueW6p+aome+8iHggee+8iToi
     :encode_word: "@594_58"
-  - :string: '"%f"'
-    :encode_word: "@594_59"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KSI=
-    :encode_word: "@594_60"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KSI=
-    :encode_word: "@594_61"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IHkpOlxuIg==
-    :encode_word: "@594_62"
-  - :string: !binary |-
-      Iui3nemboiA9ICI=
-    :encode_word: "@594_63"
   - :string: !binary |-
       IuWni+eCueW6p+aomeOAgCh4IHkp77yaIg==
-    :encode_word: "@594_64"
-  - :string: '"%lf" "%lf"'
-    :encode_word: "@594_65"
+    :encode_word: "@594_59"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTpcbiI=
-    :encode_word: "@594_66"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTpcbiI=
-    :encode_word: "@594_67"
-  - :string: !binary |-
-      Iui3nemboiA9ICUwLjJmXG4i
-    :encode_word: "@594_68"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IHkpOlxuIg==
-    :encode_word: "@594_69"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgO+8iHgsee+8ie+8miI=
-    :encode_word: "@594_70"
+      Iue1gueCueW6p+aome+8iHggee+8iToi
+    :encode_word: "@594_60"
   - :string: !binary |-
       Iui3nembouOAgD0gJS4ybGZcbiI=
-    :encode_word: "@594_71"
+    :encode_word: "@594_61"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogXG4i
-    :encode_word: "@594_72"
+      Iui3nemboiA9ICUxLjJmIg==
+    :encode_word: "@594_62"
   - :string: !binary |-
       IuWni+eCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8ie+8miI=
+    :encode_word: "@594_63"
+  - :string: !binary |-
+      Iui3nemboj0lLjJmXG4i
+    :encode_word: "@594_64"
+  - :string: !binary |-
+      Ilxu6Led6ZuiID0gJTAuMmZcbiI=
+    :encode_word: "@594_65"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCx5KTogIg==
+    :encode_word: "@594_66"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgO+8iHgsee+8ie+8miI=
+    :encode_word: "@594_67"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeOAgO+8iHgsee+8ie+8miI=
+    :encode_word: "@594_68"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTpcbiI=
+    :encode_word: "@594_69"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KSI=
+    :encode_word: "@594_70"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTpcbiI=
+    :encode_word: "@594_71"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSh4IHkpOlxuIg==
+    :encode_word: "@594_72"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KSI=
     :encode_word: "@594_73"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSDvvIh4IHnvvIk6Ig==
+      IuWni+eCueW6p+aomSAoeCB5KTogXG4i
     :encode_word: "@594_74"
   - :string: !binary |-
       Iui3nemboj0lNS4ybGZcbiI=
     :encode_word: "@594_75"
   - :string: !binary |-
-      Iui3nemboiA9ICUwLjJmIg==
+      IuWni+eCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8iSI=
     :encode_word: "@594_76"
   - :string: !binary |-
-      Iui3nembouOAgD0lLjJsZiI=
+      Iue1gueCueW6p+aome+8iHgsee+8iToi
     :encode_word: "@594_77"
   - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkp77yaIg==
+      Iui3nemboiA9ICI=
     :encode_word: "@594_78"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KSA6Ig==
+      Iue1gueCueW6p+aomSh4IHkpOlxuIg==
     :encode_word: "@594_79"
   - :string: !binary |-
-      Iui3nemboiA9ICUxLjJmIg==
+      Iui3nemboiA9ICUwLjJmXG4i
     :encode_word: "@594_80"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KSA6Ig==
+      Iui3nembouOAgD3jgIAlLjJsZiI=
     :encode_word: "@594_81"
-  - :string: !binary |-
-      Iui3nemboiA9ICU0LjJsZlxuIg==
+  - :string: '"%lf" "%lf"'
     :encode_word: "@594_82"
   - :string: !binary |-
       IuWni+eCuVxuIg==
     :encode_word: "@594_83"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJS4xZiAlLjFmXG4i
+      Iue1gueCuVxuIg==
     :encode_word: "@594_84"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJS4xZiAlLjFmXG4i
+      Iue1gueCueW6p+aomSh4IFkpOiI=
     :encode_word: "@594_85"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTpcbiAi
+  - :string: '"%0.2lf"'
     :encode_word: "@594_86"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTpcbiAi
+      Iue1gueCueW6p+aomeOAgCh4LHkpOiAi
     :encode_word: "@594_87"
   - :string: !binary |-
-      Iui3nemboiA9ICUuMmxmXG4gIg==
+      IuWni+eCueW6p+aome+8iHgsee+8iToi
     :encode_word: "@594_88"
   - :string: !binary |-
-      Iue1gueCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miI=
+      Iue1gueCueW6p+aomeOAgCh4IHkp77yaIg==
     :encode_word: "@594_89"
-  - :string: !binary |-
-      Iue1gueCuVxuIg==
+  - :string: '"%0.2lf\n"'
     :encode_word: "@594_90"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8ie+8miI=
+    :encode_word: "@594_91"
+  - :string: !binary |-
+      Iui3nemboiA9ICU0LjJsZlxuIg==
+    :encode_word: "@594_92"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB0KTogIg==
+    :encode_word: "@594_93"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KSA6Ig==
+    :encode_word: "@594_94"
+  - :string: !binary |-
+      IuWni+eCueW6p+aome+8iHgsee+8ie+8miI=
+    :encode_word: "@594_95"
+  - :string: '"%4.2lf"'
+    :encode_word: "@594_96"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgO+8iHggee+8iToi
+    :encode_word: "@594_97"
   - :string: !binary |-
       Iue1gueCueW6p+aomeOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhOOAglxu
       Ig==
-    :encode_word: "@594_91"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgO+8iHgsee+8ie+8miI=
-    :encode_word: "@594_92"
-  - :string: !binary |-
-      IuWni+eCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miI=
-    :encode_word: "@594_93"
-  - :string: !binary |-
-      Iui3nembouOAgD3jgIAlLjJsZiI=
-    :encode_word: "@594_94"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgO+8iHggee+8ie+8miI=
-    :encode_word: "@594_95"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCx5KSA6Ig==
-    :encode_word: "@594_96"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgO+8iHggee+8ie+8miI=
-    :encode_word: "@594_97"
-  - :string: !binary |-
-      Iui3nemboiA9ICAlLjJsZiI=
     :encode_word: "@594_98"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB0KTogIg==
+      Iue1gueCueW6p+aomeOAgO+8iHggee+8iTpcbiI=
     :encode_word: "@594_99"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IFkpOiI=
+      Iui3nemboiA9ICUxLjJsZlxuIg==
     :encode_word: "@594_100"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSDvvIh4IHnvvIk6Ig==
+      Iue1gueCueW6p+aomSDvvIh4IHnvvIk6Ig==
     :encode_word: "@594_101"
-  - :string: !binary |-
-      IuWni+eCueW6p+aome+8iHgsee+8iToi
+  - :string: '"%f"'
     :encode_word: "@594_102"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJWxmICVsZlxuIg==
+      IuWni+eCueW6p+aomeOAgCh4LHkpOiAi
     :encode_word: "@594_103"
   - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8ie+8miI=
+      Iue1gueCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miI=
     :encode_word: "@594_104"
   - :string: !binary |-
-      IuWni+eCueW6p+aomToi
+      Iui3nemboiA9ICU1LjJsZlxuIg==
     :encode_word: "@594_105"
   - :string: !binary |-
-      Iue1gueCueW6p+aomToi
+      Iui3nemboiDvvJ0gJTEuMmZcbiI=
     :encode_word: "@594_106"
   - :string: !binary |-
-      Iui3nemboiDvvJ0gJTEuMmZcbiI=
+      Iui3nemboiA9ICUwLjJmIg==
     :encode_word: "@594_107"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTolMC4xZiAlMC4xZlxuIg==
+      Iui3nembouOAgD0gJS4yZlxuIg==
     :encode_word: "@594_108"
   - :string: !binary |-
-      Iui3nemboiA9ICUxLjJsZlxuIg==
+      Iui3nembouOAgD0lLjJsZiI=
     :encode_word: "@594_109"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCx5KSA6Ig==
+      IuWni+eCueW6p+aomSAoeCB5KSA6Ig==
     :encode_word: "@594_110"
   - :string: !binary |-
-      Iui3nemboj0lMC4yZiI=
+      Iui3nemboiA9ICUuMmxmXG4gIg==
     :encode_word: "@594_111"
   - :string: !binary |-
-      Iue1gueCueW6p+aome+8iHgsee+8ie+8miI=
+      IuWni+eCueW6p+aomSAoeCB5KTogJS4xZiAlLjFmXG4i
     :encode_word: "@594_112"
   - :string: !binary |-
-      Iui3nemboj0lMC4yZlxuIg==
+      Iue1gueCueW6p+aomSAoeCB5KTogJS4xZiAlLjFmXG4i
     :encode_word: "@594_113"
   - :string: !binary |-
-      IjLngrnplpPjga7ot53pm6IgOiAlLjJmXG4i
+      IuWni+eCueW6p+aomSh4IHkpIDogIg==
     :encode_word: "@594_114"
-  - :string: '"%4.2lf"'
+  - :string: '"%.2f\n"'
     :encode_word: "@594_115"
   - :string: !binary |-
-      Ilxu6Led6ZuiID0gJTAuMmxmXG4i
+      Iui3nemboj0lMC4yZlxuIg==
     :encode_word: "@594_116"
-  - :string: '"%.2f"'
+  - :string: !binary |-
+      Iui3nemboiA9ICAlLjJsZiI=
     :encode_word: "@594_117"
-  - :string: '"%lf %lf\n"'
+  - :string: !binary |-
+      IuWni+eCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miI=
     :encode_word: "@594_118"
-  - :string: '"%.2f\n"'
+  - :string: !binary |-
+      IjLngrnplpPjga7ot53pm6IgOiAlLjJmXG4i
     :encode_word: "@594_119"
   - :string: !binary |-
-      Iue1gueCueW6p+aome+8iHgsee+8iToi
+      IuWni+eCueW6p+aomeOAgCh4LHkpOiI=
     :encode_word: "@594_120"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCx5KSA6ICI=
+      Iui3nemboj0lLjJmIg==
     :encode_word: "@594_121"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSh4LHkpOiAi
+      Iue1gueCueW6p+aomeOAgO+8iHggee+8ie+8miI=
     :encode_word: "@594_122"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSh4LHkpOiAi
+      Ilxu6Led6ZuiID0gJTAuMmxmXG4i
     :encode_word: "@594_123"
   - :string: !binary |-
-      IuWni+eCueW6p+aome+8iHgsee+8ie+8miI=
+      Iui3nemboiA9ICUzLjJmXG4i
     :encode_word: "@594_124"
   - :string: !binary |-
-      Iui3nembou+8nSU0LjJsZiI=
+      IuWni+eCueW6p+aomSh4LHkpOiAi
     :encode_word: "@594_125"
-  - :string: !binary |-
-      Iui3nemboiA9ICUzLjJmXG4i
+  - :string: '"%.2f"'
     :encode_word: "@594_126"
   - :string: !binary |-
-      Iui3nemboiA9ICUuMmxmIFxuIg==
+      Iui3nemboiA9JS4ybGZcbiI=
     :encode_word: "@594_127"
   - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgO+8iHggee+8iTpcbiI=
+      IuWni+eCueW6p+aomeOAgO+8iHggee+8iTolLjJsZiAlLjJsZiBcbiI=
     :encode_word: "@594_128"
-  - :string: '"%0.2lf\n"'
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSDvvIh4IHnvvIk6JS4ybGYgJS4ybGYgXG4i
     :encode_word: "@594_129"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTolMC4xZiAlMC4xZlxuIg==
+      IuWni+eCueW6p+aomeOAgO+8iHggee+8iTpcbiI=
     :encode_word: "@594_130"
   - :string: !binary |-
-      Iui3nembouOAgO+8neOAgCUuMmZcbiI=
+      Iue1gueCueW6p+aomeOAgCh4IHkpIg==
     :encode_word: "@594_131"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJS4xbGYgJS4xbGYi
+  - :string: '"%lf %lf\n"'
     :encode_word: "@594_132"
   - :string: !binary |-
-      Iue1gueCueW6p+aomTooWFkpOiI=
+      IuWni+eCueW6p+aomSAoeCB5KTpcbiAi
     :encode_word: "@594_133"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCx5KVxuIg==
+      Iue1gueCueW6p+aomSAoeCB5KTpcbiAi
     :encode_word: "@594_134"
   - :string: !binary |-
-      Iui3nembouOAgD0gJS4yZlxuIg==
+      Iui3nembouOAgO+8neOAgCUuMmZcbiI=
     :encode_word: "@594_135"
   - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkpIg==
+      Iue1gueCueW6p+aomSh4LHkpOiAi
     :encode_word: "@594_136"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCx5KVxuIg==
+      IuWni+eCueW6p+aomeOAgO+8iHggee+8ie+8miI=
     :encode_word: "@594_137"
   - :string: !binary |-
-      Iui3nembou+8nSU0LjJsZlxuIg==
+      Iue1gueCueW6p+aomSAoeCB5KTogJWxmICVsZlxuIg==
     :encode_word: "@594_138"
   - :string: !binary |-
-      Iui3nembou+8nSUwLjJsZlxuIg==
+      Iue1gueCueW6p+aomToi
     :encode_word: "@594_139"
   - :string: !binary |-
-      Iui3nembouOAgD0gJTMuMmxmXG4i
+      Iui3nemboiDvvJ0gJS4yZlxuIg==
     :encode_word: "@594_140"
   - :string: !binary |-
-      IuWni+eCueW6p+aomShYWSk6Ig==
+      Iui3nemboiA944CAJS4ybGYi
     :encode_word: "@594_141"
   - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8iTogIg==
+      Iui3nemboiUuMmYi
     :encode_word: "@594_142"
   - :string: !binary |-
-      IuWni+eCueW6p+aome+8iO+9mOOAge+9me+8iToi
+      IuWni+eCueW6p+aomeOAgCh4IHkpIg==
     :encode_word: "@594_143"
   - :string: !binary |-
-      Iue1gueCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miUuMmxm44CALCUuMmxm
-      XG4i
+      IuWni+eCueW6p+aomSDvvIh4IHnvvIk6Ig==
     :encode_word: "@594_144"
   - :string: !binary |-
-      Iui3nemboiUuMmYi
-    :encode_word: "@594_145"
-  - :string: !binary |-
-      Iui3nemboj0lLjJmIg==
-    :encode_word: "@594_146"
-  - :string: !binary |-
-      Iui3nemboiA944CAJS4ybGYi
-    :encode_word: "@594_147"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomTooeCB5KSI=
-    :encode_word: "@594_148"
-  - :string: !binary |-
       Iui3nembou+8nSUuMmZcbiI=
-    :encode_word: "@594_149"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhOOAglxu
-      Ig==
-    :encode_word: "@594_150"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4LHkpOiAi
-    :encode_word: "@594_151"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4LHkpOiAi
-    :encode_word: "@594_152"
-  - :string: !binary |-
-      Iui3nemboiA9JS4ybGZcbiI=
-    :encode_word: "@594_153"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeOOAgHkpOiI=
-    :encode_word: "@594_154"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeOOAgHkpOiI=
-    :encode_word: "@594_155"
-  - :string: !binary |-
-      Iui3nemboj0lMi4ybGZcbiI=
-    :encode_word: "@594_156"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJWxmICVsZlxuIg==
-    :encode_word: "@594_157"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8iTogIg==
-    :encode_word: "@594_158"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpOiAlLjFsZiAlLjFsZiI=
-    :encode_word: "@594_159"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KSA6ICUuMWxmICUuMWxmXG4i
-    :encode_word: "@594_160"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCx5Ke+8miI=
-    :encode_word: "@594_161"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4LHkpOiI=
-    :encode_word: "@594_162"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5Ke+8miAi
-    :encode_word: "@594_163"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5Ke+8miAi
-    :encode_word: "@594_164"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgO+8iHggeSk6ICI=
-    :encode_word: "@594_165"
-  - :string: !binary |-
-      IuWni+eCueW6p+aome+8iHggee+8ie+8miI=
-    :encode_word: "@594_166"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCx5Ke+8miI=
-    :encode_word: "@594_167"
-  - :string: !binary |-
-      Iui3nemboiDvvJ0gJS4yZlxuIg==
-    :encode_word: "@594_168"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTrjgIAi
-    :encode_word: "@594_169"
-  - :string: !binary |-
-      Iui3nemboiA9ICU0LjJsZiI=
-    :encode_word: "@594_170"
-  - :string: !binary |-
-      IuimlueCueW6p+aomSAoeCB5KTogIg==
-    :encode_word: "@594_171"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IHkpOiVsZiAlbGZcbiI=
-    :encode_word: "@594_172"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8iSI=
-    :encode_word: "@594_173"
-  - :string: !binary |-
-      IuWni+eCueOBqOe1gueCueOBruW6p+aomeOCkuWFpeWKm1xuIg==
-    :encode_word: "@594_174"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8iSI=
-    :encode_word: "@594_175"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSI=
-    :encode_word: "@594_176"
-  - :string: !binary |-
-      Iue1gueCueW6p+aome+8iHggee+8ie+8miI=
-    :encode_word: "@594_177"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpIg==
-    :encode_word: "@594_178"
-  - :string: !binary |-
-      Iui3nemboj0gJS4ybGYi
-    :encode_word: "@594_179"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpOlxuIg==
-    :encode_word: "@594_180"
-  - :string: !binary |-
-      Iui3nembouOAgO+8nSUuMmxmXG4i
-    :encode_word: "@594_181"
-  - :string: !binary |-
-      Iui3nemboiDvvJ0gJTAuMmxmIg==
-    :encode_word: "@594_182"
-  - :string: '"%3.2f\n"'
-    :encode_word: "@594_183"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IHkpXG4i
-    :encode_word: "@594_184"
-  - :string: !binary |-
-      Iui3nembou+8nSUuMmYi
-    :encode_word: "@594_185"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IHkpIg==
-    :encode_word: "@594_186"
-  - :string: '"%lf,%lf"'
-    :encode_word: "@594_187"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkpIDogIg==
-    :encode_word: "@594_188"
-  - :string: !binary |-
-      Ilxu57WC54K55bqn5qiZKHggeSnvvJoi
-    :encode_word: "@594_189"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KSA6ICUuMWxmICUuMWZcbiI=
-    :encode_word: "@594_190"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpIDogIg==
-    :encode_word: "@594_191"
-  - :string: !binary |-
-      Ilxu6Led6Zui77ydJS4ybGZcbiI=
-    :encode_word: "@594_192"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSh4LHkpOiI=
-    :encode_word: "@594_193"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgO+8iHggee+8iTpcbiI=
-    :encode_word: "@594_194"
+    :encode_word: "@594_145"
   - :string: !binary |-
       IuWni+eCueOBqOe1gueCueOBruWApOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhFxuIg==
-    :encode_word: "@594_195"
+    :encode_word: "@594_146"
   - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgO+8iHggee+8iTolLjJsZiAlLjJsZiBcbiI=
-    :encode_word: "@594_196"
+      Iue1gueCueW6p+aome+8iHgsee+8ie+8miI=
+    :encode_word: "@594_147"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSDvvIh4IHnvvIk6JS4ybGYgJS4ybGYgXG4i
-    :encode_word: "@594_197"
+      Iue1gueCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8iTogIg==
+    :encode_word: "@594_148"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSI=
+    :encode_word: "@594_149"
+  - :string: !binary |-
+      Iui3nembou+8nSU0LjJsZlxuIg==
+    :encode_word: "@594_150"
+  - :string: !binary |-
+      Iui3nemboj0lMi4ybGZcbiI=
+    :encode_word: "@594_151"
+  - :string: !binary |-
+      Iui3nemboj0lMC4ybGZcbiI=
+    :encode_word: "@594_152"
+  - :string: !binary |-
+      IuWni+eCueW6p+aome+8iO+9mOOAge+9me+8iToi
+    :encode_word: "@594_153"
+  - :string: !binary |-
+      Iue1gueCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miUuMmxm44CALCUuMmxm
+      XG4i
+    :encode_word: "@594_154"
+  - :string: !binary |-
+      Iui3nemboiA9ICUzLjJsZlxuIg==
+    :encode_word: "@594_155"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomToi
+    :encode_word: "@594_156"
+  - :string: !binary |-
+      Iui3nemboj0gJS4ybGYi
+    :encode_word: "@594_157"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSh4IHkpOiVsZiAlbGZcbiI=
+    :encode_word: "@594_158"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomTooWFkpOiI=
+    :encode_word: "@594_159"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5Ke+8miAi
+    :encode_word: "@594_160"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5Ke+8miAi
+    :encode_word: "@594_161"
+  - :string: !binary |-
+      Iui3nemboiA9ICUuMmxmIFxuIg==
+    :encode_word: "@594_162"
+  - :string: !binary |-
+      IuWni+eCueOBqOe1gueCueOBruW6p+aomeOCkuWFpeWKm1xuIg==
+    :encode_word: "@594_163"
+  - :string: '"%3.2f\n"'
+    :encode_word: "@594_164"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTogJS4xbGYgJS4xbGYi
+    :encode_word: "@594_165"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KSA6ICUuMWxmICUuMWZcbiI=
+    :encode_word: "@594_166"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KSA6ICUuMWxmICUuMWxmXG4i
+    :encode_word: "@594_167"
+  - :string: !binary |-
+      Iui3nembou+8nSU0LjJsZiI=
+    :encode_word: "@594_168"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSh4IHkpXG4i
+    :encode_word: "@594_169"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCx5KSA6ICI=
+    :encode_word: "@594_170"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSh4IFkpOiI=
+    :encode_word: "@594_171"
+  - :string: !binary |-
+      Iui3nemboiA9ICU0LjJsZiI=
+    :encode_word: "@594_172"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSDvvIh4IHnvvIk6ICI=
+    :encode_word: "@594_173"
+  - :string: !binary |-
+      Iui3nembouOAgO+8nSUuMmxmXG4i
+    :encode_word: "@594_174"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgO+8iO+9mOOAgO+9me+8iTogIg==
+    :encode_word: "@594_175"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgCh4IHkpOlxuIg==
+    :encode_word: "@594_176"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCx5Ke+8miI=
+    :encode_word: "@594_177"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCx5Ke+8miI=
+    :encode_word: "@594_178"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeOOAgHkpOiI=
+    :encode_word: "@594_179"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeOOAgHkpOiI=
+    :encode_word: "@594_180"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCx5KVxuIg==
+    :encode_word: "@594_181"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCx5KVxuIg==
+    :encode_word: "@594_182"
+  - :string: !binary |-
+      Iui3nembou+8nSUwLjJsZlxuIg==
+    :encode_word: "@594_183"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTolMC4xZiAlMC4xZlxuIg==
+    :encode_word: "@594_184"
+  - :string: !binary |-
+      Iui3nemboj0lMC4yZiI=
+    :encode_word: "@594_185"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTogJWxmICVsZlxuIg==
+    :encode_word: "@594_186"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhOOAglxu
+      Ig==
+    :encode_word: "@594_187"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSh4IHkpIg==
+    :encode_word: "@594_188"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomTooeCB5KSI=
+    :encode_word: "@594_189"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTolMC4xZiAlMC4xZlxuIg==
+    :encode_word: "@594_190"
   - :string: !binary |-
       IuWni+eCueOBqOe1gueCueOBruWApOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhC5cbiI=
-    :encode_word: "@594_198"
+    :encode_word: "@594_191"
   - :string: !binary |-
       IuWni+eCueW6p+aomeOAgCDvvIh4IHnvvIk6JS4ybGYgJS4ybGYgXG4i
-    :encode_word: "@594_199"
+    :encode_word: "@594_192"
   - :string: !binary |-
       Iue1gueCueW6p+aomSAg77yIeCB577yJOiUuMmxmICUuMmxmIFxuIg==
-    :encode_word: "@594_200"
+    :encode_word: "@594_193"
   - :string: !binary |-
       Iui3nembou+8nSUuMmxmXG4gIg==
-    :encode_word: "@594_201"
-  - :string: !binary |-
-      Iui3nemboiA9ICUzLjJsZlxuIg==
-    :encode_word: "@594_202"
+    :encode_word: "@594_194"
   - :string: !binary |-
       Iui3nemboiDvvJ0gJTAuMmxmXG4i
-    :encode_word: "@594_203"
-  - :string: '"%0.1f\n"'
-    :encode_word: "@594_204"
+    :encode_word: "@594_195"
   - :string: !binary |-
       Ilxu57WC54K55bqn5qiZICh4IHkpOiI=
-    :encode_word: "@594_205"
+    :encode_word: "@594_196"
   - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkp44CAOiAi
-    :encode_word: "@594_206"
+      Iui3nembouOAgD0gJTMuMmxmXG4i
+    :encode_word: "@594_197"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSDvvIh4IHnvvIk6ICI=
+    :encode_word: "@594_198"
   - :string: !binary |-
       Iue1gueCueW6p+aomTogKHgseSki
+    :encode_word: "@594_199"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgCh4IHkpOiAlLjFsZiAlLjFsZiI=
+    :encode_word: "@594_200"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomShYWSk6Ig==
+    :encode_word: "@594_201"
+  - :string: !binary |-
+      Iui3nembou+8nSUuMmYi
+    :encode_word: "@594_202"
+  - :string: !binary |-
+      IuimlueCueW6p+aomSAoeCB5KTogIg==
+    :encode_word: "@594_203"
+  - :string: !binary |-
+      IuWni+eCueW6p+ekgSh4IHkpOiI=
+    :encode_word: "@594_204"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeW6p+aomSI=
+    :encode_word: "@594_205"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTrjgIAi
+    :encode_word: "@594_206"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgCh4IHkp44CAOiAi
     :encode_word: "@594_207"
   - :string: !binary |-
       Iui3nembojogJS4ybGZcbiI=
     :encode_word: "@594_208"
   - :string: !binary |-
-      Iui3nemboiA9ICU1LjJsZiI=
+      Iue1gueCueW6p+aomSh4IHkpOiVsZiAlbGZcbiI=
     :encode_word: "@594_209"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IHkpOiVsZiAlbGZcbiI=
+      IuWni+eCuei3nemboiAoeCB5KTogIg==
     :encode_word: "@594_210"
   - :string: !binary |-
-      IuWni+eCuei3nemboiAoeCB5KTogIg==
+      Iue1gueCueW6p+aomeOAgCh4IHkpIDogIg==
     :encode_word: "@594_211"
-  - :string: !binary |-
-      Iue1gueCuei3nemboiAoeCB5KTogIg==
+  - :string: '"%0.2f\n"'
     :encode_word: "@594_212"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJS4yZiAlLjJmXG4i
+      IuWni+eCueW6p+aomeOAgCh4IHkpIO+8miAi
     :encode_word: "@594_213"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJS4yZiAlLjJmXG4i
+      IuWni+eCueW6p+aomSh4LHkpOiI=
     :encode_word: "@594_214"
   - :string: !binary |-
-      Iue1gueCueW6p+aomTrjgIAoeCB5KSAi
+      Iue1gueCueW6p+aomSh4LHkpOiI=
     :encode_word: "@594_215"
-  - :string: '"%0.2f\n"'
-    :encode_word: "@594_216"
-  - :string: !binary |-
-      IuWni+eCueW6p+ekgSh4IHkpOiI=
-    :encode_word: "@594_217"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAgKHggeSk6ICI=
-    :encode_word: "@594_218"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpIO+8miAi
-    :encode_word: "@594_219"
-  - :string: '"distance = %.2lf\n"'
-    :encode_word: "@594_220"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSDvvIh4IHnvvIk6ICI=
-    :encode_word: "@594_221"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4LHkpOiI=
-    :encode_word: "@594_222"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeW6p+aomSI=
-    :encode_word: "@594_223"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgO+8iHggee+8iToi
-    :encode_word: "@594_224"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IHkpIDogIg==
-    :encode_word: "@594_225"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpOiAlLjJsZiAlLjJsZlxuIg==
-    :encode_word: "@594_226"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJS4ybGYgJS4ybGZcbiI=
-    :encode_word: "@594_227"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IHkpIDogIg==
-    :encode_word: "@594_228"
   - :string: !binary |-
       Iue1gueCueW6p+aomeOAgO+8iHggee+8iToi
-    :encode_word: "@594_229"
+    :encode_word: "@594_216"
+  - :string: '"%lf,%lf"'
+    :encode_word: "@594_217"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTrjgIAi
-    :encode_word: "@594_230"
+      Ilxu57WC54K55bqn5qiZKHggeSnvvJoi
+    :encode_word: "@594_218"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJWQgJWRcbiI=
-    :encode_word: "@594_231"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgO+8iHggeSk6ICI=
-    :encode_word: "@594_232"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJWQgJWRcbiI=
-    :encode_word: "@594_233"
-  - :string: !binary |-
-      Iui3nembou+8nSAlMC4ybGZcbiI=
-    :encode_word: "@594_234"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSh4LHkp77yaIg==
-    :encode_word: "@594_235"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4LHkp77yaIg==
-    :encode_word: "@594_236"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IHkpIDoi
-    :encode_word: "@594_237"
-  - :string: !binary |-
-      Iui3nemboj0i
-    :encode_word: "@594_238"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJS4ybGYgJWxmLjJcbiI=
-    :encode_word: "@594_239"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IHkpIDoi
-    :encode_word: "@594_240"
-  - :string: !binary |-
-      Iui3nembouOAgO+8nSAlMC4ybGYi
-    :encode_word: "@594_241"
-  - :string: !binary |-
-      Iue1gueCueOBruWApOOCkuWFpeOCjOOBpuOBj+OBoOOBleOBhFxuIg==
-    :encode_word: "@594_242"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSh4IHkpOiAlMmxmICUybGZcbiI=
-    :encode_word: "@594_243"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IHkpOiAlMmxmICUybGZcbiI=
-    :encode_word: "@594_244"
-  - :string: !binary |-
-      Iui3nembouOAgO+8nSAlLjJsZiI=
-    :encode_word: "@594_245"
-  - :string: !binary |-
-      Iui3nembouOAgO+8nSUwLjJsZlxu44CAIg==
-    :encode_word: "@594_246"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkpIDoi
-    :encode_word: "@594_247"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpIDoi
-    :encode_word: "@594_248"
-  - :string: '"%0.2lf"'
-    :encode_word: "@594_249"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSI=
-    :encode_word: "@594_250"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJS4ybGYgJS4ybGZcbiI=
-    :encode_word: "@594_251"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkpOlxuIg==
-    :encode_word: "@594_252"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJTAuMWxmLCUwLjFsZlxuIg==
-    :encode_word: "@594_253"
-  - :string: !binary |-
-      Iui3nembouOAgD0gJTQuMmxmIg==
-    :encode_word: "@594_254"
-  - :string: !binary |-
-      IuW6p+aomeOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhO+8mlxuIg==
-    :encode_word: "@594_255"
-  - :string: !binary |-
-      Iui3nembouOAgD3jgIAlLjJsZlxuIg==
-    :encode_word: "@594_256"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJTAuMWxmLCUwLjFsZlxuIg==
-    :encode_word: "@594_257"
-  - :string: !binary |-
-      IuWni+eCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miUuMmxm44CALCUuMmxm
-      XG4i
-    :encode_word: "@594_258"
+      Ilxu6Led6Zui77ydJS4ybGZcbiI=
+    :encode_word: "@594_219"
   - :string: !binary |-
       Iue1gueCueW6p+aome+8iO+9mOOAge+9me+8iToi
-    :encode_word: "@594_259"
+    :encode_word: "@594_220"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTogJWQgJWRcbiI=
+    :encode_word: "@594_221"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTogJWQgJWRcbiI=
+    :encode_word: "@594_222"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSh4IHkpIDogIg==
+    :encode_word: "@594_223"
+  - :string: !binary |-
+      Iui3nemboiDvvJ0gJTAuMmxmIg==
+    :encode_word: "@594_224"
+  - :string: !binary |-
+      Ilxu57WC54K55bqn5qiZICh4IHkpOlxuIg==
+    :encode_word: "@594_225"
+  - :string: !binary |-
+      Iui3nembouOAgD0gJTAuMmZcbiI=
+    :encode_word: "@594_226"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeOAgCh4IHkp44CAOiAi
+    :encode_word: "@594_227"
+  - :string: !binary |-
+      Iui3nembouOAgD0lMC4ybGYvbiI=
+    :encode_word: "@594_228"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomTogKHgseSki
+    :encode_word: "@594_229"
+  - :string: !binary |-
+      Iue1gueCuei3nemboiAoeCB5KTogIg==
+    :encode_word: "@594_230"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgO+8iHggeSk6ICI=
+    :encode_word: "@594_231"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgCh4IHkpIDogIg==
+    :encode_word: "@594_232"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTogJS4yZiAlLjJmXG4i
+    :encode_word: "@594_233"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTogJS4yZiAlLjJmXG4i
+    :encode_word: "@594_234"
+  - :string: !binary |-
+      Iue1gueCueOBruWApOOCkuWFpeOCjOOBpuOBj+OBoOOBleOBhFxuIg==
+    :encode_word: "@594_235"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSh4IHkpOiAlMmxmICUybGZcbiI=
+    :encode_word: "@594_236"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSh4IHkpOiAlMmxmICUybGZcbiI=
+    :encode_word: "@594_237"
+  - :string: !binary |-
+      Iui3nembouOAgO+8nSUwLjJsZlxu44CAIg==
+    :encode_word: "@594_238"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSI=
+    :encode_word: "@594_239"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeOAgCh4IHkpOlxuIg==
+    :encode_word: "@594_240"
+  - :string: !binary |-
+      Iui3nembouOAgD0gJTQuMmxmIg==
+    :encode_word: "@594_241"
   - :string: !binary |-
       Iui3nembouOAgD0lLjJsZlxuIg==
-    :encode_word: "@594_260"
+    :encode_word: "@594_242"
   - :string: !binary |-
       IuWni+eCueW6p+aomeOAgO+8iHjjgIDvvZnvvInvvJrjgIAi
-    :encode_word: "@594_261"
+    :encode_word: "@594_243"
   - :string: !binary |-
       Iue1gueCueW6p+aomeOAgO+8iHjjgIDvvZnvvInvvJrjgIAi
-    :encode_word: "@594_262"
-  - :string: !binary |-
-      Iui3nemboiA9ICU1LjJsZlxuIg==
-    :encode_word: "@594_263"
+    :encode_word: "@594_244"
   - :string: !binary |-
       IuWni+eCueW6p+aomeOAgO+8iHggee+8iTogXG4i
-    :encode_word: "@594_264"
+    :encode_word: "@594_245"
   - :string: !binary |-
       Iue1gueCueW6p+aomeOAgO+8iHggee+8iTogXG4i
-    :encode_word: "@594_265"
-  - :string: !binary |-
-      Iui3nemboj0lMC4ybGZcbiI=
-    :encode_word: "@594_266"
+    :encode_word: "@594_246"
   - :string: !binary |-
       Iue1gueCueW6p+aomSh4IHkpXG4i
-    :encode_word: "@594_267"
+    :encode_word: "@594_247"
   - :string: !binary |-
       Iui3nemboiA9ICUyLjJsZiI=
-    :encode_word: "@594_268"
-  - :string: !binary |-
-      Iue1gueCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miUuMmxmICUuMmxmXG4i
-    :encode_word: "@594_269"
+    :encode_word: "@594_248"
   - :string: !binary |-
       IuWni+eCueW6p+aome+8iHgsee+8ieOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhFxuIg==
-    :encode_word: "@594_270"
+    :encode_word: "@594_249"
   - :string: !binary |-
       Iue1gueCueW6p+aome+8iHgsee+8ieOCkuWFpeWKm+OBl+OBpuOBj+OBoOOB
       leOBhFxuIg==
-    :encode_word: "@594_271"
-  - :string: !binary |-
-      IuWni+eCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miUuMmxmICUuMmxmXG4i
-    :encode_word: "@594_272"
+    :encode_word: "@594_250"
   - :string: !binary |-
       IuW6p+aomSAoeCB5KTogIg==
-    :encode_word: "@594_273"
+    :encode_word: "@594_251"
   - :string: !binary |-
       Iui3nembouOAgD0gJTMuMmxmIg==
-    :encode_word: "@594_274"
+    :encode_word: "@594_252"
   - :string: '"starting point (x y):"'
-    :encode_word: "@594_275"
+    :encode_word: "@594_253"
   - :string: '"end point (x y):"'
-    :encode_word: "@594_276"
+    :encode_word: "@594_254"
+  - :string: '"distance = %.2lf\n"'
+    :encode_word: "@594_255"
+  - :string: '"%0.1f\n"'
+    :encode_word: "@594_256"
   - :string: !binary |-
-      IuWni+eCueW6p+aomTogKHgseSki
-    :encode_word: "@594_277"
-  - :string: '"%lf%lf%lf%lf"'
-    :encode_word: "@594_278"
+      IuWni+eCueW6p+aomSAoeCB5KTogJTAuMWxmLCUwLjFsZlxuIg==
+    :encode_word: "@594_257"
   - :string: !binary |-
-      Iui3nembouOAgD0lMC4ybGYvbiI=
-    :encode_word: "@594_279"
+      Iue1gueCueW6p+aomSAoeCB5KTogJTAuMWxmLCUwLjFsZlxuIg==
+    :encode_word: "@594_258"
   - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkp44CAOiAi
-    :encode_word: "@594_280"
+      Iui3nemboj0i
+    :encode_word: "@594_259"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTogJS4ybGYgJS4ybGZcbiI=
+    :encode_word: "@594_260"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTogJS4ybGYgJWxmLjJcbiI=
+    :encode_word: "@594_261"
+  - :string: !binary |-
+      IuWni+eCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miUuMmxmICUuMmxmXG4i
+    :encode_word: "@594_262"
+  - :string: !binary |-
+      Iue1gueCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miUuMmxmICUuMmxmXG4i
+    :encode_word: "@594_263"
+  - :string: !binary |-
+      IuWni+eCueW6p+aome+8iO+9mOOAgO+9me+8ie+8miUuMmxm44CALCUuMmxm
+      XG4i
+    :encode_word: "@594_264"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgCh4IHkpIDoi
+    :encode_word: "@594_265"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeOAgCh4IHkpIDoi
+    :encode_word: "@594_266"
+  - :string: !binary |-
+      Iui3nembouOAgO+8nSAlMC4ybGYi
+    :encode_word: "@594_267"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSh4IHkpIDoi
+    :encode_word: "@594_268"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSh4IHkpIDoi
+    :encode_word: "@594_269"
   - :string: !binary |-
       IuWni+eCueW6p+aomeOAgCh4IHkpOuOAgCVsZiAlbGZcbiI=
-    :encode_word: "@594_281"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogIik7ICBzY2FuZigiJWxmICVsZiI=
-    :encode_word: "@594_282"
+    :encode_word: "@594_270"
+  - :string: '"%lf%lf%lf%lf"'
+    :encode_word: "@594_271"
   - :string: !binary |-
       Iue1gueCueW6p+aomSAoeCB5KTogIik7ICBzY2FuZigiJWxmICVsZiI=
-    :encode_word: "@594_283"
+    :encode_word: "@594_272"
   - :string: !binary |-
-      Iui3nembouOAgD0gJTAuMmZcbiI=
-    :encode_word: "@594_284"
+      IuWni+eCueW6p+aomeOAgCh4IHkpOiAlLjJsZiAlLjJsZlxuIg==
+    :encode_word: "@594_273"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoYSBiKToi
-    :encode_word: "@594_285"
+      Iue1gueCueW6p+aomSAoeCB5KTogJS4ybGYgJS4ybGZcbiI=
+    :encode_word: "@594_274"
   - :string: !binary |-
-      Ilxu57WC54K55bqn5qiZICh4IHkpOlxuIg==
-    :encode_word: "@594_286"
+      Iue1gueCueW6p+aomSAgKHggeSk6ICI=
+    :encode_word: "@594_275"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KSA6ICVsZiAlbGZcbiI=
-    :encode_word: "@594_287"
+      Iui3nembouOAgO+8nSAlLjJsZiI=
+    :encode_word: "@594_276"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTolLjFsZiAlLjFsZlxuIg==
-    :encode_word: "@594_288"
+      Iui3nembouOAgD3jgIAlLjJsZlxuIg==
+    :encode_word: "@594_277"
   - :string: !binary |-
-      Iui3nemboj0lMC4ybGYi
-    :encode_word: "@594_289"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSh4IHkpOiUwLjFsZiAlMC4xbGYi
-    :encode_word: "@594_290"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomXk9Ig==
-    :encode_word: "@594_291"
-  - :string: !binary |-
-      Iue1giglbGYgJWxmKVxuIg==
-    :encode_word: "@594_292"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomWIoeCB5KTolMC4xbGYgJTAuMWxmIg==
-    :encode_word: "@594_293"
+      Iue1gueCueW6p+aomTrjgIAoeCB5KSAi
+    :encode_word: "@594_278"
   - :string: !binary |-
       Iue1gueCueW6p+aomeOAgCh4IHkpIO+8miAi
+    :encode_word: "@594_279"
+  - :string: !binary |-
+      Iui3nemboiA9ICU1LjJsZiI=
+    :encode_word: "@594_280"
+  - :string: !binary |-
+      Iui3nemboj0lMy4ybGZcbiI=
+    :encode_word: "@594_281"
+  - :string: !binary |-
+      IuW6p+aomeOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhO+8mlxuIg==
+    :encode_word: "@594_282"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSh4LHkp77yaIg==
+    :encode_word: "@594_283"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSh4LHkp77yaIg==
+    :encode_word: "@594_284"
+  - :string: !binary |-
+      Iui3nembou+8nSAlMC4ybGZcbiI=
+    :encode_word: "@594_285"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTrjgIAi
+    :encode_word: "@594_286"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTogIik7ICBzY2FuZigiJWxmICVsZiI=
+    :encode_word: "@594_287"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoYSBiKToi
+    :encode_word: "@594_288"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeOAgO+8iHggeSk6ICI=
+    :encode_word: "@594_289"
+  - :string: !binary |-
+      IuWni+eCueOBruWApOOCkuWFpeOCjOOBpuOBj+OBoOOBleOBhFxuIg==
+    :encode_word: "@594_290"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTogJTIuMmYgJTIuMmZcbiI=
+    :encode_word: "@594_291"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTogJTIuMmYgJTIuMmZcbiI=
+    :encode_word: "@594_292"
+  - :string: !binary |-
+      Iui3nemboiA9ICUyLjJmXG4i
+    :encode_word: "@594_293"
+  - :string: !binary |-
+      IuWni+eCueW6p+aome+8iO+9mOOAge+9me+8ie+8mlxuIg==
     :encode_word: "@594_294"
   - :string: !binary |-
-      Iui3nembouOAgO+8nSI=
+      Iue1gueCueW6p+aome+8iO+9mOOAge+9me+8iTpcbiI=
     :encode_word: "@594_295"
   - :string: !binary |-
-      Iui3nemboiA9JTAuMmxmXG4i
+      IuWni+eCueW6p+aomSAoeCB5KTogJTAuMWxmICUwLjFsZlxuIg==
     :encode_word: "@594_296"
   - :string: !binary |-
-      Iui3nemboj0gJS4ybGZcbiI=
+      Iue1gueCueW6p+aomSAoeCB5KTogJTAuMWxmICUwLjFsZlxuIg==
     :encode_word: "@594_297"
   - :string: !binary |-
-      IuWniyglbGYgJWxmKVxuIg==
+      IuWni+eCueW6p+aomSAoeCx5KTogJS4xbGYgJS4xbGZcbiI=
     :encode_word: "@594_298"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCx5KTogJS4xbGYgJS4xbGZcbiI=
+    :encode_word: "@594_299"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomeOAgCh4LHkpIDoi
+    :encode_word: "@594_300"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomeOAgCh4LHkpIDoi
+    :encode_word: "@594_301"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomWIoeCB5KTolMC4xbGYgJTAuMWxmIg==
+    :encode_word: "@594_302"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSh4IHkpOiUwLjFsZiAlMC4xbGYi
+    :encode_word: "@594_303"
+  - :string: !binary |-
+      Iui3nemboj0lMC4ybGYi
+    :encode_word: "@594_304"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomXg9Ig==
+    :encode_word: "@594_305"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomXk9Ig==
+    :encode_word: "@594_306"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomXg9Ig==
+    :encode_word: "@594_307"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomXk9Ig==
+    :encode_word: "@594_308"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomSAoeCB5KTolLjFsZiAlLjFsZlxuIg==
+    :encode_word: "@594_309"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTolLjFsZiAlLjFsZlxuIg==
+    :encode_word: "@594_310"
+  - :string: !binary |-
+      Iui3nemboj0lMS4ybGZcbiI=
+    :encode_word: "@594_311"
+  - :string: !binary |-
+      Iui3nembouOAgD0lMC4ybGYi
+    :encode_word: "@594_312"
+  - :string: '"%lf,%lf,%lf,%lf"'
+    :encode_word: "@594_313"
+  - :string: !binary |-
+      IuWni+eCuei3nembouOAgO+8iHggee+8iToi
+    :encode_word: "@594_314"
+  - :string: !binary |-
+      Iue1gueCuei3nembouOAgO+8iHggee+8iToi
+    :encode_word: "@594_315"
+  - :string: !binary |-
+      Iui3nembouOAgO+8nSAlLjJsZlxuIg==
+    :encode_word: "@594_316"
+  - :string: !binary |-
+      IuWniyglbGYgJWxmKVxuIg==
+    :encode_word: "@594_317"
+  - :string: !binary |-
+      Iue1giglbGYgJWxmKVxuIg==
+    :encode_word: "@594_318"
+  - :string: !binary |-
+      Iui3nembou+8nSUwLjJsZiI=
+    :encode_word: "@594_319"
+  - :string: !binary |-
+      Iui3nemboiDvvJ0lNC4ybGZcbiI=
+    :encode_word: "@594_320"
+  - :string: !binary |-
+      IuWni+eCueW6p+aomTogJS4xZiAlLjFmXG4i
+    :encode_word: "@594_321"
+  - :string: !binary |-
+      Iue1gueCueW6p+aomTogJS4xZiAlLjFmXG4i
+    :encode_word: "@594_322"
+  - :string: !binary |-
+      IiXot53pm6Ig77ydICUuMmZcbiI=
+    :encode_word: "@594_323"
+  - :string: !binary |-
+      Iui3nemboj0lNC4ybGYi
+    :encode_word: "@594_324"
+  - :string: !binary |-
+      Iui3nemboiA9JTAuMmxmXG4i
+    :encode_word: "@594_325"
+  - :string: !binary |-
+      Iui3nemboiA9ICUzLjJmIg==
+    :encode_word: "@594_326"
+  - :string: !binary |-
+      Iui3nembouOAgO+8nSI=
+    :encode_word: "@594_327"
   - :string: !binary |-
       IuWni+eCueOAgee1gueCueOBrngseeW6p+aomeOCkuOBneOCjOOBnuOCjOWF
       peWKm+OBl+OBpuOBj+OBoOOBleOBhFxuIg==
-    :encode_word: "@594_299"
-  - :string: '"%lf\n%lf\n%lf\n%lf"'
-    :encode_word: "@594_300"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomXg9Ig==
-    :encode_word: "@594_301"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSDvvIh4IHnvvIk6ICI=
-    :encode_word: "@594_302"
-  - :string: !binary |-
-      Iui3nemboj0lMy4ybGZcbiI=
-    :encode_word: "@594_303"
-  - :string: !binary |-
-      Iui3nemboj0lMy4yZiI=
-    :encode_word: "@594_304"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpOiAlLjFsZiAlLjFsZlxuIg==
-    :encode_word: "@594_305"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkpOiAlLjFsZiAlLjFsZlxuIg==
-    :encode_word: "@594_306"
-  - :string: !binary |-
-      Iue1gueCuei3nembouOAgO+8iHggee+8iToi
-    :encode_word: "@594_307"
-  - :string: !binary |-
-      Iui3nemboj0lMS4ybGZcbiI=
-    :encode_word: "@594_308"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJTIuMmYgJTIuMmZcbiI=
-    :encode_word: "@594_309"
-  - :string: !binary |-
-      Iui3nemboj0lNC4ybGYi
-    :encode_word: "@594_310"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJTIuMmYgJTIuMmZcbiI=
-    :encode_word: "@594_311"
-  - :string: !binary |-
-      IuWni+eCueW6p+aome+8iHjjgIB577yJ77yaIg==
-    :encode_word: "@594_312"
-  - :string: !binary |-
-      Iue1gueCueW6p+aome+8iHjjgIB577yJ77yaIg==
-    :encode_word: "@594_313"
-  - :string: !binary |-
-      Iui3nembouOAgO+8neOAgCI=
-    :encode_word: "@594_314"
-  - :string: !binary |-
-      Iui3nemboiA9ICUyLjJmXG4i
-    :encode_word: "@594_315"
-  - :string: !binary |-
-      Iui3nemboiA9ICUzLjJmIg==
-    :encode_word: "@594_316"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomXk9Ig==
-    :encode_word: "@594_317"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJS4xbGbjgIAlLjFsZiBcbiI=
-    :encode_word: "@594_318"
-  - :string: !binary |-
-      Iui3nemboiDvvJ0gJTMuMmxmIg==
-    :encode_word: "@594_319"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJS4xbGYgJS4xbGYgXG4i
-    :encode_word: "@594_320"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4IHkpOiVsZiAlbGZcbiI=
-    :encode_word: "@594_321"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4IHkpOiVsZiAlbGZcbiI=
-    :encode_word: "@594_322"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomXg9Ig==
-    :encode_word: "@594_323"
-  - :string: !binary |-
-      Iui3nembouOAgD0lMC4ybGYi
-    :encode_word: "@594_324"
-  - :string: !binary |-
-      IiXot53pm6Ig77ydICUuMmZcbiI=
-    :encode_word: "@594_325"
-  - :string: !binary |-
-      Iue1gueCueW6p+aomTogJS4xZiAlLjFmXG4i
-    :encode_word: "@594_326"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomTogJS4xZiAlLjFmXG4i
-    :encode_word: "@594_327"
-  - :string: !binary |-
-      IuWni+eCueW6p+aomeOAgCh4LHkpIDoi
     :encode_word: "@594_328"
-  - :string: !binary |-
-      Iui3nemboiDvvJ0lNC4ybGZcbiI=
+  - :string: '"%lf\n%lf\n%lf\n%lf"'
     :encode_word: "@594_329"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogIik7c2NhbmYoIiVsZiAlbGYi
+      Iui3nemboiDvvJ0gJTMuMmxmIg==
     :encode_word: "@594_330"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogIik7c2NhbmYoIiVsZiAlbGYi
+      IuWni+eCueW6p+aomSAoeCB5KTogIik7c2NhbmYoIiVsZiAlbGYi
     :encode_word: "@594_331"
   - :string: !binary |-
-      IuWni+eCueW6p+aome+8iO+9mOOAge+9me+8ie+8mlxuIg==
+      Iue1gueCueW6p+aomSAoeCB5KTogIik7c2NhbmYoIiVsZiAlbGYi
     :encode_word: "@594_332"
   - :string: !binary |-
-      Iue1gueCueW6p+aome+8iO+9mOOAge+9me+8iTpcbiI=
+      Iui3nemboiA9ICVsZiI=
     :encode_word: "@594_333"
   - :string: !binary |-
-      Iui3nembou+8nSUwLjJsZiI=
+      Iui3nemboj0gJS4ybGZcbiI=
     :encode_word: "@594_334"
   - :string: !binary |-
-      Iue1gueCueW6p+aomeOAgCh4LHkpIDoi
+      IuWni+eCueW6p+aomeOAgCh4IHkpOiAlLjFsZiAlLjFsZlxuIg==
     :encode_word: "@594_335"
   - :string: !binary |-
-      Iui3nembouOAgO+8nSAlLjJsZlxuIg==
+      Iue1gueCueW6p+aomeOAgCh4IHkpOiAlLjFsZiAlLjFsZlxuIg==
     :encode_word: "@594_336"
   - :string: !binary |-
-      IuWni+eCuei3nembouOAgO+8iHggee+8iToi
+      IuWni+eCueW6p+aomSAoeCB5KTogJS4xbGbjgIAlLjFsZiBcbiI=
     :encode_word: "@594_337"
-  - :string: '"%lf,%lf,%lf,%lf"'
+  - :string: !binary |-
+      Iue1gueCueW6p+aomSAoeCB5KTogJS4xbGYgJS4xbGYgXG4i
     :encode_word: "@594_338"
   - :string: !binary |-
-      IuWni+eCueOBruW6p+aomeOAgO+8iO+9mOOAgO+9me+8iSI=
+      IuWni+eCueW6p+aomeOAgCh4IHkpOiVsZiAlbGZcbiI=
     :encode_word: "@594_339"
   - :string: !binary |-
-      IuWni+eCueOBruWApOOCkuWFpeOCjOOBpuOBj+OBoOOBleOBhFxuIg==
+      Iue1gueCueW6p+aomeOAgCh4IHkpOiVsZiAlbGZcbiI=
     :encode_word: "@594_340"
   - :string: !binary |-
-      Iue1gueCueOBruW6p+aomeOAgO+8iO+9mOOAgO+9me+8iSI=
+      IuWni+eCueOBruW6p+aomeOAgO+8iO+9mOOAgO+9me+8iSI=
     :encode_word: "@594_341"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTogJTAuMWxmICUwLjFsZlxuIg==
+      Iue1gueCueOBruW6p+aomeOAgO+8iO+9mOOAgO+9me+8iSI=
     :encode_word: "@594_342"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCB5KTogJTAuMWxmICUwLjFsZlxuIg==
+      IuWni+eCueW6p+aomSAoeCB5KSA6ICVsZiAlbGZcbiI=
     :encode_word: "@594_343"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCx5KTogJS4xbGYgJS4xbGZcbiI=
+      Iue1gueCueW6p+aomSAoeCB5KSA6ICVsZiAlbGZcbiI=
     :encode_word: "@594_344"
   - :string: !binary |-
-      Iui3nemboiA9ICVsZiI=
+      IuWni+eCueW6p+aome+8iHjjgIB577yJ77yaIg==
     :encode_word: "@594_345"
   - :string: !binary |-
-      Iue1gueCueW6p+aomSAoeCx5KTogJS4xbGYgJS4xbGZcbiI=
+      Iue1gueCueW6p+aome+8iHjjgIB577yJ77yaIg==
     :encode_word: "@594_346"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KSA6ICVsZiAlbGZcbiI=
+      Iui3nembouOAgO+8neOAgCI=
     :encode_word: "@594_347"
   - :string: !binary |-
-      IuWni+eCueW6p+aomSAoeCB5KTolLjFsZiAlLjFsZlxuIg==
+      Iui3nemboj0lMy4yZiI=
     :encode_word: "@594_348"
   '574':
   - :string: '"%d %d"'
@@ -2114,25 +2114,25 @@
     :encode_word: "@574_2"
   - :string: '"%d %d\n"'
     :encode_word: "@574_3"
-  - :string: '"sum=%d | carry=%d\n"'
-    :encode_word: "@574_4"
   - :string: '"%d%d"'
+    :encode_word: "@574_4"
+  - :string: '"sum=%d | carry=%d\n"'
     :encode_word: "@574_5"
-  - :string: '"a=%d | b=%d\n"'
-    :encode_word: "@574_6"
   - :string: '"sum=%d, carry=%d\n"'
-    :encode_word: "@574_7"
+    :encode_word: "@574_6"
   - :string: '"%d  %d"'
-    :encode_word: "@574_8"
+    :encode_word: "@574_7"
   - :string: '""'
+    :encode_word: "@574_8"
+  - :string: '"a=%d | b=%d\n"'
     :encode_word: "@574_9"
-  - :string: '"sum = %d | carry = %d\n"'
-    :encode_word: "@574_10"
   - :string: '"a=%d, b=%d\n"'
+    :encode_word: "@574_10"
+  - :string: '"%d\n %d"'
     :encode_word: "@574_11"
   - :string: '"a = %d | b = %d\n"'
     :encode_word: "@574_12"
-  - :string: '"%d\n %d"'
+  - :string: '"sum = %d | carry = %d\n"'
     :encode_word: "@574_13"
   - :string: '"sum = %d | carry = %d \n"'
     :encode_word: "@574_14"
@@ -2149,30 +2149,30 @@
     :encode_word: "@570_2"
   - :string: '"The sum of odd numbers up to %d is %-d.\n"'
     :encode_word: "@570_3"
-  - :string: '"The sum of odd numbers up to %2d is %d.\n"'
-    :encode_word: "@570_4"
-  - :string: '"The sum of odd numbers up to 1 is 1.\n"'
-    :encode_word: "@570_5"
-  - :string: '"The sum of odd numbers up to%2d is %d.\n"'
-    :encode_word: "@570_6"
-  - :string: '"The sum of odd numbers up to %d "'
-    :encode_word: "@570_7"
-  - :string: '"is %d.\n"'
-    :encode_word: "@570_8"
   - :string: '"The sum of odd numbers up to %d is "'
-    :encode_word: "@570_9"
+    :encode_word: "@570_4"
   - :string: '"%d.\n"'
+    :encode_word: "@570_5"
+  - :string: '"The sum of odd numbers up to %d "'
+    :encode_word: "@570_6"
+  - :string: '"is %d.\n"'
+    :encode_word: "@570_7"
+  - :string: '"The sum of odd numbers up to 1 is 1.\n"'
+    :encode_word: "@570_8"
+  - :string: '"The sum of odd numbers up to%2d is %d.\n"'
+    :encode_word: "@570_9"
+  - :string: '"The sum of odd numbers up to %2d is %d.\n"'
     :encode_word: "@570_10"
-  - :string: '"The sum of odd numbers up to 1 is %d.\n"'
-    :encode_word: "@570_11"
   - :string: '"%d"'
+    :encode_word: "@570_11"
+  - :string: '"The sum of odd numbers up to 1 is %d.\n"'
     :encode_word: "@570_12"
   '572':
   - :string: '"%3d points -> %5.1lf points\n"'
     :encode_word: "@572_0"
-  - :string: '"%3d points ->%6.1lf points\n"'
-    :encode_word: "@572_1"
   - :string: '"%3d points -> %5.1f points\n"'
+    :encode_word: "@572_1"
+  - :string: '"%3d points ->%6.1lf points\n"'
     :encode_word: "@572_2"
   - :string: '"%3.0lf points -> %5.1lf points\n"'
     :encode_word: "@572_3"
@@ -2188,43 +2188,43 @@
     :encode_word: "@572_8"
   - :string: '"%3.0f points -> %5.1lf points\n"'
     :encode_word: "@572_9"
-  - :string: '"100 points -> 100.0 points\n"'
-    :encode_word: "@572_10"
-  - :string: '"%3.0f points ->%6.1f points\n"'
-    :encode_word: "@572_11"
   - :string: '"%3.f points -> %5.1f points\n"'
-    :encode_word: "@572_12"
+    :encode_word: "@572_10"
+  - :string: '"100 points -> 100.0 points\n"'
+    :encode_word: "@572_11"
   - :string: '"%3d points -> "'
-    :encode_word: "@572_13"
+    :encode_word: "@572_12"
   - :string: '"%5.1f points\n"'
+    :encode_word: "@572_13"
+  - :string: '"%3.0f points ->%6.1f points\n"'
     :encode_word: "@572_14"
-  - :string: '"100.0 points\n"'
-    :encode_word: "@572_15"
-  - :string: '"%3.0f points ->%6.1lf points\n"'
-    :encode_word: "@572_16"
-  - :string: '"%3.lf points -> %5.1lf points\n"'
-    :encode_word: "@572_17"
-  - :string: '"  0 points ->   0.0 points\n"'
-    :encode_word: "@572_18"
-  - :string: '" %2d points ->  %3.1lf points\n"'
-    :encode_word: "@572_19"
   - :string: '"%3.1d points ->%6.1lf points\n"'
-    :encode_word: "@572_20"
-  - :string: '"%3d points ->%6.1lf points"'
-    :encode_word: "@572_21"
-  - :string: '"%lf\n"'
-    :encode_word: "@572_22"
-  - :string: '"%3lf"'
-    :encode_word: "@572_23"
-  - :string: '" %d points ->  %0.1lf points\n"'
-    :encode_word: "@572_24"
+    :encode_word: "@572_15"
   - :string: '"%3d points ->  %4.1f points\n"'
-    :encode_word: "@572_25"
-  - :string: '"%d points -> %0.1lf points\n"'
-    :encode_word: "@572_26"
-  - :string: '"  %d points ->  %0.1lf points\n"'
-    :encode_word: "@572_27"
-  - :string: '"  %d points ->   %0.1lf points\n"'
-    :encode_word: "@572_28"
+    :encode_word: "@572_16"
   - :string: '"%3d points -> %5.1f points"'
+    :encode_word: "@572_17"
+  - :string: '"  %d points ->   %0.1lf points\n"'
+    :encode_word: "@572_18"
+  - :string: '"  %d points ->  %0.1lf points\n"'
+    :encode_word: "@572_19"
+  - :string: '" %d points ->  %0.1lf points\n"'
+    :encode_word: "@572_20"
+  - :string: '"%d points -> %0.1lf points\n"'
+    :encode_word: "@572_21"
+  - :string: '"100.0 points\n"'
+    :encode_word: "@572_22"
+  - :string: '"%3.0f points ->%6.1lf points\n"'
+    :encode_word: "@572_23"
+  - :string: '"%3.lf points -> %5.1lf points\n"'
+    :encode_word: "@572_24"
+  - :string: '"  0 points ->   0.0 points\n"'
+    :encode_word: "@572_25"
+  - :string: '" %2d points ->  %3.1lf points\n"'
+    :encode_word: "@572_26"
+  - :string: '"%3d points ->%6.1lf points"'
+    :encode_word: "@572_27"
+  - :string: '"%lf\n"'
+    :encode_word: "@572_28"
+  - :string: '"%3lf"'
     :encode_word: "@572_29"
