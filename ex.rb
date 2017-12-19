@@ -40,4 +40,6 @@ Parallel.each_with_index(attempts, in_processes: 2) do |attempt, idx|
 end
 
 
-Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "おわったよ")
+Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "exおわったよ")
+
+system('bin/rails r check_all.rb')
