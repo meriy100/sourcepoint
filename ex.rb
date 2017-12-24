@@ -5,7 +5,7 @@
 # attempts_sliced = Attempt.where(current_assignment_id: [587, 595, 594, 574]).pluck(:id).each_slice(5).to_a
 LENGTH = 90
 START_TIME = Time.zone.now
-attempts_sliced = Attempt.where(current_assignment_id: [595]).pluck(:id).each_slice(5).to_a
+# attempts_sliced = Attempt.where(current_assignment_id: [595]).pluck(:id).each_slice(5).to_a
 # Tempfile.create('sourcepoint-') do |tmp|
 #   puts "tail -f #{tmp.path}"
 #   max = attempts_sliced.count * 1.0
@@ -17,29 +17,31 @@ attempts_sliced = Attempt.where(current_assignment_id: [595]).pluck(:id).each_sl
 #   end
 # end
 
-attempts = Attempt.where(current_assignment_id: [587, 572, 594, 574, 595])
-max = attempts.count * 1.0
+[587, 572, 594, 574, 595].each do |assignment_id|
+  attempts = Attempt.where(current_assignment_id: assignment_id)
+  max = attempts.count * 1.0
 
-def least_minutes(max, idx)
-  (Time.zone.now - START_TIME)./(idx).*(max - idx)./(60).to_i.to_s
-rescue FloatDomainError => _
-  "∞"
-end
-
-Parallel.each_with_index(attempts, in_processes: 2) do |attempt, idx|
-
-  print "\r".concat("#" * (idx * LENGTH / max) .to_i).concat(" " * (LENGTH - idx * LENGTH / max).to_i).concat("|(#{idx}/#{max}) : #{least_minutes(max, idx)}m        ")
-  GC.start;
-  _, stderr, status = Open3.capture3('bin/rails', 'r', %{SubmissionCreate.new(Attempt.find(#{attempt.id}).to_submission, same_search: false).pre_run})
-  unless status.success?
-    STDERR.puts "*"* 10
-    STDERR.puts stderr
-    Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "attempt_id: #{attempt.id}\n#####################\n\n#{stderr}")
-    exit
+  def least_minutes(max, idx)
+    (Time.zone.now - START_TIME)./(idx).*(max - idx)./(60).to_i.to_s
+  rescue FloatDomainError => _
+    "∞"
   end
+
+  Parallel.each_with_index(attempts, in_processes: 2) do |attempt, idx|
+
+    print "\r".concat("#" * (idx * LENGTH / max) .to_i).concat(" " * (LENGTH - idx * LENGTH / max).to_i).concat("|(#{idx}/#{max}) : #{least_minutes(max, idx)}m        ")
+    GC.start;
+    _, stderr, status = Open3.capture3('bin/rails', 'r', %{SubmissionCreate.new(Attempt.find(#{attempt.id}).to_submission, same_search: false).pre_run})
+    unless status.success?
+      STDERR.puts "*"* 10
+      STDERR.puts stderr
+      Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "attempt_id: #{attempt.id}\n#####################\n\n#{stderr}")
+      exit
+    end
+  end
+
+
+  Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "exおわったよ")
+
+  system('bin/rails r check_all.rb')
 end
-
-
-Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "exおわったよ")
-
-system('bin/rails r check_all.rb')

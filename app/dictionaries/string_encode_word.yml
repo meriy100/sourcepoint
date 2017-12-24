@@ -74,10 +74,10 @@
     :encode_word: "@595_11"
   - :string: '"(%.2lf"'
     :encode_word: "@595_12"
-  - :string: '"+"'
-    :encode_word: "@595_13"
   - :string: !binary |-
       IuiZmuaVsOmDqCA9ICI=
+    :encode_word: "@595_13"
+  - :string: '"+"'
     :encode_word: "@595_14"
   - :string: '"%f"'
     :encode_word: "@595_15"
@@ -94,10 +94,10 @@
     :encode_word: "@595_19"
   - :string: '"\n(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf+%.2lfi)\n"'
     :encode_word: "@595_20"
-  - :string: '"\n(%.2f+%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
-    :encode_word: "@595_21"
   - :string: !binary |-
       IuWun+aVsOmDqCA9ICI=
+    :encode_word: "@595_21"
+  - :string: '"\n(%.2f+%.2fi) + (%.2f%.2fi) = (%.2f%.2fi)\n"'
     :encode_word: "@595_22"
   - :string: '"\n(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
     :encode_word: "@595_23"
@@ -164,12 +164,12 @@
     :encode_word: "@595_48"
   - :string: '"\n(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf%.2lfi)\n"'
     :encode_word: "@595_49"
-  - :string: '" + "'
-    :encode_word: "@595_50"
-  - :string: '" = "'
-    :encode_word: "@595_51"
   - :string: !binary |-
       IuWun+aVsOmDqD1cbiI=
+    :encode_word: "@595_50"
+  - :string: '" + "'
+    :encode_word: "@595_51"
+  - :string: '" = "'
     :encode_word: "@595_52"
   - :string: '"%.2lf"'
     :encode_word: "@595_53"
@@ -677,17 +677,17 @@
     :encode_word: "@595_248"
   - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f+%.2fi)\n"'
     :encode_word: "@595_249"
-  - :string: '"(%.2f"'
-    :encode_word: "@595_250"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi)"'
-    :encode_word: "@595_251"
-  - :string: '" = (%.2lf%.2lfi)\n"'
-    :encode_word: "@595_252"
-  - :string: '" = (%.2lf+%.2lfi)\n"'
-    :encode_word: "@595_253"
-  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
-    :encode_word: "@595_254"
   - :string: '"%.2lfi) = "'
+    :encode_word: "@595_250"
+  - :string: '"(%.2f"'
+    :encode_word: "@595_251"
+  - :string: '"(%.2lf%.2lfi) + (%.2lf+%.2lfi)"'
+    :encode_word: "@595_252"
+  - :string: '" = (%.2lf%.2lfi)\n"'
+    :encode_word: "@595_253"
+  - :string: '" = (%.2lf+%.2lfi)\n"'
+    :encode_word: "@595_254"
+  - :string: '"(%.2f+%.2fi) + (%.2f+%.2fi) = (%.2f%.2fi)\n"'
     :encode_word: "@595_255"
   - :string: !binary |-
       IuOBr+OBmOOCgeOBruOBruikh+e0oOaVsOOAglxuIg==
@@ -754,19 +754,19 @@
     :encode_word: "@595_282"
   - :string: '"(%0.2lf%0.2lfi) + (%0.2lf%0.2lfi) = (%0.2lf%0.2lfi)"'
     :encode_word: "@595_283"
-  - :string: '"Enter real part of a complex number:"'
-    :encode_word: "@595_284"
-  - :string: '"%.2fi)"'
-    :encode_word: "@595_285"
-  - :string: '"(%4.2lf%4.2lfi)"'
-    :encode_word: "@595_286"
-  - :string: '"(%4.2lf+%4.2lfi)"'
-    :encode_word: "@595_287"
-  - :string: '"(%d.00+%d.00i) + (%d.00%+d.00i) = (%d.00%+d.00i)"'
-    :encode_word: "@595_288"
   - :string: '"+%.2lfi) + "'
-    :encode_word: "@595_289"
+    :encode_word: "@595_284"
   - :string: '"%.2lfi) + "'
+    :encode_word: "@595_285"
+  - :string: '"Enter real part of a complex number:"'
+    :encode_word: "@595_286"
+  - :string: '"%.2fi)"'
+    :encode_word: "@595_287"
+  - :string: '"(%4.2lf%4.2lfi)"'
+    :encode_word: "@595_288"
+  - :string: '"(%4.2lf+%4.2lfi)"'
+    :encode_word: "@595_289"
+  - :string: '"(%d.00+%d.00i) + (%d.00%+d.00i) = (%d.00%+d.00i)"'
     :encode_word: "@595_290"
   - :string: '" + (%.2lf%.2lfi)"'
     :encode_word: "@595_291"
@@ -786,45 +786,45 @@
     :encode_word: "@595_298"
   - :string: '"+%.2fi)"'
     :encode_word: "@595_299"
-  - :string: '"%d %d"'
+  - :string: '"+%.2lfi) = "'
     :encode_word: "@595_300"
-  - :string: !binary |-
-      IuWun+aVsOmDqD0lZFxuIg==
+  - :string: '"%d %d"'
     :encode_word: "@595_301"
   - :string: !binary |-
-      IuiZmuaVsOmDqD0lZFxuIg==
+      IuWun+aVsOmDqD0lZFxuIg==
     :encode_word: "@595_302"
-  - :string: '"(%d.00%d.00i) + "'
+  - :string: !binary |-
+      IuiZmuaVsOmDqD0lZFxuIg==
     :encode_word: "@595_303"
+  - :string: '"(%d.00%d.00i) + "'
+    :encode_word: "@595_304"
   - :string: !binary |-
       IuioiOeul+OBmeOCi+ikh+e0oOaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOB
       hOOAgjpcbiI=
-    :encode_word: "@595_304"
-  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)\n"'
     :encode_word: "@595_305"
-  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
+  - :string: '"(%.2lf%.2lfi) + (%.2lf%.2lfi) = (%.2lf+%.2lfi)\n"'
     :encode_word: "@595_306"
-  - :string: '")\n"'
+  - :string: '"(%.2lf+%.2lfi) + (%.2lf+%.2lfi) = (%.2lf%.2lfi)\n"'
     :encode_word: "@595_307"
-  - :string: '"(%2.2lf%+2.2lfi) + (%2.2lf%+2.2lfi) = (%2.2lf%+2.2lfi)\n"'
+  - :string: '")\n"'
     :encode_word: "@595_308"
-  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%)"'
+  - :string: '"(%2.2lf%+2.2lfi) + (%2.2lf%+2.2lfi) = (%2.2lf%+2.2lfi)\n"'
     :encode_word: "@595_309"
-  - :string: '"(%3.2lf%+3.2lfi) + (%3.2lf%+3.2lfi) = (%3.2lf% + 3.2lfi)\n"'
+  - :string: '"(%.2lf%+.2lfi) + (%.2lf%+.2lfi) = (%.2lf%)"'
     :encode_word: "@595_310"
-  - :string: !binary |-
-      IuOBr+OBmOOCgeOBpuOBruikh+e0oOaVsFxuIg==
+  - :string: '"(%3.2lf%+3.2lfi) + (%3.2lf%+3.2lfi) = (%3.2lf% + 3.2lfi)\n"'
     :encode_word: "@595_311"
   - :string: !binary |-
-      IuWun+aVsOmDqO+8nSIpOyAgc2NhbmYoIiVsZiI=
+      IuOBr+OBmOOCgeOBpuOBruikh+e0oOaVsFxuIg==
     :encode_word: "@595_312"
   - :string: !binary |-
-      IuiZmuaVsOmDqO+8nSIpOyAgc2NhbmYoIiVsZiI=
+      IuWun+aVsOmDqO+8nSIpOyAgc2NhbmYoIiVsZiI=
     :encode_word: "@595_313"
   - :string: !binary |-
-      IuWun+aVsOmDqD0lMS4wbGZcbuiZmuaVsOmDqD0lMS4wbGZcbiI=
+      IuiZmuaVsOmDqO+8nSIpOyAgc2NhbmYoIiVsZiI=
     :encode_word: "@595_314"
-  - :string: '"+%.2lfi) = "'
+  - :string: !binary |-
+      IuWun+aVsOmDqD0lMS4wbGZcbuiZmuaVsOmDqD0lMS4wbGZcbiI=
     :encode_word: "@595_315"
   - :string: !binary |-
       IuasoeOBrue0oOaVsFxuIg==
@@ -2176,19 +2176,19 @@
     :encode_word: "@572_2"
   - :string: '"%3.0lf points -> %5.1lf points\n"'
     :encode_word: "@572_3"
-  - :string: '"%3.0f points -> %5.1f points\n"'
-    :encode_word: "@572_4"
   - :string: '"%3d points ->%6.1f points\n"'
+    :encode_word: "@572_4"
+  - :string: '"%3.0f points -> %5.1f points\n"'
     :encode_word: "@572_5"
   - :string: '"%3.0lf points ->%6.1lf points\n"'
     :encode_word: "@572_6"
   - :string: '"%3.0f points -> %5.1lf points\n"'
     :encode_word: "@572_7"
-  - :string: '"\n"'
-    :encode_word: "@572_8"
-  - :string: '"%3.0lf points -> %5.1lf points"'
-    :encode_word: "@572_9"
   - :string: '"%3.f points -> %5.1f points\n"'
+    :encode_word: "@572_8"
+  - :string: '"\n"'
+    :encode_word: "@572_9"
+  - :string: '"%3.0lf points -> %5.1lf points"'
     :encode_word: "@572_10"
   - :string: '"100 points -> 100.0 points\n"'
     :encode_word: "@572_11"
@@ -2196,19 +2196,19 @@
     :encode_word: "@572_12"
   - :string: '"%3.1d points ->%6.1lf points\n"'
     :encode_word: "@572_13"
-  - :string: '"%3d points -> "'
-    :encode_word: "@572_14"
-  - :string: '"%5.1f points\n"'
-    :encode_word: "@572_15"
   - :string: '"%3d points ->  %4.1f points\n"'
-    :encode_word: "@572_16"
+    :encode_word: "@572_14"
   - :string: '"  %d points ->   %0.1lf points\n"'
-    :encode_word: "@572_17"
+    :encode_word: "@572_15"
   - :string: '"  %d points ->  %0.1lf points\n"'
-    :encode_word: "@572_18"
+    :encode_word: "@572_16"
   - :string: '" %d points ->  %0.1lf points\n"'
-    :encode_word: "@572_19"
+    :encode_word: "@572_17"
   - :string: '"%d points -> %0.1lf points\n"'
+    :encode_word: "@572_18"
+  - :string: '"%3d points -> "'
+    :encode_word: "@572_19"
+  - :string: '"%5.1f points\n"'
     :encode_word: "@572_20"
   - :string: '"%3d points -> %5.1f points"'
     :encode_word: "@572_21"
