@@ -45,7 +45,24 @@ class CurrentAssignment < ActiveHash::Base
       id: 572,
       code: '1C2',
       assignment_ids: [6, 70, 144, 212, 281, 353, 426],
+    }, {
+      id: 576,
+      code: '03B1',
+      assignment_ids: [13, 77, 150, 218, 285, 357, 430],
+    }, {
+      id: 577,
+      code: '03C1',
+      assignment_ids: [14, 78, 151, 219, 286, 358, 431],
+    }, {
+      id: 581,
+      code: '04A1',
+      assignment_ids: [17, 81, 157, 222, 289, 361, 435],
+    }, {
+      id: 612,
+      code: '09B1',
+      assignment_ids: [37, 107, 178, 248, 320, 392, 466],
     }
+
   ]
 
   has_many :templates

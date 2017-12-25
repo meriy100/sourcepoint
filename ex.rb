@@ -17,7 +17,7 @@ START_TIME = Time.zone.now
 #   end
 # end
 
-[587, 572, 594, 574, 595].each do |assignment_id|
+ARGV.map(&:to_i).each do |assignment_id|
   attempts = Attempt.where(current_assignment_id: assignment_id)
   max = attempts.count * 1.0
 

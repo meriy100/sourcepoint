@@ -17,6 +17,9 @@ def main(argv)
     print " #{status}                           "
     status == 'checked'
   end
+  puts '##################'
+  puts as.count
+  puts 'destroy? y/n'
   as.map(&:destroy)
   puts
 end
