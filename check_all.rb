@@ -1,5 +1,5 @@
 ids = [
-      612,
+612
 ].each do |id|
 
   puts id

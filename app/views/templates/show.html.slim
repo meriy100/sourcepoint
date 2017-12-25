@@ -85,7 +85,7 @@ p#notice
 
     - if @rpcsr_check_result.present?
       .panel
-        = raw @rpcsr_check_result[:messege_body]
-        = @rpcsr_check_result[:status]
-        = link_to 'browse', @rpcsr_check_result[:url]
+        = raw @rpcsr_check_result[:messege_body].encode('UTF-8', 'UTF-8')
+        = @rpcsr_check_result[:status].encode('UTF-8', 'UTF-8')
+        = link_to 'browse', @rpcsr_check_result[:url].encode('UTF-8', 'UTF-8')
 
