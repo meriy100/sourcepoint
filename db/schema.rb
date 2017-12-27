@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227080329) do
+ActiveRecord::Schema.define(version: 20171227111612) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "code",                          default: "",    null: false
@@ -84,14 +84,13 @@ ActiveRecord::Schema.define(version: 20171227080329) do
   end
 
   create_table "experiments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.binary   "file1",              limit: 65535, null: false
-    t.integer  "assignment_id",                    null: false
-    t.integer  "experiment_user_id",               null: false
+    t.binary   "file1",                 limit: 65535, null: false
+    t.integer  "experiment_user_id",                  null: false
     t.datetime "end_at"
     t.datetime "deleted_at"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.index ["assignment_id"], name: "index_experiments_on_assignment_id", using: :btree
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "current_assignment_id",               null: false
     t.index ["experiment_user_id"], name: "index_experiments_on_experiment_user_id", using: :btree
   end
 
@@ -156,7 +155,6 @@ ActiveRecord::Schema.define(version: 20171227080329) do
     t.index ["login"], name: "index_users_on_login", unique: true, using: :btree
   end
 
-  add_foreign_key "experiments", "assignments"
   add_foreign_key "experiments", "experiment_users"
   add_foreign_key "template_lines", "templates"
 end

@@ -13,7 +13,7 @@ table.table.table-stripe
     - @experiment_users.each do |experiment_user|
       tr
         td = experiment_user.name
-        td = experiment_user.deleted_at
+        td = link_to '実験', new_experiment_user_experiment_path(experiment_user)
         td = link_to 'Show', experiment_user
         td = link_to 'Edit', edit_experiment_user_path(experiment_user)
         td = link_to 'Destroy', experiment_user, data: { confirm: 'Are you sure?' }, method: :delete

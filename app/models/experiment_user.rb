@@ -10,4 +10,6 @@
 #
 
 class ExperimentUser < ApplicationRecord
+
+  has_many :experiments
 end

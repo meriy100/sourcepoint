@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :experiments
-  resources :experiment_users
+  resources :experiment_users do
+    resources :experiments
+  end
   resources :templates do
     member do
       post 'rpcsr_check'

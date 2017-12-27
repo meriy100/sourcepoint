@@ -5,7 +5,7 @@ p
   = @experiment.file1
 p
   strong Assignment:
-  = @experiment.assignment
+  = @experiment.current_assignment_id
 p
   strong Experiment user:
   = @experiment.experiment_user
@@ -16,6 +16,6 @@ p
   strong Deleted at:
   = @experiment.deleted_at
 
-= link_to 'Edit', edit_experiment_path(@experiment)
+= link_to 'Edit', edit_experiment_user_experimnent_path(@experiment_user, @experiment)
 '  |
-= link_to 'Back', experiments_path
+= link_to 'Back', experiment_user_experiments_path(@experiment)

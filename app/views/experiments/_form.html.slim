@@ -1,4 +1,4 @@
-= form_for @experiment do |f|
+= bootstrap_form_for [@experiment_user, @experiment] do |f|
   - if @experiment.errors.any?
     #error_explanation
       h2 = "#{pluralize(@experiment.errors.count, "error")} prohibited this experiment from being saved:"
@@ -7,18 +7,18 @@
           li = message
 
   .field
-    = f.label :file1
-    = f.text_field :file1
+    = f.file_field :file1
+    = f.hidden_field :experiment_user_id
+    = @experiment.to_json
   .field
-    = f.label :assignment
-    = f.text_field :assignment
+    = f.number_field :current_assignment_id
   .field
-    = f.label :experiment_user
-    = f.text_field :experiment_user
-  .field
-    = f.label :end_at
-    = f.datetime_select :end_at
-  .field
-    = f.label :deleted_at
-    = f.datetime_select :deleted_at
+    = f.hidden_field :end_at
   .actions = f.submit
+
+  - if @rpcsr_check_result.present?
+    .panel
+      = raw @rpcsr_check_result[:messege_body].encode('UTF-8', 'UTF-8')
+      = @rpcsr_check_result[:status].encode('UTF-8', 'UTF-8')
+      = link_to 'browse', @rpcsr_check_result[:url].encode('UTF-8', 'UTF-8')
+

@@ -22,5 +22,6 @@
 
 class Assignment < ApplicationRecord
   has_many :attempts
+  has_many :experiments
 end
 
