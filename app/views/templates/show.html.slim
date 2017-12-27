@@ -89,3 +89,5 @@ p#notice
         = @rpcsr_check_result[:status].encode('UTF-8', 'UTF-8')
         = link_to 'browse', @rpcsr_check_result[:url].encode('UTF-8', 'UTF-8')
 
+= bootstrap_form_for(@submission) do |f|
+  = f.file_field :file1

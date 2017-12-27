@@ -14,7 +14,7 @@ namespace :all_checker do
     submissions = Submission.search(id_gt: before_submission_id).result
     max =  submissions.count
     $i = 0
-    Parallel.each(submissions, in_processes: 2) do |s|
+    Parallel.each(submissions, in_processes: 8) do |s|
     # submissions.each do |s|
       $i = $i + 1
       puts "#{$i}/#{max}"

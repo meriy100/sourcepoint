@@ -1,6 +1,8 @@
-ids = [
+(
+ARGV ||
+[
 612
-].each do |id|
+]).each do |id|
 
   puts id
   # Attempt.search(created_at_gt: Time.zone.today).result.destroy_all

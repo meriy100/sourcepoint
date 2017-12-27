@@ -15,6 +15,7 @@
 #  updated_at            :datetime
 #  encode_code           :text(65535)
 #  current_assignment_id :integer
+#  deleted_at            :datetime
 #
 # Indexes
 #

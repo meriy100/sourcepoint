@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107065018) do
+ActiveRecord::Schema.define(version: 20171225065653) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "code",                          default: "",    null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171107065018) do
     t.datetime "updated_at"
     t.text     "encode_code",           limit: 65535
     t.integer  "current_assignment_id"
+    t.datetime "deleted_at"
     t.index ["assignment_id"], name: "index_attempts_on_assignment_id", using: :btree
     t.index ["current_assignment_id"], name: "index_attempts_on_current_assignment_id", using: :btree
     t.index ["user_id"], name: "index_attempts_on_user_id", using: :btree

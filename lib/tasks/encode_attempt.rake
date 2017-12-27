@@ -24,7 +24,7 @@ namespace :encode do
       f.puts yaml.to_yaml
     end
 
-    Parallel.each(Attempt.where(current_assignment_id: id), in_processes: 4) do |attempt|
+    Parallel.each(Attempt.where(current_assignment_id: id), in_processes: 8) do |attempt|
     # Attempt.where(current_assignment_id: 574).each do |attempt|
     # Attempt.all.each do |attempt|
       print "#"

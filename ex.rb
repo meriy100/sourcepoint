@@ -27,7 +27,7 @@ ARGV.map(&:to_i).each do |assignment_id|
     "∞"
   end
 
-  Parallel.each_with_index(attempts, in_processes: 2) do |attempt, idx|
+  Parallel.each_with_index(attempts, in_processes: 8) do |attempt, idx|
 
     print "\r".concat("#" * (idx * LENGTH / max) .to_i).concat(" " * (LENGTH - idx * LENGTH / max).to_i).concat("|(#{idx}/#{max}) : #{least_minutes(max, idx)}m        ")
     GC.start;
@@ -43,5 +43,8 @@ ARGV.map(&:to_i).each do |assignment_id|
 
   Open3.capture3('mail', '-s', 'sourcepoint', '-r', 'ttattataa@gmail.com', 'ttattataa@gmail.com', stdin_data: "exおわったよ")
 
+  CurrentAssignment.find(assignment_id).attempts.sort_by(&:encode_code).each_cons(2) do |first, second|
+    first.destroy if first.encode_code == second.encode_code
+  end
   system('bin/rails r check_all.rb')
 end
