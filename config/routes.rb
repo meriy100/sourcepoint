@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :experiments
+  resources :experiment_users
   resources :templates do
     member do
       post 'rpcsr_check'
@@ -12,5 +14,4 @@ Rails.application.routes.draw do
   end
   resources :assignments
 
-  resource :graph
 end

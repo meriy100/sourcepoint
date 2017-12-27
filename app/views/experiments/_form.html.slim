@@ -1,0 +1,24 @@
+= form_for @experiment do |f|
+  - if @experiment.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@experiment.errors.count, "error")} prohibited this experiment from being saved:"
+      ul
+        - @experiment.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :file1
+    = f.text_field :file1
+  .field
+    = f.label :assignment
+    = f.text_field :assignment
+  .field
+    = f.label :experiment_user
+    = f.text_field :experiment_user
+  .field
+    = f.label :end_at
+    = f.datetime_select :end_at
+  .field
+    = f.label :deleted_at
+    = f.datetime_select :deleted_at
+  .actions = f.submit

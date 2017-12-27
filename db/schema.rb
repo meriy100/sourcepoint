@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171225065653) do
+ActiveRecord::Schema.define(version: 20171227080329) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "code",                          default: "",    null: false
@@ -76,6 +76,25 @@ ActiveRecord::Schema.define(version: 20171225065653) do
     t.index ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id", unique: true, using: :btree
   end
 
+  create_table "experiment_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "experiments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.binary   "file1",              limit: 65535, null: false
+    t.integer  "assignment_id",                    null: false
+    t.integer  "experiment_user_id",               null: false
+    t.datetime "end_at"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.index ["assignment_id"], name: "index_experiments_on_assignment_id", using: :btree
+    t.index ["experiment_user_id"], name: "index_experiments_on_experiment_user_id", using: :btree
+  end
+
   create_table "lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "attempt_id",                    null: false
     t.integer  "submission_id",                 null: false
@@ -137,5 +156,7 @@ ActiveRecord::Schema.define(version: 20171225065653) do
     t.index ["login"], name: "index_users_on_login", unique: true, using: :btree
   end
 
+  add_foreign_key "experiments", "assignments"
+  add_foreign_key "experiments", "experiment_users"
   add_foreign_key "template_lines", "templates"
 end

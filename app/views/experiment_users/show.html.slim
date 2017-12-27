@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @experiment_user.name
+p
+  strong Deleted at:
+  = @experiment_user.deleted_at
+
+= link_to 'Edit', edit_experiment_user_path(@experiment_user)
+'  |
+= link_to 'Back', experiment_users_path

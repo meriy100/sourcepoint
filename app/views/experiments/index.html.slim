@@ -1,0 +1,29 @@
+h1 Listing experiments
+
+table
+  thead
+    tr
+      th File1
+      th Assignment
+      th Experiment user
+      th End at
+      th Deleted at
+      th
+      th
+      th
+
+  tbody
+    - @experiments.each do |experiment|
+      tr
+        td = experiment.file1
+        td = experiment.assignment
+        td = experiment.experiment_user
+        td = experiment.end_at
+        td = experiment.deleted_at
+        td = link_to 'Show', experiment
+        td = link_to 'Edit', edit_experiment_path(experiment)
+        td = link_to 'Destroy', experiment, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Experiment', new_experiment_path

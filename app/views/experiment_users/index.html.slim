@@ -1,0 +1,23 @@
+h1 Listing experiment_users
+
+table.table.table-stripe
+  thead
+    tr
+      th Name
+      th Deleted at
+      th
+      th
+      th
+
+  tbody
+    - @experiment_users.each do |experiment_user|
+      tr
+        td = experiment_user.name
+        td = experiment_user.deleted_at
+        td = link_to 'Show', experiment_user
+        td = link_to 'Edit', edit_experiment_user_path(experiment_user)
+        td = link_to 'Destroy', experiment_user, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Experiment user', new_experiment_user_path
