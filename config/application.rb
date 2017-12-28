@@ -25,6 +25,7 @@ module Sourcepoint
     #
     Dotenv.load
     config.time_zone = 'Asia/Tokyo'
+    config.i18n.default_locale = :ja
     config.generators do |g|
       g.template_engine :slim
     end
