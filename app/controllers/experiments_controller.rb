@@ -42,7 +42,12 @@ class ExperimentsController < ApplicationController
         res = rh.create_attempt(tmp.path, @experiment.current_assignment_id == 441 ? 587: @experiment.current_assignment_id)
         if m = res['location'].match(/(?<id>\d+\z)/)
           attempt = rh.get_attempt(m[:id])
-          SubmissionCreate.new(submission).run if ['internal_error', 'executed'].include?(attempt[:status])
+          @experiment.update!(status: attempt[:status])
+          if @experiment.status == 'checked'
+            @experiment.update!(end_at: Time.zone.now)
+          else
+            SubmissionCreate.new(submission).run if ['internal_error', 'executed'].include?(attempt[:status])
+          end
           redirect_to new_experiment_user_experiment_path(@experiment_user, rpcsr_check: attempt, submission_id: submission.id ), rpcsr_check: rh.get_attempt(m[:id])
         else
           raise

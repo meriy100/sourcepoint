@@ -10,6 +10,7 @@
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
 #  current_assignment_id :integer          not null
+#  status                :string(255)
 #
 # Indexes
 #
