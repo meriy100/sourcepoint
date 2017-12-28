@@ -1,8 +1,14 @@
 h1 Editing experiment
 
-== render 'form'
+.row
+  .col-md-6
+    == render 'form'
+  .col-md-6
+    - @experiment.submissions.each do |submission|
+      = submission.id
 
-= link_to 'Show', @experiment
+
+= link_to 'Show', experiment_user_experiment_path(@experiment_user, @experiment)
 '  |
-= link_to 'Back', experiments_path
+= link_to 'Back', experiment_user_experiments_path
 

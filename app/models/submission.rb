@@ -15,6 +15,7 @@
 #  updated_at    :datetime         not null
 #  check_id      :integer
 #  template_id   :integer
+#  experiment_id :integer
 #
 
 class Submission < ApplicationRecord
@@ -24,6 +25,7 @@ class Submission < ApplicationRecord
   has_many :attempts, through: :lines
   belongs_to :check, optional: true
   belongs_to :template, optional: true
+  belongs_to :experiment, optional: true
 
   before_create :set_submitted
 

@@ -1,6 +1,6 @@
 h1 Listing experiments
 
-table
+table.table
   thead
     tr
       th File1
@@ -16,13 +16,11 @@ table
     - @experiments.each do |experiment|
       tr
         td = experiment.file1
-        td = experiment.assignment
+        td = experiment.current_assignment_id
         td = experiment.experiment_user
         td = experiment.end_at
         td = experiment.deleted_at
-        td = link_to 'Show', experiment
-        td = link_to 'Edit', edit_experiment_path(experiment)
-        td = link_to 'Destroy', experiment, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Show', experiment_user_experiment_path(@experiment_user, experiment)
 
 br
 

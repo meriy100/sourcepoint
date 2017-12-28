@@ -15,6 +15,7 @@
 #  updated_at    :datetime         not null
 #  check_id      :integer
 #  template_id   :integer
+#  experiment_id :integer
 #
 
 FactoryGirl.define do

@@ -7,6 +7,8 @@ p
   strong Deleted at:
   = @experiment_user.deleted_at
 
+= link_to '実験開始', new_experiment_user_experiment_path(@experiment_user), class: 'btn btn-primary'
+
 = link_to 'Edit', edit_experiment_user_path(@experiment_user)
 '  |
 = link_to 'Back', experiment_users_path

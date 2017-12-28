@@ -16,7 +16,11 @@ class ExperimentsController < ApplicationController
 
   # GET /experiments/new
   def new
-    @experiment = @experiment_user.experiments.new
+    @experiment = @experiment_user.experiments.new(current_assignment_id: 587)
+    @submission = Submission.find(params[:submission_id]) if params[:submission_id]
+    if params[:rpcsr_check].present?
+      @rpcsr_check_result = params[:rpcsr_check]
+    end
   end
 
   # GET /experiments/1/edit
@@ -28,7 +32,22 @@ class ExperimentsController < ApplicationController
     @experiment = Experiment.new(experiment_params)
 
     if @experiment.save
-      redirect_to @experiment, notice: 'Experiment was successfully created.'
+      rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
+
+      submission = @experiment.to_submission.tap(&:save!)
+
+
+      Tempfile.create('sourcepoint-') do |tmp|
+        File.write tmp, @experiment.file1.encode('UTF-8', 'UTF-8')
+        res = rh.create_attempt(tmp.path, @experiment.current_assignment_id == 441 ? 587: @experiment.current_assignment_id)
+        if m = res['location'].match(/(?<id>\d+\z)/)
+          attempt = rh.get_attempt(m[:id])
+          SubmissionCreate.new(submission).run if ['internal_error', 'executed'].include?(attempt[:status])
+          redirect_to new_experiment_user_experiment_path(@experiment_user, rpcsr_check: attempt, submission_id: submission.id ), rpcsr_check: rh.get_attempt(m[:id])
+        else
+          raise
+        end
+      end
     else
       render :new
     end
@@ -36,18 +55,8 @@ class ExperimentsController < ApplicationController
 
   # PATCH/PUT /experiments/1
   def update
-    if @experiment.update(experiment_params)
-      rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
-
-      Tempfile.create('sourcepoint-') do |tmp|
-        File.write tmp, @experiment.file1.encode('UTF-8', 'UTF-8')
-        res = rh.create_attempt(tmp.path, @experiment.current_assignment_id == 441 ? 587: @experiment.current_assignment_id)
-        if m = res['location'].match(/(?<id>\d+\z)/)
-          redirect_to @experiment, rpcsr_check: rh.get_attempt(m[:id])
-        else
-          raise
-        end
-      end
+    if @experiment.update!(end_at: Time.zone.now)
+      redirect_to experiment_user_experiment_path(@experiment_user, @experiment)
     else
       render :edit
     end
@@ -71,6 +80,8 @@ class ExperimentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def experiment_params
-      params.require(:experiment).permit(:file1, :current_assignment_id, :experiment_user_id, :end_at, :deleted_at)
+      res = params.require(:experiment).permit(:file1, :current_assignment_id, :experiment_user_id, :end_at, :deleted_at)
+      res[:file1] = params[:experiment][:file1]&.read
+      res
     end
 end

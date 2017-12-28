@@ -1,5 +1,37 @@
-h1 New experiment
+h1 実験
 
-== render 'form'
+.row
+  .col-md-6
+    h3 05B1
+    = link_to '問題を見る', 'https://moo.sw.it.aoyama.ac.jp/mod/page/view.php?id=1930', class: 'btn btn-info'
+    = bootstrap_form_for [@experiment_user, @experiment] do |f|
+      - if @experiment.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@experiment.errors.count, "error")} prohibited this experiment from being saved:"
+          ul
+            - @experiment.errors.full_messages.each do |message|
+              li = message
 
+      .field
+        = f.file_field :file1
+        = f.hidden_field :experiment_user_id
+      .field
+        = f.hidden_field :current_assignment_id
+      .field
+        = f.hidden_field :end_at
+      .actions = f.submit '提出', class: 'btn btn-primary'
+
+      - if @rpcsr_check_result.present?
+        .panel
+          h3 実行結果
+          p 赤いハイライトが有る行は, 間違えている可能性があります
+          = raw @rpcsr_check_result[:messege_body].encode('UTF-8', 'UTF-8')
+          p = @rpcsr_check_result[:status].encode('UTF-8', 'UTF-8')
+
+          = link_to '詳しい結果を見る', @rpcsr_check_result[:url].encode('UTF-8', 'UTF-8'), class: 'btn btn-default'
+
+  .col-md-6
+    h3 提出ファイル
+    - if @submission.present?
+      == render('part', submission: @submission, line_numbers: @submission.lines)
 = link_to 'Back', experiment_user_experiments_path

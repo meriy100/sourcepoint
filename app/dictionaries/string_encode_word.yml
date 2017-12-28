@@ -7422,3 +7422,24 @@
   '320': []
   '392': []
   '466': []
+  '588':
+  - :string: '"%d"'
+    :encode_word: "@588_0"
+  - :string: '"%d\n"'
+    :encode_word: "@588_1"
+  - :string: '"%ld\n"'
+    :encode_word: "@588_2"
+  - :string: '"\n"'
+    :encode_word: "@588_3"
+  - :string: '"couldn''t define\n"'
+    :encode_word: "@588_4"
+  - :string: '"1\n"'
+    :encode_word: "@588_5"
+  - :string: '"%d\n%"'
+    :encode_word: "@588_6"
+  - :string: '"LOOP STARTED\n"'
+    :encode_word: "@588_7"
+  - :string: '"Input number = [%d]\n"'
+    :encode_word: "@588_8"
+  - :string: '"NULL is detected!!"'
+    :encode_word: "@588_9"
