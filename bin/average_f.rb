@@ -6,9 +6,9 @@ require 'pry'
 
 def calc_print(json)
    puts "count : #{json.count}".concat(
-     " precision : ".concat( (json.map{|d|d["recall"]||0}.inject(:+)/ json.count ).to_s )
+     " precision : ".concat( (json.map{|d|d["precision"]||0}.inject(:+)/ json.count ).to_s )
    ).concat(
-     " recall : ".concat( (json.map{|d|d["precision"]||0}.inject(:+)/ json.count ).to_s )
+     " recall : ".concat( (json.map{|d|d["recall"]||0}.inject(:+)/ json.count ).to_s )
    ).concat(
      " f : ".concat( (json.map{|d|d["f"]||0}.inject(:+)/ json.count ).to_s )
    )

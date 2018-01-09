@@ -31,11 +31,12 @@ namespace :all_checker do
     ActiveRecord::Base.clear_active_connections!
 
     data = Template.where(id: templates.map(&:id)).map do |template|
-      submission_lines = template.submission.lines
+      # submission_lines = template.submission.lines
+      submission_lines_group = template.submission.lines.collection_map{|f,s| f+1 == s}
       template_lines = template.template_lines
-      true_lines = submission_lines.select { |l| template_lines.to_a.include?(l) }
-      recall = (true_lines.length / submission_lines.length.*(1.0))
-      precision = (true_lines.length / template_lines.length.*(1.0))
+      true_lines = submission_lines_group.select { |ls| template_lines.to_a.&(ls).present? }
+      precision = (true_lines.length / submission_lines_group.length.*(1.0))
+      recall = (true_lines.length / template_lines.length.*(1.0))
       {
         template_id: template.id,
         submission_id: template.id,
