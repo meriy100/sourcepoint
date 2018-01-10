@@ -328,7 +328,7 @@ class SubmissionCreate
             STDERR.puts "\e[0m"
             STDERR.puts recode
             if status == 'checked'
-              line_list.reject! { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) } # TODO : 要検証
+              line_list.select { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) }
               attempt = nearest_attempts.first.dup
               # Tempfile.open do |tmp_reindent|
               #   Open3.capture3('indent', tmp.path, tmp_reindent.path)
@@ -374,7 +374,10 @@ class SubmissionCreate
   def run
     Rails.logger.info nearest_attempts.first.dist
     if run?(nearest_attempts)
-      line_list  = SearchBlock.new(self.submission.file1, nearest_attempts.first.file1, assignment_id).run
+      line_list = SearchBlock.new(self.submission.file1, nearest_attempts.first.file1, assignment_id).run
+      sub_line_lists = nearest_attempts[1..2].map do |ex|
+        SearchBlock.new(self.submission.file1, ex.file1, assignment_id).run
+      end
 
       line_list.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
