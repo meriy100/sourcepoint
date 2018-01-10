@@ -255,7 +255,7 @@ class SubmissionCreate
     self.same_search = same_search
     self.submission = submission
     self.assignment_id = submission.assignment_id
-    self.expect_attempts = attempts || Attempt.where(current_assignment_id: @submission.assignment_id)
+    self.expect_attempts = attempts || Attempt.where(current_assignment_id: @submission.assignment_id).uniq(:encode_code)
     self.print_output = true
   end
 
