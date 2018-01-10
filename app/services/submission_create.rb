@@ -255,7 +255,7 @@ class SubmissionCreate
     self.same_search = same_search
     self.submission = submission
     self.assignment_id = submission.assignment_id
-    self.expect_attempts = attempts || Attempt.where(current_assignment_id: @submission.assignment_id).uniq(:encode_code)
+    self.expect_attempts = attempts || Attempt.where(current_assignment_id: @submission.assignment_id)
     self.print_output = true
   end
 
@@ -279,54 +279,90 @@ class SubmissionCreate
     @diffs ||= Diffs.generate(actual, expect)
   end
 
-  def nearest_attempts
-    @nearest_attempts ||= expect_attempts.reject { |a| a.user_id ==  self.submission.user_id }.sort_by { |attempt|
-      dist = Levenshtein.normalized_distance(actual.encode, attempt.encode_code)
-      attempt.dist = dist
-    }.reject { |attempt| same_search ? false  : attempt.dist == 0.0 }
-  end
+  class SearchBlock
+    attr_accessor :actual, :expect, :diffs, :assignment_id
+    def initialize(actual_file1, expect_file1, assignment_id)
+      self.actual = EncodingCode.new(actual_file1, assignment_id).tap(&:encode)
+      self.expect = EncodingCode.new(expect_file1, assignment_id)
+      self.diffs = Diffs.generate(actual, expect)
+      self.assignment_id = assignment_id
 
-  def block_split_create_attempts(line_list)
-    f = diffs.foo
-    # TODO : ここで 定義とその他で分割(それ以外のロジックブロックで分けたいときも)
-    b = bar(f.select { |ff| actual.decl_lines.include?(ff[:actual].number) })
-            .concat(bar(f.reject { |ff| actual.decl_lines.include?(ff[:actual].number) }))
+      STDERR.puts actual.dictionary.valiable_list
+      STDERR.puts "\e[32m#{actual.encode}\e[0m"
+      STDERR.puts "\e[31m#{expect.encode}\e[0m"
+      STDERR.puts diffs.to_s
+    end
 
-    rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
-    b.each do |numbers|
-      next if numbers.blank?
-      e = exchange_encode(expect, actual, numbers).collection_map { |first, last|
-        first.number == last.number
-      }.map{|sets| sets.map(&:last).join}.join("\n")
+    def run
+      line_list = DiffsToLineDiffs2.new(diffs.dup, actual, expect).search_lines
+      unless ENV['NOSPLIT'] == '1'
+        block_split_create_attempts(line_list)
+      end
+      line_list
+    end
 
-      Tempfile.create('sourcepoint-') do |tmp|
-        recode = expect.headers_str.concat(expect.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
-        File.write tmp, recode
-        res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
-        if res['location'].present?
-          stdoutputln res['location']
-          m = res['location'].match(%r{/(?<id>\d+)\z})
-          status = rh.get_attempt_status(m[:id])
-          stdoutput (status == 'checked' ? "\e[32m" : "\e[31m")
-          stdoutput status
-          stdoutputln "\e[0m"
-          stdoutputln recode
-          if status == 'checked'
-            line_list.reject! { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) } # TODO : 要検証
-            attempt = nearest_attempts.first.dup
-            # Tempfile.open do |tmp_reindent|
-            #   Open3.capture3('indent', tmp.path, tmp_reindent.path)
-            #   attempt.file1 = File.read(tmp_reindent.path)
-            # end
-            attempt.file1 = recode
-            attempt.encode_code = EncodingCode.new(attempt.file1, assignment_id).encode
-            attempt.save!
+
+    def block_split_create_attempts(line_list)
+      f = diffs.foo
+      # TODO : ここで 定義とその他で分割(それ以外のロジックブロックで分けたいときも)
+      b = bar(f.select { |ff| actual.decl_lines.include?(ff[:actual].number) })
+              .concat(bar(f.reject { |ff| actual.decl_lines.include?(ff[:actual].number) }))
+
+      rh = RpcsHTTPS.new(ENV['RPCSR_PASSWORD'])
+      b.each do |numbers|
+        next if numbers.blank?
+        e = exchange_encode(expect, actual, numbers).collection_map { |first, last|
+          first.number == last.number
+        }.map{|sets| sets.map(&:last).join}.join("\n")
+
+        Tempfile.create('sourcepoint-') do |tmp|
+          recode = expect.headers_str.concat(expect.recode(e)).encode('UTF-8', 'UTF-8').concat("\n")
+          File.write tmp, recode
+          res = rh.create_attempt(tmp.path, assignment_id == 441 ? 587: assignment_id)
+          if res['location'].present?
+            STDERR.puts res['location']
+            m = res['location'].match(%r{/(?<id>\d+)\z})
+            status = rh.get_attempt_status(m[:id])
+            STDERR.print (status == 'checked' ? "\e[32m" : "\e[31m")
+            STDERR.print status
+            STDERR.puts "\e[0m"
+            STDERR.puts recode
+            if status == 'checked'
+              line_list.reject! { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) } # TODO : 要検証
+              attempt = nearest_attempts.first.dup
+              # Tempfile.open do |tmp_reindent|
+              #   Open3.capture3('indent', tmp.path, tmp_reindent.path)
+              #   attempt.file1 = File.read(tmp_reindent.path)
+              # end
+              attempt.file1 = recode
+              attempt.encode_code = EncodingCode.new(attempt.file1, assignment_id).encode
+              attempt.save!
+            end
+          else
+            raise
           end
-        else
-          raise
         end
       end
     end
+
+    def bar(blocks)
+      blocks.sort_by{|b|b[:expect].number}.collection_map { |first, second| first[:expect].number.between?(second[:expect].number-1, second[:expect].number) }
+    end
+
+    def exchange_encode(target, other, numbers)
+      result = []
+      before = target.charlist.select{|charset| charset.number < numbers.first[:expect].number}
+      middle = other.charlist.select{|charset| numbers.map{|n|n[:actual].number}.include?(charset.number)}.each{|charset|charset.number *= -1}
+      after = target.charlist.select{|charset| charset.number > numbers.last[:expect].number}
+      result.concat(before).concat(middle).concat(after)
+    end
+  end
+
+  def nearest_attempts
+    @nearest_attempts ||= expect_attempts.to_a.uniq(&:encode_code).reject { |a| a.user_id ==  self.submission.user_id }.sort_by { |attempt|
+      dist = Levenshtein.normalized_distance(actual.encode, attempt.encode_code)
+      attempt.dist = dist
+    }.reject { |attempt| same_search ? false  : attempt.dist == 0.0 }
   end
 
   def pre_run(attempts_create = false)
@@ -338,40 +374,13 @@ class SubmissionCreate
   def run
     Rails.logger.info nearest_attempts.first.dist
     if run?(nearest_attempts)
-      puts actual.dictionary.valiable_list
-      puts "\e[32m#{actual.encode}\e[0m"
-      puts "\e[31m#{expect.encode}\e[0m"
-      # line_lists = encoding_code.dictionary.valiable_order_changes.map do |dic|
-      # encoding_code =  EncodingCode.new(@submission.file1, assignment_id, dic)
-      puts diffs.to_s
-
-      #####
-      line_list = DiffsToLineDiffs2.new(diffs.dup, actual, expect).search_lines
-      # line_list = diffs_to_line_diffs2(diffs.dup, actual, expect).compact.uniq
-
-      #############
-      unless ENV['NOSPLIT'] == '1'
-        block_split_create_attempts(line_list)
-      end
-      #############
+      line_list  = SearchBlock.new(self.submission.file1, nearest_attempts.first.file1, assignment_id).run
 
       line_list.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
       end
       @submission
     end
-  end
-
-  def bar(blocks)
-    blocks.sort_by{|b|b[:expect].number}.collection_map { |first, second| first[:expect].number.between?(second[:expect].number-1, second[:expect].number) }
-  end
-
-  def exchange_encode(target, other, numbers)
-    result = []
-    before = target.charlist.select{|charset| charset.number < numbers.first[:expect].number}
-    middle = other.charlist.select{|charset| numbers.map{|n|n[:actual].number}.include?(charset.number)}.each{|charset|charset.number *= -1}
-    after = target.charlist.select{|charset| charset.number > numbers.last[:expect].number}
-    result.concat(before).concat(middle).concat(after)
   end
 
   private
