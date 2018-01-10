@@ -1,0 +1,96 @@
+b main
+run
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+info locals
+info args
+s
+quit

@@ -7427,15 +7427,15 @@
     :encode_word: "@588_0"
   - :string: '"%d\n"'
     :encode_word: "@588_1"
-  - :string: '"%ld\n"'
-    :encode_word: "@588_2"
   - :string: '"\n"'
+    :encode_word: "@588_2"
+  - :string: '"%ld\n"'
     :encode_word: "@588_3"
   - :string: '"couldn''t define\n"'
     :encode_word: "@588_4"
-  - :string: '"1\n"'
-    :encode_word: "@588_5"
   - :string: '"%d\n%"'
+    :encode_word: "@588_5"
+  - :string: '"1\n"'
     :encode_word: "@588_6"
   - :string: '"LOOP STARTED\n"'
     :encode_word: "@588_7"
@@ -7443,3 +7443,631 @@
     :encode_word: "@588_8"
   - :string: '"NULL is detected!!"'
     :encode_word: "@588_9"
+  '578':
+  - :string: '"Winner: A (points: A %d, B %d)\n"'
+    :encode_word: "@578_0"
+  - :string: '"Winner: B (points: A %d, B %d)\n"'
+    :encode_word: "@578_1"
+  - :string: '"Draw (points: A %d, B %d)\n"'
+    :encode_word: "@578_2"
+  - :string: '"%d %d"'
+    :encode_word: "@578_3"
+  - :string: '"Invalid input (Rock: 1, Scissors: 2, Paper: 3), please try again:\n"'
+    :encode_word: "@578_4"
+  - :string: '"Game input: "'
+    :encode_word: "@578_5"
+  - :string: '"Game input:"'
+    :encode_word: "@578_6"
+  - :string: '"A wins and gets %d points.\n"'
+    :encode_word: "@578_7"
+  - :string: '"B wins and gets %d points.\n"'
+    :encode_word: "@578_8"
+  - :string: '"A: Rock, "'
+    :encode_word: "@578_9"
+  - :string: '"A: Rock, B: Paper; B wins and gets 5 points.\n"'
+    :encode_word: "@578_10"
+  - :string: '"A: Scissors, B: Paper; A wins and gets 2 points.\n"'
+    :encode_word: "@578_11"
+  - :string: '"A: Paper, B: Rock; A wins and gets 5 points.\n"'
+    :encode_word: "@578_12"
+  - :string: '"Draw (points: A 0, B 0)\n"'
+    :encode_word: "@578_13"
+  - :string: '"A: Scissors, "'
+    :encode_word: "@578_14"
+  - :string: '"A: Paper, "'
+    :encode_word: "@578_15"
+  - :string: '"A: Paper, B: Scissors; B wins and gets 2 points.\n"'
+    :encode_word: "@578_16"
+  - :string: '"%d"'
+    :encode_word: "@578_17"
+  - :string: '"A: Rock, B: Scissors; A wins and gets 1 points.\n"'
+    :encode_word: "@578_18"
+  - :string: '"B: Rock; "'
+    :encode_word: "@578_19"
+  - :string: '"B: Scissors; "'
+    :encode_word: "@578_20"
+  - :string: '"B: Paper; "'
+    :encode_word: "@578_21"
+  - :string: '"Invalid input (Rock: 1, Scissors: 2, Paper: 3), please try again:"'
+    :encode_word: "@578_22"
+  - :string: '"A: Scissors, B: Rock; B wins and gets 1 points.\n"'
+    :encode_word: "@578_23"
+  - :string: '"Rock; "'
+    :encode_word: "@578_24"
+  - :string: '"Paper; "'
+    :encode_word: "@578_25"
+  - :string: '"\n"'
+    :encode_word: "@578_26"
+  - :string: '"Scissors; "'
+    :encode_word: "@578_27"
+  - :string: '"%d%d"'
+    :encode_word: "@578_28"
+  - :string: '" %d %d"'
+    :encode_word: "@578_29"
+  - :string: '"Winner: A (points: A 1, B 0)\n"'
+    :encode_word: "@578_30"
+  - :string: '"Winner: B (points: A 0, B 5)\n"'
+    :encode_word: "@578_31"
+  - :string: '"Winner: B (points: A 0, B 1)\n"'
+    :encode_word: "@578_32"
+  - :string: '"Winner: A (points: A 2, B 0)\n"'
+    :encode_word: "@578_33"
+  - :string: '"Winner: A (points: A 5, B 0)\n"'
+    :encode_word: "@578_34"
+  - :string: '"Winner: B (points: A 0, B 2)\n"'
+    :encode_word: "@578_35"
+  - :string: '"Draw"'
+    :encode_word: "@578_36"
+  - :string: '"Winner: %c (points: A %d, B %d)\n"'
+    :encode_word: "@578_37"
+  - :string: '"Winner: A"'
+    :encode_word: "@578_38"
+  - :string: '"Winner: B"'
+    :encode_word: "@578_39"
+  - :string: '"A: Rock, B: Scissors; A wins and gets %d points.\n"'
+    :encode_word: "@578_40"
+  - :string: '"A: Scissors, B: Rock; B wins and gets %d points.\n"'
+    :encode_word: "@578_41"
+  - :string: '"A: Scissors, B: Paper; A wins and gets %d points.\n"'
+    :encode_word: "@578_42"
+  - :string: '"A: Rock, B: Rock; Draw\n"'
+    :encode_word: "@578_43"
+  - :string: '"A: Paper, B: Paper; Draw\n"'
+    :encode_word: "@578_44"
+  - :string: '"Draw "'
+    :encode_word: "@578_45"
+  - :string: '" (points: A %d, B %d)\n"'
+    :encode_word: "@578_46"
+  - :string: '"A: Paper, B: Paper; Draw.\n"'
+    :encode_word: "@578_47"
+  - :string: '"A wins and gets 1 points.\n"'
+    :encode_word: "@578_48"
+  - :string: '"B wins and gets 5 points.\n"'
+    :encode_word: "@578_49"
+  - :string: '"B wins and gets 1 points.\n"'
+    :encode_word: "@578_50"
+  - :string: '"A wins and gets 2 points.\n"'
+    :encode_word: "@578_51"
+  - :string: '"A wins and gets 5 points.\n"'
+    :encode_word: "@578_52"
+  - :string: '"B wins and gets 2 points.\n"'
+    :encode_word: "@578_53"
+  - :string: '"Paper, "'
+    :encode_word: "@578_54"
+  - :string: '"Winner: A (points: A %d, B 0)\n"'
+    :encode_word: "@578_55"
+  - :string: '"Winner: B (points: A 0, B %d)\n"'
+    :encode_word: "@578_56"
+  - :string: '"A: Paper, B: Scissors; B wins and gets %d points.\n"'
+    :encode_word: "@578_57"
+  - :string: '"A: Scissors, B: Scissors; Draw\n"'
+    :encode_word: "@578_58"
+  - :string: '"Winner: A "'
+    :encode_word: "@578_59"
+  - :string: '"Winner: B "'
+    :encode_word: "@578_60"
+  - :string: '"(points: A %d, B %d)\n"'
+    :encode_word: "@578_61"
+  - :string: '"A: Rock, B: Paper; B wins and gets %d points.\n"'
+    :encode_word: "@578_62"
+  - :string: '"Game input:\n"'
+    :encode_word: "@578_63"
+  - :string: '"B: Rock, "'
+    :encode_word: "@578_64"
+  - :string: '"B: Scissors, "'
+    :encode_word: "@578_65"
+  - :string: '"B: Paper, "'
+    :encode_word: "@578_66"
+  - :string: '"Draw.\n"'
+    :encode_word: "@578_67"
+  - :string: '"A: Paper,"'
+    :encode_word: "@578_68"
+  - :string: '"A: Scissors,"'
+    :encode_word: "@578_69"
+  - :string: '"Invalid input (Rock: 1, Scissors: 2, Paper: 3), please try again\n"'
+    :encode_word: "@578_70"
+  - :string: '"A: Rock, B: Scissors; A wins and gets 1 points.\nWinner: A (points:
+      A %d, B %d)\n"'
+    :encode_word: "@578_71"
+  - :string: '"A: Rock, B: Paper; B wins and gets 5 points.\nWinner: B (points: A
+      %d, B %d)\n"'
+    :encode_word: "@578_72"
+  - :string: '"A: Scissors, B: Rock; B wins and gets 1 points.\nWinner: B (points:
+      A %d, B %d)\n"'
+    :encode_word: "@578_73"
+  - :string: '"A: Paper, B: Rock; A wins and gets 5 points.\nWinner: A (points: A
+      %d, B %d)\n"'
+    :encode_word: "@578_74"
+  - :string: '"A: Rock, B: Rock; Draw.\n"'
+    :encode_word: "@578_75"
+  - :string: '"draw.\n"'
+    :encode_word: "@578_76"
+  - :string: '"A: Rock, B: Scissors; A wins and gets 1 point.\n"'
+    :encode_word: "@578_77"
+  - :string: '"A: Scissors, B: Rock; B wins and gets 1 point.\n"'
+    :encode_word: "@578_78"
+  - :string: '"A: "'
+    :encode_word: "@578_79"
+  - :string: '"A: Paper, B: Rock; A wins and gets %d points.\n"'
+    :encode_word: "@578_80"
+  - :string: '"A: Rock, B: "'
+    :encode_word: "@578_81"
+  - :string: '"A: Scissors, B: "'
+    :encode_word: "@578_82"
+  - :string: '"A: Paper, B: "'
+    :encode_word: "@578_83"
+  - :string: '"Invalid input (Rock: 1, Scissors: 2, Paper: 3),please try again:\n"'
+    :encode_word: "@578_84"
+  - :string: '"A wins and gets %d points. \nWinner: A (points: A %d, B %d)\n"'
+    :encode_word: "@578_85"
+  - :string: '"B wins and gets %d points. \nWinner: B (points: A %d, B %d)\n"'
+    :encode_word: "@578_86"
+  - :string: '"B wins and gets %d poinnts.\n"'
+    :encode_word: "@578_87"
+  - :string: '"A wins and gets %d poinnts.\n"'
+    :encode_word: "@578_88"
+  - :string: '"A: Rock, B: Scissors; A wins and gets 1 points\n"'
+    :encode_word: "@578_89"
+  - :string: '"A: Scissors, B: paper; A wins and gets 2 points\n"'
+    :encode_word: "@578_90"
+  - :string: '"A: paper, B: Rock; A wins and gets 5 points\n"'
+    :encode_word: "@578_91"
+  - :string: '"A: Scissors, B: Rock; A wins and gets 1 points\n"'
+    :encode_word: "@578_92"
+  - :string: '"A: paper, B: Scissors; A wins and gets 2 points\n"'
+    :encode_word: "@578_93"
+  - :string: '"A: Rock, B: paper; A wins and gets 5 points\n"'
+    :encode_word: "@578_94"
+  - :string: '"B:Rook\n"'
+    :encode_word: "@578_95"
+  - :string: '"B:Scissors\n"'
+    :encode_word: "@578_96"
+  - :string: '"B:Paper\n"'
+    :encode_word: "@578_97"
+  - :string: '"A: Paper, B: Scissors; B wins and gets 2 points.\nWinner: B (points:
+      A %d, B %d)\n"'
+    :encode_word: "@578_98"
+  - :string: '"\nDraw (points: A %d, B %d)\n"'
+    :encode_word: "@578_99"
+  - :string: !binary |-
+      IlJvY2ss44CAIg==
+    :encode_word: "@578_100"
+  - :string: !binary |-
+      IlNjaXNzb3JzLOOAgCI=
+    :encode_word: "@578_101"
+  - :string: '"B: "'
+    :encode_word: "@578_102"
+  - :string: '"1 point\n"'
+    :encode_word: "@578_103"
+  - :string: '"2 points\n"'
+    :encode_word: "@578_104"
+  - :string: '"5 points\n"'
+    :encode_word: "@578_105"
+  - :string: '"B: Rock;"'
+    :encode_word: "@578_106"
+  - :string: '"B: Paper;"'
+    :encode_word: "@578_107"
+  - :string: '"A: Scissors, B: Scissors; Draw.\n"'
+    :encode_word: "@578_108"
+  - :string: '"Rock"'
+    :encode_word: "@578_109"
+  - :string: '"Scissors"'
+    :encode_word: "@578_110"
+  - :string: '"Paper"'
+    :encode_word: "@578_111"
+  - :string: '"Rock, "'
+    :encode_word: "@578_112"
+  - :string: '"Scissors, "'
+    :encode_word: "@578_113"
+  - :string: '"Winner: "'
+    :encode_word: "@578_114"
+  - :string: '"Game imput:"'
+    :encode_word: "@578_115"
+  - :string: '"A: Rock, B: Rock; A draws and gets %d points.\n"'
+    :encode_word: "@578_116"
+  - :string: '"A: Scissors, B: Scissors; A draws and gets %d points.\n"'
+    :encode_word: "@578_117"
+  - :string: '"A: paper, B: Rock; A wins and gets %d points.\n"'
+    :encode_word: "@578_118"
+  - :string: '"A: Paper, B: Paper; A draws and gets %d points.\n"'
+    :encode_word: "@578_119"
+  - :string: '"A: Rock,"'
+    :encode_word: "@578_120"
+  - :string: '" A wins and gets %d points.\n"'
+    :encode_word: "@578_121"
+  - :string: '" B wins and gets %d points.\n"'
+    :encode_word: "@578_122"
+  - :string: '"A: Rock, B: Scissors; "'
+    :encode_word: "@578_123"
+  - :string: '"A: Paper, B: Rock; "'
+    :encode_word: "@578_124"
+  - :string: '"A: Scissors, B: Paper; "'
+    :encode_word: "@578_125"
+  - :string: '"A: Scissors, B: Rock; "'
+    :encode_word: "@578_126"
+  - :string: '"A: Rock, B: Paper; "'
+    :encode_word: "@578_127"
+  - :string: '"A: Paper, B: Scissors; "'
+    :encode_word: "@578_128"
+  - :string: '"game imput: "'
+    :encode_word: "@578_129"
+  - :string: '"A wins and gets 1 points."'
+    :encode_word: "@578_130"
+  - :string: '""'
+    :encode_word: "@578_131"
+  - :string: '"Input for game number %d: "'
+    :encode_word: "@578_132"
+  - :string: '"A: Scissors, B: Paper; A wins and gets 2 points.\nWinner: A (points:
+      A %d, B %d)\n"'
+    :encode_word: "@578_133"
+  - :string: '"Game Input:"'
+    :encode_word: "@578_134"
+  - :string: !binary |-
+      IuOCqOODqeODvCI=
+    :encode_word: "@578_135"
+  - :string: !binary |-
+      Ilxu5LiN5q2j44Gq5YCk44Gn44GZ44CCIg==
+    :encode_word: "@578_136"
+  - :string: !binary |-
+      IuOCsOODvOOBrzHjgIHjg4Hjg6fjgq3jga8y44CB44OR44O844GvM+OCkuOC
+      ueODmuODvOOCueOBp+WMuuWIh+OBo+OBpuWFpeWKm+OBl+OBpuOBj+OBoOOB
+      leOBhOOAglxuIg==
+    :encode_word: "@578_137"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44Kw44O844CCQiDjgZXjgpPjga/jgrDjg7zjgIJcbuOB
+      guOBhOOBk+OAglxuIg==
+    :encode_word: "@578_138"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44Kw44O844CCQiDjgZXjgpPjga/jg4Hjg6fjgq3jgIJc
+      bkEg44GV44KT44Gu5Yud44Gh44CCQSDjgZXjgpPjgYwx54K55Y+W5b6X44CC
+      XG4i
+    :encode_word: "@578_139"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44Kw44O844CCQiDjgZXjgpPjga/jg5Hjg7zjgIJcbkIg
+      44GV44KT44Gu5Yud44Gh44CCQiDjgZXjgpPjgYw154K55Y+W5b6X44CCXG4i
+    :encode_word: "@578_140"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44OB44On44Kt44CCQiDjgZXjgpPjga/jgrDjg7zjgIJc
+      bkIg44GV44KT44Gu5Yud44Gh44CCQiDjgZXjgpPjgYwx54K55Y+W5b6X44CC
+      XG4i
+    :encode_word: "@578_141"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44OB44On44Kt44CCQiDjgZXjgpPjga/jg4Hjg6fjgq3j
+      gIJcbuOBguOBhOOBk+OAglxuIg==
+    :encode_word: "@578_142"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44OB44On44Kt44CCQiDjgZXjgpPjga/jg5Hjg7zjgIJc
+      bkEg44GV44KT44Gu5Yud44Gh44CCQSDjgZXjgpPjgYwy54K55Y+W5b6X44CC
+      XG4i
+    :encode_word: "@578_143"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44OR44O844CCQiDjgZXjgpPjga/jgrDjg7zjgIJcbkEg
+      44GV44KT44Gu5Yud44Gh44CCQSDjgZXjgpPjgYw154K55Y+W5b6X44CCXG4i
+    :encode_word: "@578_144"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44OR44O844CCQiDjgZXjgpPjga/jg4Hjg6fjgq3jgIJc
+      bkIg44GV44KT44Gu5Yud44Gh44CCQiDjgZXjgpPjgYwy54K55Y+W5b6X44CC
+      XG4i
+    :encode_word: "@578_145"
+  - :string: !binary |-
+      IkEg44GV44KT44Gv44OR44O844CCQiDjgZXjgpPjga/jg5Hjg7zjgIJcbuOB
+      guOBhOOBk+OAglxuIg==
+    :encode_word: "@578_146"
+  - :string: '"A: Scissors, B: Paper; A wins and gets 2 points.\n Winner: A (points:
+      A %d, B %d)\n"'
+    :encode_word: "@578_147"
+  - :string: '"A: Scissors, B: Scissors; Draw."'
+    :encode_word: "@578_148"
+  - :string: '"Invalid input (Rock: 1, Scissors: 2, Paper: 3),"'
+    :encode_word: "@578_149"
+  - :string: '"please try again:"'
+    :encode_word: "@578_150"
+  - :string: '"Draw\n"'
+    :encode_word: "@578_151"
+  - :string: '" Please try again:\n"'
+    :encode_word: "@578_152"
+  - :string: '"A: Rock, B:Rock;\n"'
+    :encode_word: "@578_153"
+  - :string: '"A: Rock, B:Scissors; A wins and gets 1 points.\n"'
+    :encode_word: "@578_154"
+  - :string: '"A: Rock, B:Paper; B wins and gets 5 points.\n"'
+    :encode_word: "@578_155"
+  - :string: '"A: Scissors, B:Rock; B wins and gets 1 points.\n"'
+    :encode_word: "@578_156"
+  - :string: '"A: Scissors, B:Scissors;\n"'
+    :encode_word: "@578_157"
+  - :string: '"A: Scissors, B:Paper; A wins and gets 2 points.\n"'
+    :encode_word: "@578_158"
+  - :string: '"A: Paper, B:Rock; A wins and gets 5 points.\n"'
+    :encode_word: "@578_159"
+  - :string: '"A: Paper, B:Scissors; B wins and gets 2 points.\n"'
+    :encode_word: "@578_160"
+  - :string: '"A: Paper, B:Paper;\n"'
+    :encode_word: "@578_161"
+  - :string: '"Gama input: "'
+    :encode_word: "@578_162"
+  - :string: '"Game input :"'
+    :encode_word: "@578_163"
+  - :string: '"Invalid imput (Rock: 1, Scissors: 2, Paper: 3), Please try again:\nGame
+      input: "'
+    :encode_word: "@578_164"
+  - :string: '"A wins and gets "'
+    :encode_word: "@578_165"
+  - :string: '"B wins and gets "'
+    :encode_word: "@578_166"
+  - :string: '"B: Scissors;"'
+    :encode_word: "@578_167"
+  - :string: '"A wins and gets %d points\n"'
+    :encode_word: "@578_168"
+  - :string: '"B wins and gets %d points\n"'
+    :encode_word: "@578_169"
+  - :string: '"Rock, B: "'
+    :encode_word: "@578_170"
+  - :string: '"Scissors, B: "'
+    :encode_word: "@578_171"
+  - :string: '"Paper, B: "'
+    :encode_word: "@578_172"
+  - :string: '"Scissors;"'
+    :encode_word: "@578_173"
+  - :string: '"a=%d b=%d\n"'
+    :encode_word: "@578_174"
+  - :string: '"Invalid input (Rock: 1, Scissors: 2, Paper: 3), please try again: \n"'
+    :encode_word: "@578_175"
+  - :string: '"A: Rock, B: Rock;\nDraw (points: A %d, B %d)\n"'
+    :encode_word: "@578_176"
+  - :string: '"A: Rock, B: Scissors;\nWinner: A (points: A %d, B %d)\n"'
+    :encode_word: "@578_177"
+  - :string: '"A: Rock, B: Paper;\nWinner: B (points: A %d, B %d)\n"'
+    :encode_word: "@578_178"
+  - :string: '"A: Scissors, B: Rock;\nWinner: B (points: A %d, B %d)\n"'
+    :encode_word: "@578_179"
+  - :string: '"A: Scissors, B: Scissors;\nDraw (points: A %d, B %d)\n"'
+    :encode_word: "@578_180"
+  - :string: '"A: Scissors, B: Paper;\nWinner: A (points: A %d, B %d)\n"'
+    :encode_word: "@578_181"
+  - :string: '"A: Paper, B: Rock;\nWinner: A (points: A %d, B %d)\n"'
+    :encode_word: "@578_182"
+  - :string: '"A: Paper, B: Scissors;\nWinner: B (points: A %d, B %d)\n"'
+    :encode_word: "@578_183"
+  - :string: '"A: Paper, B: Paper;\nDraw (points: A %d, B %d)\n"'
+    :encode_word: "@578_184"
+  - :string: '"A"'
+    :encode_word: "@578_185"
+  - :string: '"B"'
+    :encode_word: "@578_186"
+  - :string: !binary |-
+      IkE6IFJvY2ssIEI6IFBhcGVyOyBC44CAd2lucyBhbmQgZ2V0cyAlZCBwb2lu
+      dHMuXG4i
+    :encode_word: "@578_187"
+  - :string: '"A: Paper, B: Rock; A wins and gets 5 points\n"'
+    :encode_word: "@578_188"
+  - :string: '"A: Paper, B: Scissors; B wins and gets 2 points\n"'
+    :encode_word: "@578_189"
+  - :string: '"Invald input (Rock: %d, Scissors: %d, Paper: %d), please try again:\n"'
+    :encode_word: "@578_190"
+  - :string: '"A: Paper, B: Scissors; A wins and gets %d points.\n"'
+    :encode_word: "@578_191"
+  - :string: '"A: Rock, B: Papers; B wins and gets 5 points.\n"'
+    :encode_word: "@578_192"
+  - :string: '"A: Scissors, B: Papers; A wins and gets 2 points.\n"'
+    :encode_word: "@578_193"
+  - :string: '"A: Papers, B: Rock; A wins and gets 5 points.\n"'
+    :encode_word: "@578_194"
+  - :string: '"A: Papers, B: Scissors; B wins and gets 2 points.\n"'
+    :encode_word: "@578_195"
+  - :string: '"Invalid input (Rock: 1, Scissors: 2, Paper: 3),please try again\n"'
+    :encode_word: "@578_196"
+  - :string: '"A: Rock,B: Scissors; A wins and gets %d points.\n"'
+    :encode_word: "@578_197"
+  - :string: '"A: Scissors,B: paper; A wins and gets %d points.\n"'
+    :encode_word: "@578_198"
+  - :string: '"A: paper,B: Rock; A wins and gets %d points.\n"'
+    :encode_word: "@578_199"
+  - :string: '"A: Rock,B: Rock\n"'
+    :encode_word: "@578_200"
+  - :string: '"A: Scissors,B: Scissors\n"'
+    :encode_word: "@578_201"
+  - :string: '"A: paper,B: paper\n"'
+    :encode_word: "@578_202"
+  - :string: '"A: Rock,B: paper; B wins and gets %d points.\n"'
+    :encode_word: "@578_203"
+  - :string: '"A: Scissors,B: Rock; B wins and gets %d points.\n"'
+    :encode_word: "@578_204"
+  - :string: '"A: paper,B: Scissors; B wins and gets %d points.\n"'
+    :encode_word: "@578_205"
+  - :string: '"Rock: 1, Scissors: 2, Paper: 3\n"'
+    :encode_word: "@578_206"
+  - :string: '"Invalid input (Rock: 1, Sciccors: 2, Paper: 3), please try again:\n"'
+    :encode_word: "@578_207"
+  - :string: '"A: Sciccors,"'
+    :encode_word: "@578_208"
+  - :string: '"B: Sciccors;"'
+    :encode_word: "@578_209"
+  - :string: '"Invalid input(Rock: 1, Scissors: 2, Paper: 3),please try again:\n"'
+    :encode_word: "@578_210"
+  - :string: '"A:Rock,B:Scissors;A wins and gets 1 points.\n"'
+    :encode_word: "@578_211"
+  - :string: '"A:Rock,B:Paper;B wins and gets 5 points.\n"'
+    :encode_word: "@578_212"
+  - :string: '"A:Scissors,B:Rock;B wins and gets 1 points.\n"'
+    :encode_word: "@578_213"
+  - :string: '"A:Scissors,B:Paper;A wins and gets 2 points.\n"'
+    :encode_word: "@578_214"
+  - :string: '"A:Paper,B:Rock;A wins and gets 5 points.\n"'
+    :encode_word: "@578_215"
+  - :string: '"A:Paper,B:Scissors;B wins and gets 2 points.\n"'
+    :encode_word: "@578_216"
+  - :string: '"B: Rock;\n"'
+    :encode_word: "@578_217"
+  - :string: '"B: Scissors; A wins and gets %d points.\n"'
+    :encode_word: "@578_218"
+  - :string: '"B: Paper; B wins and gets %d points.\n"'
+    :encode_word: "@578_219"
+  - :string: '"B: Scissors;\n"'
+    :encode_word: "@578_220"
+  - :string: '"B: Rock; B wins and gets %d points.\n"'
+    :encode_word: "@578_221"
+  - :string: '"B: Paper; A wins and gets %d points.\n"'
+    :encode_word: "@578_222"
+  - :string: '"B: Paper;\n"'
+    :encode_word: "@578_223"
+  - :string: '"B: Rock; A wins and gets %d points.\n"'
+    :encode_word: "@578_224"
+  - :string: '"B: Scissors; B wins and gets %d points.\n"'
+    :encode_word: "@578_225"
+  - :string: '"B wins and gets 5 points."'
+    :encode_word: "@578_226"
+  - :string: '"A wins and gets 2 points."'
+    :encode_word: "@578_227"
+  - :string: '"B wins and gets 1 points."'
+    :encode_word: "@578_228"
+  - :string: '"B wins and gets 2 points."'
+    :encode_word: "@578_229"
+  - :string: '"Invalid input"'
+    :encode_word: "@578_230"
+  - :string: '"(Rock: 1, Scissors: 2, Paper: 3), "'
+    :encode_word: "@578_231"
+  - :string: '"please try again:\n"'
+    :encode_word: "@578_232"
+  - :string: '"Invalid input (Rock: 1, Scissors: 2,Paper: 3), please try again:\n"'
+    :encode_word: "@578_233"
+  - :string: '"A: %s, B: %s; %c wins and gets %d points.\n"'
+    :encode_word: "@578_234"
+  - :string: '"Winner: %c "'
+    :encode_word: "@578_235"
+  - :string: '"A: Rock, B: Rock; draw\n"'
+    :encode_word: "@578_236"
+  - :string: '"A: Rock, B: Scissors; A wins and gets %d points\n"'
+    :encode_word: "@578_237"
+  - :string: '"A: Rock, B: Paper; B wins and gets %d points\n"'
+    :encode_word: "@578_238"
+  - :string: '"A: Scissors, B: Rock; B wins and gets %d points\n"'
+    :encode_word: "@578_239"
+  - :string: '"A: Scissors, B: Scissors; draw\n"'
+    :encode_word: "@578_240"
+  - :string: '"A: Scissors, B: Paper; A wins and gets %d points\n"'
+    :encode_word: "@578_241"
+  - :string: '"A: Paper, B: Rock; A wins and gets %d points\n"'
+    :encode_word: "@578_242"
+  - :string: '"A: Paper, B: Scissors; B wins and gets %d points\n"'
+    :encode_word: "@578_243"
+  - :string: '"A: Paper, B: Paper; draw\n"'
+    :encode_word: "@578_244"
+  - :string: '"A: Rook,"'
+    :encode_word: "@578_245"
+  - :string: '"A: paper,"'
+    :encode_word: "@578_246"
+  - :string: '"A plays "'
+    :encode_word: "@578_247"
+  - :string: '"B plays "'
+    :encode_word: "@578_248"
+  - :string: '"Rock: "'
+    :encode_word: "@578_249"
+  - :string: '"Scissors: "'
+    :encode_word: "@578_250"
+  - :string: '"Paper: "'
+    :encode_word: "@578_251"
+  - :string: '"Current number of points:A - %d, B - %d\n"'
+    :encode_word: "@578_252"
+  - :string: '"B "'
+    :encode_word: "@578_253"
+  - :string: '"A "'
+    :encode_word: "@578_254"
+  - :string: '"A: Scissors, B: RockScissors; B wins and gets 1 points.\n"'
+    :encode_word: "@578_255"
+  - :string: '"(Rock: 1, Scissors: 2, Paper: 3), please try again:\n"'
+    :encode_word: "@578_256"
+  - :string: '"A: Paper, B: Rock; B wins and gets 2 points.\nWinner: B (points: A
+      %d, B %d)\n"'
+    :encode_word: "@578_257"
+  - :string: '"A: Rock, B: Scissors; A wins and gets 1 point.\n "'
+    :encode_word: "@578_258"
+  - :string: '"A: Scissors, B: Rock; B wins and get 1 point.\n"'
+    :encode_word: "@578_259"
+  - :string: '"A: Rock, B: Rock;\n"'
+    :encode_word: "@578_260"
+  - :string: '"A: Scissors, B: Scissors;\n"'
+    :encode_word: "@578_261"
+  - :string: '"A: Paper, B: Paper;\n"'
+    :encode_word: "@578_262"
+  - :string: '"A: Rock, B: Scissors; A wins and get 1 points.\n"'
+    :encode_word: "@578_263"
+  - :string: '"A: Scissors, B: Rock; B wins and get 1 points.\n"'
+    :encode_word: "@578_264"
+  - :string: '"A: Scissors, B:Rock ; B wins and gets 1 points.\n"'
+    :encode_word: "@578_265"
+  - :string: '"A: Scissors, B:Paper ; A wins and gets 2 points.\n"'
+    :encode_word: "@578_266"
+  - :string: '"A: Paper, B:Rock ; A wins and gets 5 points.\n"'
+    :encode_word: "@578_267"
+  - :string: '"A: Paper, B:Scissors ; B wins and gets 2 points.\n"'
+    :encode_word: "@578_268"
+  - :string: '"A: Scissosrs, B: Scissors; Draw\n"'
+    :encode_word: "@578_269"
+  - :string: '"rock(1),scissors(2),paper(3),try again\n"'
+    :encode_word: "@578_270"
+  - :string: '"A: Rock, B: Scissors; A wins and gets 1 points."'
+    :encode_word: "@578_271"
+  - :string: '"A: Rock, B: Paper; B wins and gets 5 points."'
+    :encode_word: "@578_272"
+  - :string: '"A: Scissors, B: Rock; B wins and gets 1 points."'
+    :encode_word: "@578_273"
+  - :string: '"A: Scissors, B: Paper; A wins and gets 2 points."'
+    :encode_word: "@578_274"
+  - :string: '"A: Paper, B: Rock; A wins and gets 5 points."'
+    :encode_word: "@578_275"
+  - :string: '"A: Paper, B: Scissors; B wins and gets 2 points."'
+    :encode_word: "@578_276"
+  - :string: '"Invailed input (Rock:1, Scissorse: 2, Paper: 3), Please try again:
+      \n"'
+    :encode_word: "@578_277"
+  - :string: '"A: Rock, B: Rock; Draw. \n"'
+    :encode_word: "@578_278"
+  - :string: '"A: Rock, B: scissorse; A wins and gets 1 points\n"'
+    :encode_word: "@578_279"
+  - :string: '"A: Rock, B: Paper; B wins and gets 5 points\n"'
+    :encode_word: "@578_280"
+  - :string: '"A: scissorse, B: scissose; Draw.\n"'
+    :encode_word: "@578_281"
+  - :string: '"A: Scissorse, B: Rock; B wins and gets 1 points\n"'
+    :encode_word: "@578_282"
+  - :string: '"A: Scissorse, B: Paper; A wins and gets 2 poinits\n"'
+    :encode_word: "@578_283"
+  - :string: '"A: Paper, B: Scissorse; B wins and gets 2 points.\n"'
+    :encode_word: "@578_284"
+  - :string: '"Get input: "'
+    :encode_word: "@578_285"
+  - :string: '"Invalited input (Rock: 1, Scissors: 2, Paper: 3), please try again:\n"'
+    :encode_word: "@578_286"
+  - :string: '"A", "B"'
+    :encode_word: "@578_287"
+  - :string: '"Rock", "Scissors", "Paper"'
+    :encode_word: "@578_288"
+  - :string: '"Invalid input (%s: 1, %s: 2, %s: 3), please try again:\n"'
+    :encode_word: "@578_289"
+  - :string: '"Winner: %s"'
+    :encode_word: "@578_290"
+  - :string: '" (points: %s %d, %s %d)\n"'
+    :encode_word: "@578_291"
+  - :string: '"%d %d/n"'
+    :encode_word: "@578_292"

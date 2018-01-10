@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   end
   resources :assignments
 
+  resources :current_assignments do
+    member do
+      get 'moodle'
+    end
+  end
+
 end

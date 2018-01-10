@@ -16,7 +16,7 @@ class ExperimentsController < ApplicationController
 
   # GET /experiments/new
   def new
-    @experiment = @experiment_user.experiments.new(current_assignment_id: 587)
+    @experiment = @experiment_user.experiments.new(current_assignment_id: 588)
     @submission = Submission.find(params[:submission_id]) if params[:submission_id]
     if params[:rpcsr_check].present?
       @rpcsr_check_result = params[:rpcsr_check]

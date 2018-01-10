@@ -14,7 +14,7 @@ class TemplatesController < ApplicationController
     if params[:rpcsr_check].present?
       @rpcsr_check_result = params[:rpcsr_check]
     end
-    @rpcsr_attempt = params[:rpcsr_attempt].present? ? Template.new(params.require(:rpcsr_attempt).permit(:file1, :current_assignment_id)) : @template.dup
+    @rpcsr_attempt = params[:rpcsr_attempt].present? ? Template.new(params.require(:rpcsr_attempt).permit(:file1, :current_assignment_id)).tap{|t|t.file1 = Base64.decode64(t.file1).encode('UTF-8', 'UTF-8')} : @template.dup
     @template_lines = @template.template_lines
     @submission = Submission.new(
       @template.attributes.select{ |key, _|
@@ -67,7 +67,7 @@ class TemplatesController < ApplicationController
       File.write tmp, check_template.file1.encode('UTF-8', 'UTF-8')
       res = rh.create_attempt(tmp.path, check_template.current_assignment_id == 441 ? 587: check_template.current_assignment_id)
       if m = res['location'].match(/(?<id>\d+\z)/)
-        redirect_to template_path(@template, rpcsr_check: rh.get_attempt(m[:id]), rpcsr_attempt: { file1: check_template.file1, current_assignment_id: check_template.current_assignment_id })
+        redirect_to template_path(@template, rpcsr_check: rh.get_attempt(m[:id]), rpcsr_attempt: { file1: Base64.encode64(check_template.file1), current_assignment_id: check_template.current_assignment_id })
       else
         raise
       end
@@ -78,6 +78,8 @@ class TemplatesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_template
       @template = Template.find(params[:id])
+      @template.file1 = @template.file1.encode('UTF-8', 'UTF-8')
+      @template
     end
 
     # Only allow a trusted parameter "white list" through.

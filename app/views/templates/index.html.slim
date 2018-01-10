@@ -4,6 +4,8 @@ h1
   | Templates
 - @current_assignment_ids.each do |ca_id|
   = link_to "#{ca_id}:#{CurrentAssignment.find_by_id(ca_id)&.code}", templates_path(current_assignment_id: ca_id), class: %{btn btn-info}
+- if @templates.present?
+  = link_to 'チェック', template_path(@templates.where(is_check: false).sample), class: 'btn btn-default'
 table.table.table-striped
   thead
     tr

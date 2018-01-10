@@ -18,7 +18,7 @@ p#notice
       = f.hidden_field :comment
       = f.hidden_field :assignment_id
       = f.hidden_field :user_id
-      = f.submit
+      = f.submit 'Submission'
     - if @template.is_check
       = link_to 'check remove', template_path(@template, template: { is_check: false } ), method: :patch, class: %w{btn btn-danger}
     - else
@@ -81,7 +81,7 @@ p#notice
       = f.text_area :file1
       = f.hidden_field :assignment_id
       = f.hidden_field :current_assignment_id
-      = f.submit
+      = f.submit '採点'
 
     - if @rpcsr_check_result.present?
       .panel
