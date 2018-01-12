@@ -7,6 +7,7 @@
 #  deleted_at :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  start_at   :datetime
 #
 
 require 'rails_helper'

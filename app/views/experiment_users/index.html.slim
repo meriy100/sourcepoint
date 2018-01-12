@@ -3,20 +3,23 @@ h1 Listing experiment_users
 table.table.table-stripe
   thead
     tr
+      th ID
       th Name
-      th Deleted at
       th
-      th
+      th 開始時間
+      th 投稿数
       th
 
   tbody
     - @experiment_users.each do |experiment_user|
       tr
+        td = experiment_user.id
         td = experiment_user.name
         td = link_to '実験', new_experiment_user_experiment_path(experiment_user)
+        td = l experiment_user.start_at if experiment_user.start_at.present?
+        td = experiment_user.experiments.count
         td = link_to 'Show', experiment_user
         td = link_to 'Edit', edit_experiment_user_path(experiment_user)
-        td = link_to 'Destroy', experiment_user, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 

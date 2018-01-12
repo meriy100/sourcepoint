@@ -46,7 +46,7 @@ class ExperimentsController < ApplicationController
           if @experiment.status == 'checked'
             @experiment.update!(end_at: Time.zone.now)
           else
-            SubmissionCreate.new(submission).run if ['internal_error', 'executed'].include?(attempt[:status])
+            SubmissionCreate.new(submission).run if ['internal_error', 'warnings', 'executed'].include?(attempt[:status])
           end
           redirect_to new_experiment_user_experiment_path(@experiment_user, rpcsr_check: attempt, submission_id: submission.id ), rpcsr_check: rh.get_attempt(m[:id])
         else

@@ -7,7 +7,7 @@ table.table
       th Assignment
       th Experiment user
       th End at
-      th Deleted at
+      th status
       th
       th
       th
@@ -19,7 +19,7 @@ table.table
         td = experiment.current_assignment_id
         td = experiment.experiment_user
         td = experiment.end_at
-        td = experiment.deleted_at
+        td = experiment.status
         td = link_to 'Show', experiment_user_experiment_path(@experiment_user, experiment)
 
 br

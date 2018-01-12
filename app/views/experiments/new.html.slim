@@ -21,20 +21,27 @@ h1 実験
         = f.hidden_field :current_assignment_id
       .field
         = f.hidden_field :end_at
-      .actions = f.submit '提出', class: 'btn btn-primary'
+      .actions = f.submit '提出(10秒ほどかかります)', class: 'btn btn-primary'
 
       - if @rpcsr_check_result.present?
         .panel
           h3 実行結果
           span.label[class="label-#{@rpcsr_check_result[:status] == 'checked' ? 'success' : 'danger'}"]
             = @rpcsr_check_result[:status].encode('UTF-8', 'UTF-8')
+          div
+            = link_to '最後にアンケートに回答をおねがいします', 'https://docs.google.com/forms/d/e/1FAIpQLSfn6OpoOhKct-LoC2Mzj7l9O8fH2nXZSUTsXoMzrFZwlhr7Mw/viewform?usp=sf_link', class: 'btn btn-info', target: "_blank" if @rpcsr_check_result[:status] == 'checked'
           = raw @rpcsr_check_result[:messege_body].encode('UTF-8', 'UTF-8')
 
-          = link_to '詳しい結果を見る', @rpcsr_check_result[:url].encode('UTF-8', 'UTF-8'), class: 'btn btn-default'
 
   .col-md-6
     h3 提出ファイル
     - if @submission.present?
       p 赤いハイライトが有る行は, 間違えている可能性があります
       == render('part', submission: @submission, line_numbers: @submission.lines)
-= link_to 'Back', experiment_user_experiments_path
+
+.row
+  p
+    | 開始時刻 :
+    = l @experiment_user.start_at
+  p  開始から40分以上経過してしまった場合は, 一度作成途中のソースコードを提出してからアンケートに移動してださい
+  = link_to 'アンケートに移動', 'https://docs.google.com/forms/d/e/1FAIpQLSfn6OpoOhKct-LoC2Mzj7l9O8fH2nXZSUTsXoMzrFZwlhr7Mw/viewform?usp=sf_link', class: 'btn btn-default', target: "_blank"

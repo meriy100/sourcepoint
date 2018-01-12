@@ -281,11 +281,12 @@ class SubmissionCreate
 
   class SearchBlock
     attr_accessor :actual, :expect, :diffs, :assignment_id
-    def initialize(actual_file1, expect_file1, assignment_id)
-      self.actual = EncodingCode.new(actual_file1, assignment_id).tap(&:encode)
-      self.expect = EncodingCode.new(expect_file1, assignment_id)
+    def initialize(submission, attempt, assignment_id)
+      self.actual = EncodingCode.new(submission.file1, assignment_id).tap(&:encode)
+      self.expect = EncodingCode.new(attempt.file1, assignment_id)
       self.diffs = Diffs.generate(actual, expect)
       self.assignment_id = assignment_id
+      @attempt = attempt
 
       STDERR.puts actual.dictionary.valiable_list
       STDERR.puts "\e[32m#{actual.encode}\e[0m"
@@ -328,8 +329,9 @@ class SubmissionCreate
             STDERR.puts "\e[0m"
             STDERR.puts recode
             if status == 'checked'
-              line_list.select { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) }
-              attempt = nearest_attempts.first.dup
+              line_list.select { |line| numbers.map{|n| n[:actual].number * -1}.include?(line[:number]) }.map{|l|l[:checked] = true}
+
+              attempt = @attempt.dup
               # Tempfile.open do |tmp_reindent|
               #   Open3.capture3('indent', tmp.path, tmp_reindent.path)
               #   attempt.file1 = File.read(tmp_reindent.path)
@@ -374,12 +376,16 @@ class SubmissionCreate
   def run
     Rails.logger.info nearest_attempts.first.dist
     if run?(nearest_attempts)
-      line_list = SearchBlock.new(self.submission.file1, nearest_attempts.first.file1, assignment_id).run
+      line_list = SearchBlock.new(self.submission, nearest_attempts.first, assignment_id).run
       sub_line_lists = nearest_attempts[1..2].map do |ex|
-        SearchBlock.new(self.submission.file1, ex.file1, assignment_id).run
+        SearchBlock.new(self.submission, ex, assignment_id).run
       end
 
-      line_list.each do |line_attributes|
+      checked_lines = sub_line_lists.flat_map do |ll|
+        ll.select { |l| l[:checked] }
+      end
+
+      line_list.reject{|l| l[:checked]}.reject{|l| checked_lines.any?{|cl| cl[:number] == l[:number]}  }.each do |line_attributes|
         @submission.lines.create!(line_attributes.merge(attempt_id: nearest_attempts.first.id))
       end
       @submission

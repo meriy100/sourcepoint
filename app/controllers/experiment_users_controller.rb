@@ -32,8 +32,8 @@ class ExperimentUsersController < ApplicationController
 
   # PATCH/PUT /experiment_users/1
   def update
-    if @experiment_user.update(experiment_user_params)
-      redirect_to @experiment_user, notice: 'Experiment user was successfully updated.'
+    if @experiment_user.update(experiment_user_params.merge(start_at: Time.zone.now))
+      redirect_to new_experiment_user_experiment_path(@experiment_user) , notice: 'Experiment user was successfully updated.'
     else
       render :edit
     end
@@ -53,6 +53,6 @@ class ExperimentUsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def experiment_user_params
-      params.require(:experiment_user).permit(:name, :deleted_at)
+      params.require(:experiment_user).permit(:name, :deleted_at, :start_at)
     end
 end

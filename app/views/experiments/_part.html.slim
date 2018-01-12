@@ -6,4 +6,5 @@ pre.diffcode
     |  <span class="
     = 'diffline' if line_numbers.select { |line_number| line_number.number == idx && !line_number.deleted_line }.present?
     | ">
-    = line.chomp
+    = line
+    |</span>

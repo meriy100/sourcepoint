@@ -34,15 +34,16 @@ namespace :all_checker do
       # submission_lines = template.submission.lines
       submission_lines_group = template.submission.lines.to_a.collection_map{|f,s| f.number+1 == s.number}
       template_lines = template.template_lines
-      true_lines = submission_lines_group.select { |ls| template_lines.map(&:number).&(ls.map(&:number)).present? }.flatten
-      precision = (true_lines.length / submission_lines_group.length.*(1.0))
-      recall = (true_lines.length / template_lines.length.*(1.0))
+
+      true_lines_group = submission_lines_group.map { |ls| template_lines.map(&:number).&(ls.map(&:number)) }.compact.reject{|g|g.empty?}
+      precision = (true_lines_group.length / submission_lines_group.length.*(1.0))
+      recall = (true_lines_group.flatten.length / template_lines.length.*(1.0))
       {
         template_id: template.id,
         submission_id: template.id,
         template_lines: template_lines.length,
         submission_lines: submission_lines_group.length,
-        true_lines: true_lines.length,
+        true_lines: true_lines_group.length,
         recall: recall,
         precision: precision,
         f: (2.0 / ( (1.0 / recall) + (1.0 / precision) ) ),
