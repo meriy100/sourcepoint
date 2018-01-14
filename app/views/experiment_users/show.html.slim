@@ -1,44 +1,68 @@
+.description
+  .row
+    .col-md-5
+      h2 実験の概要
+      ul
+        li 実験にご協力ありがとうございます.
+        li これから, C言語の問題を解いて提出して頂きます.
+        li ソースコードを提出すると, 問題のある個所に赤いハイライトが表示されるので, それを参考にして修正してください.
 
-
-.row
-  .col-md-10
-    h2 実験の説明
-    ul
-      li これから, C言語の問題を解いて頂きます.
-      li
-        = link_to "ここ", "https://ide.c9.io/mariy100/sourcepoint#{@experiment_user.id}#openfile-main.c", class: 'btn btn-link', target: '_blank'
-        | から, cloud9(IDE) にログインしてください(email: ttattataa@gmail.com password: K345aoyama).
-      li  実験中は このページと cloud9 を同時に利用してください.
-      li  実験中は 他の web サイトなどを利用して, 調べながらやっていただいてかまいません.
-      li  問題は1問で30分程度です.
-
-      li  このページの一番下の実験開始ボタンを押すと次の画面に遷移します.
-    div
-      = image_tag 'https://www.sw.it.aoyama.ac.jp/2015/kariyado/research/Sourcepoint_1.png', width: '100%', style: "border: 1px #444 solid"
-    ul
-      li 水色の[問題を見る] のボタンを押すと問題文が確認できます. 問題の指示に従ってソースコードを作成してください.
-      li
-        | [ファイルを選択] のボタンからファイルを選択して, 青色の[提出] ボタンを押してください.
-        | (cloud9 で作成されたソースコードを一度ダウンロードしてから投稿してください)
-      li 提出が成功すると次の画面に遷移します
-    div
-      = image_tag 'https://www.sw.it.aoyama.ac.jp/2015/kariyado/research/Sourcepoint_3.png', width: '100%', style: "border: 1px #444 solid"
-    ul
-      li ④ に採点結果が表示されます.
-      li 不正解の場合実行結果が表示されます
-      li ⑤ に提出されたソースコードが表示されます. 赤いハイライトがある部分の中に間違いがある可能性があるので, 参考にしながら回答してください.
-
-    div
-      h2 cloud9 の使い方
+  .row
+    h2 実験の手順
+    p 制限時間40分
+    .col-md-6
+      h3 cloud9 の使い方
+      ol
+        li
+          = link_to "ここ", "https://ide.c9.io/mariy100/sourcepoint#{@experiment_user.id}#openfile-main.c", class: 'btn btn-link', target: '_blank'
+          | から, cloud9(IDE) にログイン
+          br
+          | (email: ttattataa@gmail.com password: K345aoyama).
+        li main.c というファイルを編集
+        li main.c をダウンロードして実験ページで提出
+    .col-md-6
       = image_tag 'https://www.sw.it.aoyama.ac.jp/2015/kariyado/research/cloud9.png', width: '100%', style: "border: 1px #444 solid"
+  .row
+    h3 このページの使い方
+    .col-md-6
+
+      ol
+
+        li 水色の[問題を見る] のボタンを押し問題文を確認する.
+        li 問題文に従ってソースコードを作成する.
+        li
+          | [ファイルを選択] のボタンからファイルを選択して, 青色の[提出] ボタンを押す.
+          br
+          strong (cloud9 で作成されたソースコードを一度ダウンロードしてから投稿してください)
+        li 右図④ に採点結果と実行結果が表示される.
+        li
+          h5 不正解の場合
+          ol.lev2
+            li 右図⑤ に間違えている可能性がある部分に赤いハイライトが表示さされる.
+            li ソースコードを修正して再度提出してください.
+        li
+          h5 正解の場合
+          ol.lev2
+            li 緑色でchecked と表示され実験終了です.
+            li リンクからアンケートに回答してください.
 
 
-p  準備ができましたら, 下の実験開始をおしてください (最後にアンケートがあります)
+    .col-md-6
+      = image_tag 'https://www.sw.it.aoyama.ac.jp/2015/kariyado/research/Sourcepoint_1.png', width: '100%', style: "border: 1px #444 solid"
+      = image_tag 'https://www.sw.it.aoyama.ac.jp/2015/kariyado/research/Sourcepoint_3.png', width: '100%', style: "border: 1px #444 solid"
 
-= link_to '実験開始', experiment_user_path(@experiment_user, experiment_user: { start_at: Time.zone.now }), method: :patch, class: 'btn btn-success', target: '_blank'
+  .row
+    .col-md-6
+      h2 注意事項
+      ul
+        li 実験中は 他の web サイトなどを利用して, 調べながらやっていただいてかまいません.
+        li 実験中は このページと cloud9 を同時に利用してください.
+        li ソースコードの最後は改行で終わってください (warning: no newline at end of file) のエラーがでます
+        li C言語は if や while の条件式の周りにに 括弧 ( ... ) が必要です
+        li C言語は 式の最後に セミコロン ; が必要です
+
+  p  準備ができましたら, 下の実験開始をおしてください (最後にアンケートがあります)
+
+  = link_to '実験開始', experiment_user_path(@experiment_user, experiment_user: { start_at: Time.zone.now }), method: :patch, class: 'btn btn-success', target: '_blank'
 
 
-h4 注意
-p ソースコードの最後は改行で終わってください (warning: no newline at end of file) のエラーがでます
-p C言語は if や while の条件式の周りにに 括弧 ( ... ) が必要です
-p C言語は 式の最後に セミコロン ; が必要です
