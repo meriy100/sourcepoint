@@ -1,4 +1,4 @@
-def main(ids = [], noneencode_reset=true)
+def main(ids = [], nonencode_reset=true)
   ids.each do |id|
     puts id
     unless (nonencode_reset || system("bin/rake encode:attempts ID=#{id}") ) && system("bin/rake all_checker:run ID=#{id}")
