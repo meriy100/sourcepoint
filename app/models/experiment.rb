@@ -27,6 +27,8 @@ class Experiment < ApplicationRecord
 
   validates :file1, presence: true
 
+  acts_as_paranoid
+
   def to_submission
     Submission.new(file1: file1, user_id: experiment_user_id, assignment_id: current_assignment_id, experiment_id: self.id)
   end

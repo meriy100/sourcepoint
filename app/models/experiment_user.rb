@@ -12,5 +12,6 @@
 
 class ExperimentUser < ApplicationRecord
 
+  acts_as_paranoid
   has_many :experiments
 end
