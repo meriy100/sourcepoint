@@ -21,4 +21,8 @@ class Template < ApplicationRecord
   has_many :template_lines
   has_one :submission
   belongs_to_active_hash :current_assignment
+
+  def to_submission
+    Submission.new(file1: file1, assignment_id: current_assignment_id, user_id: user_id)
+  end
 end
