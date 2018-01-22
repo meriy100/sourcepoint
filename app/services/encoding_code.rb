@@ -10,7 +10,7 @@ class CharSet < Array
 end
 
 class EncodingCode
-  attr_accessor :code, :code_encoded, :dictionary, :charlist, :headers, :assignment_id
+  attr_accessor :code, :code_encoded, :dictionary, :charlist, :headers, :assignment_id, :gdb_graph, :other_graph
 
   EXPECT_CHARS = [
     "{",
@@ -49,7 +49,8 @@ class EncodingCode
 
   def initialize(src, assignment_id, dictionary = nil)
     self.code_encoded ||= ""
-    self.dictionary = dictionary || Dictionary.new(assignment_id)
+    # self.gdb_graph = ScopeVariable.new(src, assignment_id)
+    self.dictionary = dictionary || Dictionary.new(assignment_id, )
     self.charlist = []
     self.code = src.encode('UTF-8', 'UTF-8').gsub(/\r[^$]/, "\n").gsub(/^(\s*)#\s*include\s*.*$/, '\1')
     remove_comment!
@@ -227,6 +228,7 @@ class EncodingCode
       .gsub(/FP/, 'fp')
   end
 
+  # word にトークンセット
   def token_set(line)
     split_token(line).split(" ").map do |word|
       if EXPECT_CHARS.include? word
