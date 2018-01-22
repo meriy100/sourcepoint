@@ -43,7 +43,7 @@ class CurrentAssignment < ActiveHash::Base
       assignment_ids: [22, 87, 163, 228, 295, 367],
     }, {
       id: 572,
-      code: '1C2',
+      code: '01C2',
       assignment_ids: [6, 70, 144, 212, 281, 353, 426],
     }, {
       id: 576,

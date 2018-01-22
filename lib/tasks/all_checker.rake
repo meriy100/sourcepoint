@@ -37,8 +37,8 @@ namespace :all_checker do
       recall = (true_lines.length / template_lines.length.*(1.0))
       precision = (true_lines.length / submission_lines.length.*(1.0))
 
-      true_lines_group = submission_lines_group.map { |ls| template_lines.map(&:number).&(ls.map(&:number)) }.compact.reject{|g|g.empty?}
       submission_lines_group = template.submission.lines.to_a.collection_map{|f,s| f.number+1 == s.number}
+      true_lines_group = submission_lines_group.map { |ls| template_lines.map(&:number).&(ls.map(&:number)) }.compact.reject{|g|g.empty?}
       recall_of_group = (true_lines_group.flatten.length / template_lines.length.*(1.0))
       {
         template_id: template.id,
