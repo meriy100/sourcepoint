@@ -12,7 +12,34 @@ class Dictionary < Hash
 
   HASH_LIST = ('A'..'Z').to_a.concat(('a'..'z').to_a).combination(2).map{|a, b|"#{a}#{b}"}.shuffle(random: Random.new(100)).freeze
 
-  def initialize(assignment_id)
+
+  def graph_attach(maps)
+    result = maps.pop
+    [
+      result,
+      graph_attach(maps.reject{ |m| m[:key] == result[:key] })
+    ]
+  end
+
+  def initialize(assignment_id, option = {})
+    gdb_graph = option[:gdb_graph] || {}
+    other_graph = option[:other_graph] || {}
+    if gdb_graph.present? && other_graph.present?
+      maps = gdb_graph.map do |key, list|
+        other_graph.map{ |ok, og|
+          {
+            dist: Levenshtein.normalized_distance(list.json(' '), og['graph'].join(' ')),
+            other_key: ok,
+            other: og,
+            key: key,
+            gdb_graph:  list
+          }
+        }
+      end
+
+      graph_attach(maps.sort_by!{|m|m[:dist]})
+    end
+
     self.assignment_id = assignment_id
     hash_list_init
     reserve_word
