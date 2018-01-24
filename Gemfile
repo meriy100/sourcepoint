@@ -83,7 +83,7 @@ group :development, :test do
 
   gem 'annotate'
 end
-
+gem 'rails-erd', group: [:development, :test]
 
 group :test do
   gem 'rspec-mocks'
