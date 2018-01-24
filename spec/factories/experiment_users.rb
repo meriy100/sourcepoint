@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  start_at   :datetime
+#  csv_name   :string(255)
 #
 
 FactoryGirl.define do
