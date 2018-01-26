@@ -12,7 +12,12 @@
 #
 
 class ExperimentUser < ApplicationRecord
-
+  attr_accessor :csv_data
   acts_as_paranoid
   has_many :experiments
+
+  def csv_data
+    $csv_readed ||= CSVData.read_csv
+    @csv_data ||= CSVData.where(csv_name: self.csv_name).first
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124073145) do
+ActiveRecord::Schema.define(version: 20180124091336) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "code",                          default: "",    null: false
@@ -74,6 +74,14 @@ ActiveRecord::Schema.define(version: 20180124073145) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id", unique: true, using: :btree
+  end
+
+  create_table "experiment_lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "experiment_id",                 null: false
+    t.integer  "number",                        null: false
+    t.boolean  "deleted_line",  default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "experiment_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

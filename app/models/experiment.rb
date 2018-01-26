@@ -24,6 +24,7 @@ class Experiment < ApplicationRecord
   belongs_to_active_hash :current_assignment
 
   has_many :submissions
+  has_many :experiment_lines
 
   validates :file1, presence: true
 
@@ -31,5 +32,9 @@ class Experiment < ApplicationRecord
 
   def to_submission
     Submission.new(file1: file1, user_id: experiment_user_id, assignment_id: current_assignment_id, experiment_id: self.id)
+  end
+
+  def next
+    experiment_user.experiments[experiment_user.experiments.pluck(:id).index(id) + 1]
   end
 end
