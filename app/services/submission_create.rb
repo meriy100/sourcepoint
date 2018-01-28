@@ -1,3 +1,6 @@
+# NOBIGBIG
+# NOSECONDS
+# NOSPLIT
 class SubmissionCreate
   class Diffs < Array
     attr_accessor :actual, :expect
@@ -361,7 +364,7 @@ class SubmissionCreate
   end
 
   def nearest_attempts
-    @nearest_attempts ||= expect_attempts.to_a.uniq(&:encode_code).reject { |a| a.user_id ==  self.submission.user_id }.sort_by { |attempt|
+    @nearest_attempts ||= expect_attempts.search(created_at_lt: (ENV['NOBIGBIG'] == '1') ? Time.zone.now : 1.years.ago).result.to_a.uniq(&:encode_code).reject { |a| a.user_id ==  self.submission.user_id }.sort_by { |attempt|
       dist = Levenshtein.normalized_distance(actual.encode, attempt.encode_code)
       attempt.dist = dist
     }.reject { |attempt| same_search ? false  : attempt.dist == 0.0 }
@@ -377,12 +380,16 @@ class SubmissionCreate
     Rails.logger.info nearest_attempts.first.dist
     if run?(nearest_attempts)
       line_list = SearchBlock.new(self.submission, nearest_attempts.first, assignment_id).run
-      sub_line_lists = nearest_attempts[1..2].map do |ex|
-        SearchBlock.new(self.submission, ex, assignment_id).run
-      end
+      if ENV['NOSECONDS'] == '1'
+        checked_lines = []
+      else
+        sub_line_lists = nearest_attempts[1..2].map do |ex|
+          SearchBlock.new(self.submission, ex, assignment_id).run
+        end
 
-      checked_lines = sub_line_lists.flat_map do |ll|
-        ll.select { |l| l[:checked] }
+        checked_lines = sub_line_lists.flat_map do |ll|
+          ll.select { |l| l[:checked] }
+        end
       end
 
       line_list.reject{|l| l[:checked]}.reject{|l| checked_lines.any?{|cl| cl[:number] == l[:number]}  }.each do |line_attributes|

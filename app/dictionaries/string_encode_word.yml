@@ -2184,11 +2184,11 @@
     :encode_word: "@572_7"
   - :string: '"%3.f points -> %5.1f points\n"'
     :encode_word: "@572_8"
-  - :string: '"\n"'
-    :encode_word: "@572_9"
-  - :string: '"%3.0lf points -> %5.1lf points"'
-    :encode_word: "@572_10"
   - :string: '"100 points -> 100.0 points\n"'
+    :encode_word: "@572_9"
+  - :string: '"\n"'
+    :encode_word: "@572_10"
+  - :string: '"%3.0lf points -> %5.1lf points"'
     :encode_word: "@572_11"
   - :string: '"%3.0f points ->%6.1f points\n"'
     :encode_word: "@572_12"
@@ -10546,3 +10546,70 @@
     :encode_word: "@596_624"
   - :string: '"--------------------------------\n"'
     :encode_word: "@596_625"
+  '573':
+  - :string: '"%2d is not a prime number.\n"'
+    :encode_word: "@573_0"
+  - :string: '"%2d is a prime number.\n"'
+    :encode_word: "@573_1"
+  - :string: '"a prime number.\n"'
+    :encode_word: "@573_2"
+  - :string: '"%2d is "'
+    :encode_word: "@573_3"
+  - :string: '"not a prime number.\n"'
+    :encode_word: "@573_4"
+  - :string: '"%2.0d is a prime number.\n"'
+    :encode_word: "@573_5"
+  - :string: '"%2.0d is not a prime number.\n"'
+    :encode_word: "@573_6"
+  - :string: '"%2d is a prime number."'
+    :encode_word: "@573_7"
+  - :string: '"%2d is not a prime number."'
+    :encode_word: "@573_8"
+  - :string: '"\n"'
+    :encode_word: "@573_9"
+  - :string: '"%d is a prime number.\n"'
+    :encode_word: "@573_10"
+  - :string: '"%d is not a prime number.\n"'
+    :encode_word: "@573_11"
+  - :string: '" %d is a prime number.\n"'
+    :encode_word: "@573_12"
+  - :string: '" %d is not a prime number.\n"'
+    :encode_word: "@573_13"
+  - :string: '"%2.d is a prime number.\n"'
+    :encode_word: "@573_14"
+  - :string: '"%2.d is not a prime number.\n"'
+    :encode_word: "@573_15"
+  - :string: '" "'
+    :encode_word: "@573_16"
+  - :string: '"not "'
+    :encode_word: "@573_17"
+  - :string: '"%2d is"'
+    :encode_word: "@573_18"
+  - :string: '"%d"'
+    :encode_word: "@573_19"
+  - :string: '"%2.0f is a prime number.\n"'
+    :encode_word: "@573_20"
+  - :string: '"%2.0f is not a prime number.\n"'
+    :encode_word: "@573_21"
+  - :string: '" not"'
+    :encode_word: "@573_22"
+  - :string: '" a prime number.\n"'
+    :encode_word: "@573_23"
+  - :string: '"%d\n"'
+    :encode_word: "@573_24"
+  - :string: '"%2d"'
+    :encode_word: "@573_25"
+  - :string: '" is a prime number.\n"'
+    :encode_word: "@573_26"
+  - :string: '" is not a prime number.\n"'
+    :encode_word: "@573_27"
+  - :string: '"%2d "'
+    :encode_word: "@573_28"
+  - :string: '"is a prime number.\n"'
+    :encode_word: "@573_29"
+  - :string: '"is not a prime number.\n"'
+    :encode_word: "@573_30"
+  - :string: '"%2d is not "'
+    :encode_word: "@573_31"
+  - :string: '" not "'
+    :encode_word: "@573_32"
