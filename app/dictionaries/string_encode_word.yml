@@ -8076,3 +8076,2473 @@
       input: "'
     :encode_word: "@578_293"
   '3': []
+  '632':
+  - :string: '"%d"'
+    :encode_word: "@632_0"
+  - :string: '"-1\n"'
+    :encode_word: "@632_1"
+  - :string: '"%d %d"'
+    :encode_word: "@632_2"
+  - :string: '"%d %d\n"'
+    :encode_word: "@632_3"
+  - :string: '"%d\n"'
+    :encode_word: "@632_4"
+  - :string: '"\n"'
+    :encode_word: "@632_5"
+  - :string: '"-1"'
+    :encode_word: "@632_6"
+  - :string: !binary |-
+      IuaVsOWtlzogXG4i
+    :encode_word: "@632_7"
+  - :string: !binary |-
+      IlRhcm86ICVkICjlkIjoqIg6ICVkKSwgSGFuYWtvOiAlZCAo5ZCI6KiIOiAl
+      ZClcbiI=
+    :encode_word: "@632_8"
+  - :string: '"Not enough memory!\n"'
+    :encode_word: "@632_9"
+  - :string: !binary |-
+      IjEwMOOCiOOCiuWkp+OBjeOBhOWApOOBr+WFpeWKm+OBp+OBjeOBvuOBm+OC
+      kyI=
+    :encode_word: "@632_10"
+  - :string: '"error\n"'
+    :encode_word: "@632_11"
+  - :string: '"gett[%d]=%d\n"'
+    :encode_word: "@632_12"
+  - :string: !binary |-
+      IuWkqumDjuOBqOiKseWtkOOBruOCq+ODvOODieaVsOOBr++8n1xuIg==
+    :encode_word: "@632_13"
+  - :string: !binary |-
+      IuOCq+ODvOODieOBruWApFxuIg==
+    :encode_word: "@632_14"
+  - :string: '"%lf"'
+    :encode_word: "@632_15"
+  - :string: !binary |-
+      IuODoeODouODquOBjOeiuuS/neOBp+OBjeOBvuOBm+OCk1xuIg==
+    :encode_word: "@632_16"
+  - :string: !binary |-
+      IuOCq+ODvOODieOBruaemuaVsDogXG4i
+    :encode_word: "@632_17"
+  - :string: !binary |-
+      IuWJjTogJWQgJWRcbiI=
+    :encode_word: "@632_18"
+  - :string: !binary |-
+      IuWJjeWQiOioiDogJWQgJWRcbiI=
+    :encode_word: "@632_19"
+  - :string: !binary |-
+      IuW+jDogJWQgJWRcbiI=
+    :encode_word: "@632_20"
+  - :string: !binary |-
+      IuW+jOWQiOioiDogJWQgJWRcbiI=
+    :encode_word: "@632_21"
+  - :string: '"nnum=%d mnum=%d\n"'
+    :encode_word: "@632_22"
+  - :string: '"nsum=%d msum=%d\n"'
+    :encode_word: "@632_23"
+  - :string: '"nans=%d mans=%d\n"'
+    :encode_word: "@632_24"
+  - :string: '"nmanssum=%d nmsa=%d\n"'
+    :encode_word: "@632_25"
+  - :string: '"%d : "'
+    :encode_word: "@632_26"
+  - :string: !binary |-
+      IumgmOWfn+OBjOeiuuS/neOBp+OBjeOBvuOBm+OCk1xuIg==
+    :encode_word: "@632_27"
+  - :string: '"Allocation failed\n"'
+    :encode_word: "@632_28"
+  - :string: !binary |-
+      IuOCq+ODvOODieOBruaemuaVsOOCkuWFpeWKm1xuIg==
+    :encode_word: "@632_29"
+  - :string: !binary |-
+      IuWkqumDjuOBruWFpeWKm1xuIg==
+    :encode_word: "@632_30"
+  - :string: !binary |-
+      IuiKseWtkOOBruWFpeWKm1xuIg==
+    :encode_word: "@632_31"
+  - :string: !binary |-
+      Iue1kOaenFxuIg==
+    :encode_word: "@632_32"
+  - :string: !binary |-
+      IuS6jOS6uuOBjOWPl+OBkeOBqOOBo+OBn+OCq+ODvOODieOBruaemuaVsOOC
+      kuOBneOCjOOBnuOCjOWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhFxuIg==
+    :encode_word: "@632_33"
+  - :string: !binary |-
+      IuOBn+OCjeOCk+OBruaJi+aMgeOBoeOBruOCq+ODvOODieOBrueVquWPt+OC
+      kuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhFxuIg==
+    :encode_word: "@632_34"
+  - :string: !binary |-
+      IuiKseWtkOOBruaJi+aMgeOBoeOBruOCq+ODvOODieOBrueVquWPt+OCkuWF
+      peWKm+OBl+OBpuOBj+OBoOOBleOBhFxuIg==
+    :encode_word: "@632_35"
+  - :string: '"memory err!\n"'
+    :encode_word: "@632_36"
+  - :string: '"%d "'
+    :encode_word: "@632_37"
+  - :string: '"T.sum=%d %d\n"'
+    :encode_word: "@632_38"
+  - :string: '"H.sum=%d %d\n"'
+    :encode_word: "@632_39"
+  - :string: '"aveT=%d\n"'
+    :encode_word: "@632_40"
+  - :string: '"comp = %d + (%d - %d) = %d\n"'
+    :encode_word: "@632_41"
+  - :string: '"\t%d %d\n"'
+    :encode_word: "@632_42"
+  - :string: '"%d%d"'
+    :encode_word: "@632_43"
+  - :string: '"\n%d"'
+    :encode_word: "@632_44"
+  - :string: '"ta,ha[%d]=%d,%d\n"'
+    :encode_word: "@632_45"
+  - :string: '"cardt:%d\n"'
+    :encode_word: "@632_46"
+  - :string: '"total:%d\n"'
+    :encode_word: "@632_47"
+  - :string: '"a"'
+    :encode_word: "@632_48"
+  - :string: '"b"'
+    :encode_word: "@632_49"
+  - :string: '"taron:%d\n"'
+    :encode_word: "@632_50"
+  - :string: '"ct:%d\n"'
+    :encode_word: "@632_51"
+  - :string: '"ch:%d\n"'
+    :encode_word: "@632_52"
+  - :string: '"test:%d %d\n"'
+    :encode_word: "@632_53"
+  - :string: '"c"'
+    :encode_word: "@632_54"
+  - :string: '"taro"'
+    :encode_word: "@632_55"
+  - :string: '"hanako"'
+    :encode_word: "@632_56"
+  - :string: '"%d %d %d\n"'
+    :encode_word: "@632_57"
+  - :string: '"===%d %d %d===\n"'
+    :encode_word: "@632_58"
+  - :string: '"-----\n"'
+    :encode_word: "@632_59"
+  - :string: '"break\n"'
+    :encode_word: "@632_60"
+  - :string: '"check %d %d\n"'
+    :encode_word: "@632_61"
+  - :string: '"check2 %d %d\n"'
+    :encode_word: "@632_62"
+  - :string: '"---%d %d--\n"'
+    :encode_word: "@632_63"
+  - :string: '"diff=%d,d%%2=%d\n"'
+    :encode_word: "@632_64"
+  - :string: '"3:%d %d\n"'
+    :encode_word: "@632_65"
+  - :string: '"-1/n"'
+    :encode_word: "@632_66"
+  - :string: '"Not enough memory!(taro)\n"'
+    :encode_word: "@632_67"
+  - :string: '"Not enough memory!(hanako)\n"'
+    :encode_word: "@632_68"
+  - :string: '"aa\n"'
+    :encode_word: "@632_69"
+  - :string: '"bb\n"'
+    :encode_word: "@632_70"
+  - :string: '"sum_t = %d\n"'
+    :encode_word: "@632_71"
+  - :string: '"sum_h = %d\n"'
+    :encode_word: "@632_72"
+  - :string: '"sort fin\n"'
+    :encode_word: "@632_73"
+  - :string: '"def = %d\n"'
+    :encode_word: "@632_74"
+  - :string: '"odd checked\n"'
+    :encode_word: "@632_75"
+  - :string: '"%d,"'
+    :encode_word: "@632_76"
+  - :string: '"%d, %d, %d, %d\n"'
+    :encode_word: "@632_77"
+  - :string: !binary |-
+      IuOCs+ODs+ODkeOCpOODq+WujOS6hlxuIg==
+    :encode_word: "@632_78"
+  - :string: !binary |-
+      IuWFpeWKm+WujOS6hlxuIg==
+    :encode_word: "@632_79"
+  - :string: '"sum=%d,%d\n"'
+    :encode_word: "@632_80"
+  - :string: '"The number of cards is between 0 and 100.\n"'
+    :encode_word: "@632_81"
+  - :string: '"Please try again.\n"'
+    :encode_word: "@632_82"
+  - :string: '"x=%d\n"'
+    :encode_word: "@632_83"
+  - :string: '"y=%d\n"'
+    :encode_word: "@632_84"
+  - :string: '"Taro\n"'
+    :encode_word: "@632_85"
+  - :string: '"Hanako\n"'
+    :encode_word: "@632_86"
+  '623':
+  - :string: '"%s"'
+    :encode_word: "@623_0"
+  - :string: '"Your name, please:\n"'
+    :encode_word: "@623_1"
+  - :string: '"myinfo.txt","w"'
+    :encode_word: "@623_2"
+  - :string: '"Your age, please:\n"'
+    :encode_word: "@623_3"
+  - :string: '"Your student number, please:\n"'
+    :encode_word: "@623_4"
+  - :string: '"Your e-mail address, please:\n"'
+    :encode_word: "@623_5"
+  - :string: '"Cannot open file myinfo.txt for writing.\n"'
+    :encode_word: "@623_6"
+  - :string: '"myinfo.txt", "w"'
+    :encode_word: "@623_7"
+  - :string: '"Cannot open file myfile.txt for writing.\n"'
+    :encode_word: "@623_8"
+  - :string: '"%s%s%s%s"'
+    :encode_word: "@623_9"
+  - :string: '"\n"'
+    :encode_word: "@623_10"
+  - :string: '"Your e-mail address, please:"'
+    :encode_word: "@623_11"
+  - :string: '"Your age, please:"'
+    :encode_word: "@623_12"
+  - :string: '"Your student number, please:"'
+    :encode_word: "@623_13"
+  - :string: '"Your name, please:"'
+    :encode_word: "@623_14"
+  - :string: '"Unable to open file myinfo.txt.\n"'
+    :encode_word: "@623_15"
+  - :string: '"Your name, Please:\n"'
+    :encode_word: "@623_16"
+  - :string: '"myinfo.txt"'
+    :encode_word: "@623_17"
+  - :string: '"Your student number, please\n"'
+    :encode_word: "@623_18"
+  - :string: '"w"'
+    :encode_word: "@623_19"
+  - :string: '"Your age, please\n"'
+    :encode_word: "@623_20"
+  - :string: '"Cannot open file myfile. txt for writing.\n"'
+    :encode_word: "@623_21"
+  - :string: '"Your name,please:\n"'
+    :encode_word: "@623_22"
+  - :string: '"Your age,please:\n"'
+    :encode_word: "@623_23"
+  - :string: '"Your e-mail address,please:\n"'
+    :encode_word: "@623_24"
+  - :string: '"error\n"'
+    :encode_word: "@623_25"
+  - :string: '"Your e-mail address, please\n"'
+    :encode_word: "@623_26"
+  - :string: '"Unable to open file text.txt.\n"'
+    :encode_word: "@623_27"
+  - :string: '"Cannot open file myfile.txt for writing\n"'
+    :encode_word: "@623_28"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBruabuOi+vOOBv+OBq+WkseaVl+OBl+OBvuOBl+OB
+      ny5cbiI=
+    :encode_word: "@623_29"
+  - :string: '"Your e-mail, please:\n"'
+    :encode_word: "@623_30"
+  - :string: '"Cannot open file myinfo.txt for writing. \n"'
+    :encode_word: "@623_31"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBjOimi+OBpOOBi+OCiuOBvuOBm+OCk+OAglxuIg==
+    :encode_word: "@623_32"
+  - :string: '"Cannot open file myinfo.txt for writting.\n"'
+    :encode_word: "@623_33"
+  - :string: '"Cannnot open file myinfo.txt for writing.\n"'
+    :encode_word: "@623_34"
+  - :string: '"Cannot open file myinfo.txt for writing\n"'
+    :encode_word: "@623_35"
+  - :string: '"Cannot open file myinfo.txt for wrinting.\n"'
+    :encode_word: "@623_36"
+  - :string: '"myinfo.txt","wt"'
+    :encode_word: "@623_37"
+  - :string: '"Your name,please:"'
+    :encode_word: "@623_38"
+  - :string: '"Your age,please:"'
+    :encode_word: "@623_39"
+  - :string: '"Your e-mail address,please:"'
+    :encode_word: "@623_40"
+  - :string: '"your name, please:"'
+    :encode_word: "@623_41"
+  - :string: '"Cannot open file myinfo.txt.\n"'
+    :encode_word: "@623_42"
+  - :string: '"myfile.txt","w"'
+    :encode_word: "@623_43"
+  - :string: '"Cannot open file myinfo.txt\n"'
+    :encode_word: "@623_44"
+  - :string: '"Cannot open file.\n"'
+    :encode_word: "@623_45"
+  - :string: !binary |-
+      IumWi+OBkeOBvuOBm+OCk1xuIg==
+    :encode_word: "@623_46"
+  - :string: '"Cannot opne file myinfo.txt for writing.\n"'
+    :encode_word: "@623_47"
+  - :string: '"Unable to open file myinfo.text.\n"'
+    :encode_word: "@623_48"
+  - :string: '"name","student number","age","e-mail address"'
+    :encode_word: "@623_49"
+  - :string: '"Your %s, please:"'
+    :encode_word: "@623_50"
+  - :string: '"myinfo.txt","r"'
+    :encode_word: "@623_51"
+  - :string: '"Cannot open file myinfo.txt for writing"'
+    :encode_word: "@623_52"
+  - :string: '"Your age, please::\n"'
+    :encode_word: "@623_53"
+  - :string: !binary |-
+      IuODleOCoeOCpOODqyVz44GM6KaL44Gk44GL44KK44G+44Gb44KT44CCXG4i
+    :encode_word: "@623_54"
+  - :string: '"Your student number,please:\n"'
+    :encode_word: "@623_55"
+  - :string: '"Cannot open file myunfo.txt for writing.\n"'
+    :encode_word: "@623_56"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBjOimi+OBpOOBi+OCiuOBvuOBm+OCk1xuIg==
+    :encode_word: "@623_57"
+  - :string: '"Canot open the file myinfo.txt for writing\n"'
+    :encode_word: "@623_58"
+  - :string: '"Your name, please: \n"'
+    :encode_word: "@623_59"
+  - :string: '"Unable to open myinfo.txt.\n"'
+    :encode_word: "@623_60"
+  - :string: '"file open error\n"'
+    :encode_word: "@623_61"
+  - :string: '"Cannot open file myinfo.txt for writting. \n"'
+    :encode_word: "@623_62"
+  - :string: '"%d\n"'
+    :encode_word: "@623_63"
+  - :string: '"Cannot open file myinfo.txt for writing /n"'
+    :encode_word: "@623_64"
+  - :string: '"Cannot open file for writing.\n"'
+    :encode_word: "@623_65"
+  - :string: '"Your student number,please:"'
+    :encode_word: "@623_66"
+  - :string: '"Your age please:\n"'
+    :encode_word: "@623_67"
+  - :string: '"your student number, please:"'
+    :encode_word: "@623_68"
+  - :string: '"your age, please:"'
+    :encode_word: "@623_69"
+  - :string: '"your e-mail address, please:"'
+    :encode_word: "@623_70"
+  - :string: '"err file cannot open.\n"'
+    :encode_word: "@623_71"
+  - :string: '"Cannnot openfile myinfo.txt for writing.\n"'
+    :encode_word: "@623_72"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBjOS9nOaIkOOBp+OBjeOBvuOBm+OCk+OAglxuIg==
+    :encode_word: "@623_73"
+  - :string: '"Your number,please:\n"'
+    :encode_word: "@623_74"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBjOeUn+aIkOOBleOCjOOBvuOBm+OCk+OBp+OBl+OB
+      n1xuIg==
+    :encode_word: "@623_75"
+  - :string: '"Your age, please"'
+    :encode_word: "@623_76"
+  - :string: '"Unable to open file textfile\n"'
+    :encode_word: "@623_77"
+  - :string: !binary |-
+      IumWi+OBkeOBvuOBm+OCk+OBp+OBl+OBn+OCiC5teWluZm8udHh0XG4i
+    :encode_word: "@623_78"
+  - :string: '"Cannot open file myfile. txt for writing. \n"'
+    :encode_word: "@623_79"
+  - :string: '"Your student number, Please:\n"'
+    :encode_word: "@623_80"
+  - :string: '"Your age, Please:\n"'
+    :encode_word: "@623_81"
+  - :string: '"Your e-mail address, Please:\n"'
+    :encode_word: "@623_82"
+  - :string: !binary |-
+      Im15aW5mby50eHQg44KS6ZaL44GR44G+44Gb44KT44Gn44GX44GfXG4i
+    :encode_word: "@623_83"
+  - :string: '"err.\n"'
+    :encode_word: "@623_84"
+  - :string: '"your name, please:\n"'
+    :encode_word: "@623_85"
+  - :string: '"Your sudent number, please:\n"'
+    :encode_word: "@623_86"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBjOS9nOOCjOOBvuOBm+OCk1xuIg==
+    :encode_word: "@623_87"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq215aW5mby50eHTjgYzkvZzjgozjgb7jgZvjgpPjgIJc
+      biI=
+    :encode_word: "@623_88"
+  - :string: '"Cannot open file myinfo.txt fo writeing\n"'
+    :encode_word: "@623_89"
+  - :string: '"Cannot open the file.\n"'
+    :encode_word: "@623_90"
+  - :string: '"Cannot open file myinfo.txt for witing.\n"'
+    :encode_word: "@623_91"
+  - :string: '"Your e-mail adress, please:\n"'
+    :encode_word: "@623_92"
+  - :string: '"Cannnot open file myfile.txt for writing.\n"'
+    :encode_word: "@623_93"
+  - :string: '"Cannot open file myfile.\n"'
+    :encode_word: "@623_94"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OCquODvOODl+ODs+OCqOODqeODvFxuIg==
+    :encode_word: "@623_95"
+  - :string: '"Your number, please:\n"'
+    :encode_word: "@623_96"
+  - :string: '"Cannot open file for writing."'
+    :encode_word: "@623_97"
+  - :string: '"can''t open\n"'
+    :encode_word: "@623_98"
+  - :string: '"Cannot open file %s for writing.\n"'
+    :encode_word: "@623_99"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq215aW5mby50eHTjgYzopovjgaTjgYvjgorjgb7jgZvj
+      gpPjgafjgZfjgZ/jgIJcbiI=
+    :encode_word: "@623_100"
+  - :string: '"Cannot open file myinfo.txt forwriting.\n"'
+    :encode_word: "@623_101"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBjOS9nOOCjOOBvuOBm+OCk+OBp+OBl+OBn+OAglxu
+      Ig==
+    :encode_word: "@623_102"
+  - :string: '"Unable to open file text.txt\n"'
+    :encode_word: "@623_103"
+  - :string: '"CAnnot open file myfile.txt for writing.\n"'
+    :encode_word: "@623_104"
+  - :string: '"test.txt"'
+    :encode_word: "@623_105"
+  - :string: '"myinfo.txt" , "r"'
+    :encode_word: "@623_106"
+  - :string: '"cannot open file myfile.txt for writing.\n"'
+    :encode_word: "@623_107"
+  - :string: '"Your student number. please:\n"'
+    :encode_word: "@623_108"
+  - :string: '"Yout age, please:\n"'
+    :encode_word: "@623_109"
+  - :string: '"a\n"'
+    :encode_word: "@623_110"
+  - :string: '"Cannot open file myfile.txt for writting error\n"'
+    :encode_word: "@623_111"
+  - :string: '"Unable to open file\n"'
+    :encode_word: "@623_112"
+  - :string: '"Unable to open file.\n"'
+    :encode_word: "@623_113"
+  - :string: '"Youre-mail address, please:\n"'
+    :encode_word: "@623_114"
+  - :string: '"the file can not be opened\n"'
+    :encode_word: "@623_115"
+  - :string: '"the file can not be closed\n"'
+    :encode_word: "@623_116"
+  - :string: !binary |-
+      IuODleOCoeOCpOODqyVT44GM6KaL44Gk44GL44KK44G+44Gb44KTXG4iLCJt
+      eWluZm8udHh0Ig==
+    :encode_word: "@623_117"
+  - :string: '"Cannot open file myfile.txt for writinfg.\n"'
+    :encode_word: "@623_118"
+  - :string: '"Your student number, please: \n"'
+    :encode_word: "@623_119"
+  - :string: '"Your age, please: \n"'
+    :encode_word: "@623_120"
+  - :string: '"Your e-mail address, please: \n"'
+    :encode_word: "@623_121"
+  - :string: '"Cannot open file myself. txt for writing.\n"'
+    :encode_word: "@623_122"
+  - :string: '"Your number,please:"'
+    :encode_word: "@623_123"
+  - :string: '"Cannot open file myself.txt for writing.\n"'
+    :encode_word: "@623_124"
+  - :string: '"Your name, pleas:\n"'
+    :encode_word: "@623_125"
+  - :string: '"your e-mail address, please:\n"'
+    :encode_word: "@623_126"
+  - :string: '"your e-mail address:\n"'
+    :encode_word: "@623_127"
+  - :string: '"Cannot open file ''myinfo.txt''.\n"'
+    :encode_word: "@623_128"
+  - :string: '"Cannot open filt myfile.txt for writing.\n"'
+    :encode_word: "@623_129"
+  - :string: !binary |-
+      IumWi+OBkeOBvuOBm+OCkyI=
+    :encode_word: "@623_130"
+  - :string: '"Cannot open file myself.tet for writing.\n"'
+    :encode_word: "@623_131"
+  - :string: '"%S"'
+    :encode_word: "@623_132"
+  - :string: '"Unable to open file raw.bin.\n"'
+    :encode_word: "@623_133"
+  - :string: '"Unable to open file myinfo.txt \n"'
+    :encode_word: "@623_134"
+  - :string: '"Cannot open file myfile myinfo.txt for writing.\n"'
+    :encode_word: "@623_135"
+  - :string: '"Your name, please:/n"'
+    :encode_word: "@623_136"
+  - :string: '"Your name,please\n"'
+    :encode_word: "@623_137"
+  - :string: '"Your student number,please\n"'
+    :encode_word: "@623_138"
+  - :string: '"Your age,please"'
+    :encode_word: "@623_139"
+  - :string: '"Your e-mail address,please\n"'
+    :encode_word: "@623_140"
+  - :string: '"Not use file\n"'
+    :encode_word: "@623_141"
+  - :string: '"Your name, please :\n"'
+    :encode_word: "@623_142"
+  - :string: '"Your student number, please :\n"'
+    :encode_word: "@623_143"
+  - :string: '"Your age, please :\n"'
+    :encode_word: "@623_144"
+  - :string: '"Your e-mail address, please :\n"'
+    :encode_word: "@623_145"
+  - :string: '"cannot open file.\n"'
+    :encode_word: "@623_146"
+  - :string: '""'
+    :encode_word: "@623_147"
+  - :string: '"File not found: %s\n"'
+    :encode_word: "@623_148"
+  - :string: '"Cannot open file myfile.txtfor writing.\n"'
+    :encode_word: "@623_149"
+  - :string: '"Your name, plaese:\n"'
+    :encode_word: "@623_150"
+  - :string: '"Your students number, please:\n"'
+    :encode_word: "@623_151"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OCkuS9nOaIkOOBp+OBjeOBvuOBm+OCk+OBp+OBl+OB
+      n1xuIg==
+    :encode_word: "@623_152"
+  - :string: '"%d"'
+    :encode_word: "@623_153"
+  - :string: '"%s%s%d\n%s"'
+    :encode_word: "@623_154"
+  - :string: '"Can''t find\n"'
+    :encode_word: "@623_155"
+  - :string: !binary |-
+      IkNhbm5vdCBvcGVuIGZpbGUgbXlmaWxlLnR4dCBmb3Igd3JpdGluZ++8jlxu
+      Ig==
+    :encode_word: "@623_156"
+  - :string: '"file is not exist"'
+    :encode_word: "@623_157"
+  - :string: '"Can not open file myfile.txt for writing.\n"'
+    :encode_word: "@623_158"
+  - :string: !binary |-
+      IuODleOCoeOCpOODqyAlcyDjgYzopovjgaTjgYvjgorjgb7jgZvjgpPjgIIv
+      biI=
+    :encode_word: "@623_159"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBjOmWi+OBkeOBvuOBm+OCk1xuIg==
+    :encode_word: "@623_160"
+  - :string: '"cannot open file myinfo.txt for writeing.\n"'
+    :encode_word: "@623_161"
+  - :string: '"Cannot find myinfo.txt.\n"'
+    :encode_word: "@623_162"
+  - :string: '"Cannot open file mylile. txt for writing.\n"'
+    :encode_word: "@623_163"
+  - :string: '"cannot open file myinfo.txt for writing.\n"'
+    :encode_word: "@623_164"
+  - :string: '"miss\n"'
+    :encode_word: "@623_165"
+  - :string: '"name\n"'
+    :encode_word: "@623_166"
+  - :string: '"num\n"'
+    :encode_word: "@623_167"
+  - :string: '"age\n"'
+    :encode_word: "@623_168"
+  - :string: '"mail\n"'
+    :encode_word: "@623_169"
+  - :string: '"Your e-mail adress, please:"'
+    :encode_word: "@623_170"
+  - :string: '"Cannot open file myfile.txt for wrinting.\n"'
+    :encode_word: "@623_171"
+  - :string: '"your syudent number,please:"'
+    :encode_word: "@623_172"
+  - :string: !binary |-
+      IllvdXIgbmFtZSzjgIBwbGVhc2U6XG4i
+    :encode_word: "@623_173"
+  - :string: '"Your syudent number, please:\n"'
+    :encode_word: "@623_174"
+  - :string: !binary |-
+      IuODleOCoeOCpOODq+OBjOiqreOBv+i+vOOCgeOBvuOBm+OCky9uIg==
+    :encode_word: "@623_175"
+  - :string: '"stdlib.h"'
+    :encode_word: "@623_176"
+  - :string: '"Cannot open fire myfile. txt for writing.\n"'
+    :encode_word: "@623_177"
+  - :string: '"Cannot open myinfo.txt for wrinting.\n"'
+    :encode_word: "@623_178"
+  - :string: '"Your email, please:\n"'
+    :encode_word: "@623_179"
+  - :string: '"Connot open file myinfo.txt for writing.\n"'
+    :encode_word: "@623_180"
+  '596':
+  - :string: '"%lf"'
+    :encode_word: "@596_0"
+  - :string: !binary |-
+      IumItOacqOWFrOWtnSI=
+    :encode_word: "@596_1"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCI=
+    :encode_word: "@596_2"
+  - :string: !binary |-
+      IuWkp+iwt+iBluWtkCI=
+    :encode_word: "@596_3"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyI=
+    :encode_word: "@596_4"
+  - :string: !binary |-
+      IuW2i+eUsOWPi+WtkCI=
+    :encode_word: "@596_5"
+  - :string: '"%d %s\t%4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_6"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG4i
+    :encode_word: "@596_7"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDpcbiI=
+    :encode_word: "@596_8"
+  - :string: !binary |-
+      IuS4remHjuW5uOWKqSI=
+    :encode_word: "@596_9"
+  - :string: !binary |-
+      IuiXpOeUsOawuOaYkyI=
+    :encode_word: "@596_10"
+  - :string: !binary |-
+      Iua6gOeUsOmBk+WtkCI=
+    :encode_word: "@596_11"
+  - :string: !binary |-
+      IuWxseeUsOWQieaFtiI=
+    :encode_word: "@596_12"
+  - :string: !binary |-
+      Iua4oei+uuiKseWtkCI=
+    :encode_word: "@596_13"
+  - :string: !binary |-
+      IuiLseiqnjogIg==
+    :encode_word: "@596_14"
+  - :string: '"\n"'
+    :encode_word: "@596_15"
+  - :string: "\"-------- --------\t---- ---- ----\\n\""
+    :encode_word: "@596_16"
+  - :string: !binary |-
+      IuaVsOWtpjogIg==
+    :encode_word: "@596_17"
+  - :string: !binary |-
+      IuiLseiqnu+8miAi
+    :encode_word: "@596_18"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjQlNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_19"
+  - :string: !binary |-
+      IuaVsOWtpu+8miAi
+    :encode_word: "@596_20"
+  - :string: !binary |-
+      IuiLseiqnu+8miI=
+    :encode_word: "@596_21"
+  - :string: !binary |-
+      IuiLseiqnjoi
+    :encode_word: "@596_22"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhDpc
+      biI=
+    :encode_word: "@596_23"
+  - :string: !binary |-
+      IuaVsOWtpjoi
+    :encode_word: "@596_24"
+  - :string: '"%f"'
+    :encode_word: "@596_25"
+  - :string: !binary |-
+      IuaVsOWtpu+8miI=
+    :encode_word: "@596_26"
+  - :string: '" \n"'
+    :encode_word: "@596_27"
+  - :string: '"X\n"'
+    :encode_word: "@596_28"
+  - :string: '"M\n"'
+    :encode_word: "@596_29"
+  - :string: '"E\n"'
+    :encode_word: "@596_30"
+  - :string: '"-------- --------\t---- ---- ----\n"'
+    :encode_word: "@596_31"
+  - :string: !binary |-
+      IlN0dWRlbnQjICDlkI3lrZflkI3liY1cdE1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_32"
+  - :string: '"-------- -------- ---- ---- ----\n"'
+    :encode_word: "@596_33"
+  - :string: '"%d  %s\t%4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_34"
+  - :string: '"--------  --------\t---- ---- ----\n"'
+    :encode_word: "@596_35"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_36"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVkXG4i
+    :encode_word: "@596_37"
+  - :string: '"%4.1lf "'
+    :encode_word: "@596_38"
+  - :string: '"%d %s\t%4.1lf %4.1lf "'
+    :encode_word: "@596_39"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSBNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_40"
+  - :string: '"%2lf"'
+    :encode_word: "@596_41"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhO+8mlxu
+      Ig==
+    :encode_word: "@596_42"
+  - :string: '"%c\n"'
+    :encode_word: "@596_43"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjQlNYXRoIEVuZyAgRmFpbFxuLS0tLS0t
+      LS0gLS0tLS0tLS0JLS0tLSAtLS0tIC0tLS1cbiI=
+    :encode_word: "@596_44"
+  - :string: '"%3lf"'
+    :encode_word: "@596_45"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhO+8
+      mlxuIg==
+    :encode_word: "@596_46"
+  - :string: "\"--------  --------\t---- ---- ----\\n\""
+    :encode_word: "@596_47"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAlZOeVqlxuIg==
+    :encode_word: "@596_48"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjU1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_49"
+  - :string: !binary |-
+      IlN0dWRlbnQjICDlkI3lrZflkI3liY0JTWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_50"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSBNYXRoIEVuZyBGYWlsXG4i
+    :encode_word: "@596_51"
+  - :string: '"%s\t"'
+    :encode_word: "@596_52"
+  - :string: '"X"'
+    :encode_word: "@596_53"
+  - :string: '"M"'
+    :encode_word: "@596_54"
+  - :string: '"E"'
+    :encode_word: "@596_55"
+  - :string: '" "'
+    :encode_word: "@596_56"
+  - :string: !binary |-
+      IuiLseiqnu+8muOAgCI=
+    :encode_word: "@596_57"
+  - :string: '"%d\n"'
+    :encode_word: "@596_58"
+  - :string: !binary |-
+      IuiLseiqniA6ICI=
+    :encode_word: "@596_59"
+  - :string: '"%d %s\t"'
+    :encode_word: "@596_60"
+  - :string: !binary |-
+      IuaVsOWtpiA6ICI=
+    :encode_word: "@596_61"
+  - :string: '"-------- --------       ---- ---- ----\n"'
+    :encode_word: "@596_62"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDoi
+    :encode_word: "@596_63"
+  - :string: '"%d"'
+    :encode_word: "@596_64"
+  - :string: !binary |-
+      IuaVsOWtpu+8muOAgCI=
+    :encode_word: "@596_65"
+  - :string: '"%d "'
+    :encode_word: "@596_66"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtyVk55WqXG4i
+    :encode_word: "@596_67"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhFxuIg==
+    :encode_word: "@596_68"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhFxu
+      Ig==
+    :encode_word: "@596_69"
+  - :string: '"%lf %lf"'
+    :encode_word: "@596_70"
+  - :string: !binary |-
+      IuiLseiqnjogICI=
+    :encode_word: "@596_71"
+  - :string: !binary |-
+      IuaVsOWtpu+8mlxuIg==
+    :encode_word: "@596_72"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqIg==
+    :encode_word: "@596_73"
+  - :string: '"  \n"'
+    :encode_word: "@596_74"
+  - :string: !binary |-
+      IuaVsOWtpjogICI=
+    :encode_word: "@596_75"
+  - :string: !binary |-
+      IueVqlxuIg==
+    :encode_word: "@596_76"
+  - :string: '"%d  %s\t%4.1lf %4.1lf "'
+    :encode_word: "@596_77"
+  - :string: '" M\n"'
+    :encode_word: "@596_78"
+  - :string: '" E\n"'
+    :encode_word: "@596_79"
+  - :string: '" X\n"'
+    :encode_word: "@596_80"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_81"
+  - :string: '"%4.1f %4.1f %c\n"'
+    :encode_word: "@596_82"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjVx0TWF0aCBFbmcgRmFpbFxuIg==
+    :encode_word: "@596_83"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVsZOeVqlxuIg==
+    :encode_word: "@596_84"
+  - :string: !binary |-
+      IlN0dWRlbnQjXHTlkI3lrZflkI3liY0gTWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_85"
+  - :string: '"--------\t-------- ---- ---- ----\n"'
+    :encode_word: "@596_86"
+  - :string: !binary |-
+      IuiLseiqnjpcbiI=
+    :encode_word: "@596_87"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlrabvvJogIg==
+    :encode_word: "@596_88"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtyVkIg==
+    :encode_word: "@596_89"
+  - :string: !binary |-
+      IjE1OTkxMDAxIOWuieeArOiBoeW4jAklNC4xZiAlNC4xZiAlY1xuIg==
+    :encode_word: "@596_90"
+  - :string: !binary |-
+      IjE1OTkxMDAyIOWkp+iwt+iBluWtkAklNC4xZiAlNC4xZiAlY1xuIg==
+    :encode_word: "@596_91"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOm7kuW3neWTsuS5nwklNC4xZiAlNC4xZiAlY1xuIg==
+    :encode_word: "@596_92"
+  - :string: !binary |-
+      IjE1OTkxMDA0IOW2i+eUsOWPi+WtkAklNC4xZiAlNC4xZiAlY1xuIg==
+    :encode_word: "@596_93"
+  - :string: !binary |-
+      IjE1OTkxMDA1IOmItOacqOWFrOWtnQklNC4xZiAlNC4xZiAlY1xuIg==
+    :encode_word: "@596_94"
+  - :string: '"%d %s\t%4.1lf %4.1lf  \n"'
+    :encode_word: "@596_95"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhOOAglxu
+      Ig==
+    :encode_word: "@596_96"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAx55WqXG4i
+    :encode_word: "@596_97"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAz55WqXG4i
+    :encode_word: "@596_98"
+  - :string: '"%d %s\t%4.1lf %4.1lf %c"'
+    :encode_word: "@596_99"
+  - :string: !binary |-
+      InN0dWRlbnQjIOWQjeWtl+WQjeWJjSBNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_100"
+  - :string: '" %c\n"'
+    :encode_word: "@596_101"
+  - :string: !binary |-
+      IuaVsOWtpjpcbiI=
+    :encode_word: "@596_102"
+  - :string: !binary |-
+      IuWtpueUn+eCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhO+8mlxuIg==
+    :encode_word: "@596_103"
+  - :string: !binary |-
+      IuaVsOWtpiA6Ig==
+    :encode_word: "@596_104"
+  - :string: !binary |-
+      IuiLseiqniA6Ig==
+    :encode_word: "@596_105"
+  - :string: '"________ ________ ____ ____ ____\n"'
+    :encode_word: "@596_106"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwfSx7MTU5OTEwMDIsIuWkp+iwt+iBluWtkCIs
+      MCwwfSx7MTU5OTEwMDMsIum7kuW3neWTsuS5nyIsMCwwfSx7MTU5OTEwMDQs
+      IuW2i+eUsOWPi+WtkCIsMCwwfSx7MTU5OTEwMDUsIumItOacqOWFrOWtnSI=
+    :encode_word: "@596_107"
+  - :string: !binary |-
+      IuaVsOWtpuOAgDoi
+    :encode_word: "@596_108"
+  - :string: !binary |-
+      IuiLseiqnuOAgDoi
+    :encode_word: "@596_109"
+  - :string: !binary |-
+      Ilxu5a2m55Sf55Wq5Y+3ICVkIFxu5pWw5a2m77yaIg==
+    :encode_word: "@596_110"
+  - :string: '"Student# Name       Math Eng  Fail\n"'
+    :encode_word: "@596_111"
+  - :string: '"-------- ---------- ---- ---- ----\n"'
+    :encode_word: "@596_112"
+  - :string: '"-------- --------      ---- ---- ----\n"'
+    :encode_word: "@596_113"
+  - :string: '"%4.1lf %4.1lf "'
+    :encode_word: "@596_114"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgIFx0TWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_115"
+  - :string: '"\t%4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_116"
+  - :string: '" %lf"'
+    :encode_word: "@596_117"
+  - :string: '"-------- -------       ---- ---- ----\n"'
+    :encode_word: "@596_118"
+  - :string: !binary |-
+      IuaVsOWtpjpcdCI=
+    :encode_word: "@596_119"
+  - :string: !binary |-
+      IuiLseiqnjpcdCI=
+    :encode_word: "@596_120"
+  - :string: '"%ld  "'
+    :encode_word: "@596_121"
+  - :string: '"%d %s\t%4.1lf %4.1lf %s\n"'
+    :encode_word: "@596_122"
+  - :string: '"%d %s\t%4.1lf %4.1lf"'
+    :encode_word: "@596_123"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgICAgICBNYXRoIEVuZyAgRmFpbFxu
+      Ig==
+    :encode_word: "@596_124"
+  - :string: '"%ld %s\t%4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_125"
+  - :string: !binary |-
+      IuaVsOWtpuOAgDpcbiI=
+    :encode_word: "@596_126"
+  - :string: !binary |-
+      IuiLseiqnuOAgDpcbiI=
+    :encode_word: "@596_127"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCJ9LHsxNTk5MTAwMiwi5aSn6LC36IGW5a2QIn0sezE1
+      OTkxMDAzLCLpu5Llt53lk7LkuZ8ifSx7MTU5OTEwMDQsIuW2i+eUsOWPi+Wt
+      kCJ9LHsxNTk5MTAwNSwi6Yi05pyo5YWs5a2dIg==
+    :encode_word: "@596_128"
+  - :string: '"%d %s\t%.1lf %.1lf "'
+    :encode_word: "@596_129"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlrabvvJrjgIAi
+    :encode_word: "@596_130"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjU1hdGggRW5nIEZhaWxcbiI=
+    :encode_word: "@596_131"
+  - :string: !binary |-
+      IjE1OTkxMDAxIiwi5a6J54Cs6IGh5biMIg==
+    :encode_word: "@596_132"
+  - :string: !binary |-
+      IjE1OTkxMDAyIiwi5aSn6LC36IGW5a2QIg==
+    :encode_word: "@596_133"
+  - :string: !binary |-
+      IjE1OTkxMDAzIiwi6buS5bed5ZOy5LmfIg==
+    :encode_word: "@596_134"
+  - :string: !binary |-
+      IjE1OTkxMDA0Iiwi5baL55Sw5Y+L5a2QIg==
+    :encode_word: "@596_135"
+  - :string: !binary |-
+      IjE1OTkxMDA1Iiwi6Yi05pyo5YWs5a2dIg==
+    :encode_word: "@596_136"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlrabvvJoi
+    :encode_word: "@596_137"
+  - :string: '"%d %s\t%4.1f %4.1f %c\n"'
+    :encode_word: "@596_138"
+  - :string: !binary |-
+      IjE1OTkxMDAxICVzXHQlLjFsZiAlNC4xbGYgJWNcbiIsIuWuieeArOiBoeW4
+      jCI=
+    :encode_word: "@596_139"
+  - :string: !binary |-
+      IjE1OTkxMDAyICVzXHQlLjFsZiAlNC4xbGYgJWNcbiIsIuWkp+iwt+iBluWt
+      kCI=
+    :encode_word: "@596_140"
+  - :string: !binary |-
+      IjE1OTkxMDAzICVzXHQlLjFsZiAlNC4xbGYgJWNcbiIsIum7kuW3neWTsuS5
+      nyI=
+    :encode_word: "@596_141"
+  - :string: !binary |-
+      IjE1OTkxMDA0ICVzXHQlLjFsZiAlNC4xbGYgJWNcbiIsIuW2i+eUsOWPi+Wt
+      kCI=
+    :encode_word: "@596_142"
+  - :string: !binary |-
+      IjE1OTkxMDA1ICVzXHQlLjFsZiAlNC4xbGYgJWNcbiIsIumItOacqOWFrOWt
+      nSI=
+    :encode_word: "@596_143"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjQlNYXRoIEVuZyAgRmFpbFxuLS0tLS0t
+      LS0gLS0tLS0tLS1cdC0tLS0gLS0tLSAtLS0tXG4i
+    :encode_word: "@596_144"
+  - :string: !binary |-
+      InN0dWRlbnQjIOWQjeWtl+WQjeWJjU1hdGggRW5nIEZhaWxcbiI=
+    :encode_word: "@596_145"
+  - :string: !binary |-
+      IuaVsOWtpjrjgIAi
+    :encode_word: "@596_146"
+  - :string: '"%lf\n"'
+    :encode_word: "@596_147"
+  - :string: '"-------- --------    ---- ---- ----\n"'
+    :encode_word: "@596_148"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNXHRNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_149"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDE155WqXG4i
+    :encode_word: "@596_150"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDIz55WqXG4i
+    :encode_word: "@596_151"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDQ055WqXG4i
+    :encode_word: "@596_152"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDU355WqXG4i
+    :encode_word: "@596_153"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDY055WqXG4i
+    :encode_word: "@596_154"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDc355WqXG4i
+    :encode_word: "@596_155"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMTEx55WqXG4i
+    :encode_word: "@596_156"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMjM055WqXG4i
+    :encode_word: "@596_157"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlraY6Ig==
+    :encode_word: "@596_158"
+  - :string: '"1599%d %s\t%4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_159"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhOOA
+      glxuIg==
+    :encode_word: "@596_160"
+  - :string: '"%d  %s\t%4.1f %4.1f %c\n"'
+    :encode_word: "@596_161"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAlZFxuIg==
+    :encode_word: "@596_162"
+  - :string: '"%d  %s\t%.1lf %.1lf %c\n"'
+    :encode_word: "@596_163"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDogXG4i
+    :encode_word: "@596_164"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAy55WqXG4i
+    :encode_word: "@596_165"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDA055WqXG4i
+    :encode_word: "@596_166"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDA155WqXG4i
+    :encode_word: "@596_167"
+  - :string: !binary |-
+      IjXkurrjga7lrabnlJ/jga7ngrnmlbDjgpLlhaXjgozjgabkuIvjgZXjgYRc
+      biI=
+    :encode_word: "@596_168"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgICAgIE1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_169"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgICAgICAgTWF0aCBFbmcgIEZhaWxc
+      biI=
+    :encode_word: "@596_170"
+  - :string: '"-------- --------        ---- ---- ----\n"'
+    :encode_word: "@596_171"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgICAgICBNYXRoIEVuZyBGYWlsXG4i
+    :encode_word: "@596_172"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSBNYXRoIEVuZyAgRmFpbFxuLS0tLS0t
+      LS0gLS0tLS0tLS0gLS0tLSAtLS0tIC0tLS1cbiI=
+    :encode_word: "@596_173"
+  - :string: !binary |-
+      IuWtpueUn+OBrueVquWPt+OCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDpcbiI=
+    :encode_word: "@596_174"
+  - :string: '"-------- ------------ ---- ----\n"'
+    :encode_word: "@596_175"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtzE1OTkxMDAx55WqXG4i
+    :encode_word: "@596_176"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtzE1OTkxMDAy55WqXG4i
+    :encode_word: "@596_177"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtzE1OTkxMDAz55WqXG4i
+    :encode_word: "@596_178"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtzE1OTkxMDA055WqXG4i
+    :encode_word: "@596_179"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtzE1OTkxMDA155WqXG4i
+    :encode_word: "@596_180"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOiLl+Wtl+WQjeWJjSAgICAgTWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_181"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjeOAgE1hdGggRW5nIEZhaWxcbiI=
+    :encode_word: "@596_182"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhCA6XG4i
+    :encode_word: "@596_183"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNCU1hdGggRW5nICBGYWlsXG4tLS0t
+      LS0tLSAtLS0tLS0tLQktLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_184"
+  - :string: !binary |-
+      IuiLseiqnjrjgIAi
+    :encode_word: "@596_185"
+  - :string: !binary |-
+      IjEw5Lq644Gu5a2m55Sf44Gu54K55pWw44KS5YWl44KM44Gm5LiL44GV44GE
+      XG4i
+    :encode_word: "@596_186"
+  - :string: !binary |-
+      IuiLseiqnjogXG4i
+    :encode_word: "@596_187"
+  - :string: "\"%d %s\t%4.1lf %4.1lf  \\n\""
+    :encode_word: "@596_188"
+  - :string: !binary |-
+      InN0dWRlbnQjIOWQjeWtl+WQjeWJjU1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_189"
+  - :string: '"%d %s\t%4.1f %4.1f"'
+    :encode_word: "@596_190"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDpcbuWt
+      pueUn+eVquWPtyVk55WqXG4i
+    :encode_word: "@596_191"
+  - :string: '"%d %s\t%4.1lf %4.1lf E\n"'
+    :encode_word: "@596_192"
+  - :string: '"%d %s\t%4.1lf %4.1lf M\n"'
+    :encode_word: "@596_193"
+  - :string: '"%d %s\t%4.1lf %4.1lf X\n"'
+    :encode_word: "@596_194"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWwgXG4i
+    :encode_word: "@596_195"
+  - :string: '"-------- --------\t---- ---- ---- \n"'
+    :encode_word: "@596_196"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAlZOeVqjpcbiI=
+    :encode_word: "@596_197"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwLCIi
+    :encode_word: "@596_198"
+  - :string: !binary |-
+      IuWkp+iwt+iBluWtkCIsMCwwLCIi
+    :encode_word: "@596_199"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyIsMCwwLCIi
+    :encode_word: "@596_200"
+  - :string: !binary |-
+      IuW2i+eUsOWPi+WtkCIsMCwwLCIi
+    :encode_word: "@596_201"
+  - :string: !binary |-
+      IumItOacqOWFrOWtnSIsMCwwLCIi
+    :encode_word: "@596_202"
+  - :string: '"%s  %s\t%.1lf %.1lf %c\n"'
+    :encode_word: "@596_203"
+  - :string: !binary |-
+      IlN0dWRlbnQjICDlkI3lrZflkI3liY0JTWF0aCBFbmcgIEZhaWxcbi0tLS0t
+      LS0tICAtLS0tLS0tLQktLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_204"
+  - :string: '"aaaa"'
+    :encode_word: "@596_205"
+  - :string: !binary |-
+      IuaVsOWtpjolMC4wbGZcbiI=
+    :encode_word: "@596_206"
+  - :string: !binary |-
+      IuiLseiqnjolMC4wbGZcbiI=
+    :encode_word: "@596_207"
+  - :string: '"%d  %s\t%0.1lf %0.1lf %c\n"'
+    :encode_word: "@596_208"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtyVkXG4i
+    :encode_word: "@596_209"
+  - :string: !binary |-
+      IuaVsOWtpuOAgDogICI=
+    :encode_word: "@596_210"
+  - :string: !binary |-
+      IuiLseiqnuOAgDogICI=
+    :encode_word: "@596_211"
+  - :string: '"-------- -------- \t---- ---- ----\n"'
+    :encode_word: "@596_212"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNIE1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_213"
+  - :string: '" %s"'
+    :encode_word: "@596_214"
+  - :string: '" %4.1lf"'
+    :encode_word: "@596_215"
+  - :string: !binary |-
+      IjE1OTkxMDAxIOWuieeArOiBoeW4jFx0JTAuMWYgJTAuMWYgIg==
+    :encode_word: "@596_216"
+  - :string: !binary |-
+      IjE1OTkxMDAyIOWkp+iwt+iBluWtkFx0JTAuMWYgJTAuMWYgIg==
+    :encode_word: "@596_217"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOm7kuW3neWTsuS5n1x0JTAuMWYgJTAuMWYgIg==
+    :encode_word: "@596_218"
+  - :string: !binary |-
+      IjE1OTkxMDA0IOW2i+eUsOWPi+WtkFx0JTAuMWYgJTAuMWYgIg==
+    :encode_word: "@596_219"
+  - :string: !binary |-
+      IjE1OTkxMDA1IOmItOacqOWFrOWtnVx0JTAuMWYgJTAuMWYgIg==
+    :encode_word: "@596_220"
+  - :string: !binary |-
+      IiVk55WqXG4i
+    :encode_word: "@596_221"
+  - :string: '"-------- -------        ---- ---- ----\n"'
+    :encode_word: "@596_222"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhDtc
+      biI=
+    :encode_word: "@596_223"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPt+OCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDpcbiI=
+    :encode_word: "@596_224"
+  - :string: '"-------- -------  ---- ---- ----\n"'
+    :encode_word: "@596_225"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwLCcgJ30sezE1OTkxMDAyLCLlpKfosLfogZbl
+      rZAiLDAsMCwnICd9LHsxNTk5MTAwMywi6buS5bed5ZOy5LmfIiwwLDAsJyAn
+      fSx7MTU5OTEwMDQsIuW2i+eUsOWPi+WtkCIsMCwwLCcgJ30sezE1OTkxMDA1
+      LCLpiLTmnKjlhazlrZ0i
+    :encode_word: "@596_226"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhO+8
+      miI=
+    :encode_word: "@596_227"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNXHRNYXRoIEVuZyBGYWlsXG4i
+    :encode_word: "@596_228"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSBcdE1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_229"
+  - :string: '"%lf "'
+    :encode_word: "@596_230"
+  - :string: '"%4.1lf"'
+    :encode_word: "@596_231"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAlZOeVqlxu5pWw5a2mOiAi
+    :encode_word: "@596_232"
+  - :string: !binary |-
+      InN0dWRlbnQjIOWQjeWtl+WQjeWJjSBNYXRoIEVuZyBGYWlsXG4i
+    :encode_word: "@596_233"
+  - :string: !binary |-
+      IjE1OTkxMDAxIOWuieeArOiBoeW4jFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_234"
+  - :string: !binary |-
+      IuaVsOWtpu+8miAgIg==
+    :encode_word: "@596_235"
+  - :string: !binary |-
+      IuiLseiqnu+8miAgIg==
+    :encode_word: "@596_236"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzolZOeVqlxuIg==
+    :encode_word: "@596_237"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSBNYXRoIEVuZyBGYWlsXG4tLS0tLS0t
+      LSAtLS0tLS0tLSAtLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_238"
+  - :string: '"%.1lf "'
+    :encode_word: "@596_239"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyI=
+    :encode_word: "@596_240"
+  - :string: !binary |-
+      IuaVsOWtpiI=
+    :encode_word: "@596_241"
+  - :string: !binary |-
+      IuiLseiqniI=
+    :encode_word: "@596_242"
+  - :string: '" X"'
+    :encode_word: "@596_243"
+  - :string: '" M"'
+    :encode_word: "@596_244"
+  - :string: '" E"'
+    :encode_word: "@596_245"
+  - :string: '"  "'
+    :encode_word: "@596_246"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhDpc
+      buWtpueUn+eVquWPtyI=
+    :encode_word: "@596_247"
+  - :string: "\"%d %s\t%4.1lf %4.1lf %c\\n\""
+    :encode_word: "@596_248"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCJ9LHsxNTk5MTAwMywi5aSn6LC36IGW5a2QIn0sezE1
+      OTkxMDE1LCLpu5Llt53lk7LkuZ8ifSx7MTU5OTEwMjMsIuW2i+eUsOWPi+Wt
+      kCJ9LHsxNTk5MTA0NCwi6Yi05pyo5YWs5a2dIn0sezE1OTkxMDU3LCLkuK3p
+      h47lubjliqkifSx7MTU5OTEwNjQsIuiXpOeUsOawuOaYkyJ9LHsxNTk5MTA3
+      Nywi5rqA55Sw6YGT5a2QIn0sezE1OTkxMTExLCLlsbHnlLDlkInmhbYifSx7
+      MTU5OTEyMzQsIua4oei+uuiKseWtkCI=
+    :encode_word: "@596_249"
+  - :string: '"-------- ------- ---- --- ----\n"'
+    :encode_word: "@596_250"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgICBNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_251"
+  - :string: !binary |-
+      Ilxu5pWw5a2m77yaICI=
+    :encode_word: "@596_252"
+  - :string: !binary |-
+      IuaVsOWtpjogXG4i
+    :encode_word: "@596_253"
+  - :string: "\"%d %s\t%4.1lf %4.1lf E\\n\""
+    :encode_word: "@596_254"
+  - :string: "\"%d %s\t%4.1lf %4.1lf M\\n\""
+    :encode_word: "@596_255"
+  - :string: "\"%d %s\t%4.1lf %4.1lf X\\n\""
+    :encode_word: "@596_256"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjU1hdGggRW5nICBGYWlsXG4tLS0tLS0t
+      LSAtLS0tLS0tLQktLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_257"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOiLl+Wtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_258"
+  - :string: !binary |-
+      IlN0dWRlbnQjIyDlkI3lrZflkI3liY1NYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_259"
+  - :string: '"%4.1f "'
+    :encode_word: "@596_260"
+  - :string: !binary |-
+      IuaVsOWtpuOAgO+8miI=
+    :encode_word: "@596_261"
+  - :string: !binary |-
+      IuiLseiqnuOAgO+8miI=
+    :encode_word: "@596_262"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMgIOWQjeWtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_263"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsIDAsIDAsfSwgezE1OTkxMDAyLCAi5aSn6LC36IGW
+      5a2QIg==
+    :encode_word: "@596_264"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyIsIDAsIDAsfSwgezE1OTkxMDA0LCAi5baL55Sw5Y+L
+      5a2QIg==
+    :encode_word: "@596_265"
+  - :string: '"%s  %s\t%4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_266"
+  - :string: '"%d  %s\t%.1lf %.1lf"'
+    :encode_word: "@596_267"
+  - :string: "\"%s\t\""
+    :encode_word: "@596_268"
+  - :string: "\"%d  %s\t%4.1lf %4.1lf %c\\n\""
+    :encode_word: "@596_269"
+  - :string: !binary |-
+      Ilxu5a2m55Sf55Wq5Y+3JWTnlapcbiI=
+    :encode_word: "@596_270"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMgIOWQjeWtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWxcbi0t
+      LS0tLS0tICAtLS0tLS0tLVx0LS0tLSAtLS0tIC0tLS1cbiI=
+    :encode_word: "@596_271"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhCI=
+    :encode_word: "@596_272"
+  - :string: !binary |-
+      IlN0dWRlbnQjICDlkI3lrZflkI3liY1cdE1hdGggRW5nICBGYWlsXG4tLS0t
+      LS0tLSAgLS0tLS0tLS1cdC0tLS0gLS0tLSAtLS0tXG4i
+    :encode_word: "@596_273"
+  - :string: '"%d  "'
+    :encode_word: "@596_274"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsIuWkp+iwt+iBluWtkCIsIum7kuW3neWTsuS5nyIs
+      IuW2i+eUsOWPi+WtkCIsIumItOacqOWFrOWtnSI=
+    :encode_word: "@596_275"
+  - :string: !binary |-
+      IuWbveiqnjogIg==
+    :encode_word: "@596_276"
+  - :string: '"%d  %s\t%.1f %.1f %c\n"'
+    :encode_word: "@596_277"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTk0MTAwJWRcbiI=
+    :encode_word: "@596_278"
+  - :string: '"%ld  %s\t%.1lf %.1lf "'
+    :encode_word: "@596_279"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlraY6ICAi
+    :encode_word: "@596_280"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG46Ig==
+    :encode_word: "@596_281"
+  - :string: !binary |-
+      IlxuXG5TdHVkZW50IyAg5ZCN5a2X5ZCN5YmNXHRNYXRoIEVuZyAgRmFpbFxu
+      LS0tLS0tLS0gIC0tLS0tLS0tXHQtLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_282"
+  - :string: !binary |-
+      IjE1OTkxMDAxICDlronngKzogaHluIxcdCUwLjFmICUwLjFmICI=
+    :encode_word: "@596_283"
+  - :string: !binary |-
+      IjE1OTkxMDAyICDlpKfosLfogZblrZBcdCUwLjFmICUwLjFmICI=
+    :encode_word: "@596_284"
+  - :string: !binary |-
+      IjE1OTkxMDAzICDpu5Llt53lk7LkuZ9cdCUwLjFmICUwLjFmICI=
+    :encode_word: "@596_285"
+  - :string: !binary |-
+      IjE1OTkxMDA0ICDltovnlLDlj4vlrZBcdCUwLjFmICUwLjFmICI=
+    :encode_word: "@596_286"
+  - :string: !binary |-
+      IjE1OTkxMDA1ICDpiLTmnKjlhazlrZ1cdCUwLjFmICUwLjFmICI=
+    :encode_word: "@596_287"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsDQki5aSn6LC36IGW5a2QIiwNCSLpu5Llt53lk7Lk
+      uZ8iLA0JIuW2i+eUsOWPi+WtkCIsDQki6Yi05pyo5YWs5a2dIiwNfTsNDXR5
+      cGVkZWYgc3RydWN0IFRlc3R7DSAgICBkb3VibGUgcFs1XTsNfXRlc3Q7DQ0N
+      DWludCBtYWluKCl7DQkNCWludCBzbnVtWzVdID0gew0JCTE1OTkxMDAxLA0J
+      CTE1OTkxMDAyLA0JCTE1OTkxMDAzLA0JCTE1OTkxMDA0LA0JCTE1OTkxMDA1
+      DSAgfTsNDQl0ZXN0IG1hdGgsIGVuZzsNCWludCBuOw0JcHJpbnRmKCLlrabn
+      lJ/jga7ngrnmlbDjgpLlhaXlipvjgZfjgabjgY/jgaDjgZXjgYQ6XG4iKTsN
+      CWZvciAobiA9IDA7IG4gPCA1OyBuKyspDQl7DQkNCXByaW50Zigi5a2m55Sf
+      55Wq5Y+3JWTnlapcbiIsc251bVtuXSk7DQlwcmludGYoIuaVsOWtpjogXG4i
+      KTsNCXNjYW5mKCIlbGYiLCAmbWF0aC5wW25dKTsNCXByaW50Zigi6Iux6Kqe
+      OiBcbiIpOw0Jc2NhbmYoIiVsZiIsICZlbmcucFtuXSk7DQl9DQlwcmludGYo
+      IlxuIik7DQlwcmludGYoIlN0dWRlbnQjICDlkI3lrZflkI3liY1cdE1hdGgg
+      RW5nICBGYWlsXG4iKTsNCXByaW50ZigiLS0tLS0tLS0gIC0tLS0tLS0tXHQt
+      LS0tIC0tLS0gLS0tLVxuIik7DQlmb3IgKG4gPSAwOyBuIDwgNTsgbisrKQ0J
+      ew0JCXByaW50ZigiJWQgICVzXHQlLjFsZiAlLjFsZiAiDQkJCQkJLHNudW1b
+      bl0sIG5hbWVbbl0sIG1hdGgucFtuXSwgZW5nLnBbbl0gKTsNCQlpZihtYXRo
+      LnBbbl0gPD0gTUFUSCAmJiBlbmcucFtuXSA+IEVOR0xJVEggKSB7DQkJCXBy
+      aW50ZigiTVxuIik7DQkJfSBlbHNlIGlmIChtYXRoLnBbbl0gPiBNQVRIICYm
+      IGVuZy5wW25dIDw9IEVOR0xJVEgpIHsNCQkJcHJpbnRmKCJFXG4iKTsNCQl9
+      IGVsc2UgaWYgKG1hdGgucFtuXSA8PU1BVEggJiYgZW5nLnBbbl0gPD0gRU5H
+      TElUSCkgew0JCQlwcmludGYoIlhcbiIpOw0JCX0gZWxzZSB7DQkJCXByaW50
+      ZigiIFxuIg==
+    :encode_word: "@596_288"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsDQki5aSn6LC36IGW5a2QIiwNCSLpu5Llt53lk7Lk
+      uZ8iLA0JIuW2i+eUsOWPi+WtkCIsDQki6Yi05pyo5YWs5a2dIiwNfTsNDXR5
+      cGVkZWYgc3RydWN0IFRlc3R7DSAgICBkb3VibGUgcFs1XTsNfXRlc3Q7DQ0N
+      DWludCBtYWluKHZvaWQpIHsNCQ0JaW50IHNudW1bNV0gPSB7DQkJMTU5OTEw
+      MDEsIDE1OTkxMDAyLCAxNTk5MTAwMywgMTU5OTEwMDQsIDE1OTkxMDA1DSAg
+      fTsNDQl0ZXN0IG1hdGgsIGVuZzsNCQ0JaW50IG47DQkNCXByaW50Zigi5a2m
+      55Sf44Gu54K55pWw44KS5YWl5Yqb44GX44Gm44GP44Gg44GV44GEOlxuIik7
+      DQkNCWZvciAobiA9IDA7IG4gPCA1OyBuKyspIHsNCSAgcHJpbnRmKCLlrabn
+      lJ/nlarlj7clZOeVqlxuIixzbnVtW25dKTsNCSAgcHJpbnRmKCLmlbDlraY6
+      IFxuIik7DQkgIHNjYW5mKCIlbGYiLCAmbWF0aC5wW25dKTsNCSAgcHJpbnRm
+      KCLoi7Hoqp46IFxuIik7DQkgIHNjYW5mKCIlbGYiLCAmZW5nLnBbbl0pOw0J
+      fQ0gIHByaW50ZigiXG4iKTsNCXByaW50ZigiU3R1ZGVudCMgIOWQjeWtl+WQ
+      jeWJjVx0TWF0aCBFbmcgIEZhaWxcbiIpOw0JcHJpbnRmKCItLS0tLS0tLSAg
+      LS0tLS0tLS1cdC0tLS0gLS0tLSAtLS0tXG4iKTsNCWZvciAobiA9IDA7IG4g
+      PCA1OyBuKyspDQl7DQkJcHJpbnRmKCIlZCAgJXNcdCUuMWxmICUuMWxmICIN
+      CQkJCQksc251bVtuXSwgbmFtZVtuXSwgbWF0aC5wW25dLCBlbmcucFtuXSAp
+      Ow0JCSAgaWYobWF0aC5wW25dIDw9IE1BVEggJiYgZW5nLnBbbl0gPiBFTkdM
+      SVRIICkgew0JCQkgIHByaW50ZigiTVxuIik7DQkJICB9IGVsc2UgaWYgKG1h
+      dGgucFtuXSA+IE1BVEggJiYgZW5nLnBbbl0gPD0gRU5HTElUSCkgew0JCQkg
+      IHByaW50ZigiRVxuIik7DQkJICB9IGVsc2UgaWYgKG1hdGgucFtuXSA8PU1B
+      VEggJiYgZW5nLnBbbl0gPD0gRU5HTElUSCkgew0JCQkgIHByaW50ZigiWFxu
+      Iik7DQkJICB9IGVsc2Ugew0JCQkgIHByaW50ZigiIFxuIg==
+    :encode_word: "@596_289"
+  - :string: '"%d %s\t%.1f %.1f "'
+    :encode_word: "@596_290"
+  - :string: !binary |-
+      InN0dWRlbnQjIOWQjeWtl+WQjeWJjSBcdE1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_291"
+  - :string: !binary |-
+      IjE1OTkxMDAxIOWuieeArOiBoeW4jAklMy4xZiAlMy4xZiAlY1xuIg==
+    :encode_word: "@596_292"
+  - :string: !binary |-
+      IjE1OTkxMDAyIOWkp+iwt+iBluWtkAklMy4xZiAlMy4xZiAlY1xuIg==
+    :encode_word: "@596_293"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOm7kuW3neWTsuS5nwklMy4xZiAlMy4xZiAlY1xuIg==
+    :encode_word: "@596_294"
+  - :string: !binary |-
+      IjE1OTkxMDA0IOW2i+eUsOWPi+WtkAklMy4xZiAlMy4xZiAlY1xuIg==
+    :encode_word: "@596_295"
+  - :string: !binary |-
+      IjE1OTkxMDA1IOmItOacqOWFrOWtnQklMy4xZiAlMy4xZiAlY1xuIg==
+    :encode_word: "@596_296"
+  - :string: '"\t%4.1lf"'
+    :encode_word: "@596_297"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgTWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_298"
+  - :string: '"--------  --------  ---- ---- ----\n"'
+    :encode_word: "@596_299"
+  - :string: '"%.1f %.1f %c\n"'
+    :encode_word: "@596_300"
+  - :string: '"%ld "'
+    :encode_word: "@596_301"
+  - :string: !binary |-
+      IjE1OTkxMDAxIOWuieeArOiBoeW4jFx0JTQuMWxmICU0LjFsZiAi
+    :encode_word: "@596_302"
+  - :string: !binary |-
+      IjE1OTkxMDAyIOWkp+iwt+iBluWtkFx0JTQuMWxmICU0LjFsZiAi
+    :encode_word: "@596_303"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOm7kuW3neWTsuS5n1x0JTQuMWxmICU0LjFsZiAi
+    :encode_word: "@596_304"
+  - :string: !binary |-
+      IjE1OTkxMDA0IOW2i+eUsOWPi+WtkFx0JTQuMWxmICU0LjFsZiAi
+    :encode_word: "@596_305"
+  - :string: !binary |-
+      IjE1OTkxMDA1IOmItOacqOWFrOWtnVx0JTQuMWxmICU0LjFsZiAi
+    :encode_word: "@596_306"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMSwxfSx7MTU5OTEwMDIsIuWkp+iwt+iBluWtkCIs
+      MSwxfSx7MTU5OTEwMDMsIum7kuW3neWTsuS5nyIsMSwxfSx7MTU5OTEwMDQs
+      IuW2i+eUsOWPi+WtkCIsMSwxfSx7MTU5OTEwMDUsIumItOacqOWFrOWtnSI=
+    :encode_word: "@596_307"
+  - :string: !binary |-
+      InN0dWRlbnQjIOWQjeWtl+WQjeWJjQlNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_308"
+  - :string: !binary |-
+      IuWtpueUn+OBrueVquWPt+OCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhFxu
+      Ig==
+    :encode_word: "@596_309"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwLCdhJ30sezE1OTkxMDAyLCLlpKfosLfogZbl
+      rZAiLDAsMCwnYSd9LHsxNTk5MTAwMywi6buS5bed5ZOy5LmfIiwwLDAsJ2En
+      fSx7MTU5OTEwMDQsIuW2i+eUsOWPi+WtkCIsMCwwLCdhJ30sezE1OTkxMDA1
+      LCLpiLTmnKjlhazlrZ0i
+    :encode_word: "@596_310"
+  - :string: '"Student# "'
+    :encode_word: "@596_311"
+  - :string: !binary |-
+      IuWQjeWtl+WQjeWJjSAi
+    :encode_word: "@596_312"
+  - :string: '"Math "'
+    :encode_word: "@596_313"
+  - :string: '"Eng  "'
+    :encode_word: "@596_314"
+  - :string: '"Fail\n"'
+    :encode_word: "@596_315"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWxcbi0tLS0t
+      LS0tIC0tLS0tLS0tXHQtLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_316"
+  - :string: '"%4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_317"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDpcbuWt
+      pueUn+eVquWPtzE1OTkxMDAlZOeVqlxu5pWw5a2m77yaIg==
+    :encode_word: "@596_318"
+  - :string: '"%d %s %4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_319"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNCU1hdGggRW5nICBGYWlsIg==
+    :encode_word: "@596_320"
+  - :string: "\"\\n-------- --------\t---- ---- ----\\n\""
+    :encode_word: "@596_321"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNXHRNYXRoIEVuZyAgRmFpbFxuLS0t
+      LS0tLS0gLS0tLS0tLS1cdC0tLS0gLS0tLSAtLS0tXG4i
+    :encode_word: "@596_322"
+  - :string: '"1599100%d"'
+    :encode_word: "@596_323"
+  - :string: !binary |-
+      IiDlronngKzogaHluIwi
+    :encode_word: "@596_324"
+  - :string: !binary |-
+      IiDlpKfosLfogZblrZAi
+    :encode_word: "@596_325"
+  - :string: !binary |-
+      IiDpu5Llt53lk7LkuZ8i
+    :encode_word: "@596_326"
+  - :string: !binary |-
+      IiDltovnlLDlj4vlrZAi
+    :encode_word: "@596_327"
+  - :string: !binary |-
+      IiDpiLTmnKjlhazlrZ0i
+    :encode_word: "@596_328"
+  - :string: "\"----------------\t---- ---- ----\\n\""
+    :encode_word: "@596_329"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlraYgOiAi
+    :encode_word: "@596_330"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNICBNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_331"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhO+8mlxu
+      5a2m55Sf55Wq5Y+3MTU5OTEwMDHnlapcbuaVsOWtpu+8miAi
+    :encode_word: "@596_332"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAy55WqXG7mlbDlrabvvJogIg==
+    :encode_word: "@596_333"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAz55WqXG7mlbDlrabvvJogIg==
+    :encode_word: "@596_334"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDA055WqXG7mlbDlrabvvJogIg==
+    :encode_word: "@596_335"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDA155WqXG7mlbDlrabvvJogIg==
+    :encode_word: "@596_336"
+  - :string: !binary |-
+      IlxuXG5TdHVkZW50IyDlkI3lrZflkI3liY1cdE1hdGggRW5nICBGYWlsXG4t
+      LS0tLS0tLSAtLS0tLS1cdC0tLS0gLS0tLSAtLS0tXG4i
+    :encode_word: "@596_337"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwfSx7MTU5OTEwMDIsIuWkp+iwt+iBluWtkCIs
+      MCwwfSx7MTU5OTEwMDMsIum7kuW3neWTsuS5nyI=
+    :encode_word: "@596_338"
+  - :string: !binary |-
+      IuW2i+eUsOWPi+WtkCIsMCwwfSx7MTU5OTEwMDUsIumItOacqOWFrOWtnSI=
+    :encode_word: "@596_339"
+  - :string: '"1599100%d %s\t%4.1lf %4.1lf "'
+    :encode_word: "@596_340"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjQkgIE1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_341"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyAlZCDnlapcbiI=
+    :encode_word: "@596_342"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjeOAgE1hdGggRW5nIOOAgEZhaWxcbiI=
+    :encode_word: "@596_343"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgICAgTWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_344"
+  - :string: '"-------- -----     ---- ---  ----\n"'
+    :encode_word: "@596_345"
+  - :string: '"%lf %lf\n"'
+    :encode_word: "@596_346"
+  - :string: '"%8d "'
+    :encode_word: "@596_347"
+  - :string: '" %c"'
+    :encode_word: "@596_348"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgIE1hdGggRW5nICBGYWlsXG4tLS0t
+      LS0tLS0gLS0tLS0tLS1cdC0tLS0gLS0tLSAtLS0tXG4i
+    :encode_word: "@596_349"
+  - :string: '"-------- --------\n"'
+    :encode_word: "@596_350"
+  - :string: '"---- ---- ----\n"'
+    :encode_word: "@596_351"
+  - :string: !binary |-
+      IuaVsOWtpiA6ICVsZlxuIg==
+    :encode_word: "@596_352"
+  - :string: !binary |-
+      IuiLseiqniA6ICVsZlxuIg==
+    :encode_word: "@596_353"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlraYgOiAgIg==
+    :encode_word: "@596_354"
+  - :string: !binary |-
+      IuiLseiqniA6ICAi
+    :encode_word: "@596_355"
+  - :string: '"________ _____ ____ ____ ____\n"'
+    :encode_word: "@596_356"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgIFx0TWF0aCBFbmcgIEZhaWxcbi0t
+      LS0tLS0tIC0tLS0tLS0tXHQtLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_357"
+  - :string: "\"-------- --------\t---- ---- ----\\n\\n\""
+    :encode_word: "@596_358"
+  - :string: !binary |-
+      IjE1OTkxMDAyIOWkp+iwt+iBluWtkFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_359"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOm7kuW3neWTsuS5n1x0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_360"
+  - :string: !binary |-
+      IjE1OTkxMDA0IOW2i+eUsOWPi+WtkFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_361"
+  - :string: !binary |-
+      IjE1OTkxMDA1IOmItOacqOWFrOWtnVx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_362"
+  - :string: '"%d %s\t%.1lf %.1lf %c\n"'
+    :encode_word: "@596_363"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwLCdcMCd9LHsxNTk5MTAwMiwi5aSn6LC36IGW
+      5a2QIiwwLDAsJ1wwJ30sezE1OTkxMDAzLCLpu5Llt53lk7LkuZ8iLDAsMCwn
+      XDAnfSx7MTU5OTEwMDQsIuW2i+eUsOWPi+WtkCIsMCwwLCdcMCd9LHsxNTk5
+      MTAwNSwi6Yi05pyo5YWs5a2dIg==
+    :encode_word: "@596_364"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVsZOeVqlxu5pWw5a2mOiI=
+    :encode_word: "@596_365"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMSwxLCdhJ30sezE1OTkxMDAyLCLlpKfosLfogZbl
+      rZAiLDEsMSwnYSd9LHsxNTk5MTAwMywi6buS5bed5ZOy5LmfIiwxLDEsJ2En
+      fSx7MTU5OTEwMDQsIuW2i+eUsOWPi+WtkCIsMSwxLCdhJ30sezE1OTkxMDA1
+      LCLpiLTmnKjlhazlrZ0i
+    :encode_word: "@596_366"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtzolZOeVqlxuIg==
+    :encode_word: "@596_367"
+  - :string: "\"%d %s\t%.1lf %.1lf %c\\n\""
+    :encode_word: "@596_368"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsIDE1OTkxMDAxLCAwLCAwfSwgeyLlpKfosLfogZbl
+      rZAi
+    :encode_word: "@596_369"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyIsIDE1OTkxMDAzLCAwLCAwfSwgeyLltovnlLDlj4vl
+      rZAi
+    :encode_word: "@596_370"
+  - :string: !binary |-
+      IuWtpueUn+OBrueVquWPt+OCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhDpc
+      biI=
+    :encode_word: "@596_371"
+  - :string: !binary |-
+      IuWtpuexjeeVquWPtyVk55WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_372"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg6IuX5a2X5ZCN5YmNIE1hdGggRW5nICBGYWlsXG4tLS0t
+      LS0tLSAtLS0tLS0tLSAtLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_373"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMTAlZOeVqlxuIg==
+    :encode_word: "@596_374"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwfSx7IuWkp+iwt+iBluWtkCIsMCwwfSx7Ium7
+      kuW3neWTsuS5nyIsMCwwfSx7IuW2i+eUsOWPi+WtkCIsMCwwfSx7IumItOac
+      qOWFrOWtnSI=
+    :encode_word: "@596_375"
+  - :string: '"15991001 "'
+    :encode_word: "@596_376"
+  - :string: '"15991002 "'
+    :encode_word: "@596_377"
+  - :string: '"15991003 "'
+    :encode_word: "@596_378"
+  - :string: '"15991004 "'
+    :encode_word: "@596_379"
+  - :string: '"15991005 "'
+    :encode_word: "@596_380"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgICBcdE1hdGggRW5nICBGYWlsXG4t
+      LS0tLS0tLSAtLS0tLS0tLVx0LS0tLSAtLS0tIC0tLS1cbiI=
+    :encode_word: "@596_381"
+  - :string: '"%s "'
+    :encode_word: "@596_382"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhO+8
+      mlxu5a2m55Sf55Wq5Y+3MTU5OTEwMCVk55WqXG4i
+    :encode_word: "@596_383"
+  - :string: !binary |-
+      IuaVsOWtpu+8miAiKTtzY2FuZigiJWxmIg==
+    :encode_word: "@596_384"
+  - :string: !binary |-
+      IuiLseiqnu+8miAiKTtzY2FuZigiJWxmIg==
+    :encode_word: "@596_385"
+  - :string: '"%ld %s\t%4.1lf %4.1lf  \n"'
+    :encode_word: "@596_386"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCJ9LHsxNTk5MTAwMiwi5aSn6LC36IGW5a2QIg==
+    :encode_word: "@596_387"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyJ9LHsxNTk5MTAwNCwi5baL55Sw5Y+L5a2QIn0sezE1
+      OTkxMDA1LCLpiLTmnKjlhazlrZ0i
+    :encode_word: "@596_388"
+  - :string: !binary |-
+      IlN0dWRlbnQjICDlkI3lrZflkI3liY0gIE1hdGggRW5nIEZhaWwi
+    :encode_word: "@596_389"
+  - :string: '"\n-------- -------- ---- ---- ----\n"'
+    :encode_word: "@596_390"
+  - :string: '"\n\n"'
+    :encode_word: "@596_391"
+  - :string: !binary |-
+      IjE1OTkxMDAxICVzXHQlNC4xbGYgJTQuMWxmICVjXG4iLCLlronngKzogaHl
+      uIwi
+    :encode_word: "@596_392"
+  - :string: !binary |-
+      IjE1OTkxMDAyICVzXHQlNC4xbGYgJTQuMWxmICVjXG4iLCLlpKfosLfogZbl
+      rZAi
+    :encode_word: "@596_393"
+  - :string: !binary |-
+      IjE1OTkxMDAzICVzXHQlNC4xbGYgJTQuMWxmICVjXG4iLCLpu5Llt53lk7Lk
+      uZ8i
+    :encode_word: "@596_394"
+  - :string: !binary |-
+      IjE1OTkxMDA0ICVzXHQlNC4xbGYgJTQuMWxmICVjXG4iLCLltovnlLDlj4vl
+      rZAi
+    :encode_word: "@596_395"
+  - :string: !binary |-
+      IjE1OTkxMDA1ICVzXHQlNC4xbGYgJTQuMWxmICVjXG4iLCLpiLTmnKjlhazl
+      rZ0i
+    :encode_word: "@596_396"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCJ9LHsxNTk5MTAwMiwi5aSn6LC36IGW5a2QIn0sezE1
+      OTkxMDAzLCLpu5Llt53lk7LkuZ8i
+    :encode_word: "@596_397"
+  - :string: !binary |-
+      IuW2i+eUsOWPi+WtkCJ9LHsxNTk5MTAwNSwi6Yi05pyo5YWs5a2dIg==
+    :encode_word: "@596_398"
+  - :string: !binary |-
+      IuaVsOWtpjolZFxuIg==
+    :encode_word: "@596_399"
+  - :string: !binary |-
+      IuiLseiqnjolZFxuIg==
+    :encode_word: "@596_400"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwLCdcMCd9LHsxNTk5MTAwMiwi5aSn6LC36IGW
+      5a2QIg==
+    :encode_word: "@596_401"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyIsMCwwLCdcMCd9LHsxNTk5MTAwNCwi5baL55Sw5Y+L
+      5a2QIiwwLDAsJ1wwJ30sezE1OTkxMDA1LCLpiLTmnKjlhazlrZ0i
+    :encode_word: "@596_402"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTExMDAlZOeVqlxuIg==
+    :encode_word: "@596_403"
+  - :string: !binary |-
+      IlN0dWRlbnRzIyDlkI3lrZflkI3liY0gTWF0aCBFbmcgRmFpbFxuIg==
+    :encode_word: "@596_404"
+  - :string: '"%s %s\t%.1lf %.1lf %c\n"'
+    :encode_word: "@596_405"
+  - :string: !binary |-
+      IlN0dWRlbnQjICDlkI3lrZflkI3liY0gTWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_406"
+  - :string: '"--------  -------- ---- ---- ----\n"'
+    :encode_word: "@596_407"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhOOAgjpc
+      biI=
+    :encode_word: "@596_408"
+  - :string: !binary |-
+      InN0dWRlbnQjIOWQjeWtl+WQjeWJjeOAgE1hdGggRW5nIEZhaWw6XG4i
+    :encode_word: "@596_409"
+  - :string: !binary |-
+      Ii0tLS0tLS0tIC0tLS0t44CALS0tLSAtLS0gLS0tLTpcbiI=
+    :encode_word: "@596_410"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPt+OCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhDpcbiI=
+    :encode_word: "@596_411"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzoxNTk5MTAwJWTnlapcbiI=
+    :encode_word: "@596_412"
+  - :string: !binary |-
+      IuiLseiqnu+8mlxuIg==
+    :encode_word: "@596_413"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwLDB9LCB7MTU5OTEwMDIsIuWkp+iwt+iBluWt
+      kCIsMCwwLDB9LHsxNTk5MTAwMywi6buS5bed5ZOy5LmfIiwwLDAsMH0sezE1
+      OTkxMDA0LCLltovnlLDlj4vlrZAiLDAsMCwwfSx7MTU5OTEwMDUsIumItOac
+      qOWFrOWtnSI=
+    :encode_word: "@596_414"
+  - :string: '"-------- ----- ---- ---- ----\n"'
+    :encode_word: "@596_415"
+  - :string: !binary |-
+      IiVkIOWuieeArOiBoeW4jFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_416"
+  - :string: !binary |-
+      IiVkIOWkp+iwt+iBluWtkFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_417"
+  - :string: !binary |-
+      IiVkIOm7kuW3neWTsuS5n1x0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_418"
+  - :string: !binary |-
+      IiVkIOW2i+eUsOWPi+WtkFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_419"
+  - :string: !binary |-
+      IiVkIOmItOacqOWFrOWtnVx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_420"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVkOlxuIg==
+    :encode_word: "@596_421"
+  - :string: !binary |-
+      IuaVsOWtpjolZlxuIg==
+    :encode_word: "@596_422"
+  - :string: !binary |-
+      IuiLseiqnjolZlxuIg==
+    :encode_word: "@596_423"
+  - :string: !binary |-
+      IuaVsOWtpjogIik7c2NhbmYoIiVsZiI=
+    :encode_word: "@596_424"
+  - :string: !binary |-
+      IuiLseiqnjogIik7c2NhbmYoIiVsZiI=
+    :encode_word: "@596_425"
+  - :string: '"%d %d"'
+    :encode_word: "@596_426"
+  - :string: '"-------- ---------- ---  ----\n"'
+    :encode_word: "@596_427"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMTU5OTEwMDEsMCwwLCIgIg==
+    :encode_word: "@596_428"
+  - :string: !binary |-
+      IuWkp+iwt+iBluWtkCIsMTU5OTEwMDMsMCwwLCIgIg==
+    :encode_word: "@596_429"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyIsMTU5OTEwMTUsMCwwLCIgIg==
+    :encode_word: "@596_430"
+  - :string: !binary |-
+      IuW2i+eUsOWPi+WtkCIsMTU5OTEwMjMsMCwwLCIgIg==
+    :encode_word: "@596_431"
+  - :string: !binary |-
+      IumItOacqOWFrOWtnSIsMTU5OTEwNDQsMCwwLCIgIg==
+    :encode_word: "@596_432"
+  - :string: !binary |-
+      IuS4remHjuW5uOWKqSIsMTU5OTEwNTcsMCwwLCIgIg==
+    :encode_word: "@596_433"
+  - :string: !binary |-
+      IuiXpOeUsOawuOaYkyIsMTU5OTEwNjQsMCwwLCIgIg==
+    :encode_word: "@596_434"
+  - :string: !binary |-
+      Iua6gOeUsOmBk+WtkCIsMTU5OTEwNzcsMCwwLCIgIg==
+    :encode_word: "@596_435"
+  - :string: !binary |-
+      IuWxseeUsOWQieaFtiIsMTU5OTExMTEsMCwwLCIgIg==
+    :encode_word: "@596_436"
+  - :string: !binary |-
+      Iua4oei+uuiKseWtkCIsMTU5OTEyMzQsMCwwLCIgIg==
+    :encode_word: "@596_437"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjeOAgOOAgOOAgE1hdGggRW5nICBGYWls
+      XG4i
+    :encode_word: "@596_438"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwLCcgJ30sezE1OTkxMDAzLCLlpKfosLfogZbl
+      rZAiLDAsMCwnICd9LHsxNTk5MTAxNSwi6buS5bed5ZOy5LmfIiwwLDAsJyAn
+      fSx7MTU5OTEwMjMsIuW2i+eUsOWPi+WtkCIsMCwwLCcgJ30sezE1OTkxMDQ0
+      LCLpiLTmnKjlhazlrZ0iLDAsMCwnICd9LHsxNTk5MTA1Nywi5Lit6YeO5bm4
+      5YqpIiwwLDAsJyAnfSx7MTU5OTEwNjQsIuiXpOeUsOawuOaYkyIsMCwwLCcg
+      J30sezE1OTkxMDc3LCLmuoDnlLDpgZPlrZAiLDAsMCwnICd9LHsxNTk5MTEx
+      MSwi5bGx55Sw5ZCJ5oW2IiwwLDAsJyAnfSx7MTU5OTEyMzQsIua4oei+uuiK
+      seWtkCI=
+    :encode_word: "@596_439"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxJTAuM2TnlapcbiI=
+    :encode_word: "@596_440"
+  - :string: '"15991%0.3d "'
+    :encode_word: "@596_441"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPt++8miVk55WqXG4i
+    :encode_word: "@596_442"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgIE1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_443"
+  - :string: '"%s\t%4.1lf "'
+    :encode_word: "@596_444"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjQlNYXRoIEVuZyAgRmFpbFxuLS0tLS0t
+      LS0gLS0tLS0tLS0JLS0tLSAtLS0tIC0tLS0gXG4i
+    :encode_word: "@596_445"
+  - :string: '"%d %s\t%4.1f %4.1f "'
+    :encode_word: "@596_446"
+  - :string: !binary |-
+      IjE1OTkxMDAxIiwgIuWuieeArOiBoeW4jCI=
+    :encode_word: "@596_447"
+  - :string: !binary |-
+      IjE1OTkxMDAzIiwgIuWkp+iwt+iBluWtkCI=
+    :encode_word: "@596_448"
+  - :string: !binary |-
+      IjE1OTkxMDE1IiwgIum7kuW3neWTsuS5nyI=
+    :encode_word: "@596_449"
+  - :string: !binary |-
+      IjE1OTkxMDIzIiwgIuW2i+eUsOWPi+WtkCI=
+    :encode_word: "@596_450"
+  - :string: !binary |-
+      IjE1OTkxMDQ0IiwgIumItOacqOWFrOWtnSI=
+    :encode_word: "@596_451"
+  - :string: !binary |-
+      IjE1OTkxMDU3IiwgIuS4remHjuW5uOWKqSI=
+    :encode_word: "@596_452"
+  - :string: !binary |-
+      IjE1OTkxMDY0IiwgIuiXpOeUsOawuOaYkyI=
+    :encode_word: "@596_453"
+  - :string: !binary |-
+      IjE1OTkxMDc3IiwgIua6gOeUsOmBk+WtkCI=
+    :encode_word: "@596_454"
+  - :string: !binary |-
+      IjE1OTkxMTExIiwgIuWxseeUsOWQieaFtiI=
+    :encode_word: "@596_455"
+  - :string: !binary |-
+      IjE1OTkxMjM0IiwgIua4oei+uuiKseWtkCI=
+    :encode_word: "@596_456"
+  - :string: '"%s %s\t%4.1lf %4.1lf %c\n"'
+    :encode_word: "@596_457"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCJ9LHsxNTk5MTAwMywi5aSn6LC36IGW5a2QIg==
+    :encode_word: "@596_458"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyJ9LHsxNTk5MTAyMywi5baL55Sw5Y+L5a2QIn0sezE1
+      OTkxMDQ0LCLpiLTmnKjlhazlrZ0i
+    :encode_word: "@596_459"
+  - :string: !binary |-
+      IuS4remHjuW5uOWKqSJ9LHsxNTk5MTA2NCwi6Jek55Sw5rC45piTIn0sezE1
+      OTkxMDc3LCLmuoDnlLDpgZPlrZAi
+    :encode_word: "@596_460"
+  - :string: !binary |-
+      IuWxseeUsOWQieaFtiJ9LHsxNTk5MTIzNCwi5rih6L666Iqx5a2QIg==
+    :encode_word: "@596_461"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhO+8
+      mlxu5a2m55Sf55Wq5Y+3JWTnlapcbuaVsOWtpu+8miI=
+    :encode_word: "@596_462"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDpcbuWt
+      pueUn+eVquWPtyVk55WqXG7mlbDlraY6Ig==
+    :encode_word: "@596_463"
+  - :string: '"%lf\n%lf"'
+    :encode_word: "@596_464"
+  - :string: '"-------- -------\t---- ---- ----\n"'
+    :encode_word: "@596_465"
+  - :string: '"-------- ------ ---- ---- ----\n"'
+    :encode_word: "@596_466"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAx55WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_467"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAz55WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_468"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDE155WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_469"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDIz55WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_470"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDQ055WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_471"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDU355WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_472"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDY055WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_473"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDc355WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_474"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMTEx55WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_475"
+  - :string: !binary |-
+      IjE1OTkxMDAxIOWuieeArOiBoeW4jFx0JS4xZiAlLjFmICI=
+    :encode_word: "@596_476"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOWkp+iwt+iBluWtkFx0JS4xZiAlLjFmICI=
+    :encode_word: "@596_477"
+  - :string: !binary |-
+      IjE1OTkxMDE1IOm7kuW3neWTsuS5n1x0JS4xZiAlLjFmICI=
+    :encode_word: "@596_478"
+  - :string: !binary |-
+      IjE1OTkxMDIzIOW2i+eUsOWPi+WtkFx0JS4xZiAlLjFmICI=
+    :encode_word: "@596_479"
+  - :string: !binary |-
+      IjE1OTkxMDQ0IOmItOacqOWFrOWtnVx0JS4xZiAlLjFmICI=
+    :encode_word: "@596_480"
+  - :string: !binary |-
+      IjE1OTkxMDU3IOS4remHjuW5uOWKqVx0JS4xZiAlLjFmICI=
+    :encode_word: "@596_481"
+  - :string: !binary |-
+      IjE1OTkxMDY0IOiXpOeUsOawuOaYk1x0JS4xZiAlLjFmICI=
+    :encode_word: "@596_482"
+  - :string: !binary |-
+      IjE1OTkxMDc3IOa6gOeUsOmBk+WtkFx0JS4xZiAlLjFmICI=
+    :encode_word: "@596_483"
+  - :string: !binary |-
+      IjE1OTkxMTExIOWxseeUsOWQieaFtlx0JS4xZiAlLjFmICI=
+    :encode_word: "@596_484"
+  - :string: !binary |-
+      IjE1OTkxMjM0IOa4oei+uuiKseWtkFx0JTQuMWYgJTQuMWYgIg==
+    :encode_word: "@596_485"
+  - :string: !binary |-
+      Ilxu5a2m55Sf55Wq5Y+3ICVkIOeVqlxuIg==
+    :encode_word: "@596_486"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsMCwwLH0sezE1OTkxMDAzLCAi5aSn6LC36IGW5a2Q
+      Ig==
+    :encode_word: "@596_487"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5nyIsMCwwLH0sezE1OTkxMDIzLCAi5baL55Sw5Y+L5a2Q
+      Ig==
+    :encode_word: "@596_488"
+  - :string: !binary |-
+      IumItOacqOWFrOWtnSIsMCwwLH0sezE1OTkxMDU3LCAi5Lit6YeO5bm45Yqp
+      Ig==
+    :encode_word: "@596_489"
+  - :string: !binary |-
+      IuiXpOeUsOawuOaYkyIsMCwwLH0sezE1OTkxMDc3LCAi5rqA55Sw6YGT5a2Q
+      Ig==
+    :encode_word: "@596_490"
+  - :string: !binary |-
+      IuWxseeUsOWQieaFtiIsMCwwLH0sezE1OTkxMjM0LCAi5rih6L666Iqx5a2Q
+      Ig==
+    :encode_word: "@596_491"
+  - :string: !binary |-
+      Ilxu5a2m57GN55Wq5Y+3JWTnlapcbiI=
+    :encode_word: "@596_492"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNCU1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_493"
+  - :string: '"-------- ----- ---- --- ----\n"'
+    :encode_word: "@596_494"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVk55WqXG7mlbDlraY6XG4i
+    :encode_word: "@596_495"
+  - :string: !binary |-
+      IjE1OTkxMDAxIOWuieeArOiBoeW4jAki
+    :encode_word: "@596_496"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOWkp+iwt+iBluWtkAki
+    :encode_word: "@596_497"
+  - :string: !binary |-
+      IjE1OTkxMDE1IOm7kuW3neWTsuS5nwki
+    :encode_word: "@596_498"
+  - :string: !binary |-
+      IjE1OTkxMDIzIOW2i+eUsOWPi+WtkAki
+    :encode_word: "@596_499"
+  - :string: !binary |-
+      IjE1OTkxMDQ0IOmItOacqOWFrOWtnQki
+    :encode_word: "@596_500"
+  - :string: !binary |-
+      IjE1OTkxMDU3IOS4remHjuW5uOWKqQki
+    :encode_word: "@596_501"
+  - :string: !binary |-
+      IjE1OTkxMDY0IOiXpOeUsOawuOaYkwki
+    :encode_word: "@596_502"
+  - :string: !binary |-
+      IjE1OTkxMDc3IOa6gOeUsOmBk+WtkAki
+    :encode_word: "@596_503"
+  - :string: !binary |-
+      IjE1OTkxMTExIOWxseeUsOWQieaFtgki
+    :encode_word: "@596_504"
+  - :string: !binary |-
+      IjE1OTkxMjM0IOa4oei+uuiKseWtkAki
+    :encode_word: "@596_505"
+  - :string: '"%4.1f %4.1f "'
+    :encode_word: "@596_506"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzolZFxuIg==
+    :encode_word: "@596_507"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgIE1hdGggRW5nIEZhaWxcbiI=
+    :encode_word: "@596_508"
+  - :string: '"-------- --------   ---- --- ----\n"'
+    :encode_word: "@596_509"
+  - :string: !binary |-
+      InN0dWRlbnQj44CA5ZCN5a2X5ZCN5YmNTWF0aOOAgEVuZ+OAgOOAgEZhaWxc
+      biI=
+    :encode_word: "@596_510"
+  - :string: !binary |-
+      Ii0tLS0tLS0t44CALS0tLS0tLeOAgOOAgOOAgOOAgOOAgOOAgOOAgC0tLS3j
+      gIAtLS0t44CALS0tLVxuIg==
+    :encode_word: "@596_511"
+  - :string: '"-------- --------   ----- ---- ----\n"'
+    :encode_word: "@596_512"
+  - :string: !binary |-
+      Ilxu5pWw5a2mOiAi
+    :encode_word: "@596_513"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSBNYXRoICBFbmcgICBGYWlsXG4i
+    :encode_word: "@596_514"
+  - :string: '"--------  ------  ----  ---  ----\n"'
+    :encode_word: "@596_515"
+  - :string: !binary |-
+      IuaVsOWtpjogJWxmXG4i
+    :encode_word: "@596_516"
+  - :string: !binary |-
+      IuiLseiqnjogJWxmXG4i
+    :encode_word: "@596_517"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzolZCI=
+    :encode_word: "@596_518"
+  - :string: "\"-------- --------\t---- ---- ----\""
+    :encode_word: "@596_519"
+  - :string: !binary |-
+      IlxuU3R1ZGVudCMg5ZCN5a2X5ZCN5YmNICAgICAgTWF0aCBFbmcgRmFpbFxu
+      Ig==
+    :encode_word: "@596_520"
+  - :string: '"--------- --------    ---- ---- ---\n"'
+    :encode_word: "@596_521"
+  - :string: !binary |-
+      IuWtpueUn+OBrueVquWPt+OCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhO+8
+      mlxuIg==
+    :encode_word: "@596_522"
+  - :string: '"--------  -----  ---- ---  ----\n"'
+    :encode_word: "@596_523"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjU1hdGggRW5nICBmYWlsXG4i
+    :encode_word: "@596_524"
+  - :string: '"-------- ------       ---- ---- ----\n"'
+    :encode_word: "@596_525"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuOBj+OBoOOBleOBhDoi
+    :encode_word: "@596_526"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgXHRNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_527"
+  - :string: "\"-------- --------\t\\t---- ---- ----\\n\""
+    :encode_word: "@596_528"
+  - :string: '"--------  -----  ----  --- ----\n"'
+    :encode_word: "@596_529"
+  - :string: "\"\t%4.1lf\""
+    :encode_word: "@596_530"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAx55WqIg==
+    :encode_word: "@596_531"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDAz55WqIg==
+    :encode_word: "@596_532"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDE155WqIg==
+    :encode_word: "@596_533"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDIz55WqIg==
+    :encode_word: "@596_534"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDQ055WqIg==
+    :encode_word: "@596_535"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDU355WqIg==
+    :encode_word: "@596_536"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDY055WqIg==
+    :encode_word: "@596_537"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMDc355WqIg==
+    :encode_word: "@596_538"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMTEx55WqIg==
+    :encode_word: "@596_539"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTkxMjM055WqIg==
+    :encode_word: "@596_540"
+  - :string: !binary |-
+      IjE1OTkxMDAxIOWuieeArOiBoeW4jAklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_541"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOWkp+iwt+iBluWtkAklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_542"
+  - :string: !binary |-
+      IjE1OTkxMDE1IOm7kuW3neWTsuS5nwklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_543"
+  - :string: !binary |-
+      IjE1OTkxMDIzIOW2i+eUsOWPi+WtkAklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_544"
+  - :string: !binary |-
+      IjE1OTkxMDQ0IOmItOacqOWFrOWtnQklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_545"
+  - :string: !binary |-
+      IjE1OTkxMDU3IOS4remHjuW5uOWKqQklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_546"
+  - :string: !binary |-
+      IjE1OTkxMDY0IOiXpOeUsOawuOaYkwklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_547"
+  - :string: !binary |-
+      IjE1OTkxMDc3IOa6gOeUsOmBk+WtkAklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_548"
+  - :string: !binary |-
+      IjE1OTkxMTExIOWxseeUsOWQieaFtgklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_549"
+  - :string: !binary |-
+      IjE1OTkxMjM0IOa4oei+uuiKseWtkAkgJS4xbGYgICUuMWxmICI=
+    :encode_word: "@596_550"
+  - :string: !binary |-
+      IjE1OTkxMjM0IOa4oei+uuiKseWtkAklLjFsZiAlLjFsZiAi
+    :encode_word: "@596_551"
+  - :string: !binary |-
+      IiVk55WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_552"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDpcbuWt
+      pueUn+eVquWPtyVk55WqXG7mlbDlrabvvJogIg==
+    :encode_word: "@596_553"
+  - :string: !binary |-
+      IlNUVURFTlQjIOWQjeWtl+WQjeWJjQlNYXRoIEVuZyAgRmFpbFxuLS0tLS0t
+      LS0gLS0tLS0tXHQtLS0tIC0tLS0gLS0tLVxuIg==
+    :encode_word: "@596_554"
+  - :string: !binary |-
+      IjE1OTkxMDAzIOWkp+iwt+iBluWtkFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_555"
+  - :string: !binary |-
+      IjE1OTkxMDE1IOm7kuW3neWTsuS5n1x0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_556"
+  - :string: !binary |-
+      IjE1OTkxMDIzIOW2i+eUsOWPi+WtkFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_557"
+  - :string: !binary |-
+      IjE1OTkxMDQ0IOmItOacqOWFrOWtnVx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_558"
+  - :string: !binary |-
+      IjE1OTkxMDU3IOS4remHjuW5uOWKqVx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_559"
+  - :string: !binary |-
+      IjE1OTkxMDY0IOiXpOeUsOawuOaYk1x0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_560"
+  - :string: !binary |-
+      IjE1OTkxMDc3IOa6gOeUsOmBk+WtkFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_561"
+  - :string: !binary |-
+      IjE1OTkxMTExIOWxseeUsOWQieaFtlx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_562"
+  - :string: !binary |-
+      IjE1OTkxMjM0IOa4oei+uuiKseWtkFx0JTQuMWxmICU0LjFsZiAlY1xuIg==
+    :encode_word: "@596_563"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtyVkIg==
+    :encode_word: "@596_564"
+  - :string: !binary |-
+      InN0dWRlbnQjIOWQjeWtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_565"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjQlNYXRoIEVuZyAgRmFpbFxuLS0tLS0t
+      LS0gLS0tLS0tLS0JLS0tLSAtLS0tIC0tLS0i
+    :encode_word: "@596_566"
+  - :string: !binary |-
+      IuaVsOWtpu+8miAlLjFsZlxuIg==
+    :encode_word: "@596_567"
+  - :string: !binary |-
+      IuiLseiqnu+8miAlLjBsZlxuIg==
+    :encode_word: "@596_568"
+  - :string: '"-------- --------   ---- ---  ----\n"'
+    :encode_word: "@596_569"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSBNYXRo44CARW5n44CARmFpbFxuIg==
+    :encode_word: "@596_570"
+  - :string: !binary |-
+      IlN0dWRlbmV0IyDlkI3lrZflkI3liY1NYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_571"
+  - :string: '"--------- --------       ---- ---- ----\n"'
+    :encode_word: "@596_572"
+  - :string: '"%d %s\t%4.1f %4.1f X\n"'
+    :encode_word: "@596_573"
+  - :string: '"%d %s\t%4.1f %4.1f M\n"'
+    :encode_word: "@596_574"
+  - :string: '"%d %s\t%4.1f %4.1f E\n"'
+    :encode_word: "@596_575"
+  - :string: '"%d %s\t%4.1f %4.1f  \n"'
+    :encode_word: "@596_576"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhCI=
+    :encode_word: "@596_577"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjQkgTWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_578"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWwi
+    :encode_word: "@596_579"
+  - :string: '"-------- --------\t---- ---- ----"'
+    :encode_word: "@596_580"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjU1hdGggRW5nICBGYWlsXG4tLS0tLS0t
+      LSAtLS0tLS0tLVx0IC0tLS0gLS0tLSAtLS0tXG4i
+    :encode_word: "@596_581"
+  - :string: '"%d %s\t\n"'
+    :encode_word: "@596_582"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIsIDAsIDB9LCB7MTU5OTEwMDMsICLlpKfosLfogZbl
+      rZAiLCAwLCAwfSwgezE1OTkxMDE1LCAi6buS5bed5ZOy5LmfIiwgMCwgMH0s
+      IHsxNTk5MTAyMywgIuW2i+eUsOWPi+WtkCIsIDAsIDB9LCB7MTU5OTEwNDQs
+      ICLpiLTmnKjlhazlrZ0iLCAwLCAwfSwgezE1OTkxMDU3LCAi5Lit6YeO5bm4
+      5YqpIiwgMCwgMH0sIHsxNTk5MTA2NCwgIuiXpOeUsOawuOaYkyIsIDAsIDB9
+      LCB7MTU5OTEwNzcsICLmuoDnlLDpgZPlrZAiLCAwLCAwfSwgezE1OTkxMTEx
+      LCAi5bGx55Sw5ZCJ5oW2IiwgMCwgMH0sIHsxNTk5MTIzNCwgIua4oei+uuiK
+      seWtkCI=
+    :encode_word: "@596_583"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhDpcbuWt
+      pueUn+eVquWPtyVk55WqXG7mlbDlraY6ICI=
+    :encode_word: "@596_584"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCJ9LCB7MTU5OTEwMDMsICLlpKfosLfogZblrZAifSwg
+      ezE1OTkxMDE1LCAi6buS5bed5ZOy5LmfIn0sIHsxNTk5MTAyMywgIuW2i+eU
+      sOWPi+WtkCJ9LCB7MTU5OTEwNDQsICLpiLTmnKjlhazlrZ0ifSwgezE1OTkx
+      MDU3LCAi5Lit6YeO5bm45YqpIn0sIHsxNTk5MTA2NCwgIuiXpOeUsOawuOaY
+      kyJ9LCB7MTU5OTEwNzcsICLmuoDnlLDpgZPlrZAifSwgezE1OTkxMTExLCAi
+      5bGx55Sw5ZCJ5oW2In0sIHsxNTk5MTIzNCwgIua4oei+uuiKseWtkCI=
+    :encode_word: "@596_585"
+  - :string: '"-------- -------- ---- --- ----\n"'
+    :encode_word: "@596_586"
+  - :string: !binary |-
+      IuaVsOWtpiAi
+    :encode_word: "@596_587"
+  - :string: !binary |-
+      IuiLseiqniAi
+    :encode_word: "@596_588"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjSAgCU1hdGggRW5nICBGYWlsXG4i
+    :encode_word: "@596_589"
+  - :string: "\"%d %s\t%4.1lf %4.1lf \""
+    :encode_word: "@596_590"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jCIgfSwgc3QyID0gezE1OTkxMDAzLCLlpKfosLfogZbl
+      rZAiIH0sIHN0MyA9IHsxNTk5MTAxNSwi6buS5bed5ZOy5LmfIg==
+    :encode_word: "@596_591"
+  - :string: !binary |-
+      IuW2i+eUsOWPi+WtkCIgfSwgc3Q1ID0gezE1OTkxMDQ0LCLpiLTmnKjlhazl
+      rZ0iIH0sIHN0NiA9IHsxNTk5MTA1Nywi5Lit6YeO5bm45YqpIg==
+    :encode_word: "@596_592"
+  - :string: !binary |-
+      IuiXpOeUsOawuOaYkyIgfSwgc3Q4ID0gezE1OTkxMDc3LCLmuoDnlLDpgZPl
+      rZAiIH0sIHN0OSA9IHsxNTk5MTExMSwi5bGx55Sw5ZCJ5oW2IiB9LCBzdDEw
+      ID0gezE1OTkxMjM0LCLmuKHovrroirHlrZAi
+    :encode_word: "@596_593"
+  - :string: '"%d %s\t%4.1lf %4.1lf %c\n\n"'
+    :encode_word: "@596_594"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjeOAgOOAgCAgIE1hdGggRW5nICBGYWls
+      XG4i
+    :encode_word: "@596_595"
+  - :string: '"-------- ------         ---- ---  ----\n"'
+    :encode_word: "@596_596"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjQlNYXRoIEVuZyBGYWlsXG4i
+    :encode_word: "@596_597"
+  - :string: '"-------- -------    ---- --- ----\n"'
+    :encode_word: "@596_598"
+  - :string: '"-------- ------        ---- ---- ----\n"'
+    :encode_word: "@596_599"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjU1hdGggRW5nICBGYWlsIg==
+    :encode_word: "@596_600"
+  - :string: "\"-------- ------\t---- ---- ----\\n\""
+    :encode_word: "@596_601"
+  - :string: !binary |-
+      IlN0dWRlbnQg5ZCN5a2X5ZCN5YmNXHRNYXRoIEVuZyAgRmFpbFxuIg==
+    :encode_word: "@596_602"
+  - :string: '"------- -------\t---- ---- ----\n"'
+    :encode_word: "@596_603"
+  - :string: '"-------- ------\t---- ---- ----\n"'
+    :encode_word: "@596_604"
+  - :string: '"-------- ------ ---- ---  ----\n"'
+    :encode_word: "@596_605"
+  - :string: !binary |-
+      IuWtpueUn+OBrueCueaVsOOCkuWFpeWKm+OBl+OBpuS4i+OBleOBhO+8mlxu
+      5a2m55Sf55Wq5Y+3JWRcbiI=
+    :encode_word: "@596_606"
+  - :string: '"%d %s"'
+    :encode_word: "@596_607"
+  - :string: "\"\t%4.1lf %4.1lf\""
+    :encode_word: "@596_608"
+  - :string: !binary |-
+      IuWtpueUn+eVquWPtzE1OTklZOeVqlxuIg==
+    :encode_word: "@596_609"
+  - :string: !binary |-
+      IlN0dWRlbnQjIOWQjeWtl+WQjeWJjVx0TWF0aOOAgEVuZ+OAgEZhaWxcbiI=
+    :encode_word: "@596_610"
+  - :string: !binary |-
+      Ii0tLS0tLS0tIC0tLS0tLS0tXHQtLS0t44CALS0tLeOAgC0tLS1cbiI=
+    :encode_word: "@596_611"
+  - :string: '"Math score: "'
+    :encode_word: "@596_612"
+  - :string: '"English score: "'
+    :encode_word: "@596_613"
+  - :string: !binary |-
+      InN0dWRlbnQjIOiLl+Wtl+WQjeWJjVx0TWF0aCBFbmcgIEZhaWxcbiI=
+    :encode_word: "@596_614"
+  - :string: !binary |-
+      IuWuieeArOiBoeW4jFwwIg==
+    :encode_word: "@596_615"
+  - :string: !binary |-
+      IuWkp+iwt+iBluWtkFwwIg==
+    :encode_word: "@596_616"
+  - :string: !binary |-
+      Ium7kuW3neWTsuS5n1wwIg==
+    :encode_word: "@596_617"
+  - :string: !binary |-
+      IuW2i+eUsOWPi+WtkFwwIg==
+    :encode_word: "@596_618"
+  - :string: !binary |-
+      IumItOacqOWFrOWtnVwwIg==
+    :encode_word: "@596_619"
+  - :string: !binary |-
+      IuS4remHjuW5uOWKqVwwIg==
+    :encode_word: "@596_620"
+  - :string: !binary |-
+      IuiXpOeUsOawuOaYk1wwIg==
+    :encode_word: "@596_621"
+  - :string: !binary |-
+      Iua6gOeUsOmBk+WtkFwwIg==
+    :encode_word: "@596_622"
+  - :string: !binary |-
+      IuWxseeUsOWQieaFtlwwIg==
+    :encode_word: "@596_623"
+  - :string: !binary |-
+      Iua4oei+uuiKseWtkFwwIg==
+    :encode_word: "@596_624"
+  - :string: '"--------------------------------\n"'
+    :encode_word: "@596_625"

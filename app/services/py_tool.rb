@@ -157,6 +157,8 @@ module PyTool
         end
       end
       variable_sets
+    rescue NoMethodError => e
+      []
     end
 
 

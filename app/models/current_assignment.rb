@@ -69,6 +69,10 @@ class CurrentAssignment < ActiveHash::Base
       id: 578,
       code: '03C2',
       assignment_ids: [79, 152, 220, 287, 359, 432],
+    }, {
+      id: 596,
+      code: '06C1',
+      assignment_ids: [32, 97, 173, 237, 304, 376, 450],
     },
   ]
 

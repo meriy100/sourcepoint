@@ -10,6 +10,7 @@ class CharSet < Array
 end
 
 class EncodingCode
+  class LineCountUnsame < StandardError; end
   attr_accessor :code, :code_encoded, :dictionary, :charlist, :headers, :assignment_id
 
   EXPECT_CHARS = [

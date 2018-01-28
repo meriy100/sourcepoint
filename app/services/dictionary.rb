@@ -114,7 +114,6 @@ class Dictionary < Hash
   end
 
   def next_var_name_token(order = 0)
-    binding.pry if @var_list[order].blank?
     raise EmptyHasList if @var_list[order].blank?
     @var_list[order].shift
   end

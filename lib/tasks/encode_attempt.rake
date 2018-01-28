@@ -31,6 +31,12 @@ namespace :encode do
       begin
         encode_code = EncodingCode.new(attempt.file1, id).encode
         attempt.update!(encode_code: encode_code)
+      rescue EncodingCode::LineCountUnsame
+        puts attempt.id
+        attempt.destroy
+      rescue Dictionary::EmptyHasList => e
+        puts attempt.id
+        attempt.destroy
       rescue => e
         puts attempt.id
         raise e

@@ -2,6 +2,8 @@
 
 require 'json'
 require 'pry'
+require 'active_hash'
+require './app/models/current_assignment.rb'
 
 
 def calc_print(json)
@@ -17,7 +19,14 @@ rescue NoMethodError => e
 end
 
 if __FILE__ == $0
-  ARGV.each do |path|
+  (
+    if ARGV.first  == '-c'
+      ARGV.shift
+      CurrentAssignment.where(code: ARGV).map(&:id).flat_map{|id| Dir["data/#{id}/*.json"] }
+    else
+      ARGV
+    end
+  ).each do |path|
     puts path
     calc_print(JSON[File.read(path)])
     puts
