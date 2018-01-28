@@ -3,7 +3,7 @@ def check_all(id, nonencode_reset=false)
   if YAML.load_file(Rails.root.join('app', 'dictionaries', 'string_encode_word.yml'))[:string_encode_word]["#{id}"].blank?
     system("bin/rake encode:attempts ID=#{id}")
   end
-  unless system("bin/rake all_checker:run ID=#{id} NOBIGBIG=1 NOSECONDS=1 NOSPLIT=1 ")
+  unless system("bin/rake all_checker:run ID=#{id} NOBIGBIG=1 NOSECONDS=1 ")
     puts "error : #{id}"
     exit
   end

@@ -372,8 +372,7 @@ class SubmissionCreate
 
   def pre_run(attempts_create = false)
     self.print_output = false
-    line_list = DiffsToLineDiffs2.new(diffs.dup, actual, expect).search_lines
-    block_split_create_attempts(line_list)
+    line_list = SearchBlock.new(self.submission, nearest_attempts.first, assignment_id).run
   end
 
   def run

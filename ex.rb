@@ -1,9 +1,15 @@
 LENGTH = 90
 START_TIME = Time.zone.now
 
-ARGV.map(&:to_i).each do |assignment_id|
+ids = CurrentAssignment.where(code: ARGV).map(&:id)
+
+ids.map(&:to_i).each do |assignment_id|
   attempts = Attempt.where(current_assignment_id: assignment_id)
   max = attempts.count * 1.0
+
+  CurrentAssignment.find(assignment_id).attempts.sort_by(&:encode_code).each_cons(2) do |first, second|
+    first.destroy if first.encode_code == second.encode_code
+  end
 
   def least_minutes(max, idx)
     (Time.zone.now - START_TIME)./(idx).*(max - idx)./(60).to_i.to_s
