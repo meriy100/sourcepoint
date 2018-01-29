@@ -4,9 +4,6 @@ START_TIME = Time.zone.now
 ids = CurrentAssignment.where(code: ARGV).map(&:id)
 
 ids.map(&:to_i).each do |assignment_id|
-  attempts = Attempt.where(current_assignment_id: assignment_id)
-  max = attempts.count * 1.0
-
   CurrentAssignment.find(assignment_id).attempts.sort_by(&:encode_code).each_cons(2) do |first, second|
     first.destroy if first.encode_code == second.encode_code
   end
@@ -16,6 +13,10 @@ ids.map(&:to_i).each do |assignment_id|
   rescue FloatDomainError => _
     "∞"
   end
+
+  attempts = Attempt.where(current_assignment_id: assignment_id)
+  max = attempts.count * 1.0
+
 
   Parallel.each_with_index(attempts, in_processes: 8) do |attempt, idx|
 

@@ -364,7 +364,7 @@ class SubmissionCreate
   end
 
   def nearest_attempts
-    @nearest_attempts ||= expect_attempts.search(created_at_lt: (ENV['NOBIGBIG'] == '1') ? Time.zone.now : 1.years.ago).result.to_a.uniq(&:encode_code).reject { |a| a.user_id ==  self.submission.user_id }.sort_by { |attempt|
+    @nearest_attempts ||= expect_attempts.search(created_at_lt: (ENV['NOBIGBIG'] == '1') ? 1.years.ago : Time.zone.now ).result.to_a.uniq(&:encode_code).reject { |a| a.user_id ==  self.submission.user_id }.sort_by { |attempt|
       dist = Levenshtein.normalized_distance(actual.encode, attempt.encode_code)
       attempt.dist = dist
     }.reject { |attempt| same_search ? false  : attempt.dist == 0.0 }
